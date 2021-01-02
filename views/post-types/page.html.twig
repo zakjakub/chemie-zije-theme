@@ -1,0 +1,47 @@
+{% extends "layouts/default-page.html.twig" %}
+
+{% block body_content %}
+    {% block page_content %}
+        <main class="container content-wrapper">
+            <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+                <header class="row bg-primary text-white">
+                    <div class="col-6" style="background-image: url({{ post.thumbnail.src('large') }});"></div>
+                    <div class="col-6 justify-content-center align-items-center align-content-center">
+                        <h1 class="p-5">
+                            {{ post.title }}
+                        </h1>
+                    </div>
+                </header>
+                <section class="row">
+                    <div class="col-12">
+                        {{ post.content }}
+                    </div>
+                </section>
+            </article>
+        </main>
+    {% endblock page_content %}
+    {% block page_signpost %}
+        {% if post.children|default and post.children|length > 0 %}
+            <nav class="container">
+                <div class="row gx-5 justify-content-md-center">
+                    {% for childPost in post.children %}
+                        {% set symbol = site.theme.link ~ '/images/symbols/reaction.png' %}
+                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                            <div class="card bg-light border-0 h-100" style="background-color: rgba(100, 100, 255, .1) !important;">
+                                <img src="{{ symbol }}" class="card-img-top mx-auto" alt="..." style="max-width: 85%;">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        {{ childPost.title }}
+                                    </h5>
+                                    <p class="card-text">
+                                        {{ childPost.description }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </nav>
+        {% endif %}
+    {% endblock page_signpost %}
+{% endblock body_content %}

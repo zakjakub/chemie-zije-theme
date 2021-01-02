@@ -1,0 +1,21 @@
+{
+  "name": "chemie-zije-2021-theme",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "@wpackio/scripts": "^5.0.0",
+    "fork-ts-checker-webpack-plugin": "^6.0.8",
+    "sass": "^1.30.0",
+    "typescript": "^4.1.3"
+  },
+  "scripts": {
+    "bootstrap": "wpackio-scripts bootstrap",
+    "build": "wpackio-scripts build",
+    "start": "wpackio-scripts start",
+    "archive": "wpackio-scripts pack"
+  },
+  "dependencies": {
+    "@wpackio/entrypoint": "^5.0.0",
+    "bootstrap": "^5.0.0-beta1"
+  }
+}

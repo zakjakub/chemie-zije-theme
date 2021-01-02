@@ -1,0 +1,15 @@
+{% extends "layouts/default-page.html.twig" %}
+{% set map = site.theme.link ~ '/images/others/map.png' %}
+
+{% block body_content %}
+    <div class="container">
+        <article class="row post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+            <section class="col-12">
+                <img src="{{ map }}" class="img-fluid d-block mx-auto" alt="Interaktivní průmyslová mapa">
+            </section>
+            <section class="col-12">
+                {{ post.content }}
+            </section>
+        </article>
+    </div>
+{% endblock body_content %}

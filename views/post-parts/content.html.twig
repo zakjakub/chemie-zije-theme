@@ -1,0 +1,14 @@
+<section id="content" role="main" class="container">
+    <div class="row">
+        <header class="col-12">
+            {% if title %}
+                <h2>{{ title }}</h2>
+            {% endif %}
+        </header>
+        <main class="col-12 wrapper {{ sidebar_class }}">
+            {% block content %}
+                Požadovaná stránka bohužel nebyla nalezena.
+            {% endblock content %}
+        </main>
+    </div>
+</section>

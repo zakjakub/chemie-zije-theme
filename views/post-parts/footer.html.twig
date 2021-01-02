@@ -1,0 +1,22 @@
+{% set footer_eu_msmt = site.theme.link ~ '/images/footer/footer-eu-msmt.png' %}
+
+<footer id="footer-eu-msmt" class="footer website-footer mt-5 border-top border-info">
+    <div class="container py-4 text-dark">
+        <div class="row align-items-center">
+            <div class="col-12 d-flex flex-column flex-lg-row align-items-center justify-content-between">
+                <div>Tyto webové stránky vznikly za finanční podpory:</div>
+                <img src="{{ footer_eu_msmt }}" alt="Evropské strukturální a investiční fondy a MŠMT" class="footer-eu-msmt-image">
+            </div>
+        </div>
+    </div>
+</footer>
+
+<footer id="footer" class="website-footer bg-secondary text-light">
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-12">
+                Copyright {{ "now"|date('Y') }}
+            </div>
+        </div>
+    </div>
+</footer>
