@@ -1,0 +1,7 @@
+{% extends "layouts/default-page.html.twig" %}
+
+{% block page_signpost %}
+    {% include 'post-parts/page-signpost.html.twig' with {posts: posts} %}
+    {% include 'post-parts/pagination.html.twig'
+        with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+{% endblock page_signpost %}

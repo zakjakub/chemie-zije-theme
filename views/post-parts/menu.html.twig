@@ -1,8 +1,8 @@
-{% set menu = menu.primary %}
+{% set primaryMenu = menu.primary %}
 
-{% if menu %}
+{% if primaryMenu %}
     <ul itemscope itemtype="http://schema.org/SiteNavigationElement" class="text-uppercase primary-menu">
-        {% for item in menu.items %}
+        {% for item in primaryMenu.items %}
             <li class="{{ item.classes | join(' ') }}">
                 <a target="{{ item.target }}" href="{{ item.link }}" itemprop="url" class="px-4 py-2">
                     <span itemprop="name">{{ item.title }}</span>
@@ -10,27 +10,5 @@
                 {% include "post-parts/menu.html.twig" with {'items': item.children} %}
             </li>
         {% endfor %}
-        {#
-        <li>
-            <a href="#" itemprop="url" class="px-4 py-2">
-                <span itemprop="name">Úvod</span>
-            </a>
-        </li>
-        <li>
-            <a href="/" itemprop="url" class="px-4 py-2">
-                <span itemprop="name">Studijní materiály</span>
-            </a>
-        </li>
-        <li>
-            <a href="/" itemprop="url" class="px-4 py-2">
-                <span itemprop="name">Výukové materiály</span>
-            </a>
-        </li>
-        <li>
-            <a href="/" itemprop="url" class="px-4 py-2">
-                <span itemprop="name">Kontakt</span>
-            </a>
-        </li>
-        #}
     </ul>
 {% endif %}
