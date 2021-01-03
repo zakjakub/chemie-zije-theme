@@ -1,8 +1,6 @@
-{% set primaryMenu = menu.primary %}
-
-{% if primaryMenu %}
+{% if items|default and items|length > 0 %}
     <ul itemscope itemtype="http://schema.org/SiteNavigationElement" class="text-uppercase primary-menu">
-        {% for item in primaryMenu.items %}
+        {% for item in items %}
             <li class="{{ item.classes | join(' ') }}">
                 <a target="{{ item.target }}" href="{{ item.link }}" itemprop="url" class="px-4 py-2">
                     <span itemprop="name">{{ item.title }}</span>
