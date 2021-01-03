@@ -1,5 +1,7 @@
 {% extends "layouts/default-page.html.twig" %}
 
+{% set posts = posts|length > 0 ? posts : post.children %}
+
 {% block body_content %}
     {% block page_content %}
         <main class="container content-wrapper">
@@ -11,6 +13,7 @@
         </main>
     {% endblock page_content %}
     {% block page_signpost %}
-        {% include 'post-parts/page-signpost.html.twig' with {posts: post.children} %}
+        {% include 'post-parts/page-signpost.html.twig' %}
+        {% include 'post-parts/pagination.html.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
     {% endblock page_signpost %}
 {% endblock body_content %}
