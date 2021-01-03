@@ -12,6 +12,7 @@ $context['posts'] = new Timber\PostQuery(new WP_Query());
 $context['foo']   = 'bar';
 $templates        = array('post-types/index.html.twig');
 if (is_home()) {
+    $context['isHome']   = true;
     array_unshift($templates, 'post-types/front-page.html.twig', 'post-types/home.html.twig');
 }
 Timber::render($templates, $context);

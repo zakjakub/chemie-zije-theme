@@ -1,10 +1,19 @@
-{% set imageSrc = image.src('medium')|default(site.theme.link ~ '/images/photos/foto.png') %}
+{% set imageSrc = post.thumbnail.image.src('medium')|default(site.theme.link ~ '/images/photos/foto.png') %}
 
 <header class="row bg-primary text-white">
-    <div class="col-6" style="background-image: url({{ imageSrc }})"></div>
-    <div class="col-6 justify-content-center align-items-center align-content-center justify-items-center text-center">
-        <h1 class="p-5">
-            {{ title }}
-        </h1>
+    <div class="col-6" style="background-image: url({{ imageSrc }}); background-position: center; background-size: cover; min-height: 20em;"></div>
+    <div class="col-6 d-flex justify-content-center align-items-center align-content-center justify-items-center text-center">
+        {% if isHome %}
+            <h1 style="font-size: 3em; text-transform: capitalize;">
+                {{ site.name }}
+            </h1>
+        {% else %}
+            <h1 style="text-transform: capitalize;">
+                {{ site.name }}
+            </h1>
+            <h2 class="p-5">
+                {{ post.title }}
+            </h2>
+        {% endif %}
     </div>
 </header>
