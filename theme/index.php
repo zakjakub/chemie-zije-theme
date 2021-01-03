@@ -12,6 +12,6 @@ $templates = ['post-types/index.html.twig'];
 if (is_home() || is_front_page()) {
     $context['isHome']   = true;
     $context['posts'] = Timber::get_posts(['post_type' => 'article',]);
-    $templates           = ['post-types/home.html.twig', 'post-types/home.html.twig', ...$templates];
+    $templates           = ['post-types/front-page.html.twig', 'post-types/front-page.html.twig', ...$templates];
 }
 Timber::render($templates, $context);

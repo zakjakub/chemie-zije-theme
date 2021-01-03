@@ -16,6 +16,6 @@ $timber_post     = Timber::get_post();
 $context['post'] = $timber_post;
 if (is_home() || is_front_page()) {
     $context['isHome']   = true;
-    $context['posts'] = Timber::get_posts(['post_type' => 'article',]);
+    $context['posts'] = Timber::get_posts(['post_type' => 'article']);
 }
 Timber::render(array('page-customs/page-'.$timber_post->slug.'.html.twig', 'post-types/page.html.twig'), $context);
