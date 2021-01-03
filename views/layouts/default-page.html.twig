@@ -41,7 +41,7 @@
     <!-- WP_HEAD -->
     {{ function('wp_head') }}
 </head>
-<body class="{{ body_class }}" data-template="layouts/default-page.twig">
+<body class="{{ body_class }}" data-template="layouts/default-page.html.twig">
 
 {% block body_header %}
     {% include 'post-parts/header.html.twig' %}

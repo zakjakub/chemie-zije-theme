@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The main template file
  * This is the most generic template file in a WordPress theme
@@ -7,11 +6,14 @@
  * It is used to display a page when nothing more specific matches a query.
  * E.g., it puts together the home page when no home.php file exists
  */
-$context   = Timber::context();
-$templates = ['post-types/index.html.twig'];
+
+$context         = Timber::context();
+$timber_post     = Timber::get_post();
+$context['post'] = $timber_post;
+$templates       = ['index.html.twig'];
 if (is_home() || is_front_page()) {
-    $context['isHome']   = true;
-    $context['posts'] = Timber::get_posts(['post_type' => 'article',]);
-    $templates           = ['post-types/front-page.html.twig', 'post-types/front-page.html.twig', ...$templates];
+    $context['isHome'] = true;
+    $context['posts']  = Timber::get_posts(['post_type' => 'article']);
+    $templates         = ['post-types/front-page.html.twig', 'post-types/home.html.twig', ...$templates];
 }
 Timber::render($templates, $context);
