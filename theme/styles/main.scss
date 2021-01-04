@@ -60,7 +60,8 @@ $rfs-base-value: 0.8rem;
       text-decoration: none;
       transition: color 500ms;
 
-      &.active,
+      &.current-menu-item,
+      &.current-page-ancestor,
       &:hover {
         color: $secondary;
       }
