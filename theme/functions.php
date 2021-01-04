@@ -14,7 +14,12 @@ use Zakjakub\ChemieZijeTheme\ChemieZijeTheme;
 
 $timber  = new Timber();
 $enqueue = new Enqueue(
-    'chemieZijeTheme', 'dist', '1.0.0', 'theme', 'theme', 'regular'
+    'chemieZijeTheme',
+    'dist',
+    '1.0.0',
+    'theme',
+    'theme',
+    'regular'
 );
 if (!class_exists('Timber')) {
     add_action(
