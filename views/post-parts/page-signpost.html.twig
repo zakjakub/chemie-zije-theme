@@ -1,13 +1,12 @@
 {% if posts|default and posts|length > 0 %}
     <nav class="container">
-        <div class="row gx-5 justify-content-md-center">
+        <div class="row g-5 justify-content-md-center">
             {% for post in posts %}
                 {% set imgSrc = post.thumbnail.src('small')|default(site.theme.link ~ '/images/symbols/reaction.png') %}
                 {% set imgAlt = post.thumbnail.alt|default(post.title) %}
-                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                    <a class="card signpost-card bg-light border-0 h-100 text-dark text-decoration-none" href="{{ post.path }}"
-                       style="background-color: rgba(100, 100, 255, .1) !important;">
-                        <img src="{{ imgSrc }}" class="card-img-top mx-auto" alt="{{ imgAlt }}" style="max-width: 85%;">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <a class="card signpost-card border-0 h-100 text-dark text-decoration-none" href="{{ post.path }}">
+                        <img src="{{ imgSrc }}" class="card-img-top mx-auto" alt="{{ imgAlt }}">
                         <div class="card-body">
                             <h5 class="card-title">
                                 {{ post.title }}

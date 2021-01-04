@@ -7,7 +7,7 @@
  * @link UNLICENSED
  * @license UNLICENSED
  * 
- * Copyright (c) 2020 Jakub ZAK
+ * Copyright (c) 2021 Jakub ZAK
  * 
  * This software is released under the UNLICENSED License
  * https://opensource.org/licenses/UNLICENSED

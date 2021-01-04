@@ -7,3 +7,32 @@ $rfs-base-value: 0.8rem;
   max-height: 6em;
 }
 
+.page-banner {
+  .title-box {
+    h1 {
+      font-size: 4em;
+
+      &.single-heading {
+        font-size: 6em;
+      }
+    }
+  }
+
+  .image-box {
+    background-position: center;
+    background-size: cover;
+    min-height: 20em;
+  }
+}
+
+.signpost-card {
+  background-color: rgba(200, 200, 255, .2) !important;
+
+  .card-img-top {
+    max-width: 85%;
+  }
+
+  :hover {
+    background-color: rgba(200, 200, 255, .25) !important;
+  }
+}
