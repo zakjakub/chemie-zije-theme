@@ -37,7 +37,6 @@ $rfs-base-value: 0.8rem;
 }
 
 
-
 .primary-menu {
   display: flex;
   flex-direction: row;
@@ -61,6 +60,7 @@ $rfs-base-value: 0.8rem;
       text-decoration: none;
       transition: color 500ms;
 
+      &.active,
       &:hover {
         color: $secondary;
       }
