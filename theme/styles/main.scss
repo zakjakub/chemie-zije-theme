@@ -54,14 +54,19 @@ $rfs-base-value: 0.8rem;
     justify-content: center;
     list-style-type: none;
 
+    &.current-menu-item,
+    &.current-page-ancestor {
+      a {
+        color: $secondary;
+      }
+    }
+
     a {
       color: $dark;
       font-weight: bolder;
       text-decoration: none;
       transition: color 500ms;
 
-      &.current-menu-item,
-      &.current-page-ancestor,
       &:hover {
         color: $secondary;
       }
