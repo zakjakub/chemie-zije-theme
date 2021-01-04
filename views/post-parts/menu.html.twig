@@ -1,12 +1,11 @@
 {% if items|default and items|length > 0 %}
     <ul itemscope itemtype="http://schema.org/SiteNavigationElement" class="text-uppercase primary-menu">
         {% for item in items %}
-            {% set activeClass = item.current or item.current_item_parent or item.current_item_ancestor ? ' active ' : '' %}
             <li class="{{ item.classes | join(' ') }}">
-                <a target="{{ item.target }}" href="{{ item.link }}" itemprop="url" class="px-4 py-2 {{ activeClass }}">
+                <a target="{{ item.target }}" href="{{ item.link }}" itemprop="url" class="px-4 py-2">
                     <span itemprop="name">{{ item.title }}</span>
                 </a>
-                {# {% include "post-parts/menu.html.twig" with {'items': item.children} %} #}
+                {% include "post-parts/menu.html.twig" with {'items': item.children} %}
             </li>
         {% endfor %}
     </ul>
