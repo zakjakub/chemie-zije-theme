@@ -1,6 +1,6 @@
 {% if posts|default and posts|length > 0 %}
     <nav class="container">
-        <div class="row g-5 justify-content-md-center">
+        <div class="row m-3 g-5 justify-content-md-center">
             {% for post in posts %}
                 {% set imgSrc = post.thumbnail.src('small')|default(site.theme.link ~ '/images/symbols/reaction.png') %}
                 {% set imgAlt = post.thumbnail.alt|default(post.title) %}

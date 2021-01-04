@@ -10,7 +10,6 @@
         </main>
     {% endblock page_content %}
     {% block page_signpost %}
-        <!-- {{ posts|length }} -->
         {% set subPosts = posts|default and posts|length > 0 ? posts : post.children %}
         {% include 'post-parts/page-signpost.html.twig' with {posts: subPosts} %}
         {% include 'post-parts/pagination.html.twig' with { pagination: subPosts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}

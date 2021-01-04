@@ -1,5 +1,7 @@
-<section class="row">
+{% if content and content|length > 0 %}
+<section class="row mx-3">
     <div class="col-12">
         {{ content }}
     </div>
 </section>
+{% endif %}

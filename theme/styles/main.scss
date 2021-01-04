@@ -1,7 +1,6 @@
 $rfs-base-value: 0.8rem;
 
 @import "bootstrap-up";
-@import "menu";
 
 .footer-eu-msmt-image {
   max-height: 6em;
@@ -36,3 +35,38 @@ $rfs-base-value: 0.8rem;
     background-color: rgba(200, 200, 255, .3) !important;
   }
 }
+
+
+
+.primary-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  > li {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    vertical-align: middle;
+    justify-content: center;
+    list-style-type: none;
+
+    a {
+      color: $dark;
+      font-weight: bolder;
+      text-decoration: none;
+      transition: color 500ms;
+
+      &:hover {
+        color: $secondary;
+      }
+    }
+  }
+}
+
+
+
