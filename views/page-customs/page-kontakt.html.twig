@@ -1,0 +1,32 @@
+{% extends "layouts/default-page.html.twig" %}
+
+{% block body_content %}
+    <div class="container">
+        <article class="row post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+            {% if post.content %}
+            <section class="col-12">
+                {{ post.content }}
+            </section>
+            {% endif %}
+            <section class="col-12 col-lg-6">
+                <address>
+                    <p>{{ post.meta('name') }}</p>
+                    <p>{{ post.meta('department') }}</p>
+                    <p>{{ post.meta('faculty') }}</p>
+                    <p>{{ post.meta('university') }}</p>
+                    <p>{{ post.meta('street') }} {{ post.meta('house_number') }}</p>
+                    <p>{{ post.meta('postal_code') }} {{ post.meta('city') }}</p>
+                    <p>{{ post.meta('phone') }}</p>
+                    <p>{{ post.meta('fax') }}</p>
+                    <p>{{ post.meta('e_mail') }}</p>
+                    <p>{{ post.meta('gps') }}</p>
+                </address>
+            </section>
+            <section class="col-12 col-lg-6">
+                {% for contact in contacts %}
+                    {{ contact }}
+                {% endfor %}
+            </section>
+        </article>
+    </div>
+{% endblock body_content %}
