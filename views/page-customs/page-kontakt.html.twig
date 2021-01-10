@@ -1,32 +1,48 @@
-{% extends "layouts/default-page.html.twig" %}
+{% extends "post-types/page.html.twig" %}
 
-{% block body_content %}
-    <div class="container">
-        <article class="row post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-            {% if post.content %}
-            <section class="col-12">
-                {{ post.content }}
-            </section>
-            {% endif %}
-            <section class="col-12 col-lg-6">
-                <address>
-                    <p>{{ post.meta('name') }}</p>
-                    <p>{{ post.meta('department') }}</p>
-                    <p>{{ post.meta('faculty') }}</p>
-                    <p>{{ post.meta('university') }}</p>
-                    <p>{{ post.meta('street') }} {{ post.meta('house_number') }}</p>
-                    <p>{{ post.meta('postal_code') }} {{ post.meta('city') }}</p>
-                    <p>{{ post.meta('phone') }}</p>
-                    <p>{{ post.meta('fax') }}</p>
-                    <p>{{ post.meta('e_mail') }}</p>
-                    <p>{{ post.meta('gps') }}</p>
-                </address>
-            </section>
-            <section class="col-12 col-lg-6">
-                {% for contact in contacts %}
-                    {{ contact }}
-                {% endfor %}
-            </section>
+{% block page_content %}
+    <main class="container content-wrapper">
+        <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+            {% include 'post-parts/page-banner-header-row.html.twig' with {image: post.thumbnail, title: post.title} %}
+            <div class="row post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+                {% if post.content %}
+                    <section class="col-12">
+                        {{ post.content }}
+                    </section>
+                {% endif %}
+                <section class="col-12 col-lg-6">
+                    <h3>{{ post.meta('name') }}</h3>
+                    <address>
+                        <p>{{ post.meta('department') }}</p>
+                        <p>{{ post.meta('faculty') }}</p>
+                        <p>{{ post.meta('university') }}</p>
+                        <p>{{ post.meta('street') }} {{ post.meta('house_number') }}</p>
+                        <p>{{ post.meta('postal_code') }} {{ post.meta('city') }}</p>
+                        <p>{{ post.meta('phone') }}</p>
+                        <p>{{ post.meta('fax') }}</p>
+                        <p>{{ post.meta('e_mail') }}</p>
+                        <p>{{ post.meta('gps') }}</p>
+                    </address>
+                </section>
+                <section class="col-12 col-lg-6">
+                    <h4>Didaktika</h4>
+                    {% for contact in contacts %}
+                        <h5>{{ contact }}</h5>
+                        {% if post.meta('position') %}
+                            <p>{{ post.meta('position') }}</p>
+                        {% endif %}
+                        {% if post.meta('phone') %}
+                            <p>Telefon: {{ post.meta('phone') }}</p>
+                        {% endif %}
+                        {% if post.meta('fax') %}
+                            <p>Fax: {{ post.meta('fax') }}</p>
+                        {% endif %}
+                        {% if post.meta('e_mail') %}
+                            <p>E-mail: {{ post.meta('e_mail') }}</p>
+                        {% endif %}
+                    {% endfor %}
+                </section>
+            </div>
         </article>
-    </div>
-{% endblock body_content %}
+    </main>
+{% endblock page_content %}
