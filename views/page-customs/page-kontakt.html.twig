@@ -11,6 +11,13 @@
                     </section>
                 {% endif %}
                 <section class="col-12 col-lg-6">
+                    {{ dump(post.meta()) }}
+
+                    {{ dump(contacts) }}
+
+                    {{ dump(contact) }}
+
+
                     <h3>{{ post.meta('name') }}</h3>
                     <address>
                         <p>{{ post.meta('department') }}</p>
