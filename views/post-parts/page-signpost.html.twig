@@ -2,11 +2,9 @@
     <nav class="container">
         <div class="row m-3 g-5 justify-content-md-center">
             {% for post in posts %}
-                {% set imgSrc = post.thumbnail.src('small')|default(site.theme.link ~ '/images/symbols/reaction.png') %}
-                {% set imgAlt = post.thumbnail.alt|default(post.title) %}
                 <div class="col-12 col-md-6 col-lg-4">
                     <a class="card signpost-card border-0 h-100 text-dark text-decoration-none" href="{{ post.path }}">
-                        <img src="{{ imgSrc }}" class="card-img-top mx-auto" alt="{{ imgAlt }}">
+                        <img src="{{ post.meta('menu_image') }}" class="card-img-top mx-auto" alt="{{ post.title }}">
                         <div class="card-body">
                             <h5 class="card-title">
                                 {{ post.title }}
