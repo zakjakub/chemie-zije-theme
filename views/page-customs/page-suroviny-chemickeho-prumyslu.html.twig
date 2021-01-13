@@ -4,15 +4,19 @@
     <main class="container content-wrapper">
         <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
             {% include 'post-parts/page-banner-header-row.html.twig' with {image: post.thumbnail, title: post.title} %}
-
             {% for element in elements %}
-
-                <p>
-                    {{ element.title }}
-                </p>
-
+                <section class="col-12">
+                    <article class="row">
+                        <div class="col-9">
+                            <h3>{{ element.title }}</h3>
+                            <span>{{ element.content }}</span>
+                        </div>
+                        <div class="col-3">
+                            <img class="img-fluid" src="{{ element.thumbnail.src }}" alt="{{ element.thumbnail.alt }}">
+                        </div>
+                    </article>
+                </section>
             {% endfor %}
-
         </article>
     </main>
 {% endblock page_content %}
