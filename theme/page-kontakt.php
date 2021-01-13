@@ -4,7 +4,6 @@ use Timber\Post;
 use Timber\Term;
 
 $context                = Timber::context();
-$context['post']        = Timber::get_post();
 $context['contacts']    = carbon_get_theme_option('contact');
 $context['departments'] = [];
 foreach (Timber::get_posts(['post_type' => 'contact_person']) as $person) {
