@@ -19,5 +19,5 @@ foreach (Timber::get_posts(['post_type' => 'contact_person']) as $person) {
     }
 }
 $context['departments'] = array_reverse($context['departments']);
-$templates = ['page-customs/page-'.$context['post']->slug.'.html.twig', 'post-types/page.html.twig'];
+$templates              = ['page-customs/page-'.$context['post']->slug.'.html.twig', 'post-types/page.html.twig'];
 Timber::render($templates, $context);
