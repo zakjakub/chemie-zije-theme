@@ -1,5 +1,7 @@
 {% extends "post-types/page.html.twig" %}
 
+{# Page with list of industry materials. #}
+
 {% block page_content %}
     <main class="container content-wrapper">
         <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
@@ -9,9 +11,7 @@
                     <article class="row">
                         <div class="col-12 col-md-8 col-lg-9 d-flex align-items-start flex-column">
                             <a href="{{ element.link }}" class="text-dark text-decoration-none">
-                                <h3>
-                                    {{ element.title }}
-                                </h3>
+                                <h3>{{ element.title }}</h3>
                             </a>
                             <main style="text-align: justify;">
                                 {{ element.content }}

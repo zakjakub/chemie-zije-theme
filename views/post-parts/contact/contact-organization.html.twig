@@ -1,0 +1,32 @@
+<div class="department-contact mb-5">
+    <h3>{{ singleContact.name|default(singleContact.department) }}</h3>
+    <address>
+        {% if singleContact.department %}
+            <strong>{{ singleContact.department }}</strong><br>
+        {% endif %}
+        {% if singleContact.department %}
+            {{ singleContact.faculty }}<br>
+        {% endif %}
+        {% if singleContact.department %}
+            {{ singleContact.university }}<br>
+        {% endif %}
+        {% if singleContact.department %}
+            {{ singleContact.street }} {{ singleContact.house_number }}<br>
+        {% endif %}
+        {% if singleContact.department %}
+            {{ singleContact.postal_code }} {{ singleContact.city }}<br>
+        {% endif %}
+        {% if singleContact.department %}
+            Telefon: {{ singleContact.phone }}<br>
+        {% endif %}
+        {% if singleContact.department %}
+            Fax: {{ singleContact.fax }}<br>
+        {% endif %}
+        {% if singleContact.department %}
+            E-mail: {{ singleContact.e_mail }}<br>
+        {% endif %}
+        {% if singleContact.department %}
+            GPS: {{ singleContact.gps }}<br>
+        {% endif %}
+    </address>
+</div>

@@ -4,14 +4,12 @@
             {% for post in posts %}
                 <div class="col-12 col-md-6 col-lg-4">
                     <a class="card signpost-card border-0 h-100 text-dark text-decoration-none" href="{{ post.path }}">
-                        <img src="{{ post.meta('menu_image') }}" class="card-img-top mx-auto" alt="{{ post.title }}">
+                        {% if post.meta('menu_image')|default %}
+                            <img src="{{ post.meta('menu_image') }}" class="card-img-top mx-auto" alt="{{ post.title }}">
+                        {% endif %}
                         <div class="card-body">
-                            <h5 class="card-title">
-                                {{ post.title }}
-                            </h5>
-                            <p class="card-text">
-                                {{ post.description }}
-                            </p>
+                            <h5 class="card-title">{{ post.title }}</h5>
+                            <p class="card-text">{{ post.description }}</p>
                         </div>
                     </a>
                 </div>

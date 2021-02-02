@@ -1,4 +1,10 @@
-{% extends "layouts/default-page.html.twig" %}
+{% extends "post-types/page.html.twig" %}
+
+{#
+  Theme for page with list of contact persons.
+  This page theme can be selected as custom theme of single "page" type post (due to config in "theme/page_periodical-table.php").
+#}
+
 {% set periodicalTable = site.theme.link ~ '/images/others/periodical-table.png' %}
 
 {% block body_content %}

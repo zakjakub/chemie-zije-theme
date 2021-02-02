@@ -22,16 +22,11 @@ class ChemieZijeTheme extends Site
         add_action('init', [$this, 'registerPostTypes']);
         add_action('init', [$this, 'registerTaxonomies']);
         // WPackIO Enqueue
-        $this->enqueue = new Enqueue(
-            'chemieZijeTheme', 'dist', '1.0.0', 'theme', 'theme', 'regular'
-        );
+        $this->enqueue = new Enqueue('chemieZijeTheme', 'dist', '1.0.0', 'theme', 'theme', 'regular');
         add_action('wp_enqueue_scripts', [$this, 'themeEnqueue']);
-        add_action(
-            'after_setup_theme',
-            function () {
-                register_nav_menus(['primary' => 'Primární menu (v záhlaví)']);
-            }
-        );
+        add_action('after_setup_theme', function () {
+            register_nav_menus(['primary' => 'Primární menu (v záhlaví)']);
+        });
         parent::__construct();
     }
 
@@ -101,18 +96,15 @@ class ChemieZijeTheme extends Site
          *
          * See: https://codex.wordpress.org/Post_Formats
          */
-        add_theme_support(
-            'post-formats',
-            [
-                'aside',
-                'image',
-                'video',
-                'quote',
-                'link',
-                'gallery',
-                'audio',
-            ]
-        );
+        add_theme_support('post-formats', [
+            'aside',
+            'image',
+            'video',
+            'quote',
+            'link',
+            'gallery',
+            'audio',
+        ]);
         add_theme_support('menus');
     }
 

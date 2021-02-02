@@ -5,7 +5,7 @@
                 <a target="{{ item.target }}" href="{{ item.link }}" itemprop="url" class="px-4 py-2">
                     <span itemprop="name">{{ item.title }}</span>
                 </a>
-                {% include "post-parts/menu.html.twig" with {'items': item.children} %}
+                {% include "post-parts/layout/menu.html.twig" with {'items': item.children} %}
             </li>
         {% endfor %}
     </ul>
