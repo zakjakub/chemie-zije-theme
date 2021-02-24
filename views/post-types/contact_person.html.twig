@@ -1,6 +1,26 @@
 {% extends "post-types/page.html.twig" %}
 
 {% block content %}
-    <h3>{{ post }}</h3>
-    This is one contact page.
+    <section class="row my-3">
+        <div class="col-12">
+            <h3>Kontaktní údaje</h3>
+            {% if post.meta('_position') %}
+                <strong>{{ post.meta('_position') }}</strong><br>
+            {% endif %}
+            {% if post.meta('_phone') %}
+                Telefon: {{ post.meta('_phone') }}<br>
+            {% endif %}
+            {% if post.meta('_fax') %}
+                Fax: {{ post.meta('_fax') }}<br>
+            {% endif %}
+            {% if post.meta('_e_mail') %}
+                E-mail: {{ post.meta('_e_mail') }}<br>
+            {% endif %}
+        </div>
+    </section>
+    <section class="row my-3">
+        <div class="col-12">
+            {{ post.content }}
+        </div>
+    </section>
 {% endblock content %}

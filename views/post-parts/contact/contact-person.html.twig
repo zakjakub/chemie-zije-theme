@@ -2,16 +2,16 @@
     <a href="{{ person.link }}" class="text-body text-decoration-none">
         <h5>{{ person }}</h5>
     </a>
-    {% if person.meta('position') %}
-        <strong>{{ person.meta('position') }}</strong><br>
+    {% if person.meta('_position') %}
+        <strong>{{ person.meta('_position') }}</strong><br>
     {% endif %}
-    {% if person.meta('phone') %}
-        Telefon: {{ person.meta('phone') }}<br>
+    {% if person.meta('_phone') %}
+        Telefon: {{ person.meta('_phone') }}<br>
     {% endif %}
-    {% if person.meta('fax') %}
-        Fax: {{ person.meta('fax') }}<br>
+    {% if person.meta('_fax') %}
+        Fax: {{ person.meta('_fax') }}<br>
     {% endif %}
-    {% if person.meta('e_mail') %}
-        E-mail: {{ person.meta('e_mail') }}<br>
+    {% if person.meta('_e_mail') %}
+        E-mail: {{ person.meta('_e_mail') }}<br>
     {% endif %}
 </div>
