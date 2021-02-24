@@ -1,4 +1,8 @@
 <?php
+/**
+ * @noinspection PhpUnused
+ * @noinspection UnknownInspectionInspection
+ */
 
 namespace Zakjakub\ChemieZijeTheme;
 
@@ -22,12 +26,27 @@ class ChemieZijeTheme extends Site
         add_action('init', [$this, 'registerPostTypes']);
         add_action('init', [$this, 'registerTaxonomies']);
         // WPackIO Enqueue
-        $this->enqueue = new Enqueue('chemieZijeTheme', 'dist', '1.0.0', 'theme', 'theme', 'regular');
+        $this->enqueue = $this->getEnqueue();
         add_action('wp_enqueue_scripts', [$this, 'themeEnqueue']);
-        add_action('after_setup_theme', function () {
-            register_nav_menus(['primary' => 'Primární menu (v záhlaví)']);
-        });
+        add_action(
+            'after_setup_theme',
+            fn() => register_nav_menus(['primary' => 'Primární menu (v záhlaví)'])
+        );
         parent::__construct();
+    }
+
+    private function getEnqueue(): Enqueue
+    {
+        // @formatter:off
+        return $this->enqueue ?? new Enqueue(
+            appName: 'chemieZijeTheme',
+            outputPath: 'dist',
+            version: '1.0.0',
+            type: 'theme',
+            pluginPath: 'theme',
+            themeType: 'regular',
+        );
+        // @formatter:on
     }
 
     final public function themeEnqueue(): void
@@ -90,38 +109,23 @@ class ChemieZijeTheme extends Site
          * Switch default core markup for search form, comment form, and comments
          * to output valid HTML5.
          */
-        add_theme_support('html5', ['comment-form', 'comment-list', 'gallery', 'caption']);
+        add_theme_support(
+            'html5',
+            ['comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script']
+        );
         /*
          * Enable support for Post Formats.
-         *
          * See: https://codex.wordpress.org/Post_Formats
          */
-        add_theme_support('post-formats', [
-            'aside',
-            'image',
-            'video',
-            'quote',
-            'link',
-            'gallery',
-            'audio',
-        ]);
+        add_theme_support(
+            'post-formats',
+            ['aside', 'image', 'video', 'quote', 'link', 'gallery', 'audio',]
+        );
         add_theme_support('menus');
     }
 
-    //    /**
-    //     * This Would return 'foo bar!'.
-    //     *
-    //     * @param  string  $text  being 'foo', then returned 'foo bar!'.
-    //     *
-    //     * @return string
-    //     */
-    //    final public function myfoo(string $text): string
-    //    {
-    //        $text .= ' bar!';
-    //
-    //        return $text;
-    //    }
-    /** This is where you can add your own functions to twig.
+    /**
+     * This is where you can add your own functions to twig.
      *
      * @param  Environment  $twig  get extension.
      *
@@ -131,7 +135,7 @@ class ChemieZijeTheme extends Site
     {
         $twig->addExtension(new StringLoaderExtension());
 
-        // $twig->addFilter(new TwigFilter('myfoo', array($this, 'myfoo')));
+        // $twig->addFilter(new TwigFilter('myFunction', array($this, 'myFunction')));
         return $twig;
     }
 }
