@@ -25,14 +25,14 @@ $rfs-base-value: 0.8rem;
 }
 
 .signpost-card {
-  background-color: rgba(200, 200, 255, .2) !important;
+  background-color: rgba(200, 200, 255, .25) !important;
 
   .card-img-top {
     max-width: 85%;
   }
 
   &:hover {
-    background-color: rgba(200, 200, 255, .3) !important;
+    background-color: rgba(200, 200, 255, .35) !important;
   }
 }
 

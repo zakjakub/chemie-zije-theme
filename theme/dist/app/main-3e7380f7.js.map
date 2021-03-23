@@ -1,16 +1,1 @@
-{
-  "version": 3,
-  "sources": [
-    "webpack:///./theme/scripts/main.js"
-  ],
-  "names": [
-    "console",
-    "log"
-  ],
-  "mappings": ";;;;;;;;;;;;;;;;;gKAAA,iBAIAA,QAAQC,IAAI,yB",
-  "file": "app/main-3e7380f7.js",
-  "sourcesContent": [
-    "// noinspection ES6UnusedImports\nimport bootstrap from 'bootstrap';\nimport '../styles/main.scss';\n\nconsole.log('I am initialized!!!!');\n"
-  ],
-  "sourceRoot": ""
-}
+{"version":3,"sources":["webpack:///./theme/scripts/main.js"],"names":["console","log"],"mappings":";;;;;;;;;;;;;;;;;gKAAA,iBAIAA,QAAQC,IAAI,yB","file":"app/main-3e7380f7.js","sourcesContent":["// noinspection ES6UnusedImports\nimport bootstrap from 'bootstrap';\nimport '../styles/main.scss';\n\nconsole.log('I am initialized!!!!');\n"],"sourceRoot":""}
