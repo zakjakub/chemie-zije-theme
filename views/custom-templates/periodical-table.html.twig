@@ -8,10 +8,10 @@ This page theme can be selected as custom theme of single "page" type post (due 
 {% set periodicalTable = site.theme.link ~ '/images/others/periodical-table.png' %}
 
 {% block body_content %}
-    <div class="container my-5">
+    <div class="container content-wrapper my-5">
         {% block periodical_table %}
             <div class="row post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-                <div class="col-12 periodical-table" id="interactive-periodical-table">
+                <div class="col-12">
                     {% include 'post-parts/periodical-table/interactive-periodical-table.html.twig' %}
                 </div>
             </div>

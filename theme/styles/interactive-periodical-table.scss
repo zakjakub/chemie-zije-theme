@@ -2,13 +2,9 @@
 
 .interactive-periodical-table {
   display: grid;
-  margin: auto;
-  grid-template-columns: 2em repeat(18, auto);
-  grid-template-rows: repeat(7, auto) 1em repeat(2, auto);
+  width: 100%;
+  grid-template-columns: 1fr repeat(18, 2fr);
+  grid-template-rows: repeat(7, 2fr) 1fr repeat(2, 2fr);
   grid-gap: 0;
-  justify-content: center;
-
   text-align: center;
-
-
 }

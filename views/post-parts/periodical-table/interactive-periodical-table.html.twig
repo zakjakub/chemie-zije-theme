@@ -1,11 +1,4 @@
-<div id="interactive-periodical-table" class="interactive-periodical-table">
-
-    <div style="grid-column: 1; grid-row: 1;"></div>
-    <div style="grid-column: 3; grid-row: 2;"></div>
-    <div style="grid-column: 4 / 13; grid-row: 2 / 4;"></div>
-    <div style="grid-column: 14 / 18; grid-row: 2;"></div>
-    <div style="grid-column: 1 / 19; grid-row: 9; background-color: lightgrey;"></div>
-    <div style="grid-column: 1 / 5; grid-row: 10 / 11;"></div>
+<div class="interactive-periodical-table">
 
     {% set index = 1 %}
     {% for rowIndex in 1..11 %}
@@ -25,5 +18,12 @@
             {% set index = index + 1 %}
         {% endfor %}
     {% endfor %}
+
+    <div style="grid-column: 1; grid-row: 1;"></div>
+    <div style="grid-column: 3; grid-row: 2;"></div>
+    <div style="grid-column: 4 / 13; grid-row: 2 / 4;"></div>
+    <div style="grid-column: 14 / 18; grid-row: 2;"></div>
+    <div style="grid-column: 1 / 19; grid-row: 9; background-color: lightgrey;"></div>
+    <div style="grid-column: 1 / 5; grid-row: 10 / 11;"></div>
 
 </div>
