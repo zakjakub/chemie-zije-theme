@@ -1,22 +1,35 @@
 <div class="interactive-periodical-table">
 
-    {% set index = 1 %}
-    {% for rowIndex in 1..11 %}
-        {% if rowIndex > 1 %}
-            <div style="grid-row: {{ rowIndex }}; grid-column: 1;">
-                {{ rowIndex - 1 }}
+    {% for columnIndex in 1..18 %}
+        <div style="grid-row: 1; grid-column: {{ columnIndex + 1 }}; vertical-align: bottom;">
+            {{ columnIndex }}
+        </div>
+    {% endfor %}
+    {% for rowIndex in 1..10 %}
+        {% if rowIndex != 8 %}
+            <div style="grid-row: {{ rowIndex + 1 }}; grid-column: 1; text-align: right;">
+                {{ rowIndex }}
             </div>
         {% endif %}
-        {% for columnIndex in 1..19 %}
-            <div style="grid-row: {{ rowIndex }}; grid-column: {{ columnIndex }}; background-color: lightgreen; border: 1px solid red;">
-                {% if rowIndex == 0 %}
-                    {{ columnIndex - 1 }}
-                {% else %}
-                    Fe ({{ index }})
-                {% endif %}
+    {% endfor %}
+
+    {% for element in elements %}
+        {% if element.period and element.periodical_group %}
+            {% set col = element.periodical_group + 1 %}
+            {% set row = element.period + 1 %}
+        {% elseif element.atomic_number >= 58 and element.atomic_number <= 71 %}
+            {% set col = element.atomic_number - 54 %}
+            {% set row = 10 %}
+        {% elseif element.atomic_number >= 90 and element.atomic_number <= 103 %}
+            {% set col = element.atomic_number - 86 %}
+            {% set row = 11 %}
+        {% endif %}
+        {% if row and col %}
+            <div style="grid-column: {{ col }}; grid-row: {{ row }}; background-color: lightgreen; border: 1px solid red;">
+                {{ element.atomic_number }}<br>
+                <strong>{{ element.symbol }}</strong>
             </div>
-            {% set index = index + 1 %}
-        {% endfor %}
+        {% endif %}
     {% endfor %}
 
     <div style="grid-column: 1; grid-row: 1;"></div>
