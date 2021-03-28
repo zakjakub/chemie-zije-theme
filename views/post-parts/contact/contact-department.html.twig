@@ -1,8 +1,8 @@
-<div class="sub-department mb-5">
-    <h4>
-        {{ department.name|default('Další kontakty') }}
-    </h4>
+<section class="sub-department mb-5">
+    <header>
+        <h4>{{ department.name|default('Další kontakty') }}</h4>
+    </header>
     {% for person in department.persons %}
         {% include 'post-parts/contact/contact-person.html.twig' %}
     {% endfor %}
-</div>
+</section>

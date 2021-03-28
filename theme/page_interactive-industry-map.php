@@ -5,4 +5,7 @@
  * Template Post Type: page
  */
 
-Timber::render(["custom-templates/interactive-industry-map.html.twig", 'post-types/page.html.twig'], Timber::context());
+Timber::render(
+    ["custom-templates/interactive-industry-map.html.twig", 'post-types/page-layout.html.twig'],
+    Timber::context()
+);

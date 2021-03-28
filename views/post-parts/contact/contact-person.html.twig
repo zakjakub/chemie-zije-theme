@@ -1,7 +1,9 @@
-<div class="sub-department-person mb-3">
-    <a href="{{ person.link }}" class="text-body text-decoration-none">
-        <h5>{{ person }}</h5>
-    </a>
+<article class="sub-department-person mb-3">
+    <header>
+        <a href="{{ person.link }}" class="text-body text-decoration-none">
+            <h5>{{ person }}</h5>
+        </a>
+    </header>
     {% if person.meta('_position') %}
         <strong>{{ person.meta('_position') }}</strong><br>
     {% endif %}
@@ -14,4 +16,4 @@
     {% if person.meta('_e_mail') %}
         E-mail: {{ person.meta('_e_mail') }}<br>
     {% endif %}
-</div>
+</article>

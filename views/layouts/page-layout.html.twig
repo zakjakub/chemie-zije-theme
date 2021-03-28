@@ -1,3 +1,6 @@
+{#
+DEFAULT PAGE TEMPLATE - Used (directly or by inheritance) by every other page on website.
+#}
 {%- set html_lang = language|default(site.language|default('cs-CZ')) -%}
 {%- set title = title|default(site.name|default) -%}
 <!doctype html>
@@ -41,12 +44,29 @@
 </head>
 <body class="{{ body_class }}" data-template="layouts/default-page.html.twig">
 
+{% block skip_to_content %}
+    <a class="skip-link screen-reader-text d-none" href="#main-content">{{ _e( 'Skip to content') }}</a>
+{% endblock skip_to_content %}
+
 {% block body_header %}
     {% include 'post-parts/layout/header.html.twig' %}
 {% endblock body_header %}
+
 {% block body_content %}
-    {% include 'post-parts/layout/content.html.twig' %}
+    <div class="container content-wrapper">
+        <div class="row">
+            <main class="col-12 {{ sidebars.content|default ? 'col-lg-8' : '' }}" id="main-content">
+                {% include 'post-parts/not-found.twig' %}
+            </main>
+            {% if sidebars.content|default %}
+                <aside class="col-12 col-lg-4">
+                    {{ sidebars.content|default }}
+                </aside>
+            {% endif %}
+        </div>
+    </div>
 {% endblock body_content %}
+
 {% block body_footer %}
     {% include 'post-parts/layout/footer.html.twig' %}
     {{ function('wp_footer') }}

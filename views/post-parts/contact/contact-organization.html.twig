@@ -1,4 +1,4 @@
-<div class="department-contact mb-5">
+<article class="department-contact mb-5">
     <h3>{{ singleContact.name|default(singleContact.department) }}</h3>
     <address>
         {% if singleContact.department %}
@@ -29,4 +29,4 @@
             GPS: {{ singleContact.gps }}<br>
         {% endif %}
     </address>
-</div>
+</article>

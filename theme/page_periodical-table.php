@@ -1779,5 +1779,5 @@ $elements = [
 ];
 $context = Timber::context();
 $context['elements'] = $elements;
-$templates = ["custom-templates/periodical-table.html.twig", 'post-types/page.html.twig'];
+$templates = ["custom-templates/periodical-table.html.twig", 'post-types/page-layout.html.twig'];
 Timber::render($templates, $context);

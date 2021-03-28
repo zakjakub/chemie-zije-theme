@@ -7,11 +7,11 @@
  * E.g., it puts together the home page when no home.php file exists
  */
 
-$context   = Timber::context();
+$context = Timber::context();
 $templates = ['index.html.twig'];
 if (is_home() || is_front_page()) {
     $context['isHome'] = true;
-    $context['posts']  = Timber::get_posts(['type' => 'page']);
-    $templates         = ['post-types/front-page.html.twig', 'post-types/home.html.twig', ...$templates];
+    $context['posts'] = Timber::get_posts(['type' => 'page']);
+    $templates = ['post-types/front-page-layout.html.twig', 'post-types/home.html.twig', ...$templates];
 }
 Timber::render($templates, $context);

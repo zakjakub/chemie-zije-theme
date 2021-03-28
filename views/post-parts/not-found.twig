@@ -1,0 +1,12 @@
+<article class="row">
+    <header class="col-12">
+        {% if title %}
+            <h2>{{ title }}</h2>
+        {% endif %}
+    </header>
+    <main class="col-12">
+        {% block content %}
+            Požadovaná stránka '{{ post.link }}' bohužel nebyla nalezena.
+        {% endblock content %}
+    </main>
+</article>

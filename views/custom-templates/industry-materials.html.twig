@@ -3,31 +3,27 @@
 {# Page with list of industry materials. #}
 
 {% block page_content %}
-    <main class="container content-wrapper">
-        <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-            {% include 'post-parts/page-banner-header-row.html.twig' with {image: post.thumbnail, title: post.title} %}
-            {% for element in elements %}
-                <section class="col-12 mt-3 mb-5">
-                    <article class="row">
-                        <div class="col-12 col-md-8 col-lg-9 d-flex align-items-start flex-column">
-                            <a href="{{ element.link }}" class="text-dark text-decoration-none">
-                                <h3>{{ element.title }}</h3>
-                            </a>
-                            <main style="text-align: justify;">
-                                {{ element.content }}
-                            </main>
-                            <nav class="mt-auto">
-                                [<a href="{{ element.link }}" title="{{ element.title }}"> více informací </a>]
-                            </nav>
-                        </div>
-                        <div class="col-12 col-md-4 col-lg-3 d-flex flex-column justify-content-center">
-                            <a href="{{ element.link }}" title="{{ element.title }}">
-                                <img class="d-block w-100 mh-100 p-2 img-thumbnail" src="{{ element.thumbnail.src }}" alt="{{ element.thumbnail.alt }}">
-                            </a>
-                        </div>
-                    </article>
-                </section>
-            {% endfor %}
-        </article>
-    </main>
+    <section class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+        {% include 'post-parts/layout/main-banner-row.html.twig' with {image: post.thumbnail, title: post.title} %}
+        {% for element in elements %}
+            <article class="row mt-3 mb-5">
+                <div class="col-12 col-md-8 col-lg-9 d-flex align-items-start flex-column">
+                    <a href="{{ element.link }}" class="text-dark text-decoration-none">
+                        <h3>{{ element.title }}</h3>
+                    </a>
+                    <main style="text-align: justify;">
+                        {{ element.content }}
+                    </main>
+                    <nav class="mt-auto">
+                        [<a href="{{ element.link }}" title="{{ element.title }}"> více informací </a>]
+                    </nav>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 d-flex flex-column justify-content-center">
+                    <a href="{{ element.link }}" title="{{ element.title }}">
+                        <img class="d-block w-100 mh-100 p-2 img-thumbnail" src="{{ element.thumbnail.src }}" alt="{{ element.thumbnail.alt }}">
+                    </a>
+                </div>
+            </article>
+        {% endfor %}
+    </section>
 {% endblock page_content %}

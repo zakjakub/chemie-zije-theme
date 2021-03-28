@@ -25,6 +25,7 @@ class ChemieZijeTheme extends Site
         add_filter('timber/context', [$this, 'addToContext']);
         add_action('init', [$this, 'registerPostTypes']);
         add_action('init', [$this, 'registerTaxonomies']);
+        add_action('init', [$this, 'registerSidebars']);
         // WPackIO Enqueue
         $this->enqueue = $this->getEnqueue();
         add_action('wp_enqueue_scripts', [$this, 'themeEnqueue']);
@@ -66,6 +67,32 @@ class ChemieZijeTheme extends Site
      */
     final public function registerTaxonomies(): void
     {
+    }
+
+    final public function registerSidebars(): void
+    {
+        $sidebars = [
+            ['id' => 'content', 'name' => 'Pravý boční panel'],
+            ['id' => 'footer-banner', 'name' => 'Nad zápatím'],
+            ['id' => 'footer-banner-fluid', 'name' => 'Nad zápatím (celá šířka stránky)'],
+            ['id' => 'footer-left', 'name' => 'Zápatí vlevo'],
+            ['id' => 'footer-right', 'name' => 'Zápatí vpravo'],
+        ];
+        foreach ($sidebars as $index => $sidebar) {
+            register_sidebar(
+                [
+                    'id'             => $sidebar['id'] ?? "sidebar-$index",
+                    'name'           => $sidebar['name'] ?? "Sidebar $index",
+                    'description'    => $sidebar['description'] ?? '',
+                    'before_widget'  => '',
+                    'after_widget'   => '',
+                    'before_title'   => '',
+                    'after_title'    => '',
+                    'before_sidebar' => '',
+                    'after_sidebar'  => '',
+                ]
+            );
+        }
     }
 
     /**

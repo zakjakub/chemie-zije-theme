@@ -10,6 +10,27 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/theme/styles/main.scss">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/views/post-parts/layout/footer.html.twig">
+          <value>
+            <Attribute>
+              <option name="separator" value="|" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/views/post-types/page.html.twig">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>

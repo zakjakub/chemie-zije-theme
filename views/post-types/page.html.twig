@@ -1,19 +1,24 @@
-{% extends "layouts/default-page.html.twig" %}
+{% extends "layouts/page-layout.html.twig" %}
 
-{% block body_content %}
-    {% block page_content %}
-        <main class="container content-wrapper">
-            <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-                {% include 'post-parts/page-banner-header-row.html.twig' with {image: post.thumbnail, title: post.title} %}
-                {% block content %}
-                    {% include 'post-parts/basic-content-section.html.twig'with {title: post.title, content: post.content} %}
-                {% endblock content %}
-            </article>
-        </main>
-    {% endblock page_content %}
-    {% block page_signpost %}
-        {% set subPosts = posts|default and posts|length > 0 ? posts : post.children %}
-        {% include 'post-parts/page-signpost.html.twig' with {posts: subPosts} %}
-        {% include 'post-parts/pagination.html.twig' with { pagination: subPosts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
-    {% endblock page_signpost %}
-{% endblock body_content %}
+{% block page_content %}
+    <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+        {% block article_header %}
+            {% include 'post-parts/layout/main-banner-row.html.twig' with {image: post.thumbnail, title: post.title} %}
+        {% endblock article_header %}
+        {% block article_content %}
+            {% if content and content|length > 0 %}
+                <div class="row mx-3">
+                    <div class="col-12">
+                        {{ post.content }}
+                    </div>
+                </div>
+            {% endif %}
+        {% endblock article_content %}
+        {% block article_signpost %}
+            {% set subPosts = posts|default and posts|length > 0 ? posts : post.children %}
+            {% include 'post-parts/layout/signpost.html.twig' with {posts: subPosts} %}
+            {% include 'post-parts/layout/pagination-row.html.twig'
+                with { pagination: subPosts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+        {% endblock article_signpost %}
+    </article>
+{% endblock page_content %}
