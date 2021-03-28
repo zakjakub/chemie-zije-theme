@@ -56,7 +56,9 @@ DEFAULT PAGE TEMPLATE - Used (directly or by inheritance) by every other page on
     <div class="container content-wrapper">
         <div class="row">
             <main class="col-12 {{ sidebars.content|default ? 'col-lg-8' : '' }}" id="main-content">
-                {% include 'post-parts/not-found.twig' %}
+                {% block page_content %}
+                    {% include 'post-parts/not-found.twig' %}
+                {% endblock page_content %}
             </main>
             {% if sidebars.content|default %}
                 <aside class="col-12 col-lg-4">
