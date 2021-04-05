@@ -11,6 +11,7 @@ use Timber\Site;
 use Twig\Environment;
 use Twig\Extension\StringLoaderExtension;
 use WPackio\Enqueue;
+use Zakjakub\ChemieZijeTheme\widgets\EuMsmtWidget;
 
 class ChemieZijeTheme extends Site
 {
@@ -26,6 +27,7 @@ class ChemieZijeTheme extends Site
         add_action('init', [$this, 'registerPostTypes']);
         add_action('init', [$this, 'registerTaxonomies']);
         add_action('init', [$this, 'registerSidebars']);
+        add_action('widgets_init', [$this, 'registerWidgets']);
         // WPackIO Enqueue
         $this->enqueue = $this->getEnqueue();
         add_action('wp_enqueue_scripts', [$this, 'themeEnqueue']);
@@ -67,6 +69,11 @@ class ChemieZijeTheme extends Site
      */
     final public function registerTaxonomies(): void
     {
+    }
+
+    final public function registerWidgets(): void
+    {
+        register_widget(new EuMsmtWidget());
     }
 
     final public function registerSidebars(): void
