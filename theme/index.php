@@ -9,12 +9,6 @@
 
 $context = Timber::context();
 $templates = ['post-types/page.html.twig'];
-
-$widgets = ['content', 'footer_banner', 'footer_banner_fluid', 'footer_left', 'footer_right'];
-foreach ($widgets as $widget) {
-    $context['sidebars'][$widget] = Timber::get_widgets($widget);
-}
-
 if (is_home() || is_front_page()) {
     $context['isHome'] = true;
     $context['posts'] = Timber::get_posts(['type' => 'page']);

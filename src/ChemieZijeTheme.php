@@ -42,13 +42,13 @@ class ChemieZijeTheme extends Site
     {
         // @formatter:off
         return $this->enqueue ?? new Enqueue(
-            appName: 'chemieZijeTheme',
-            outputPath: 'dist',
-            version: '1.0.0',
-            type: 'theme',
-            pluginPath: 'theme',
-            themeType: 'regular',
-        );
+                appName: 'chemieZijeTheme',
+                outputPath: 'dist',
+                version: '1.0.0',
+                type: 'theme',
+                pluginPath: 'theme',
+                themeType: 'regular',
+            );
         // @formatter:on
     }
 
@@ -104,7 +104,7 @@ class ChemieZijeTheme extends Site
 
     /**
      * This is where you add some context
-     *
+     *;
      * @param  array  $context  context['this'] Being the Twig's {{ this }}.
      *
      * @return array
@@ -117,6 +117,9 @@ class ChemieZijeTheme extends Site
                 continue;
             }
             $context['menu'][$location] = Timber::get_menu($location);
+        }
+        foreach (['content', 'footer_banner', 'footer_banner_fluid', 'footer_left', 'footer_right'] as $widget) {
+            $context['sidebars'][$widget] = Timber::get_widgets($widget);
         }
 
         return $context;

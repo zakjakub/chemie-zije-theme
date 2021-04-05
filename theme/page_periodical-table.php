@@ -1779,11 +1779,5 @@ $elements = [
 ];
 $context = Timber::context();
 $context['elements'] = $elements;
-
-$widgets = ['content', 'footer_banner', 'footer_banner_fluid', 'footer_left', 'footer_right'];
-foreach ($widgets as $widget) {
-    $context['sidebars'][$widget] = Timber::get_widgets($widget);
-}
-
 $templates = ["custom-templates/periodical-table.html.twig", 'post-types/page-layout.html.twig'];
 Timber::render($templates, $context);
