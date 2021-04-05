@@ -1,14 +1,14 @@
 {% if sidebars.footer_banner|default %}
     <footer id="footer-banner" class="container mt-5">
         {{ include('widgets/eu-msmt-widget/eu-msmt-widget.html.twig') }}
-        {# {{ sidebars.footer_banner|default }} #}
+        {{ sidebars.footer_banner|default }}
     </footer>
 {% endif %}
 
 {% if sidebars.footer_banner_fluid|default %}
     <footer id="footer-banner-fluid" class="container-fluid mt-5">
         {{ include('widgets/eu-msmt-widget/eu-msmt-widget.html.twig') }}
-        {# {{ sidebars.footer_banner_fluid|default }} #}
+        {{ sidebars.footer_banner_fluid|default }}
     </footer>
 {% endif %}
 
