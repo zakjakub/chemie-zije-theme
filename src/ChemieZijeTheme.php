@@ -80,10 +80,10 @@ class ChemieZijeTheme extends Site
     {
         $sidebars = [
             ['id' => 'content', 'name' => 'Pravý boční panel'],
-            ['id' => 'footer-banner', 'name' => 'Nad zápatím'],
-            ['id' => 'footer-banner-fluid', 'name' => 'Nad zápatím (celá šířka stránky)'],
-            ['id' => 'footer-left', 'name' => 'Zápatí vlevo'],
-            ['id' => 'footer-right', 'name' => 'Zápatí vpravo'],
+            ['id' => 'footer_banner', 'name' => 'Nad zápatím'],
+            ['id' => 'footer_banner_fluid', 'name' => 'Nad zápatím (celá šířka stránky)'],
+            ['id' => 'footer_left', 'name' => 'Zápatí vlevo'],
+            ['id' => 'footer_right', 'name' => 'Zápatí vpravo'],
         ];
         foreach ($sidebars as $index => $sidebar) {
             register_sidebar(

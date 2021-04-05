@@ -17,17 +17,6 @@ $widgets = ['content', 'footer_banner', 'footer_banner_fluid', 'footer_left', 'f
 foreach ($widgets as $widget) {
     $context['sidebars'][$widget] = Timber::get_widgets($widget);
 }
-error_log("WIDGETS WIDGETS WIDGETS");
-error_log("WIDGETS WIDGETS WIDGETS");
-error_log("WIDGETS WIDGETS WIDGETS");
-error_log("WIDGETS WIDGETS WIDGETS");
-error_log("WIDGETS WIDGETS WIDGETS");
-error_log("WIDGETS WIDGETS WIDGETS");
-error_log("WIDGETS WIDGETS WIDGETS");
-error_log("WIDGETS WIDGETS WIDGETS");
-error_log("WIDGETS WIDGETS WIDGETS");
-error_log("WIDGETS WIDGETS WIDGETS");
-error_log(var_export($widgets, true));
 
 $postSlug = $context['post']->slug;
 $templates = ["page-customs/page-$postSlug.html.twig", 'post-types/page.html.twig'];

@@ -14,18 +14,6 @@ $widgets = ['content', 'footer_banner', 'footer_banner_fluid', 'footer_left', 'f
 foreach ($widgets as $widget) {
     $context['sidebars'][$widget] = Timber::get_widgets($widget);
 }
-error_log("WIDGETS WIDGETS WIDGETS");
-error_log("WIDGETS WIDGETS WIDGETS");
-error_log("WIDGETS WIDGETS WIDGETS");
-error_log("WIDGETS WIDGETS WIDGETS");
-error_log("WIDGETS WIDGETS WIDGETS");
-error_log("WIDGETS WIDGETS WIDGETS");
-error_log("WIDGETS WIDGETS WIDGETS");
-error_log("WIDGETS WIDGETS WIDGETS");
-error_log("WIDGETS WIDGETS WIDGETS");
-error_log("WIDGETS WIDGETS WIDGETS");
-error_log(var_export($widgets, true));
-
 
 if (is_home() || is_front_page()) {
     $context['isHome'] = true;
