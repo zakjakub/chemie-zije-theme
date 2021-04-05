@@ -2,13 +2,10 @@
 {{ args.before_title|raw }}{{ instance.title|apply_filters('widget_title') }}{{ args.after_title|raw }}
 
 {% set footer_eu_msmt = site.theme.link ~ '/images/footer/footer-eu-msmt.png' %}
-<div class="container py-4 text-dark border-top border-info">
-    <div class="row align-items-center">
-        <div class="col-12 d-flex flex-column flex-lg-row align-items-center justify-content-between">
-            <div>Tyto webové stránky vznikly za finanční podpory:</div>
-            <img src="{{ footer_eu_msmt }}" alt="Evropské strukturální a investiční fondy a MŠMT" class="footer-eu-eu-msmt-widget-image">
-        </div>
+<div class="row align-items-center py-4 text-dark border-top border-info">
+    <div class="col-12 d-flex flex-column flex-lg-row align-items-center justify-content-between">
+        <div>Tyto webové stránky vznikly za finanční podpory:</div>
+        <img src="{{ footer_eu_msmt }}" alt="Evropské strukturální a investiční fondy a MŠMT" class="footer-eu-eu-msmt-widget-image">
     </div>
 </div>
-
 {{ args.after_widget|raw }}
