@@ -14,6 +14,7 @@ class EuMsmtWidget extends WP_Widget
 
     final public function widget($args, $instance): void
     {
+        error_log("FOOOOOOOOOOOOOOOOOOOOOOOOOO");
         Timber::render('widgets/eu-msmt-widget/eu-msmt-widget.html.twig');
     }
 }
