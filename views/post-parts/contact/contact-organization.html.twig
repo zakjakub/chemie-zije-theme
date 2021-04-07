@@ -1,32 +1,32 @@
 <article class="department-contact mb-5">
     <h3>{{ singleContact.name|default(singleContact.department) }}</h3>
     <address>
-        {% if singleContact.department %}
+        {% if singleContact.department|default %}
             <strong>{{ singleContact.department }}</strong><br>
         {% endif %}
-        {% if singleContact.department %}
+        {% if singleContact.faculty|default %}
             {{ singleContact.faculty }}<br>
         {% endif %}
-        {% if singleContact.department %}
+        {% if singleContact.university|default %}
             {{ singleContact.university }}<br>
         {% endif %}
-        {% if singleContact.department %}
-            {{ singleContact.street }} {{ singleContact.house_number }}<br>
+        {% if singleContact.street|default %}
+            {{ singleContact.street }} {{ singleContact.house_number|default }}<br>
         {% endif %}
-        {% if singleContact.department %}
+        {% if singleContact.postal_code|default %}
             {{ singleContact.postal_code }} {{ singleContact.city }}<br>
         {% endif %}
-        {% if singleContact.department %}
-            Telefon: {{ singleContact.phone }}<br>
+        {% if singleContact.phone|default %}
+            Telefon: <a href="tel:{{ singleContact.phone }}">{{ singleContact.phone }}</a><br>
         {% endif %}
-        {% if singleContact.department %}
-            Fax: {{ singleContact.fax }}<br>
+        {% if singleContact.fax|default %}
+            Fax: <a href="fax:{{ singleContact.fax }}">{{ singleContact.fax }}</a><br>
         {% endif %}
-        {% if singleContact.department %}
-            E-mail: {{ singleContact.e_mail }}<br>
+        {% if singleContact.e_mail|default %}
+            E-mail: <a href="mailto:{{ singleContact.e_mail }}">{{ singleContact.e_mail }}</a><br>
         {% endif %}
-        {% if singleContact.department %}
-            GPS: {{ singleContact.gps }}<br>
+        {% if singleContact.gps|default %}
+            GPS: <a href="https://mapy.cz/?q={{ singleContact.gps }}">{{ singleContact.gps }}</a><br>
         {% endif %}
     </address>
 </article>
