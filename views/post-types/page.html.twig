@@ -3,13 +3,18 @@
 {% block page_content %}
     <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
         {% block article_header %}
-            {% include 'post-parts/layout/main-banner-row.html.twig' with {image: post.thumbnail, title: post.title} %}
+            {% include 'post-parts/layout/main-banner-row.html.twig'
+                with {image: post ? post.thumbnail : null, title: post ? post.title : 'Stránka nenalezena'} %}
         {% endblock article_header %}
         {% block article_content %}
             {% if content and content|length > 0 %}
                 <div class="row mx-3">
                     <div class="col-12">
-                        {{ post.content }}
+                        {% if post|default %}
+                            {{ post.content }}
+                        {% else %}
+                            Stránka nebyla nalezena.
+                        {% endif %}
                     </div>
                 </div>
             {% endif %}
