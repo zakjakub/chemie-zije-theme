@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/views/custom-templates/contact.html.twig">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/views/post-parts/layout/footer.html.twig">
           <value>
             <Attribute>

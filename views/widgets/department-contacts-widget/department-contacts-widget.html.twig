@@ -1,0 +1,8 @@
+{{ args.before_widget|raw }}
+{{ args.before_title|raw }}{{ instance.title|apply_filters('widget_title') }}{{ args.after_title|raw }}
+
+{% set footer_eu_msmt = site.theme.link ~ '/images/footer/footer-eu-msmt.png' %}
+    {% for singleContact in contacts %}
+        {% include 'post-parts/contact/contact-organization.html.twig' %}
+    {% endfor %}
+{{ args.after_widget|raw }}

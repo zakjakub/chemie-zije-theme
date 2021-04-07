@@ -11,6 +11,7 @@ use Timber\Site;
 use Twig\Environment;
 use Twig\Extension\StringLoaderExtension;
 use WPackio\Enqueue;
+use Zakjakub\ChemieZijeTheme\widgets\DepartmentContactsWidget;
 use Zakjakub\ChemieZijeTheme\widgets\EuMsmtWidget;
 
 class ChemieZijeTheme extends Site
@@ -74,6 +75,7 @@ class ChemieZijeTheme extends Site
     final public function registerWidgets(): void
     {
         register_widget(new EuMsmtWidget());
+        register_widget(new DepartmentContactsWidget());
     }
 
     final public function registerSidebars(): void
@@ -119,7 +121,8 @@ class ChemieZijeTheme extends Site
             }
             $context['menu'][$location] = Timber::get_menu($location);
         }
-        foreach (['content', 'footer_banner', 'footer_banner_fluid', 'footer_left', 'footer_right'] as $widget) {
+        $widgets = ['content', 'footer_banner', 'footer_banner_fluid', 'footer_left', 'footer_center', 'footer_right'];
+        foreach ($widgets as $widget) {
             $context['sidebars'][$widget] = Timber::get_widgets($widget);
         }
 
