@@ -42,13 +42,13 @@ class ChemieZijeTheme extends Site
     {
         // @formatter:off
         return $this->enqueue ?? new Enqueue(
-                appName: 'chemieZijeTheme',
-                outputPath: 'dist',
-                version: '1.0.0',
-                type: 'theme',
-                pluginPath: 'theme',
-                themeType: 'regular',
-            );
+            appName: 'chemieZijeTheme',
+            outputPath: 'dist',
+            version: '1.0.0',
+            type: 'theme',
+            pluginPath: 'theme',
+            themeType: 'regular',
+        );
         // @formatter:on
     }
 
@@ -105,6 +105,7 @@ class ChemieZijeTheme extends Site
     /**
      * This is where you add some context
      *;
+     *
      * @param  array  $context  context['this'] Being the Twig's {{ this }}.
      *
      * @return array

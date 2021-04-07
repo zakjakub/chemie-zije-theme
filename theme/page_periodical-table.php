@@ -2,7 +2,7 @@
 /*
  * Template Name: Periodická tabulka prvků
  * Description: Stránka s interaktivní periodickou tabulkou prvků.
- * Template Post Type: page
+ * Template Post Type: page, study_material_cat, teach_material_cat
  */
 
 $elements = [

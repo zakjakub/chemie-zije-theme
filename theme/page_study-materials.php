@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Stránka s výukovými materiály (kategoriemi výukových materiálů)
+ * Template Name: Stránka se studijními materiály (kategoriemi studijních materiálů)
  * Template Post Type: page
  */
 
