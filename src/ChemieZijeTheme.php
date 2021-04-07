@@ -85,7 +85,7 @@ class ChemieZijeTheme extends Site
             ['id' => 'footer_banner', 'name' => 'Nad zápatím'],
             ['id' => 'footer_banner_fluid', 'name' => 'Nad zápatím (celá šířka stránky)'],
             ['id' => 'footer_left', 'name' => 'Zápatí vlevo'],
-            ['id' => 'footer_right', 'name' => 'Zápatí střed'],
+            ['id' => 'footer_center', 'name' => 'Zápatí střed'],
             ['id' => 'footer_right', 'name' => 'Zápatí vpravo'],
         ];
         foreach ($sidebars as $index => $sidebar) {
