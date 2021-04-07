@@ -5,6 +5,6 @@
  */
 
 $context = Timber::context();
-$context['subPosts'] = Timber::get_posts(['post_type' => 'teach_material_cat']);
+$context['subPosts'] = Timber::get_posts(['post_type' => 'study_material_cat']);
 $templates = ['custom-templates/teaching-materials.html.twig', 'post-types/page-layout.html.twig'];
 Timber::render($templates, $context);
