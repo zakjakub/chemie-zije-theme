@@ -11,8 +11,8 @@ use Timber\Site;
 use Twig\Environment;
 use Twig\Extension\StringLoaderExtension;
 use WPackio\Enqueue;
-use Zakjakub\ChemieZijeTheme\widgets\DepartmentContactsWidget;
-use Zakjakub\ChemieZijeTheme\widgets\EuMsmtWidget;
+use Zakjakub\ChemieZijeTheme\Widgets\DepartmentContactsWidget;
+use Zakjakub\ChemieZijeTheme\Widgets\EuMsmtWidget;
 
 class ChemieZijeTheme extends Site
 {

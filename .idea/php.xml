@@ -10,6 +10,8 @@
       <path value="$PROJECT_DIR$/vendor/automattic/wordbless" />
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/hellonico/timber-dump-extension" />
+      <path value="$PROJECT_DIR$/vendor/hellonico/twig-dump-extension" />
       <path value="$PROJECT_DIR$/vendor/htmlburger/carbon-fields" />
       <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
@@ -39,6 +41,8 @@
       <path value="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
       <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
       <path value="$PROJECT_DIR$/vendor/timber/timber" />
       <path value="$PROJECT_DIR$/vendor/twig/cache-extension" />
