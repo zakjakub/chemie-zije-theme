@@ -7,14 +7,10 @@
                 with {image: post ? post.thumbnail : null, title: post ? post.title : 'Stránka nenalezena'} %}
         {% endblock article_header %}
         {% block article_content %}
-            {% if content and content|length > 0 %}
+            {% if (post.content|default and post.content|length > 0) or (content|default and content|length > 0) %}
                 <div class="row mx-3">
                     <div class="col-12">
-                        {% if post|default %}
-                            {{ post.content }}
-                        {% else %}
-                            Stránka nebyla nalezena.
-                        {% endif %}
+                        {{ post.content|default(content|default) }}
                     </div>
                 </div>
             {% endif %}
