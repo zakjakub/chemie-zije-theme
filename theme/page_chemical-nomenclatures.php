@@ -1,7 +1,7 @@
 <?php
 /*
  * Template Name: Stránka s kategoriemi výukových materiálů
- * Template Post Type: page, study_material
+ * Template Post Type: page, study_material_cat
  */
 
 $context = Timber::context();
