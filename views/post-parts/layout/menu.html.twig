@@ -1,5 +1,8 @@
 {% if items|default and items|length > 0 %}
-    <ul itemscope itemtype="http://schema.org/SiteNavigationElement" class="menu" style="font-size: {{ fontSize ? fontSize : '1em' }}">
+    <ul itemscope
+        itemtype="http://schema.org/SiteNavigationElement"
+        class="menu hover-bold"
+        style="font-size: {{ fontSize ? fontSize : '1em' }}">
         {% for item in items %}
             <li class="{{ item.classes | join(' ') }}">
                 <a target="{{ item.target }}" href="{{ item.link }}" itemprop="url" class="px-4 py-2">

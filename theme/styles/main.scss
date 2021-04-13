@@ -77,8 +77,16 @@ $rfs-base-value: 0.8rem;
 
 a {
   text-decoration: none;
-  &:hover {
+  &.hover-bold:hover {
     font-weight: bold;
+  }
+}
+
+.hover-bold {
+  a {
+    &:hover {
+      font-weight: bold;
+    }
   }
 }
 
