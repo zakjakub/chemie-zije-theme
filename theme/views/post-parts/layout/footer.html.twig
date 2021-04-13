@@ -1,0 +1,33 @@
+{% if sidebars.footer_banner|default %}
+    <footer id="footer-banner" class="container mt-5">
+        {{ sidebars.footer_banner|default }}
+    </footer>
+{% endif %}
+
+{% if sidebars.footer_banner_fluid|default %}
+    <footer id="footer-banner-fluid" class="container-fluid mt-5">
+        {{ sidebars.footer_banner_fluid|default }}
+    </footer>
+{% endif %}
+
+<footer id="footer-main" class="bg-primary text-light">
+    <div class="container p-4">
+        <div class="row">
+            <aside class="col-12 col-lg">
+                {% if sidebars.footer_left|default %}
+                    {{ sidebars.footer_left|default }}
+                {% endif %}
+            </aside>
+            <aside class="col-12 col-lg">
+                {% if sidebars.footer_center|default %}
+                    {{ sidebars.footer_center|default }}
+                {% endif %}
+            </aside>
+            <aside class="col-12 col-lg">
+                {% if sidebars.footer_right|default %}
+                    {{ sidebars.footer_right|default }}
+                {% endif %}
+            </aside>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,78 @@
+{#
+DEFAULT PAGE TEMPLATE - Used (directly or through inheritance) by every other page on website.
+#}
+{%- set html_lang = language|default(site.language|default('cs-CZ')) -%}
+{%- set title = title|default(site.name|default) -%}
+<!doctype html>
+<!--[if lt IE 9]><html class="no-js no-svg ie lt-ie9 lt-ie8 lt-ie7" {{ site.language_attributes }} prefix="og: http://ogp.me/ns#"><![endif]-->
+<!--[if IE 9]><html class="no-js no-svg ie ie9 lt-ie9 lt-ie8" {{ site.language_attributes }} prefix="og: http://ogp.me/ns#"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js no-svg" {{ site.language_attributes }} prefix="og: http://ogp.me/ns#">
+<!--<![endif]-->
+<head>
+    <meta charset="{{ site.charset|default('utf-8') }}">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name='format-detection' content='telephone=yes'>
+    <meta name='DC.Language' content='{{ html_lang }}'>
+    <meta name="description" content="{% block html_description %}{{ description|default(default_description|default(oswis.web.description)) }}{% endblock html_description %}">
+    <meta name='author' content='{% block meta_author %}{{ author|default('Jakub Zak (https://jakubzak.cz)') }}{% endblock meta_author %}'>
+    <meta name='copyright' content='{% block meta_copyright %}{{ copyright|default('Jakub Zak (https://jakubzak.cz)') }}{% endblock meta_copyright %}'>
+    <meta name='Designer' content='{% block meta_designer %}{{ designer|default('Jakub Zak (https://jakubzak.cz)') }}{% endblock meta_designer %}'>
+    <link rel="author" href="{{ site.theme.link }}/humans.txt"/>
+    <link rel="pingback" href="{{ site.pingback_url }}"/>
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <meta name='Revisit-After' content='{% block meta_revisit_after %}{{ revisit_after|default('1 day') }}{% endblock meta_revisit_after %}'>
+    <meta name="application-name" content="{% block meta_app_name %}{{ oswis.app.name|default(title) }}{% endblock %}">
+    <meta name="apple-mobile-web-app-title" content="{% block meta_app_title_apple %}{{ block('meta_app_name') }}{% endblock %}">
+    <meta property="og:site_name" content="{{ block('meta_app_name') }}">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ block('html_description') }}">
+    <meta property="og:locale" content="{{ html_lang }}">
+    <meta property="og:type" content="{% block og_type %}{{ og_type|default('website') }}{% endblock %}">
+    {# <meta property="og:url" content="{{ absolute_url(app.request.pathInfo) }}"> #}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="{{ block('meta_app_name') }}">
+    <meta name="twitter:creator" content="{{ block('meta_author') }}">
+    <meta property="og:latitude" content="{% block meta_geo_x %}{{ geo_lat|default(oswis.web.geo_x) }}{% endblock %}"/>
+    <meta property="og:longitude" content="{% block meta_geo_y %}{{ geo_lon|default(oswis.web.geo_y) }}{% endblock %}"/>
+    <meta name='geo.position' content='{% block meta_geo_position %}{{ block('meta_geo_x') }},{{ block('meta_geo_y') }}{% endblock %}'>
+    <meta name='ICBM' content='{{ block('meta_geo_position') }}'>
+    <link rel="stylesheet" href="{{ site.theme.link ~ '/style.css' }}" type="text/css" media="screen"/>
+    <!-- WP_HEAD -->
+    {{ function('wp_head') }}
+</head>
+<body class="{{ body_class }}" data-template="layouts/default-page.html.twig">
+
+{% block skip_to_content %}
+    <a class="skip-link screen-reader-text d-none" href="#main-content">{{ _e( 'Skip to content') }}</a>
+{% endblock skip_to_content %}
+
+{% block body_header %}
+    {% include 'post-parts/layout/header.html.twig' %}
+{% endblock body_header %}
+
+{% block body_content %}
+    <div class="container content-wrapper">
+        <div class="row">
+            <main class="col-12 {{ sidebars.content|default ? 'col-lg-8' : '' }}" id="main-content">
+                {% block page_content %}
+                    {% include 'post-parts/not-found.twig' %}
+                {% endblock page_content %}
+            </main>
+            {% if sidebars.content|default %}
+                <aside class="col-12 col-lg-4">
+                    {{ sidebars.content|default }}
+                </aside>
+            {% endif %}
+        </div>
+    </div>
+{% endblock body_content %}
+
+{% block body_footer %}
+    {% include 'post-parts/layout/footer.html.twig' %}
+    {{ function('wp_footer') }}
+{% endblock body_footer %}
+
+</body>
+</html>

@@ -2,23 +2,26 @@
 
 {# Page with list of industry materials. #}
 
-s{% block article_content %}
+{% block article_content %}
     {% if (post.content|default and post.content|length > 0) or (content|default and content|length > 0) %}
-        <section class="row my-3">
+        <section class="row my-5">
             <div class="col-12">
                 {{ post.content|default(content|default) }}
             </div>
         </section>
     {% endif %}
     {% for element in elements %}
-        <section class="row mt-3 mb-5">
-            <div class="col-12 col-md-8 col-lg-9 d-flex align-items-start flex-column">
+        <section class="row my-5">
+            <div class="col-12 col-md-8 col-lg-9 d-flex align-items-start flex-column py-1">
                 <a href="{{ element.link }}" class="text-dark text-decoration-none">
                     <h3>{{ element.title }}</h3>
                 </a>
                 <div style="text-align: justify;">
                     {{ element.content }}
                 </div>
+                <nav class="mt-auto">
+                    [<a href="{{ element.link }}" title="{{ element.title }}">více informací</a>]
+                </nav>
             </div>
             <div class="col-12 col-md-4 col-lg-3 d-flex flex-column justify-content-center">
                 <a href="{{ element.link }}" title="{{ element.title }}">

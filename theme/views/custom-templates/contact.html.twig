@@ -1,0 +1,27 @@
+{% extends "post-types/page.html.twig" %}
+
+{# Page with contacts. #}
+
+{% block page_content %}
+    <section class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+        {% include 'post-parts/layout/main-banner-row.html.twig'
+            with {image: post.thumbnail, title: post.title} %}
+        <div class="row post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+            {% if post.content|default %}
+                <article class="col-12">
+                    {{ post.content }}
+                </article>
+            {% endif %}
+            <section class="col-12 col-lg-6">
+                {% for singleContact in contacts %}
+                    {% include 'post-parts/contact/contact-organization.html.twig' %}
+                {% endfor %}
+            </section>
+            <section class="col-12 col-lg-6">
+                {% for department in departments %}
+                    {% include 'post-parts/contact/contact-department.html.twig' %}
+                {% endfor %}
+            </section>
+        </div>
+    </section>
+{% endblock page_content %}

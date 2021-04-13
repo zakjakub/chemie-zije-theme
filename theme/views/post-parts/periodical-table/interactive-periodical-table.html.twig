@@ -1,0 +1,42 @@
+<div class="interactive-periodical-table">
+
+    {% for columnIndex in 1..18 %}
+        <div style="grid-row: 1; grid-column: {{ columnIndex + 1 }}; vertical-align: bottom;">
+            {{ columnIndex }}
+        </div>
+    {% endfor %}
+    {% for rowIndex in 1..10 %}
+        {% if rowIndex != 8 %}
+            <div style="grid-row: {{ rowIndex + 1 }}; grid-column: 1; text-align: right;">
+                {{ rowIndex }}
+            </div>
+        {% endif %}
+    {% endfor %}
+
+    {% for element in elements %}
+        {% if element.period and element.periodical_group %}
+            {% set col = element.periodical_group + 1 %}
+            {% set row = element.period + 1 %}
+        {% elseif element.atomic_number >= 58 and element.atomic_number <= 71 %}
+            {% set col = element.atomic_number - 54 %}
+            {% set row = 10 %}
+        {% elseif element.atomic_number >= 90 and element.atomic_number <= 103 %}
+            {% set col = element.atomic_number - 86 %}
+            {% set row = 11 %}
+        {% endif %}
+        {% if row and col %}
+            <div style="grid-column: {{ col }}; grid-row: {{ row }}; background-color: lightgreen; border: 1px solid red;">
+                {{ element.atomic_number }}<br>
+                <strong>{{ element.symbol }}</strong>
+            </div>
+        {% endif %}
+    {% endfor %}
+
+    <div style="grid-column: 1; grid-row: 1;"></div>
+    <div style="grid-column: 3; grid-row: 2;"></div>
+    <div style="grid-column: 4 / 13; grid-row: 2 / 4;"></div>
+    <div style="grid-column: 14 / 18; grid-row: 2;"></div>
+    <div style="grid-column: 1 / 19; grid-row: 9; background-color: lightgrey;"></div>
+    <div style="grid-column: 1 / 5; grid-row: 10 / 11;"></div>
+
+</div>

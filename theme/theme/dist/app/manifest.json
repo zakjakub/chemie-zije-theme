@@ -1,0 +1,30 @@
+{
+  "main.css": "app/main-024cfe28.css",
+  "main.css.map": "app/main-024cfe28.css.map",
+  "main.js": "app/main-3e7380f7.js",
+  "main.js.map": "app/main-3e7380f7.js.map",
+  "runtime.js": "app/runtime-4decd5d4.js",
+  "runtime.js.map": "app/runtime-4decd5d4.js.map",
+  "vendors~main.js": "app/vendors~main-79bc24c9.js",
+  "vendors~main.js.map": "app/vendors~main-79bc24c9.js.map",
+  "wpackioEp": {
+    "main": {
+      "js": [
+        "app/runtime-4decd5d4.js",
+        "app/vendors~main-79bc24c9.js",
+        "app/main-3e7380f7.js"
+      ],
+      "js.map": [
+        "app/runtime-4decd5d4.js.map",
+        "app/vendors~main-79bc24c9.js.map",
+        "app/main-3e7380f7.js.map"
+      ],
+      "css": [
+        "app/main-024cfe28.css"
+      ],
+      "css.map": [
+        "app/main-024cfe28.css.map"
+      ]
+    }
+  }
+}
