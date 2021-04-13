@@ -77,6 +77,9 @@ $rfs-base-value: 0.8rem;
 
 a {
   text-decoration: none;
+  &:hover {
+    font-weight: bold;
+  }
 }
 
 .text-light {

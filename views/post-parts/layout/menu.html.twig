@@ -1,11 +1,11 @@
 {% if items|default and items|length > 0 %}
-    <ul itemscope itemtype="http://schema.org/SiteNavigationElement" class="menu">
+    <ul itemscope itemtype="http://schema.org/SiteNavigationElement" class="menu" style="font-size: {{ fontSize ? fontSize : '1em' }}">
         {% for item in items %}
             <li class="{{ item.classes | join(' ') }}">
                 <a target="{{ item.target }}" href="{{ item.link }}" itemprop="url" class="px-4 py-2">
                     <span itemprop="name">{{ item.title }}</span>
                 </a>
-                {% include "post-parts/layout/menu.html.twig" with {'items': item.children} %}
+                {% include "post-parts/layout/menu.html.twig" with {'items': item.children, 'fontSize': '0.9em'} %}
             </li>
         {% endfor %}
     </ul>
