@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Stránka s kategoriemi výukových materiálů
+ * Template Name: Stránka s kategoriemi chemického názvosloví
  * Template Post Type: page, study_material_cat
  */
 
