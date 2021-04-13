@@ -32,10 +32,7 @@ class ChemieZijeTheme extends Site
         // WPackIO Enqueue
         $this->enqueue = $this->getEnqueue();
         add_action('wp_enqueue_scripts', [$this, 'themeEnqueue']);
-        add_action(
-            'after_setup_theme',
-            fn() => register_nav_menus(['primary' => 'Primární menu (v záhlaví)'])
-        );
+        add_action('after_setup_theme', [$this, 'registerNavMenus']);
         parent::__construct();
     }
 
@@ -58,16 +55,10 @@ class ChemieZijeTheme extends Site
         $this->enqueue->enqueue('app', 'main', []);
     }
 
-    /**
-     * This is where you can register custom post types.
-     */
     final public function registerPostTypes(): void
     {
     }
 
-    /**
-     * This is where you can register custom taxonomies.
-     */
     final public function registerTaxonomies(): void
     {
     }
@@ -105,6 +96,18 @@ class ChemieZijeTheme extends Site
         }
     }
 
+    final public function registerNavMenus(): void
+    {
+        register_nav_menus(
+            [
+                'primary'       => 'Primární menu (v záhlaví)',
+                'footer_left'   => 'Menu v levém sloupci zápatí',
+                'footer_center' => 'Menu v prostředním sloupci zápatí',
+                'footer_right'  => 'Menu v pravém sloupci zápatí',
+            ]
+        );
+    }
+
     /**
      * This is where you add some context
      *;
@@ -136,9 +139,8 @@ class ChemieZijeTheme extends Site
         add_theme_support('automatic-feed-links');
         /*
          * Let WordPress manage the document title.
-         * By adding theme support, we declare that this theme does not use a
-         * hard-coded <title> tag in the document head, and expect WordPress to
-         * provide it for us.
+         * By adding, we declare that this theme does not use a hard-coded <title> tag in the document head,
+         * and expect WordPress to provide it for us.
          */
         add_theme_support('title-tag');
         /*
