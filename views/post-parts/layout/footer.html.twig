@@ -17,15 +17,30 @@
                 {% if sidebars.footer_left|default %}
                     {{ sidebars.footer_left|default }}
                 {% endif %}
+                {% if menu.footer_left.get_items %}
+                    <nav role="navigation">
+                        {% include "post-parts/layout/menu.html.twig" with {'items': menu.footer_left.get_items} %}
+                    </nav>
+                {% endif %}
             </aside>
             <aside class="col-12 col-lg">
                 {% if sidebars.footer_center|default %}
                     {{ sidebars.footer_center|default }}
                 {% endif %}
+                {% if menu.footer_center.get_items %}
+                    <nav role="navigation">
+                        {% include "post-parts/layout/menu.html.twig" with {'items': menu.footer_center.get_items} %}
+                    </nav>
+                {% endif %}
             </aside>
             <aside class="col-12 col-lg">
                 {% if sidebars.footer_right|default %}
                     {{ sidebars.footer_right|default }}
+                {% endif %}
+                {% if menu.footer_right.get_items %}
+                    <nav role="navigation">
+                        {% include "post-parts/layout/menu.html.twig" with {'items': menu.footer_right.get_items} %}
+                    </nav>
                 {% endif %}
             </aside>
         </div>

@@ -2,7 +2,7 @@
 /*
  * Template Name: Suroviny chemického průmyslu
  * Description: Stránka s přehledem oblastí surovin chemického průmyslu.
- * Template Post Type: page
+ * Template Post Type: page, study_material_cat
  */
 
 $context = Timber::context();
