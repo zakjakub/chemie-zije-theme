@@ -26,7 +26,7 @@
             E-mail: <a href="mailto:{{ singleContact.e_mail }}">{{ singleContact.e_mail }}</a><br>
         {% endif %}
         {% if singleContact.gps|default %}
-            GPS: <a href="https://mapy.cz/?q={{ singleContact.gps }}">{{ singleContact.gps }}</a><br>
+            GPS: <a href="https://mapy.cz/?q={{ singleContact.gps|escape }}">{{ singleContact.gps }}</a><br>
         {% endif %}
     </address>
 </article>
