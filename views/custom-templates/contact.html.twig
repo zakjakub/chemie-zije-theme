@@ -12,9 +12,7 @@
                 </article>
             {% endif %}
             <section class="col-12 col-lg-6">
-                {% for singleContact in contacts %}
-                    {% include 'post-parts/contact/contact-organization.html.twig' %}
-                {% endfor %}
+                {% include 'post-parts/contact/contact-organization.html.twig' %}
             </section>
             <section class="col-12 col-lg-6">
                 {% for department in departments %}
