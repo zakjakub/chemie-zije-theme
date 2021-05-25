@@ -8,12 +8,12 @@
         <strong>{{ person.meta('_position') }}</strong><br>
     {% endif %}
     {% if person.meta('_phone') %}
-        Telefon: {{ person.meta('_phone') }}<br>
+        Telefon: <a href="tel:{{ person.meta('_phone') }}">{{ person.meta('_phone') }}</a><br>
     {% endif %}
     {% if person.meta('_fax') %}
         Fax: {{ person.meta('_fax') }}<br>
     {% endif %}
     {% if person.meta('_e_mail') %}
-        E-mail: {{ person.meta('_e_mail') }}<br>
+        E-mail: <a href="mailto:{{ person.meta('_e_mail') }}">{{ person.meta('_e_mail') }}</a><br>
     {% endif %}
 </article>

@@ -4,8 +4,7 @@
 
 {% block page_content %}
     <section class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-        {% include 'post-parts/layout/main-banner-row.html.twig'
-            with {image: post.thumbnail, title: post.title} %}
+        {% include 'post-parts/layout/main-banner-row.html.twig' with {image: post.thumbnail, title: post.title} %}
         <div class="row post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
             {% if post.content|default %}
                 <article class="col-12">

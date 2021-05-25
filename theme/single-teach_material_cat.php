@@ -7,8 +7,8 @@ $context['materials'] = new Timber\PostQuery(
     new WP_Query(
         [
             'post_type' => 'teach_material',
-            'orderby' => 'title',
-            'order'   => 'ASC',
+            'orderby'   => 'title',
+            'order'     => 'ASC',
             'tax_query' => [
                 [
                     'taxonomy' => 'teach_mat_cat_type',

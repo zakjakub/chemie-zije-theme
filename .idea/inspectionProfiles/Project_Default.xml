@@ -80,7 +80,7 @@
       </option>
       <option name="migratedIntoUserSpace" value="true" />
     </inspection_tool>
-    <inspection_tool class="HtmlRequiredLangAttribute" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="HtmlRequiredLangAttribute" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="HttpUrlsUsage" enabled="true" level="WEAK WARNING" enabled_by_default="true">
       <option name="ignoredUrls">
         <list>
@@ -104,6 +104,8 @@
           <option value="http://schemas.xmlsoap.org/" />
           <option value="http://cxf.apache.org/schemas/" />
           <option value="http://schema.org" />
+          <option value="http://ogp.me" />
+          <option value="http://gmpg.org" />
         </list>
       </option>
     </inspection_tool>

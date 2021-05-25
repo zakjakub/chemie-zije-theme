@@ -4,12 +4,7 @@
         class="menu hover-bold"
         style="font-size: {{ fontSize ? fontSize : '1em' }}">
         {% for item in items %}
-            <li class="{{ item.classes | join(' ') }}">
-                <a target="{{ item.target }}" href="{{ item.link }}" itemprop="url" class="px-4 py-2">
-                    <span itemprop="name">{{ item.title }}</span>
-                </a>
-                {% include "post-parts/layout/menu.html.twig" with {'items': item.children, 'fontSize': '0.9em'} %}
-            </li>
+            {% include 'post-parts/layout/menu-item.html.twig' %}
         {% endfor %}
     </ul>
 {% endif %}
