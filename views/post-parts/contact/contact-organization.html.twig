@@ -1,32 +1,32 @@
 <article class="department-contact mb-5">
-    <h3>{{ singleContact.name|default(singleContact.department) }}</h3>
+    <h3>{{ contact.name|default(contact.department) }}</h3>
     <address>
-        {% if singleContact.department|default %}
-            <strong>{{ singleContact.department }}</strong><br>
+        {% if contact.department|default %}
+            <strong>{{ contact.department }}</strong><br>
         {% endif %}
-        {% if singleContact.faculty|default %}
-            {{ singleContact.faculty }}<br>
+        {% if contact.faculty|default %}
+            {{ contact.faculty }}<br>
         {% endif %}
-        {% if singleContact.university|default %}
-            {{ singleContact.university }}<br>
+        {% if contact.university|default %}
+            {{ contact.university }}<br>
         {% endif %}
-        {% if singleContact.street|default %}
-            {{ singleContact.street }} {{ singleContact.house_number|default }}<br>
+        {% if contact.street|default %}
+            {{ contact.street }} {{ contact.house_number|default }}<br>
         {% endif %}
-        {% if singleContact.postal_code|default %}
-            {{ singleContact.postal_code }} {{ singleContact.city }}<br>
+        {% if contact.postal_code|default %}
+            {{ contact.postal_code }} {{ contact.city }}<br>
         {% endif %}
-        {% if singleContact.phone|default %}
-            Telefon: <a href="tel:{{ singleContact.phone }}">{{ singleContact.phone }}</a><br>
+        {% if contact.phone|default %}
+            Telefon: <a href="tel:{{ contact.phone }}">{{ contact.phone }}</a><br>
         {% endif %}
-        {% if singleContact.fax|default %}
-            Fax: <a href="fax:{{ singleContact.fax }}">{{ singleContact.fax }}</a><br>
+        {% if contact.fax|default %}
+            Fax: <a href="fax:{{ contact.fax }}">{{ contact.fax }}</a><br>
         {% endif %}
-        {% if singleContact.e_mail|default %}
-            E-mail: <a href="mailto:{{ singleContact.e_mail }}">{{ singleContact.e_mail }}</a><br>
+        {% if contact.e_mail|default %}
+            E-mail: <a href="mailto:{{ contact.e_mail }}">{{ contact.e_mail }}</a><br>
         {% endif %}
-        {% if singleContact.gps|default %}
-            GPS: <a href="https://mapy.cz/?q={{ singleContact.gps|escape }}">{{ singleContact.gps }}</a><br>
+        {% if contact.gps|default %}
+            GPS: <a href="https://mapy.cz/?q={{ contact.gps|escape }}">{{ contact.gps }}</a><br>
         {% endif %}
     </address>
 </article>

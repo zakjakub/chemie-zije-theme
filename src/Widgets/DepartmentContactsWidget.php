@@ -18,8 +18,6 @@ class DepartmentContactsWidget extends WP_Widget
 
     final public function widget($args, $instance): void
     {
-        $context = Timber::context();
-        $context['contacts'] = carbon_get_theme_option('contact');
-        Timber::render('widgets/department-contacts-widget/department-contacts-widget.html.twig', $context);
+        Timber::render('widgets/department-contacts-widget/department-contacts-widget.html.twig', Timber::context());
     }
 }
