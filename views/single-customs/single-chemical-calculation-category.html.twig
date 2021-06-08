@@ -1,0 +1,19 @@
+{% extends "post-types/page.html.twig" %}
+
+{% block article_content %}
+    {{ parent('article_content') }}
+    <div class="row my-5">
+        <div class="col-12">
+            Zadání příkladu...
+        </div>
+    </div>
+    <div class="row my-5">
+        <div class="col-12">
+            Řešení příkladu...
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block article_signpost %}
+{% endblock %}
