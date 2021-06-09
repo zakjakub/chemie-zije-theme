@@ -2,18 +2,27 @@
 
 {% block article_content %}
     {{ parent('article_content') }}
-    {% for equation in equations %}
+
     <div class="row my-5 border border-3 border-primary border-top">
-        <div class="col-12">
-            {{ equation.assignment|apply_filters('the_content') }}
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                {% for equation in equations %}
+                    <div class="swiper-slide">
+                        <div class="col-12">
+                            {{ equation.assignment|apply_filters('the_content') }}
+                        </div>
+                        <div class="col-12">
+                            {{ equation.solution|apply_filters('the_content') }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
     </div>
-    <div class="row my-5">
-        <div class="col-12">
-            {{ equation.solution|apply_filters('the_content') }}
-        </div>
-    </div>
-    {% endfor %}
 {% endblock %}
 
 
