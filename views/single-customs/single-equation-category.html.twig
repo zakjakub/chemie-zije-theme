@@ -2,16 +2,18 @@
 
 {% block article_content %}
     {{ parent('article_content') }}
-    <div class="row my-5">
+    {% for equation in equations %}
+    <div class="row my-5 border border-3 border-primary border-top">
         <div class="col-12">
-            Zadání příkladu...
+            {{ equation.assignment|apply_filters('the_content') }}
         </div>
     </div>
     <div class="row my-5">
         <div class="col-12">
-            Řešení příkladu...
+            {{ equation.solution|apply_filters('the_content') }}
         </div>
     </div>
+    {% endfor %}
 {% endblock %}
 
 
