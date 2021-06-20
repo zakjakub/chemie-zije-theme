@@ -3,26 +3,41 @@
 {% block article_content %}
     {{ parent('article_content') }}
 
-    <div class="row my-5 border border-3 border-primary border-top">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                {% for equation in equations %}
-                    <div class="swiper-slide">
-                        <div class="col-12">
-                            {{ equation.assignment|apply_filters('the_content') }}
-                        </div>
-                        <div class="col-12">
-                            {{ equation.solution|apply_filters('the_content') }}
-                        </div>
+    {% if equations|length > 0 %}
+        <div class="row my-5 border-1 border-primary border-top my-5 py-3 px-3">
+            <div class="col-12">
+                <h3 class="mt-3 mb-2">Řešené příklady</h3>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper p-4">
+                        {% for index, equation in equations %}
+                            <div class="swiper-slide p-5">
+                                <div class="my-1">
+                                    {{ equation.assignment|apply_filters('the_content') }}
+                                    <p class="my-5">
+                                        <a class="btn btn-primary"
+                                           data-bs-toggle="collapse"
+                                           href="#solution{{ index }}"
+                                           role="button"
+                                           aria-expanded="false"
+                                           aria-controls="solution{{ index }}">
+                                            Zobrazit řešení
+                                        </a>
+                                    </p>
+                                </div>
+                                <div class="my-1 collapse" id="solution{{ index }}">
+                                    {{ equation.solution|apply_filters('the_content') }}
+                                </div>
+                            </div>
+                        {% endfor %}
                     </div>
-                {% endfor %}
-            </div>
 
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
         </div>
-    </div>
+    {% endif %}
 {% endblock %}
 
 
