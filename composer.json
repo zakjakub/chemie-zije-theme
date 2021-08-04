@@ -21,15 +21,15 @@
   "require": {
     "php": ">=8.0",
     "timber/timber": "^2.x-dev",
-    "wpackio/enqueue": "^2.2",
+    "wpackio/enqueue": "^3.4.0",
     "hellonico/timber-dump-extension": "dev-master"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
-    "squizlabs/php_codesniffer": "^3.5.8",
+    "squizlabs/php_codesniffer": "^3.6.0",
     "phpunit/phpunit": "7.*",
-    "roots/wordpress": "^5.6",
-    "automattic/wordbless": "^0.1.0",
+    "roots/wordpress": "^5.7",
+    "automattic/wordbless": "^0.3",
     "htmlburger/carbon-fields": "^3.2"
   },
   "autoload": {

@@ -1,34 +1,36 @@
 {
-  "main.css": "app/main-f8443bf4.css",
-  "main.css.map": "app/main-f8443bf4.css.map",
-  "main.js": "app/main-41d96233.js",
-  "main.js.map": "app/main-41d96233.js.map",
+  "main.css": "app/main-f9769692.css",
+  "main.css.map": "app/main-f9769692.css.map",
+  "main.js": "app/main-d05e32af.js",
+  "main.js.map": "app/main-d05e32af.js.map",
   "runtime.js": "app/runtime-4decd5d4.js",
   "runtime.js.map": "app/runtime-4decd5d4.js.map",
-  "vendors~main.css": "app/vendors~main-518f3e75.css",
-  "vendors~main.css.map": "app/vendors~main-518f3e75.css.map",
-  "vendors~main.js": "app/vendors~main-14695069.js",
-  "vendors~main.js.map": "app/vendors~main-14695069.js.map",
+  "vendors~main.css": "app/vendors~main-52bb263a.css",
+  "vendors~main.css.map": "app/vendors~main-52bb263a.css.map",
+  "vendors~main.js": "app/vendors~main-68c60518.js",
+  "vendors~main.js.map": "app/vendors~main-68c60518.js.map",
   "wpackioEp": {
     "main": {
-      "js": [
-        "app/runtime-4decd5d4.js",
-        "app/vendors~main-14695069.js",
-        "app/main-41d96233.js"
-      ],
-      "js.map": [
-        "app/runtime-4decd5d4.js.map",
-        "app/vendors~main-14695069.js.map",
-        "app/main-41d96233.js.map"
-      ],
-      "css": [
-        "app/vendors~main-518f3e75.css",
-        "app/main-f8443bf4.css"
-      ],
-      "css.map": [
-        "app/vendors~main-518f3e75.css.map",
-        "app/main-f8443bf4.css.map"
-      ]
+      "assets": {
+        "js": [
+          "app/runtime-4decd5d4.js",
+          "app/vendors~main-68c60518.js",
+          "app/main-d05e32af.js"
+        ],
+        "js.map": [
+          "app/runtime-4decd5d4.js.map",
+          "app/vendors~main-68c60518.js.map",
+          "app/main-d05e32af.js.map"
+        ],
+        "css": [
+          "app/vendors~main-52bb263a.css",
+          "app/main-f9769692.css"
+        ],
+        "css.map": [
+          "app/vendors~main-52bb263a.css.map",
+          "app/main-f9769692.css.map"
+        ]
+      }
     }
   }
 }
