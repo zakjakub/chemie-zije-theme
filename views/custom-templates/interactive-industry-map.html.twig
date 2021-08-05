@@ -25,9 +25,11 @@
                     {% endapply %}
                 </div>
             </section>
-            <section class="col-12">
-                {{ dump(companies) }}
-            </section>
+            {% for company in companies %}
+                <section class="col-12">
+                    {{ dump(company) }}
+                </section>
+            {% endfor %}
             <section class="col-12">
                 {{ post.content }}
             </section>
