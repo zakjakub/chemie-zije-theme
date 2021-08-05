@@ -5,7 +5,7 @@
 {% set map = site.theme.link ~ '/images/others/map.png' %}
 
 {% block body_content %}
-    <div class="container">
+    <div class="container-fluid">
         <article class="row post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
             <section class="col-12">
                 <div class="ratio ratio-21x9">
@@ -13,13 +13,18 @@
                         [leaflet-map]
                         {% for company in companies %}
                             {% for location in company.locations %}
-                                <!-- MARKER: {{ location.name }} -->
-                                [leaflet-marker
-                                lat={{ location.latitude }}
-                                lng={{ location.longitude }}
-                                iconUrl="https://i.imgur.com/Q54ueuO.png"
-                                iconSize="80,50"
-                                iconAnchor="40,60"]
+                                {{ dump(company.logo) }}
+                                <!-- MARKER: {{ location.location_name }} LOGO: {{ company.logo }} -->
+                                {% apply spaceless %}
+                                    [leaflet-marker
+                                    lat={{ location.location_latitude }}
+                                    lng={{ location.location_longitude }}
+                                    iconUrl="{{ company.meta('_company_logo')|default ? get_image(company.meta('_company_logo')).src : 'https://i.imgur.com/Q54ueuO.png' }}"
+                                    iconSize="null,50"]<a href='{{ company.meta('_company_url')|escape }}' style='text-align: center!important;'>
+                                    <h5 class="text-center"><strong>{{ company.meta('_company_name')|escape }}</strong></h5>
+                                    <h6 class="text-center">{{ location.location_name|escape }}</h6>
+                                </a>[/leaflet-marker]
+                                {% endapply %}
                             {% endfor %}
                         {% endfor %}
                     {% endapply %}
