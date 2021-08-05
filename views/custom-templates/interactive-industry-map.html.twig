@@ -8,7 +8,17 @@
     <div class="container">
         <article class="row post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
             <section class="col-12">
-                <img src="{{ map }}" class="img-fluid d-block mx-auto" alt="Interaktivní průmyslová mapa">
+                <div class="ratio ratio-21x9">
+                    {% apply shortcodes %}
+                        [leaflet-map]
+                        [leaflet-marker
+                            lat=49.591796708243166
+                            lng=17.027091979980472
+                            iconUrl="https://i.imgur.com/Q54ueuO.png"
+                            iconSize="80,50"
+                            iconAnchor="40,60"]
+                    {% endapply %}
+                </div>
             </section>
             <section class="col-12">
                 {{ post.content }}
