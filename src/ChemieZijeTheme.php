@@ -11,6 +11,7 @@ use Timber\Site;
 use Twig\Environment;
 use Twig\Extension\StringLoaderExtension;
 use WPackio\Enqueue;
+use Zakjakub\ChemieZijeTheme\Post\MapCompanyPost;
 use Zakjakub\ChemieZijeTheme\Widgets\DepartmentContactsWidget;
 use Zakjakub\ChemieZijeTheme\Widgets\EuMsmtWidget;
 
@@ -33,6 +34,10 @@ class ChemieZijeTheme extends Site
         $this->enqueue = $this->getEnqueue();
         add_action('wp_enqueue_scripts', [$this, 'themeEnqueue']);
         add_action('after_setup_theme', [$this, 'registerNavMenus']);
+        add_filter(
+            'timber/post/classmap',
+            fn($classmap) => array_merge($classmap, ['map_company' => MapCompanyPost::class]),
+        );
         parent::__construct();
     }
 
@@ -80,32 +85,28 @@ class ChemieZijeTheme extends Site
             ['id' => 'footer_right', 'name' => 'Zápatí vpravo'],
         ];
         foreach ($sidebars as $index => $sidebar) {
-            register_sidebar(
-                [
-                    'id'             => $sidebar['id'] ?? "sidebar-$index",
-                    'name'           => $sidebar['name'] ?? "Sidebar $index",
-                    'description'    => $sidebar['description'] ?? '',
-                    'before_widget'  => '',
-                    'after_widget'   => '',
-                    'before_title'   => '',
-                    'after_title'    => '',
-                    'before_sidebar' => '',
-                    'after_sidebar'  => '',
-                ]
-            );
+            register_sidebar([
+                'id'             => $sidebar['id'] ?? "sidebar-$index",
+                'name'           => $sidebar['name'] ?? "Sidebar $index",
+                'description'    => $sidebar['description'] ?? '',
+                'before_widget'  => '',
+                'after_widget'   => '',
+                'before_title'   => '',
+                'after_title'    => '',
+                'before_sidebar' => '',
+                'after_sidebar'  => '',
+            ]);
         }
     }
 
     final public function registerNavMenus(): void
     {
-        register_nav_menus(
-            [
-                'primary'       => 'Primární menu (v záhlaví)',
-                'footer_left'   => 'Menu v levém sloupci zápatí',
-                'footer_center' => 'Menu v prostředním sloupci zápatí',
-                'footer_right'  => 'Menu v pravém sloupci zápatí',
-            ]
-        );
+        register_nav_menus([
+            'primary'       => 'Primární menu (v záhlaví)',
+            'footer_left'   => 'Menu v levém sloupci zápatí',
+            'footer_center' => 'Menu v prostředním sloupci zápatí',
+            'footer_right'  => 'Menu v pravém sloupci zápatí',
+        ]);
     }
 
     /**
@@ -131,18 +132,18 @@ class ChemieZijeTheme extends Site
         }
         // Contact fields.
         $context['contact'] = [
-            'name' => carbon_get_theme_option('contact_name'),
-            'department' => carbon_get_theme_option('contact_department'),
-            'faculty' => carbon_get_theme_option('contact_faculty'),
-            'university' => carbon_get_theme_option('contact_university'),
-            'street' => carbon_get_theme_option('contact_street'),
+            'name'         => carbon_get_theme_option('contact_name'),
+            'department'   => carbon_get_theme_option('contact_department'),
+            'faculty'      => carbon_get_theme_option('contact_faculty'),
+            'university'   => carbon_get_theme_option('contact_university'),
+            'street'       => carbon_get_theme_option('contact_street'),
             'house_number' => carbon_get_theme_option('contact_house_number'),
-            'postal_code' => carbon_get_theme_option('contact_postal_code'),
-            'city' => carbon_get_theme_option('contact_city'),
-            'phone' => carbon_get_theme_option('contact_phone'),
-            'fax' => carbon_get_theme_option('contact_fax'),
-            'e_mail' => carbon_get_theme_option('contact_e_mail'),
-            'gps' => carbon_get_theme_option('contact_gps'),
+            'postal_code'  => carbon_get_theme_option('contact_postal_code'),
+            'city'         => carbon_get_theme_option('contact_city'),
+            'phone'        => carbon_get_theme_option('contact_phone'),
+            'fax'          => carbon_get_theme_option('contact_fax'),
+            'e_mail'       => carbon_get_theme_option('contact_e_mail'),
+            'gps'          => carbon_get_theme_option('contact_gps'),
         ];
 
         return $context;
@@ -170,16 +171,13 @@ class ChemieZijeTheme extends Site
          */
         add_theme_support(
             'html5',
-            ['comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script']
+            ['comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script'],
         );
         /*
          * Enable support for Post Formats.
          * See: https://codex.wordpress.org/Post_Formats
          */
-        add_theme_support(
-            'post-formats',
-            ['aside', 'image', 'video', 'quote', 'link', 'gallery', 'audio',]
-        );
+        add_theme_support('post-formats', ['aside', 'image', 'video', 'quote', 'link', 'gallery', 'audio',]);
         add_theme_support('menus');
     }
 
