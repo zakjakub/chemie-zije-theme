@@ -1,0 +1,93 @@
+{% extends "post-types/page.html.twig" %}
+
+{% block article_content %}
+    <section class="row my-3">
+        <div class="col">
+            <p>{{ post.decription }}</p>
+        </div>
+        {% if post.meta('_company_logo')|default %}
+            <div class="col-12 col-md-4 col-lg-3 d-flex flex-column justify-content-center">
+                <img class="d-block w-100 mh-100 p-2 img-thumbnail"
+                     src="{{ get_image(company.meta('_company_logo')).src }}"
+                     alt="{{ get_image(company.meta('_company_logo')).alt }}">
+            </div>
+        {% endif %}
+    </section>
+
+    <section class="row my-3">
+        {% if post.activities|length > 0 %}
+            <div class="col-12 col-lg">
+                <h3>Výroba</h3>
+                <ul>
+                    {% for activity in post.activities %}
+                        <li class="text-uppercase">
+                            <strong>{{ activity.activity_name }}</strong>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        {% if post.locations|length > 0 %}
+            <div class="col-12 col-lg">
+                <h3>Provozovny</h3>
+                <ul>
+                    {% for location in post.locations %}
+                        <li class="text-uppercase">
+                            <strong>{{ location.location_name }}</strong>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </section>
+
+    <section class="row my-3">
+        {% if post.meta('_company_url') or post.meta('_company_email') or post.meta('_company_phone') %}
+        <div class="col-12 col-lg">
+            <h3>Kontakt</h3>
+            {% if post.meta('_company_url') %}
+                <p>
+                    <strong>Web:</strong>
+                    <a href="{{ post.meta('_company_url') }}" title="{{ post.title }}">
+                        {{ post.meta('_company_url') }}
+                    </a>
+                </p>
+            {% endif %}
+            {% if post.meta('_company_email') %}
+                <p>
+                    <strong>E-mail:</strong>
+                    <a href="mailto:{{ post.meta('_company_url') }}" title="{{ post.title }}">
+                        {{ post.meta('_company_email') }}
+                    </a>
+                </p>
+            {% endif %}
+            {% if post.meta('_company_phone') %}
+                <p>
+                    <strong>Telefon:</strong>
+                    <a href="call:{{ post.meta('_company_phone') }}" title="{{ post.title }}">
+                        {{ post.meta('_company_phone') }}
+                    </a>
+                </p>
+            {% endif %}
+        </div>
+        {% endif %}
+        {% if post.documents|length > 0 %}
+            <div class="col-12 col-lg">
+                <h3>Pracovní listy</h3>
+                <ul>
+                    {% for document in post.documents %}
+                        <li class="text-uppercase">
+                            <strong>{{ document.document_name }}</strong>: {{ document.document_file }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </section>
+
+    <section class="row my-3">
+        <div class="col-12">
+            {{ post.content }}
+        </div>
+    </section>
+{% endblock article_content %}
