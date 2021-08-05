@@ -5,7 +5,10 @@
  * Template Post Type: page, study_material_cat, teach_material_cat
  */
 
+$context = Timber::context();
+$context['companies'] = Timber::get_posts(['post_type' => 'map_company']);
+
 Timber::render(
     ["custom-templates/interactive-industry-map.html.twig", 'post-types/page-layout.html.twig'],
-    Timber::context()
+    $context,
 );
