@@ -1,3 +1,3 @@
 <?php
 
-Timber::render(['single-customs/single-map-company.html.twig', 'post-types/page.html.twig'], Timber::context());
+Timber::render(['post-types/single-map_company.html.twig', 'post-types/page.html.twig'], Timber::context());
