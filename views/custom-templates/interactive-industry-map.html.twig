@@ -20,7 +20,7 @@
                                     lat={{ location.location_latitude }}
                                     lng={{ location.location_longitude }}
                                     iconUrl="{{ company.meta('_company_logo')|default ? get_image(company.meta('_company_logo')).src : 'https://i.imgur.com/Q54ueuO.png' }}"
-                                    iconSize="null,40"]<a href='{{ company.link()|escape }}' style='text-align: center!important;'>
+                                    iconSize="null,45"]<a href='{{ company.link()|escape }}' style='text-align: center!important;'>
                                     <h5 class="text-center"><strong>{{ company.title|escape }}</strong></h5>
                                     <h6 class="text-center">{{ location.location_name|escape }}</h6>
                                 </a>[/leaflet-marker]
