@@ -16,7 +16,7 @@
                     [<a href="{{ element.link }}" title="{{ element.title }}">více informací</a>]
                 </nav>
             </div>
-            {% if element.meta('_material_image').src|default %}
+            {% if get_image(element.meta('_material_image')).src|default %}
                 <div class="col-12 col-md-4 col-lg-3 d-flex flex-column justify-content-center">
                     <a href="{{ element.link }}" title="{{ element.title }}">
                         <img class="d-block w-100 mh-100 p-2 img-thumbnail"
