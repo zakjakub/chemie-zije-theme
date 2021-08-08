@@ -25,8 +25,8 @@ This page theme can be selected as custom theme of single "page" type post (due 
                     <div class="col-12 col-md-4 col-lg-3 d-flex flex-column justify-content-center">
                         <a href="{{ element.link }}" title="{{ element.title }}">
                             <img class="d-block w-100 mh-100 p-2 img-thumbnail"
-                                 src="{{ get_image(company.meta('_material_image')).src }}"
-                                 alt="{{ get_image(company.meta('_material_image')).alt }}">
+                                 src="{{ get_image(post.meta('_material_image')).src }}"
+                                 alt="{{ get_image(post.meta('_material_image')).alt }}">
                         </a>
                     </div>
                 {% endif %}
