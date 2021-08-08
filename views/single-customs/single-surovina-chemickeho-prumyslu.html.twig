@@ -1,4 +1,12 @@
 {% extends "post-types/page.html.twig" %}
 
+{% block article_header %}
+    {% include 'post-parts/layout/main-banner-row.html.twig'
+        with {
+        image: (post.meta('_material_image').src|default(post.thumbnail)),
+        title: post ? post.title : 'Stránka nenalezena'
+    } %}
+{% endblock %}
+
 {% block article_signpost %}
 {% endblock %}
