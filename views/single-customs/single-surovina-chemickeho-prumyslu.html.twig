@@ -2,3 +2,23 @@
 
 {% block article_signpost %}
 {% endblock %}
+
+{% block article_content %}
+    {% if (post.content|default and post.content|length > 0) or (content|default and content|length > 0) %}
+        <section class="row my-5">
+            <div class="col-12 col-md d-flex align-items-start flex-column py-1 text-dark text-decoration-none">
+                <h3>{{ post.title }}</h3>
+                <div style="text-align: justify;">
+                    {{ post.content }}
+                </div>
+            </div>
+            {% if get_image(post.meta('_material_image')).src|default %}
+                <div class="col-12 col-md-4 col-lg-3 d-flex flex-column justify-content-center">
+                    <img class="d-block w-100 mh-100 p-2 img-thumbnail"
+                         src="{{ get_image(post.meta('_material_image')).src }}"
+                         alt="{{ get_image(post.meta('_material_image')).alt }}">
+                </div>
+            {% endif %}
+        </section>
+    {% endif %}
+{% endblock %}
