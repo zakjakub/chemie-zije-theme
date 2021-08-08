@@ -5,7 +5,7 @@
 {% block article_content %}
     {% for element in elements %}
         <section class="row my-5">
-            <div class="col-12 col-md-8 col-lg-9 d-flex align-items-start flex-column py-1">
+            <div class="col-12 col-md d-flex align-items-start flex-column py-1">
                 <a href="{{ element.link }}" class="text-dark text-decoration-none">
                     <h3>{{ element.title }}</h3>
                 </a>
@@ -16,12 +16,12 @@
                     [<a href="{{ element.link }}" title="{{ element.title }}">více informací</a>]
                 </nav>
             </div>
-            {% if post.meta('_material_image').src|default %}
+            {% if element.meta('_material_image').src|default %}
                 <div class="col-12 col-md-4 col-lg-3 d-flex flex-column justify-content-center">
                     <a href="{{ element.link }}" title="{{ element.title }}">
                         <img class="d-block w-100 mh-100 p-2 img-thumbnail"
-                             src="{{ get_image(post.meta('_material_image')).src }}"
-                             alt="{{ get_image(post.meta('_material_image')).alt }}">
+                             src="{{ get_image(element.meta('_material_image')).src }}"
+                             alt="{{ get_image(element.meta('_material_image')).alt }}">
                     </a>
                 </div>
             {% endif %}
