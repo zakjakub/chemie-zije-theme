@@ -6,7 +6,6 @@
  */
 
 $context = Timber::context();
-$postSlug = $context['post']->slug;
 $context['elements'] = Timber::get_posts(
     [
         'post_type' => 'industry_material',
