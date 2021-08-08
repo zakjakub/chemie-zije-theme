@@ -21,11 +21,15 @@ This page theme can be selected as custom theme of single "page" type post (due 
                         [<a href="{{ element.link }}" title="{{ element.title }}">více informací</a>]
                     </nav>
                 </div>
-                <div class="col-12 col-md-4 col-lg-3 d-flex flex-column justify-content-center">
-                    <a href="{{ element.link }}" title="{{ element.title }}">
-                        <img class="d-block w-100 mh-100 p-2 img-thumbnail" src="{{ element.thumbnail.src }}" alt="{{ element.thumbnail.alt }}">
-                    </a>
-                </div>
+                {% if post.meta('_material_image').src|default %}
+                    <div class="col-12 col-md-4 col-lg-3 d-flex flex-column justify-content-center">
+                        <a href="{{ element.link }}" title="{{ element.title }}">
+                            <img class="d-block w-100 mh-100 p-2 img-thumbnail"
+                                 src="{{ get_image(company.meta('_material_image')).src }}"
+                                 alt="{{ get_image(company.meta('_material_image')).alt }}">
+                        </a>
+                    </div>
+                {% endif %}
             </article>
         {% endfor %}
     </section>
