@@ -5,11 +5,9 @@
  */
 
 $context = Timber::context();
-$context['posts'] = Timber::get_posts(
-    [
-        'post_type' => 'teach_material_cat',
-        'orderby'   => ['priority' => 'ASC'],
-    ]
-);
+$context['posts'] = Timber::get_posts([
+    'post_type' => 'teach_material_cat',
+    'orderby'   => ['priority' => 'ASC'],
+]);
 $templates = ['custom-templates/teaching-materials.html.twig', 'post-types/page.html.twig'];
 Timber::render($templates, $context);
