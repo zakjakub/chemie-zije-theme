@@ -5,6 +5,23 @@
 {% set map = site.theme.link ~ '/images/others/map.png' %}
 
 {% block body_content %}
+    <div class="container content-wrapper">
+        <div class="row">
+            <main class="col-12 {{ sidebars.content|default ? 'col-lg-8' : '' }}" id="main-content">
+                <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+                    {% block article_header %}
+                        {% include 'post-parts/layout/main-banner-row.html.twig'
+                            with {image: post ? post.thumbnail : null, title: post ? post.title : 'Stránka nenalezena'} %}
+                    {% endblock article_header %}
+                </article>
+            </main>
+            {% if sidebars.content|default %}
+                <aside class="col-12 col-lg-4">
+                    {{ sidebars.content|default }}
+                </aside>
+            {% endif %}
+        </div>
+    </div>
     <div class="container-fluid">
         <article class="row post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
             <section class="col-12 m-0 p-0">
@@ -15,16 +32,13 @@
                             {% for location in company.locations %}
                                 {{ dump(company.logo) }}
                                 <!-- MARKER: {{ location.location_name }} LOGO: {{ company.logo }} -->
-                                {% apply spaceless %}
-                                    [leaflet-marker
-                                    lat={{ location.location_latitude }}
-                                    lng={{ location.location_longitude }}
-                                    iconUrl="{{ company.meta('_company_logo')|default ? get_image(company.meta('_company_logo')).src : 'https://i.imgur.com/Q54ueuO.png' }}"
-                                    iconSize="null,45"]<a href='{{ company.link()|escape }}' style='text-align: center!important;'>
+                                {% apply spaceless -%}
+                                    [leaflet-marker lat={{ location.location_latitude }} lng={{ location.location_longitude }}
+                                    ]<a href='{{ company.link()|escape }}' style='text-align: center!important;'>
                                     <h5 class="text-center"><strong>{{ company.title|escape }}</strong></h5>
                                     <h6 class="text-center">{{ location.location_name|escape }}</h6>
                                 </a>[/leaflet-marker]
-                                {% endapply %}
+                                {%- endapply %}
                             {% endfor %}
                         {% endfor %}
                     {% endapply %}
