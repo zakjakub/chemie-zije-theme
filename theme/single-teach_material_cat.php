@@ -12,7 +12,7 @@ $context['materials'] = new Timber\PostQuery(
             [
                 'taxonomy' => 'teach_mat_cat_type',
                 'field'    => 'slug',
-                'terms'    => is_array($terms) ? $terms : [$terms],
+                'terms'    => array_map(static fn(\Timber\Term $term) => $term->__toString(), $terms),
             ],
         ],
     ])
