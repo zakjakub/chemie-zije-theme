@@ -6,7 +6,7 @@
  */
 
 $context = Timber::context();
-$context['companies'] = Timber::get_posts(['post_type' => 'map_company']);
+$context['companies'] = Timber::get_posts(['post_type' => 'map_company', 'numberposts' => -1]);
 Timber::render(
     ["custom-templates/interactive-industry-map.html.twig", 'post-types/page-layout.html.twig'],
     $context,
