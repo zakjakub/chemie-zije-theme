@@ -1,5 +1,6 @@
 <?php
 
+use Timber\PostQuery;
 use Timber\Term;
 
 $context = Timber::context();
@@ -20,7 +21,4 @@ $context['materials'] = new Timber\PostQuery(
         ],
     ])
 );
-foreach ($context['materials'] as $material) {
-    dd($material);
-}
 Timber::render($templates, $context);
