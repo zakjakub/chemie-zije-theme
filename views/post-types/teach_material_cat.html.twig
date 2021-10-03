@@ -29,17 +29,19 @@
                         <img class="d-block w-100 mh-100 p-2 img-thumbnail" src="{{ image_src }}" alt="{{ material.thumbnail.alt }}">
                     </a>
                 {% endif %}
-                <ul>
-                    {% for document in post.documents %}
-                        <li class="text-uppercase">
-                            <strong>
-                                <a href="{{ get_attachment(document.document_file).link }}" target="_blank">
-                                    {{ document.document_name }}
-                                </a>
-                            </strong>
-                        </li>
-                    {% endfor %}
-                </ul>
+                {% if material.documents|length > 0 %}
+                    <ul>
+                        {% for document in material.documents %}
+                            <li class="text-uppercase">
+                                <strong>
+                                    <a href="{{ get_attachment(document.document_file).link }}" target="_blank">
+                                        {{ document.document_name }}
+                                    </a>
+                                </strong>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             </div>
         </section>
     {% endfor %}

@@ -14,7 +14,7 @@
             <div class="col-12">
                 <h3>Pracovní listy</h3>
                 <ul>
-                    {% for document in material.documents %}
+                    {% for document in post.documents %}
                         <li class="text-uppercase">
                             <strong>
                                 <a href="{{ get_attachment(document.document_file).link }}" target="_blank">
