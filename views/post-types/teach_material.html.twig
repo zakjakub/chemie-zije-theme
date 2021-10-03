@@ -10,17 +10,18 @@
         </div>
     {% endif %}
     <div class="row my-5">
-        <div class="col-12">
-            <ul>
-                {% for item in post.files %}
-                    <li>
-                        <a href="#">
-                            {{ item.file_name }}
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
+        {% if post.documents|length > 0 %}
+            <div class="col-12">
+                <h3>Pracovní listy</h3>
+                <ul>
+                    {% for document in post.documents %}
+                        <li class="text-uppercase">
+                            <strong>{{ document.document_name }}</strong>: {{ document.document_file }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
     </div>
 {% endblock article_content %}
 
