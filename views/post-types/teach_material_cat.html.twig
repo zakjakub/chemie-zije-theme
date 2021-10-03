@@ -11,6 +11,7 @@
             </div>
         </section>
     {% endif %}
+    {{ dump(materials) }}
     {% for material in materials %}
         <section class="row my-5">
             <div class="col-12 col-md-8 col-lg-9 d-flex align-items-start flex-column">
@@ -28,7 +29,6 @@
                         <img class="d-block w-100 mh-100 p-2 img-thumbnail" src="{{ image_src }}" alt="{{ material.thumbnail.alt }}">
                     </a>
                 {% endif %}
-                {{ dump(post) }}
                 <ul>
                     {% for document in material.documents %}
                         <li>
