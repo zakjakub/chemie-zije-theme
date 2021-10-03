@@ -30,6 +30,7 @@ class ChemieZijeTheme extends Site
         add_action('init', [$this, 'registerTaxonomies']);
         add_action('init', [$this, 'registerSidebars']);
         add_action('widgets_init', [$this, 'registerWidgets']);
+        add_filter('query_vars', 'add_query_vars_filter');
         // WPackIO Enqueue
         $this->enqueue = $this->getEnqueue();
         add_action('wp_enqueue_scripts', [$this, 'themeEnqueue']);
@@ -53,6 +54,13 @@ class ChemieZijeTheme extends Site
             themeType: 'regular',
         );
         // @formatter:on
+    }
+
+    final public function addQueryVarsFilter(array $vars): array
+    {
+        $vars[] = 'oblast';
+
+        return $vars;
     }
 
     final public function themeEnqueue(): void
