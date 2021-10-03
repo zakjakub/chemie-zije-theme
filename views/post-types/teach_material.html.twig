@@ -16,7 +16,7 @@
                 <ul>
                     {% for document in post.documents %}
                         <li class="text-uppercase">
-                            <strong>{{ document.document_name }}</strong>: {{ get_file(document.document_file).src }}
+                            <strong>{{ document.document_name }}</strong>: {{ get_file(document.document_file) }}
                         </li>
                     {% endfor %}
                 </ul>
