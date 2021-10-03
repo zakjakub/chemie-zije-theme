@@ -3,6 +3,7 @@
 {# Page with list of teaching materials. #}
 
 {% block article_content %}
+    {{ dump() }}
     <!-- Oblast: {{ subtype|default('neuvedena') }} -->
     {% if (post.content|default and post.content|length > 0) or (content|default and content|length > 0) %}
         <section class="row my-3">
@@ -11,7 +12,6 @@
             </div>
         </section>
     {% endif %}
-    {% dump(materials) %}
     {% for material in materials %}
         <section class="row my-5">
             <div class="col-12 col-md-8 col-lg-9 d-flex align-items-start flex-column">
