@@ -31,13 +31,9 @@
                 {% endif %}
                 {% for document in material.documents %}
                     <p class="text-center">
-                        <small>
-                            <strong>
-                            <a href="{{ get_attachment(document.document_file).link }}" target="_blank">
-                                {{ document.document_name }}
-                            </a>
-                        </strong>
-                        </small>
+                        <a href="{{ get_attachment(document.document_file).link }}" target="_blank">
+                            <strong><small>{{ document.document_name }}</small></strong>
+                        </a>
                     </p>
                 {% endfor %}
             </div>
