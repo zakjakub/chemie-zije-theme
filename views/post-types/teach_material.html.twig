@@ -11,7 +11,7 @@
     <div class="row my-5">
         <div class="col-12">
             <ul>
-                {% for document in post.documents %}
+                {% for document in post.meta('documents') %}
                     <li>
                         <a href="#">
                             {{ document.name }}
