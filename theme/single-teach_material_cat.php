@@ -20,4 +20,7 @@ $context['materials'] = new Timber\PostQuery(
         ],
     ])
 );
+foreach ($context['materials'] as $material) {
+    dd($material);
+}
 Timber::render($templates, $context);

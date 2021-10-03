@@ -28,7 +28,6 @@
                         <img class="d-block w-100 mh-100 p-2 img-thumbnail" src="{{ image_src }}" alt="{{ material.thumbnail.alt }}">
                     </a>
                 {% endif %}
-                {{ dump(material.meta('_documents')) }}
                 <ul>
                     {% for document in material.documents %}
                         <li>
