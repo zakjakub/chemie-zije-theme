@@ -12,6 +12,7 @@ use Twig\Environment;
 use Twig\Extension\StringLoaderExtension;
 use WPackio\Enqueue;
 use Zakjakub\ChemieZijeTheme\Post\MapCompanyPost;
+use Zakjakub\ChemieZijeTheme\Post\TeachMaterialPost;
 use Zakjakub\ChemieZijeTheme\Widgets\DepartmentContactsWidget;
 use Zakjakub\ChemieZijeTheme\Widgets\EuMsmtWidget;
 
@@ -37,7 +38,13 @@ class ChemieZijeTheme extends Site
         add_action('after_setup_theme', [$this, 'registerNavMenus']);
         add_filter(
             'timber/post/classmap',
-            fn($classmap) => array_merge($classmap, ['map_company' => MapCompanyPost::class]),
+            fn($classmap) => array_merge(
+                $classmap,
+                [
+                    'map_company' => MapCompanyPost::class,
+                    'teach_material' => TeachMaterialPost::class,
+                ],
+            ),
         );
         parent::__construct();
     }
