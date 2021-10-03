@@ -16,7 +16,9 @@
                 <ul>
                     {% for document in post.documents %}
                         <li class="text-uppercase">
-                            <strong>{{ document.document_name }}</strong>: {{ get_file(document.document_file) }}
+                            <a href="{{ get_attachment(document.document_file).link }}" target="_blank">
+                                {{ document.document_name }}
+                            </a>
                         </li>
                     {% endfor %}
                 </ul>
