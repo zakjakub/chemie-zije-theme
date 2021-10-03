@@ -1,2 +1,27 @@
 {% extends "post-types/page.html.twig" %}
 
+{% block article_content %}
+    {% if (post.content|default and post.content|length > 0) or (content|default and content|length > 0) %}
+        <div class="row my-5">
+            <div class="col-12">
+                {{ post.content|default(content|default) }}
+            </div>
+        </div>
+    {% endif %}
+    <div class="row my-5">
+        <div class="col-12">
+            <ul>
+                {% for document in post.documents %}
+                    <li>
+                        <a href="#">
+                            {{ document.name }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock article_content %}
+
+{% block article_signpost %}
+{% endblock article_signpost %}
