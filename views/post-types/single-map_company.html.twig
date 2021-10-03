@@ -81,7 +81,7 @@
                     {% for document in post.documents %}
                         <li class="text-uppercase">
                             <strong>
-                                <a href="{{ get_attachment(document.document_file).link }}" target="_blank">
+                                <a href="{{ get_attachment(document.document_file).src }}" target="_blank">
                                     {{ document.document_name }}
                                 </a>
                             </strong>
