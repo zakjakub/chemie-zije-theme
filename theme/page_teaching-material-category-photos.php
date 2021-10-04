@@ -27,7 +27,7 @@ $context['materials'] = Timber::get_posts(
         'tax_query' => [
             [
                 'taxonomy' => 'teach_mat_cat_type',
-                'field'    => 'slug',
+                'field'    => 'title',
                 'terms'    => array_map(static fn(Term $term) => $term->__toString(), $context['categories']),
             ],
         ],
