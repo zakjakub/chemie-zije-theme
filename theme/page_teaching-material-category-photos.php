@@ -33,4 +33,7 @@ $context['materials'] = Timber::get_posts(
         ],
     ])
 );
+
+dd($context['materials']);
+
 Timber::render($templates, $context);
