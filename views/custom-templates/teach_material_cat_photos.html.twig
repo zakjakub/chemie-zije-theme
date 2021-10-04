@@ -1,10 +1,6 @@
 {% extends "post-types/page.html.twig" %}
 
 {% block article_content %}
-    <!--
-    FOTOGRAFIE
-    {{ post.terms({taxonomy: 'teach_mat_sub_type'})|join(', ') }}
-     -->
     {% if (post.content|default and post.content|length > 0) or (content|default and content|length > 0) %}
         <div class="row my-5">
             <div class="col-12">
@@ -13,18 +9,15 @@
         </div>
 
         <div class="row my-5">
-            {{ dump(subtypes) }}
-            {{ dump(subtype) }}
-            {% for oneSubType in subtypes %}
-                <!-- ONE SUBTYPE -->
-                {% if subtype == oneSubType %}
-                    <div class="col-auto bg-light text-primary border border-1 border-dark">
-                        {{ oneSubType }}
-                    </div>
+            {% for oneSubType in post.terms({taxonomy: 'teach_mat_sub_type'}) %}
+                {% if subtype == oneSubType.slug %}
+                    <a class="d-block col-auto bg-light text-primary border border-1 border-dark" href="?oblast={{ oneSubType.slug }}">
+                        {{ oneSubType.name }}
+                    </a>
                 {% else %}
-                    <div class="col-auto bg-primary text-light border border-1 border-dark">
-                        {{ oneSubType }}
-                    </div>
+                    <a class="d-block col-auto bg-primary text-light border border-1 border-dark" href="?oblast={{ oneSubType.slug }}">
+                        {{ oneSubType.name }}
+                    </a>
                 {% endif %}
             {% endfor %}
         </div>
