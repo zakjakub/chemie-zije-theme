@@ -25,15 +25,18 @@ $context['materials'] = Timber::get_posts(
         'orderby'   => 'title',
         'order'     => 'ASC',
         'tax_query' => [
+            'relation' => 'AND',
             [
                 'taxonomy' => 'teach_mat_cat_type',
                 'field'    => 'title',
                 'terms'    => array_map(static fn(Term $term) => $term->__toString(), $context['categories']),
             ],
+            [
+                'taxonomy' => 'teach_mat_sub_type',
+                'field'    => 'title',
+                'terms'    => $subTerm ? $subTerm->__toString() : [],
+            ],
         ],
     ])
 );
-
-dd($context['materials']);
-
 Timber::render($templates, $context);
