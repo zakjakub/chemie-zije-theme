@@ -15,11 +15,11 @@
         {% for oneSubType in subtypes %}
             <!-- ONE SUBTYPE -->
             {% if subtype == oneSubType.slug %}
-                <a class="d-block col p-3 text-center align-middle bg-light text-secondary border border-1 border-dark" href="?oblast={{ oneSubType.slug }}">
+                <a class="d-block col p-3 text-center align-middle bg-light text-secondary border border-1 border-dark" href="?oblast={{ oneSubType.id }}">
                     <strong>{{ oneSubType.name }}</strong>
                 </a>
             {% else %}
-                <a class="d-block col p-3 text-center align-middle bg-secondary text-light border border-1 border-dark" href="?oblast={{ oneSubType.slug }}">
+                <a class="d-block col p-3 text-center align-middle bg-secondary text-light border border-1 border-dark" href="?oblast={{ oneSubType.id }}">
                     <strong>{{ oneSubType.name }}</strong>
                 </a>
             {% endif %}
