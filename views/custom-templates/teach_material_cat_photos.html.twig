@@ -12,14 +12,14 @@
         {{ dump(subtype) }}
         {% for oneSubType in subtypes %}
             <!-- ONE SUBTYPE -->
-            {% if subtype == oneSubType %}
-                <div class="col-auto bg-light text-primary border border-1 border-dark">
-                    {{ oneSubType }}
-                </div>
+            {% if subtype == oneSubType.slug %}
+                <a class="d-block col bg-light text-primary border border-1 border-dark" href="?oblast={{ oneSubType.slug }}">
+                    {{ oneSubType.name }}
+                </a>
             {% else %}
-                <div class="col-auto bg-primary text-light border border-1 border-dark">
+                <a class="d-block col bg-primary text-light border border-1 border-dark" href="?oblast={{ oneSubType.slug }}">
                     {{ oneSubType }}
-                </div>
+                </a>
             {% endif %}
         {% endfor %}
     </div>
