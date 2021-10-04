@@ -10,8 +10,8 @@
 
         <div class="row my-5">
             {% for oneSubType in post.terms({taxonomy: 'teach_mat_sub_type'}) %}
-                <a class="d-block col-auto bg-light text-primary border border-1 border-dark" href="?oblast={{ oneSubType.slug }}">
-                    {{ oneSubType.name }}
+                <a class="d-block col-auto bg-light text-primary border border-1 border-dark" href="?oblast={{ oneSubType }}">
+                    {{ oneSubType }}
                 </a>
             {% endfor %}
         </div>
