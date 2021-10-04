@@ -16,6 +16,9 @@ $templates = [
 ];
 $context['categories'] = $context['post']->terms('teach_mat_cat_type');
 $context['subtypes'] = $context['post']->terms('teach_mat_sub_type');
+
+dd($context['subtypes']);
+
 $context['materials'] = Timber::get_posts(
     new WP_Query([
         'post_type' => 'teach_material',
