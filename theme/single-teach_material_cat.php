@@ -3,8 +3,10 @@
 use Timber\Term;
 
 $context = Timber::context();
+$context['subtype'] = get_query_var('oblast');
 $templates = ['post-types/teach_material_cat.html.twig', 'post-types/page.html.twig'];
 $terms = $context['post']->terms('teach_mat_cat_type');
+$context['subtypes'] = $context['post']->terms('teach_mat_sub_type');
 $context['materials'] = Timber::get_posts(
     new WP_Query([
         'post_type' => 'teach_material',
@@ -13,7 +15,7 @@ $context['materials'] = Timber::get_posts(
         'tax_query' => [
             [
                 'taxonomy' => 'teach_mat_cat_type',
-                'field'    => 'title',
+                'field'    => 'slug',
                 'terms'    => array_map(static fn(Term $term) => $term->__toString(), $terms),
             ],
         ],
