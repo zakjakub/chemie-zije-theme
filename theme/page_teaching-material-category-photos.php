@@ -31,11 +31,11 @@ $context['materials'] = Timber::get_posts(
                 'field'    => 'slug',
                 'terms'    => array_map(static fn(Term $term) => $term->__toString(), $context['categories']),
             ],
-            [
-                'taxonomy' => 'teach_mat_sub_type',
-                'field'    => 'slug',
-                'terms'    => $subTerm ? $subTerm->__toString() : [],
-            ],
+//            [
+//                'taxonomy' => 'teach_mat_sub_type',
+//                'field'    => 'slug',
+//                'terms'    => $subTerm ? $subTerm->__toString() : [],
+//            ],
         ],
     ])
 );
