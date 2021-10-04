@@ -10,9 +10,11 @@
         </div>
 
         <div class="row my-5">
-            {% for oneSubType in post.subtypes %}
+            {{ dump(subtypes) }}
+            {{ dump(subtype) }}
+            {% for oneSubType in subtypes %}
                 <!-- ONE SUBTYPE -->
-                {% if post.subtype == oneSubType %}
+                {% if subtype == oneSubType %}
                     <div class="col-auto bg-light text-primary border border-1 border-dark">
                         {{ oneSubType }}
                     </div>
