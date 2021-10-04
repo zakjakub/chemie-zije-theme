@@ -1,12 +1,11 @@
 <?php
 
-use Timber\PostQuery;
 use Timber\Term;
 
 $context = Timber::context();
-$context['subtype'] = get_query_var('oblast');
 $templates = ['post-types/teach_material_cat.html.twig', 'post-types/page.html.twig'];
 $terms = $context['post']->terms('teach_mat_cat_type');
+$context['subtypes'] = $context['post']->terms('teach_mat_sub_type');
 $context['materials'] = Timber::get_posts(
     new WP_Query([
         'post_type' => 'teach_material',
