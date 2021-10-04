@@ -32,7 +32,7 @@ $context['materials'] = Timber::get_posts(
             [
                 'taxonomy' => 'teach_mat_sub_type',
                 'field'    => 'slug',
-                'terms'    => [''.$context['subtype']],
+                'terms'    => ''.$context['subtype'],
             ],
         ],
     ])
