@@ -31,7 +31,7 @@ $context['materials'] = Timber::get_posts(
             [
                 'taxonomy' => 'teach_mat_sub_type',
                 'field'    => 'slug',
-                'terms'    => array_map(static fn(Term $term) => $term->__toString(), [''.$context['subtype']]),
+                'terms'    => [''.$context['subtype']],
             ],
         ],
     ])
