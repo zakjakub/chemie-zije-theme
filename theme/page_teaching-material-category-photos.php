@@ -26,7 +26,7 @@ $taxQuery = [
     ],
     [
         'taxonomy' => 'teach_mat_sub_type',
-        'field'    => 'title',
+        'field'    => 'slug',
         'terms'    => [$context['subtype']],
     ],
 ];
