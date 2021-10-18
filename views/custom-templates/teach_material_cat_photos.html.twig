@@ -22,7 +22,7 @@
             {% else %}
                 <a class="d-block col m-2 p-2 text-center align-middle bg-secondary text-white border border-bottom-0 border-3 border-dark rounded-bottom rounded-pill"
                    href="?oblast={{ oneSubType.slug }}">
-                    <strong>{{ oneSubType.name }}</strong>
+                    {{ oneSubType.name }}
                 </a>
             {% endif %}
         {% endfor %}
