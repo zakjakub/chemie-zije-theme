@@ -8,7 +8,7 @@
 use Timber\Term;
 
 $context = Timber::context();
-$context['subtype'] = get_query_var('oblast');
+$context['subtype'] = get_query_var('oblast') ?? 'chemikalie';
 $templates = [
     'custom-templates/teach_material_cat_photos.html.twig',
     'post-types/teach_material_cat.html.twig',
