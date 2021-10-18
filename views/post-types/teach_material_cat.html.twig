@@ -25,12 +25,12 @@
             <div class="col-12 col-md-4 d-flex flex-column justify-content-center order-lg-first">
                 {% set image_src = material.thumbnail.src|default(get_image(material.meta('_menu_image')).src|default) %}
                 {% if image_src|default and image_src|length > 0 %}
-                    <a href="{{ material.link }}" title="{{ material.title }}" class="mb-2">
+                    <a href="{{ material.link }}" title="{{ material.title }}" class="mb-3">
                         <img class="d-block w-100 mh-100 p-2 img-thumbnail" src="{{ image_src }}" alt="{{ material.thumbnail.alt }}">
                     </a>
                 {% endif %}
                 {% for document in material.documents %}
-                    <p class="text-center">
+                    <p class="text-center mb-2">
                         <a href="{{ get_attachment(document.document_file).src }}" target="_blank">
                             <strong><small>{{ document.document_name }}</small></strong>
                         </a>
