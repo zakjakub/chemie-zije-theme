@@ -17,24 +17,28 @@ $templates = [
 $context['categories'] = $context['post']->terms('teach_mat_cat_type');
 $context['subtypes'] = $context['post']->terms('teach_mat_sub_type');
 
+$taxQuery = [
+    'relation' => 'AND',
+    [
+        'taxonomy' => 'teach_mat_cat_type',
+        'field'    => 'title',
+        'terms'    => array_map(static fn(Term $term) => $term->__toString(), $context['categories']),
+    ],
+    [
+        'taxonomy' => 'teach_mat_sub_type',
+        'field'    => 'title',
+        'terms'    => $context['subtype'],
+    ],
+];
+
+var_dump($taxQuery);
+
 $context['materials'] = Timber::get_posts(
     new WP_Query([
         'post_type' => 'teach_material',
         'orderby'   => 'title',
         'order'     => 'ASC',
-        'tax_query' => [
-            'relation' => 'AND',
-            [
-                'taxonomy' => 'teach_mat_cat_type',
-                'field'    => 'title',
-                'terms'    => array_map(static fn(Term $term) => $term->__toString(), $context['categories']),
-            ],
-            [
-                'taxonomy' => 'teach_mat_sub_type',
-                'field'    => 'title',
-                'terms'    => $context['subtype'],
-            ],
-        ],
+        'tax_query' => $taxQuery,
     ])
 );
 Timber::render($templates, $context);
