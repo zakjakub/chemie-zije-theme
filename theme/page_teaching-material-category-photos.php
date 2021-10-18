@@ -16,7 +16,7 @@ $templates = [
 ];
 $context['categories'] = $context['post']->terms('teach_mat_cat_type');
 $context['subtypes'] = $context['post']->terms('teach_mat_sub_type');
-usort($subTypes, static fn(Term $a, Term $b) => $a->description() <=> $b->description());
+usort($context['subtypes'], static fn(Term $a, Term $b) => $a->description() <=> $b->description());
 $context['materials'] = Timber::get_posts(
     new WP_Query([
         'post_type' => 'teach_material',
