@@ -31,8 +31,8 @@
     <div class="row my-5">
         {% for material in materials %}
             <article class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <a class="card border-0 h-100 text-dark text-decoration-none" href="{{ material.path }}">
-                    {% set image_src = material.thumbnail.src|default(get_image(material.meta('_menu_image')).src|default) %}
+                {% set image_src = material.thumbnail.src|default(get_image(material.meta('_menu_image')).src|default) %}
+                <a class="card border-0 h-100 text-dark text-decoration-none" href="{{ image.src }}">
                     {% if image_src|default and image_src|length > 0 %}
                         <div class="ratio ratio-16x9 card-img-top mx-auto mt-4">
                             <img class="d-block w-100 mh-100 p-2 img-thumbnail" src="{{ image_src }}" alt="{{ material.thumbnail.alt }}">
