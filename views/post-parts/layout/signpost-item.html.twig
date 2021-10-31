@@ -5,7 +5,7 @@
                 <img src="{{ get_image(post.meta('_menu_image')).src }}" alt="{{ post.title }}" class="mw-100"/>
             </div>
         {% endif %}
-        {% set classes = post.meta('_menu_image')|default ? 'justify-content-start': 'justify-content-center align-items-center pt-5' %}
+        {% set classes = post.meta('_menu_image')|default ? 'justify-content-cenetr': 'justify-content-center align-items-center pt-5' %}
         <div class="card-body d-flex flex-column {{ classes }}">
             <h5 class="card-title {{ post.post_excerpt|default|length > 0 ? '' : 'text-center' }}">
                 {{ post.title }}
