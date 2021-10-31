@@ -12,6 +12,27 @@
             </div>
         </section>
     {% endif %}
+
+    {% if subtypes|length > 1 %}
+        <div class="row mt-3 mb-0">
+            {% for oneSubType in subtypes %}
+                <!-- ONE SUBTYPE -->
+                {% set classes_common = "d-flex col my-3 mx-1 px-5 px-xl-4 py-2 text-center align-items-center justify-content-center" %}
+                {% set classes_border = "border border-bottom-0 border-3 border-dark rounded-bottom rounded-pill" %}
+                {% set classes = classes_common ~ " " ~ classes_border %}
+                {% if subtype == oneSubType.slug %}
+                    <a class="{{ classes }} bg-white text-secondary" href="?oblast={{ oneSubType.slug }}">
+                        <strong>{{ oneSubType.name }}</strong>
+                    </a>
+                {% else %}
+                    <a class="{{ classes }} bg-secondary text-white" href="?oblast={{ oneSubType.slug }}">
+                        {{ oneSubType.name }}
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+
     {% for material in materials %}
         <section class="row my-5">
             <div class="col-12 col-md-8 d-flex align-items-start flex-column">
