@@ -45,6 +45,13 @@
                 </a>
             </article>
         {% endfor %}
+        {% if materials|count < 1 %}
+            <article class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <p>
+                    V této kategorii bohužel ještě nejsou žádné fotografie.
+                </p>
+            </article>
+        {% endfor %}
     </div>
 {% endblock article_content %}
 
