@@ -21,7 +21,7 @@
   "require": {
     "php": ">=8.0",
     "timber/timber": "^2.x-dev",
-    "wpackio/enqueue": "dev-master",
+    "wpackio/enqueue": "^3.4.0",
     "hellonico/timber-dump-extension": "dev-master"
   },
   "require-dev": {
