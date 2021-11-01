@@ -22,6 +22,7 @@ $context['materials'] = Timber::get_posts(
         'post_type' => 'teach_material',
         'orderby'   => 'title',
         'order'     => 'ASC',
+        'posts_per_page' => 1000,
         'tax_query' => [
             'relation' => 'AND',
             [
