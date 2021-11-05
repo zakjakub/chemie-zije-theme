@@ -41,7 +41,7 @@ class ChemieZijeTheme extends Site
             fn($classmap) => array_merge(
                 $classmap,
                 [
-                    'map_company' => MapCompanyPost::class,
+                    'map_company'    => MapCompanyPost::class,
                     'teach_material' => TeachMaterialPost::class,
                 ],
             ),

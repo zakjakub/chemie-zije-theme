@@ -23,7 +23,10 @@ $rfs-base-value: 0.8rem;
 .signpost-card {
   background-color: rgba(200, 200, 255, .25) !important;
 
-  .card-img-top {
+  .card-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     max-width: 90%;
   }
 

@@ -1,8 +1,8 @@
 <article class="col-12 col-md-6 col-lg-4">
     <a class="card signpost-card border-0 h-100 text-dark text-decoration-none" href="{{ post.path }}">
         {% if post.meta('_menu_image')|default %}
-            <div class="w-100 card-img-top mx-auto mt-4">
-                <img src="{{ get_image(post.meta('_menu_image')).src }}" alt="{{ post.title }}" class="mw-100"/>
+            <div class="w-100 card-img card-img-top mx-auto mt-4 ratio ratio-4x3 rounded rounded-2"
+                 style="background-image: url({{ get_image(post.meta('_menu_image')).src }})">
             </div>
         {% endif %}
         {% set classes = post.meta('_menu_image')|default ? 'justify-content-center': 'justify-content-center align-items-center pt-5' %}

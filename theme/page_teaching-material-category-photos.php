@@ -19,11 +19,11 @@ $context['subtypes'] = $context['post']->terms('teach_mat_sub_type');
 usort($context['subtypes'], static fn(Term $a, Term $b) => $a->description() <=> $b->description());
 $context['materials'] = Timber::get_posts(
     new WP_Query([
-        'post_type' => 'teach_material',
-        'orderby'   => 'title',
-        'order'     => 'ASC',
+        'post_type'      => 'teach_material',
+        'orderby'        => 'title',
+        'order'          => 'ASC',
         'posts_per_page' => 1000,
-        'tax_query' => [
+        'tax_query'      => [
             'relation' => 'AND',
             [
                 'taxonomy' => 'teach_mat_cat_type',
