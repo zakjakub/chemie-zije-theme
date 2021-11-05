@@ -12,16 +12,26 @@
   text-align: center;
 
   .element {
-    border-color: blue;
-    background-color: lightblue;
-    border-width: .15em;
+    background-color: blue;
     clip-path: polygon(
                     0% 0%, /* top left */
                     100% 0%, /* top right */
                     100% 100%, /* bottom right */
-                    3em 100%, /* bottom left */
-                    0 calc(100% - 3em) /* bottom left */
+                    1em 100%, /* bottom left */
+                    0 calc(100% - 1em) /* bottom left */
     );
+    .element-content {
+      width: calc(100% - .5em);
+      height: calc(100% - .5em);
+      background-color: lightblue;
+      clip-path: polygon(
+                      0% 0%, /* top left */
+                      100% 0%, /* top right */
+                      100% 100%, /* bottom right */
+                      1em 100%, /* bottom left */
+                      0 calc(100% - 1em) /* bottom left */
+      );
+    }
   }
 
 }

@@ -26,8 +26,10 @@
         {% endif %}
         {% if row and col %}
             <div class="element" style="grid-column: {{ col }}; grid-row: {{ row }};">
-                {{ element.atomic_number }}<br>
-                <strong>{{ element.symbol }}</strong>
+                <div class="element-content">
+                    {{ element.atomic_number }}<br>
+                    <strong>{{ element.symbol }}</strong>
+                </div>
             </div>
         {% endif %}
     {% endfor %}
