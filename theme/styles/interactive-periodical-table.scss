@@ -14,33 +14,23 @@
   .element {
     border-color: blue;
     background-color: lightblue;
+    border-left: 5px solid;
     position: relative;
-    border-left: 2px solid;
-    overflow: hidden;
+    border-radius: 10px;
+    background-image: linear-gradient(135deg, transparent 5%, #333 5% 95%, transparent 95%);
+    padding: 20px;
+    z-index: 0;
 
-    &:after,
-    &:before {
-      position: absolute;
-      content: '';
-      width: calc(100% - 2px);
-      left: 0;
+    .elem::before {
       z-index: -1;
-    }
-
-    &:before {
-      height: 20%;
-      top: 0;
-      border-style: solid;
-      border-width: 2px 3px 0 0;
-      transform: skew(45deg);
-      transform-origin: right bottom;
-    }
-
-    &:after {
-      height: calc(80% - 4px);
-      bottom: 0;
-      border-style: solid;
-      border-width: 0 2px 2px 0;
+      content: '';
+      position: absolute;
+      left: 3px;
+      right: 3px;
+      top: 3px;
+      bottom: 3px;
+      border-radius: 7px;
+      background-image: linear-gradient(135deg, transparent 5%, orange 5% 95%, transparent 95%);
     }
 
 
