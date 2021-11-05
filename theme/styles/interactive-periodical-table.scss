@@ -14,9 +14,38 @@
   .element {
     border-color: blue;
     background-color: lightblue;
-    border-width: .15em;
-    clip-path: polygon(2em 100%, 0 calc(100% - 2em));
+    position: relative;
+    border-left: 2px solid;
+    overflow: hidden;
+
+    &:after,
+    &:before {
+      position: absolute;
+      content: '';
+      width: calc(100% - 2px);
+      left: 0;
+      z-index: -1;
+    }
+
+    &:before {
+      height: 20%;
+      top: 0;
+      border-style: solid;
+      border-width: 2px 3px 0 0;
+      transform: skew(45deg);
+      transform-origin: right bottom;
+    }
+
+    &:after {
+      height: calc(80% - 4px);
+      bottom: 0;
+      border-style: solid;
+      border-width: 0 2px 2px 0;
+    }
+
+
   }
+
 
 }
 
