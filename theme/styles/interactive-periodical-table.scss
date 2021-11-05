@@ -5,8 +5,6 @@
   width: 100%;
   min-width: 780px;
   max-width: 100%;
-  min-height: 580px;
-  max-height: 80vh;
   grid-template-columns: 1fr repeat(18, 2fr);
   grid-template-rows: 2fr repeat(7, 3fr) 1fr repeat(2, 3fr);
   grid-gap: .1em;
