@@ -23,6 +23,7 @@
     .element-content {
       width: calc(100% - .5em);
       height: calc(100% - .5em);
+      margin: auto;
       background-color: lightblue;
       clip-path: polygon(
                       0% 0%, /* top left */
