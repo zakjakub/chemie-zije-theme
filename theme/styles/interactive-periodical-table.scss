@@ -6,12 +6,20 @@
   min-width: 780px;
   max-width: 100%;
   grid-template-columns: 1fr repeat(18, 2fr);
-  grid-template-rows: 2fr repeat(7, 3fr) 1fr repeat(2, 3fr);
+  grid-template-rows: 1fr repeat(7, 3fr) 1fr repeat(2, 3fr);
   grid-gap: .1em;
   text-align: center;
 
   * {
     box-sizing: border-box;
+  }
+
+  .index {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid grey;
+    background-color: lightgrey;
   }
 
   .element {

@@ -1,13 +1,13 @@
 <div class="interactive-periodical-table">
 
     {% for columnIndex in 1..18 %}
-        <div style="grid-row: 1; grid-column: {{ columnIndex + 1 }}; vertical-align: bottom;">
+        <div class="index index-column" style="grid-row: 1; grid-column: {{ columnIndex + 1 }}; vertical-align: bottom;">
             {{ columnIndex }}
         </div>
     {% endfor %}
     {% for rowIndex in 1..10 %}
         {% if rowIndex != 8 %}
-            <div style="grid-row: {{ rowIndex + 1 }}; grid-column: 1; text-align: right;">
+            <div class="index index-row" style="grid-row: {{ rowIndex + 1 }}; grid-column: 1; text-align: right;">
                 {{ rowIndex }}
             </div>
         {% endif %}
