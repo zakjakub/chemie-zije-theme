@@ -18,8 +18,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid grey;
-    background-color: lightgrey;
+    border: 2px solid $up-gray;
+    background-color: rgba($up-gray, .6);
+    font-weight: bolder;
   }
 
   .element {
