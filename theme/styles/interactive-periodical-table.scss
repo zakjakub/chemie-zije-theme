@@ -10,6 +10,14 @@
   grid-template-rows: 2fr repeat(7, 3fr) 1fr repeat(2, 3fr);
   grid-gap: 0;
   text-align: center;
+
+  .element {
+    border-color: blue;
+    background-color: lightblue;
+    border-width: .15em;
+    clip-path: polygon(2em 100%, 0 calc(100% - 2em));
+  }
+
 }
 
 
