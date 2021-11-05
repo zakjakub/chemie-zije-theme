@@ -4,6 +4,7 @@
   display: grid;
   width: 100%;
   min-width: 780px;
+  max-width: 100%;
   min-height: 580px;
   max-height: 80vh;
   grid-template-columns: 1fr repeat(18, 2fr);
@@ -40,6 +41,26 @@
 
       > * {
         display: block;
+      }
+
+      .atomic-number {
+        font-size: .8em;
+        font-weight: bold;
+        text-align: left;
+      }
+
+      .atomic-weight {
+        font-size: .7em;
+      }
+
+      .symbol {
+        font-size: 1.1em;
+        font-weight: bold;
+      }
+
+      .name {
+        font-size: .7em;
+        font-weight: bold;
       }
     }
   }

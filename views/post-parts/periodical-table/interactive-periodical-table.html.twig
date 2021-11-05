@@ -27,10 +27,10 @@
         {% if row and col %}
             <div class="element" style="grid-column: {{ col }}; grid-row: {{ row }};">
                 <div class="element-content">
-                    <small>{{ element.atomic_number }}</small>
-                    <strong>{{ element.symbol }}</strong>
-                    <small>{{ element.name_cz }}</small>
-                    <small>{{ element.atomic_weight }}</small>
+                    <span class="atomic-number">{{ element.atomic_number }}</span>
+                    <span class="symbol">{{ element.symbol }}</span>
+                    <span class="name">{{ element.name_cz }}</span>
+                    <span class="atomic-weight">{{ element.atomic_weight }}</span>
                 </div>
             </div>
         {% endif %}
