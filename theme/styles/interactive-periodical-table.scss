@@ -32,7 +32,7 @@
       width: calc(100% - .5em);
       height: calc(100% - .5em);
       margin: .25em;
-      padding: .1em .3em .3em;
+      padding: .05em .25em .25em;
       background-color: lightblue;
       clip-path: polygon(
                       0% 0%, /* top left */
@@ -55,7 +55,7 @@
       }
 
       .atomic-weight {
-        font-size: .63em;
+        font-size: .6em;
       }
 
       .symbol {
@@ -64,7 +64,7 @@
       }
 
       .name {
-        font-size: .67em;
+        font-size: .65em;
         font-weight: bold;
       }
     }
