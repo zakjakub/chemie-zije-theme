@@ -10,6 +10,10 @@
   grid-gap: .15em;
   text-align: center;
 
+  &.big {
+    font-size: 1.1em;
+  }
+
   @media (max-width: 800px) {
     font-size: 0.7em;
   }
@@ -25,6 +29,16 @@
     border: 2px solid rgba($up-gray, .8);
     background-color: rgba($up-gray, .2);
     font-weight: bolder;
+  }
+
+  .index-column {
+    height: 2em;
+    margin-top: auto;
+  }
+
+  .index-row {
+    width: 2em;
+    margin-left: auto;
   }
 
   .element {

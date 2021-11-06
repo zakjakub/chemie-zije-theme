@@ -1,7 +1,8 @@
 <div class="interactive-periodical-table">
 
+    {% set columnIndexRows = [1, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2, 1] %}
     {% for columnIndex in 1..18 %}
-        <div class="index index-column" style="grid-row: 1; grid-column: {{ columnIndex + 1 }}; vertical-align: bottom;">
+        <div class="index index-column" style="grid-row: {{ columnIndexRows[columnIndex + 1] }}; grid-column: {{ columnIndex + 1 }};">
             {{ columnIndex }}
         </div>
     {% endfor %}
