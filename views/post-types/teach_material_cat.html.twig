@@ -16,7 +16,7 @@
             {% for oneSubType in subtypes %}
                 <!-- ONE SUBTYPE -->
                 {% set classes_common = "d-flex col m-0 mt-3 mx-1 px-5 px-xl-4 py-2 text-center align-items-center justify-content-center" %}
-                {% set classes_border = "border border-3 border-primary" %}
+                {% set classes_border = "border border-2 border-primary" %}
                 {% set classes = classes_common ~ " " ~ classes_border %}
                 {% if subtype == oneSubType.slug %}
                     <a class="{{ classes }} bg-white text-primary" href="?oblast={{ oneSubType.slug }}"
