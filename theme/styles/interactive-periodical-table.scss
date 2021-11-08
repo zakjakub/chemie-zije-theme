@@ -3,7 +3,7 @@
 .interactive-periodical-table {
   display: grid;
   width: 100%;
-  min-width: 780px;
+  min-width: 500px;
   max-width: 100%;
   grid-template-columns: 1fr repeat(18, 2fr);
   grid-template-rows: 1fr repeat(7, 3fr) 1fr repeat(2, 3fr);
@@ -28,6 +28,7 @@
 
   @media (max-width: 800px) {
     font-size: 0.75em;
+    grid-template-rows: 1fr repeat(7, 2fr) 1fr repeat(2, 2fr);
   }
 
   @media (max-width: 700px) {
