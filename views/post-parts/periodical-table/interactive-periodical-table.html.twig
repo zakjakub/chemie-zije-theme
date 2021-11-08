@@ -28,10 +28,18 @@
         {% if row and col %}
             <div class="element" style="grid-column: {{ col }}; grid-row: {{ row }};">
                 <div class="element-content">
-                    <span class="atomic-number">{{ element.atomic_number }}</span>
-                    <span class="symbol">{{ element.symbol }}</span>
-                    <span class="name">{{ element.name_cz }}</span>
-                    <span class="atomic-weight">{{ element.atomic_weight }}</span>
+                    <span class="atomic-number">
+                        {{ element.atomic_number }}
+                    </span>
+                    <span class="symbol">
+                        {{ element.symbol }}
+                    </span>
+                    <span class="name d-none d-md-block">
+                        {{ element.name_cz }}
+                    </span>
+                    <span class="atomic-weight d-none d-md-block">
+                        {{ element.atomic_weight }}
+                    </span>
                 </div>
             </div>
         {% endif %}
