@@ -7,7 +7,7 @@ This page theme can be selected as custom theme of single "page" type post (due 
 
 {% set periodicalTable = site.theme.link ~ '/images/others/periodical-table.png' %}
 
-{% block body_content %}
+{% block article_content %}
     <main class="container content-wrapper my-5">
         {% block periodical_table %}
             <div class="row post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
@@ -20,4 +20,7 @@ This page theme can be selected as custom theme of single "page" type post (due 
     <div class="container-fluid my-5">
         {{ block('periodical_table') }}
     </div>
-{% endblock body_content %}
+{% endblock %}
+
+{% block article_signpost %}
+{% endblock %}
