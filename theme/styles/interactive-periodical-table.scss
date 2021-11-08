@@ -23,11 +23,8 @@
   }
 
   @media (max-width: 753px) {
-    grid-template-rows: 1fr repeat(7, 2fr) 1fr repeat(2, 2fr);
-  }
-
-  @media (max-width: 700px) {
     font-size: 0.7em;
+    grid-template-rows: 1fr repeat(7, 2fr) 1fr repeat(2, 2fr);
   }
 
   @media (max-width: 600px) {
