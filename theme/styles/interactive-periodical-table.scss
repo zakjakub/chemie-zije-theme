@@ -35,6 +35,10 @@
     font-size: 0.7em;
   }
 
+  @media (max-width: 600px) {
+    font-size: 0.65em;
+  }
+
   * {
     box-sizing: border-box;
   }
