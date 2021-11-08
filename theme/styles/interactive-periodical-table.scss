@@ -19,15 +19,10 @@
   }
 
   @media (max-width: 1000px) {
-    font-size: 0.85em;
-  }
-
-  @media (max-width: 900px) {
     font-size: 0.8em;
   }
 
-  @media (max-width: 800px) {
-    font-size: 0.75em;
+  @media (max-width: 753px) {
     grid-template-rows: 1fr repeat(7, 2fr) 1fr repeat(2, 2fr);
   }
 
