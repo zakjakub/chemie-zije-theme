@@ -3,7 +3,7 @@
 .interactive-periodical-table {
   display: grid;
   width: 100%;
-  min-width: 500px;
+  min-width: 400px;
   max-width: 100%;
   grid-template-columns: 1fr repeat(18, 2fr);
   grid-template-rows: 1fr repeat(7, 3fr) 1fr repeat(2, 3fr);
