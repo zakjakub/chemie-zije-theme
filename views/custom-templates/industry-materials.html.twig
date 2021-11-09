@@ -19,7 +19,7 @@
                 <a href="{{ element.link }}" class="text-dark text-decoration-none">
                     <h3>
                         {{- element.title -}}
-                        {{- element.meta('_alternative_names') ? ' (' ~ element.meta('_alternative_names') ~ ')'  : '' -}}
+                        {{- element.meta('_alternative_names') ? ' <small>(' ~ element.meta('_alternative_names') ~ ')</small>'  : '' -}}
                     </h3>
                 </a>
                 <div style="text-align: justify;">
