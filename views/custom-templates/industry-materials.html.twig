@@ -17,7 +17,10 @@
             {% endif %}
             <div class="col-12 col-md d-flex align-items-start flex-column py-1">
                 <a href="{{ element.link }}" class="text-dark text-decoration-none">
-                    <h3>{{ element.title }}</h3>
+                    <h3>
+                        {{- element.title -}}
+                        {{- element.meta('_alternative_names') ? ' (' ~ element.meta('_alternative_names') ~ ')'  : '' -}}
+                    </h3>
                 </a>
                 <div style="text-align: justify;">
                     {{ element.content }}

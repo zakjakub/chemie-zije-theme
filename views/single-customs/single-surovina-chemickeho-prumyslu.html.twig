@@ -6,8 +6,11 @@
 {% block article_content %}
         <section class="row my-5">
             <div class="col-12">
-                <h3>{{ post.title }}</h3>
-                <div style="text-align: justify;">
+                <h3>
+                    {{- post.title -}}
+                    {{- post.meta('_alternative_names') ? ' (' ~ post.meta('_alternative_names') ~ ')'  : '' -}}
+                </h3>
+                <div>
                     {{ post.content }}
                 </div>
             </div>
