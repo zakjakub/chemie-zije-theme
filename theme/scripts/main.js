@@ -1,6 +1,6 @@
 // noinspection ES6UnusedImports,JSUnusedLocalSymbols
 // noinspection ES6CheckImport
-import bootstrap from 'bootstrap';
+import * as bootstrap from 'bootstrap';
 import Swiper from 'swiper/bundle';
 import '../styles/main.scss';
 

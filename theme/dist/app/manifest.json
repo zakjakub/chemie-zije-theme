@@ -1,8 +1,8 @@
 {
   "main.css": "app/main-27e2a765.css",
   "main.css.map": "app/main-27e2a765.css.map",
-  "main.js": "app/main-d05e32af.js",
-  "main.js.map": "app/main-d05e32af.js.map",
+  "main.js": "app/main-83e84682.js",
+  "main.js.map": "app/main-83e84682.js.map",
   "runtime.js": "app/runtime-4decd5d4.js",
   "runtime.js.map": "app/runtime-4decd5d4.js.map",
   "vendors~main.css": "app/vendors~main-73223b47.css",
@@ -15,12 +15,12 @@
         "js": [
           "app/runtime-4decd5d4.js",
           "app/vendors~main-5df4e517.js",
-          "app/main-d05e32af.js"
+          "app/main-83e84682.js"
         ],
         "js.map": [
           "app/runtime-4decd5d4.js.map",
           "app/vendors~main-5df4e517.js.map",
-          "app/main-d05e32af.js.map"
+          "app/main-83e84682.js.map"
         ],
         "css": [
           "app/vendors~main-73223b47.css",

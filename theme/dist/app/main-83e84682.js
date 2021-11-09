@@ -16,4 +16,4 @@
  * A zero setup Webpack Bundler Script for WordPress
  */
 (window.wpackiochemieZijeThemeappJsonp=window.wpackiochemieZijeThemeappJsonp||[]).push([[0],{3:function(i,e,n){n(4),i.exports=n(6)},6:function(i,e,n){"use strict";n.r(e);n(5),new(n(2).a)(".swiper-container",{direction:"horizontal",loop:!1,pagination:{el:".swiper-pagination"},navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"}})}},[[3,1,2]]]);
-//# sourceMappingURL=main-d05e32af.js.map
+//# sourceMappingURL=main-83e84682.js.map
