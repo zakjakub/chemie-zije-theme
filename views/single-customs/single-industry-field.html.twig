@@ -1,0 +1,30 @@
+{% extends "post-types/page.html.twig" %}
+
+{% block article_signpost %}
+{% endblock %}
+
+{% block article_content %}
+    <section class="row my-5">
+        <div class="col-12">
+            <h3>
+                {{- post.title -}} foo
+            </h3>
+            <div>
+                {{ post.content }}
+            </div>
+        </div>
+        {% if post.references|length > 0 %}
+            <div class="col-12">
+                <h4>Literatura</h4>
+                <ul style="list-style: none;">
+                    {% for reference in post.references %}
+                        <li>
+                            <sup>{{ reference.reference_id }}</sup>
+                            <span>{{ reference.reference_text }}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </section>
+{% endblock %}
