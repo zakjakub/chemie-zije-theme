@@ -15,8 +15,8 @@
     {% endif %}
 
     {% if post.tabs|length > 0 %}
-        <nav class="row p-0 m-0" style="line-height: 1.1;">
-            <div class="rounded-tabs" id="nav-tab" role="tablist">
+        <nav>
+            <div class="row p-0 rounded-tabs" id="nav-tab" role="tablist">
                 {% for index, tab in post.tabs %}
                     {% set active = index < 1 ? 'active' : '' %}
                     <button class="rounded-tab col m-0 mt-3 mx-1 px-5 px-xl-4 py-2 border border-2 border-primary {{ active }}"
