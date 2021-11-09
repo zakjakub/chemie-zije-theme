@@ -17,13 +17,11 @@
         {% if post.references|length > 0 %}
             <div class="col-12">
                 <h4>Literatura</h4>
-                <ul>
+                <ul style="list-style: none;">
                     {% for reference in post.references %}
                         <li>
-                            <p>
-                                <sup>{{ reference.reference_id }}</sup>
-                                <span>{{ reference.reference_text }}</span>
-                            </p>
+                            <sup>{{ reference.reference_id }}</sup>
+                            <span>{{ reference.reference_text }}</span>
                         </li>
                     {% endfor %}
                 </ul>
