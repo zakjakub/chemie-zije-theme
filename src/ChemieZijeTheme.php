@@ -11,6 +11,7 @@ use Timber\Site;
 use Twig\Environment;
 use Twig\Extension\StringLoaderExtension;
 use WPackio\Enqueue;
+use Zakjakub\ChemieZijeTheme\Post\ChemicalIndustryFieldPost;
 use Zakjakub\ChemieZijeTheme\Post\ChemicalIndustryMaterialPost;
 use Zakjakub\ChemieZijeTheme\Post\MapCompanyPost;
 use Zakjakub\ChemieZijeTheme\Post\TeachMaterialPost;
@@ -43,6 +44,7 @@ class ChemieZijeTheme extends Site
                 $classmap,
                 [
                     'industry_material' => ChemicalIndustryMaterialPost::class,
+                    'industry_field'    => ChemicalIndustryFieldPost::class,
                     'map_company'       => MapCompanyPost::class,
                     'teach_material'    => TeachMaterialPost::class,
                 ],

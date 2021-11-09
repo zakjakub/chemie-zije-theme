@@ -6,14 +6,11 @@
 {% block article_content %}
     <section class="row my-5">
         <div class="col-12">
-            <h3>
-                {{- post.title -}} foo
-            </h3>
             <div>
                 {{ post.content }}
             </div>
         </div>
-        {% if post.references|length > 0 %}
+        {% if post.tabs|length > 0 %}
             <div class="col-12">
                 <h4>Literatura</h4>
                 <ul style="list-style: none;">
