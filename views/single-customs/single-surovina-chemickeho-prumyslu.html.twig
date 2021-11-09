@@ -8,7 +8,7 @@
         <div class="col-12">
             <h3>
                 {{- post.title -}}
-                {{- post.meta('_alternative_names') ? ' (' ~ post.meta('_alternative_names') ~ ')'  : '' -}}
+                {{- post.meta('_alternative_names') ? ' <small>(' ~ post.meta('_alternative_names') ~ ')</small>'  : '' -}}
             </h3>
             <div>
                 {{ post.content }}
