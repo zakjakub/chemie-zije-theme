@@ -12,10 +12,9 @@
         </div>
     </section>
 
-
     {% if post.tabs|length > 0 %}
-        <nav class="row px-3 mt-0 mb-0" style="line-height: 1.1;">
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <nav class="row p-0 m-0" style="line-height: 1.1;">
+            <div class="nav" id="nav-tab" role="tablist">
                 {% for index, tab in post.tabs %}
                     {% set classes_common = "d-flex col m-0 mt-3 mx-1 px-5 px-xl-4 py-2 text-center align-items-center justify-content-center" %}
                     {% set classes_border = "border border-2 border-primary" %}
