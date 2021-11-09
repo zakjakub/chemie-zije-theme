@@ -10,6 +10,10 @@
   grid-gap: .15em;
   text-align: center;
 
+  span {
+    text-align: center;
+  }
+
   &.big {
     font-size: 1.1em;
   }
