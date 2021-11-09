@@ -11,6 +11,7 @@ use Timber\Site;
 use Twig\Environment;
 use Twig\Extension\StringLoaderExtension;
 use WPackio\Enqueue;
+use Zakjakub\ChemieZijeTheme\Post\ChemicalIndustryMaterialPost;
 use Zakjakub\ChemieZijeTheme\Post\MapCompanyPost;
 use Zakjakub\ChemieZijeTheme\Post\TeachMaterialPost;
 use Zakjakub\ChemieZijeTheme\Widgets\DepartmentContactsWidget;
@@ -41,8 +42,9 @@ class ChemieZijeTheme extends Site
             fn($classmap) => array_merge(
                 $classmap,
                 [
-                    'map_company'    => MapCompanyPost::class,
-                    'teach_material' => TeachMaterialPost::class,
+                    'industry_material' => ChemicalIndustryMaterialPost::class,
+                    'map_company'       => MapCompanyPost::class,
+                    'teach_material'    => TeachMaterialPost::class,
                 ],
             ),
         );
