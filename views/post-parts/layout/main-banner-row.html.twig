@@ -9,9 +9,9 @@
             {{ site.name }}
         </h1>
         <h2 class="p-5 pt-2 {{ isHome ? ' d-none ' : '' }}">
-            {%- if post.type.labels.name|default %}
-                {{ post.type.labels.name }}
-            {% endif -%}
+            {%- if post.type.labels.name|default -%}
+                <small class="d-block">{{ post.type.labels.name }}</small>
+            {%- endif -%}
             {{- post.title -}}
         </h2>
     </div>
