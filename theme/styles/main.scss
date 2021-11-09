@@ -20,6 +20,26 @@ $rfs-base-value: 0.8rem;
   }
 }
 
+.rounded-tabs {
+
+  .rounded-tab {
+    //  bg-white text-primary
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: $white;
+    color: $primary;
+    border-top-left-radius: 1.2em !important;
+    border-top-right-radius: 1.2em !important;
+
+    .active {
+      background-color: $primary;
+      color: $white;
+    }
+  }
+}
+
 #main-content {
   p, span {
     text-align: justify;
