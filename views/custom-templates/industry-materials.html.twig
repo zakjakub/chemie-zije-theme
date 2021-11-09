@@ -5,6 +5,14 @@
 {% block article_content %}
     {% for element in elements %}
         <section class="row my-5">
+            {% set image_src = element.thumbnail.src|default(get_image(element.meta('_menu_image')).src|default) %}
+            {% if image_src|default and image_src|length > 0 %}
+                <a href="{{ element.link }}" title="{{ element.title }}" class="mb-3">
+                    <img class="d-block w-100 mh-100 p-2 img-thumbnail"
+                         src="{{ image_src }}"
+                         alt="{{ element.thumbnail.alt|default }}">
+                </a>
+            {% endif %}
             <div class="col-12 col-md d-flex align-items-start flex-column py-1">
                 <a href="{{ element.link }}" class="text-dark text-decoration-none">
                     <h3>{{ element.title }}</h3>
@@ -16,15 +24,6 @@
                     [<a href="{{ element.link }}" title="{{ element.title }}">více informací</a>]
                 </nav>
             </div>
-            {% if get_image(element.meta('_material_image')).src|default %}
-                <div class="col-12 col-md-4 col-lg-3 d-flex flex-column justify-content-center">
-                    <a href="{{ element.link }}" title="{{ element.title }}">
-                        <img class="d-block w-100 mh-100 p-2 img-thumbnail"
-                             src="{{ get_image(element.meta('_material_image')).src }}"
-                             alt="{{ get_image(element.meta('_material_image')).alt }}">
-                    </a>
-                </div>
-            {% endif %}
         </section>
     {% endfor %}
     {% if (post.content|default and post.content|length > 0) or (content|default and content|length > 0) %}
