@@ -1,7 +1,6 @@
 $rfs-base-value: 0.8rem;
 
 @import "bootstrap-up";
-@import "interactive-periodical-table";
 @import "~swiper/swiper-bundle.min.css";
 
 .footer-eu-msmt-image {
@@ -127,3 +126,5 @@ a {
 .text-justify {
   text-align: justify !important;
 }
+
+@import "interactive-periodical-table";
