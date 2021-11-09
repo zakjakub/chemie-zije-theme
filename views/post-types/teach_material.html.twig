@@ -10,11 +10,27 @@
         </div>
     {% endif %}
     <div class="row my-5">
-        {% if post.documents|length > 0 %}
+        {% if post.presentations|length > 0 %}
+            <div class="col-12">
+                <h3>Prezentace</h3>
+                <ul>
+                    {% for document in post.presentations %}
+                        <li>
+                            <strong>
+                                <a href="{{ get_attachment(document.document_file).src }}" target="_blank">
+                                    {{ document.document_name }}
+                                </a>
+                            </strong>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        {% if post.handouts|length > 0 %}
             <div class="col-12">
                 <h3>Pracovní listy</h3>
                 <ul>
-                    {% for document in post.documents %}
+                    {% for document in post.handouts %}
                         <li>
                             <strong>
                                 <a href="{{ get_attachment(document.document_file).src }}" target="_blank">
