@@ -14,11 +14,10 @@
                 {{ post.content }}
             </div>
         </div>
-        {% set references = post.meta('_references') %}
-        {% if references|length > 0 %}
+        {% if post.references|length > 0 %}
             <div class="col-12">
                 <ul>
-                    {% for reference in references %}
+                    {% for reference in post.references %}
                         <li>
                             <sup>{{ reference.reference_id }}</sup>
                             <span>{{ reference.reference_text }}</span>
