@@ -4,13 +4,15 @@
 {% endblock %}
 
 {% block article_content %}
-    <section class="row my-5">
-        <div class="col-12">
-            <div>
-                {{ post.content }}
+    {% if post.content|default %}
+        <section class="row my-5">
+            <div class="col-12">
+                <div>
+                    {{ post.content }}
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    {% endif %}
 
     {% if post.tabs|length > 0 %}
         <nav class="row p-0 m-0" style="line-height: 1.1;">
