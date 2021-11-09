@@ -15,22 +15,20 @@
     {% endif %}
 
     {% if post.tabs|length > 0 %}
-        <nav>
-            <div class="nav row p-0 rounded-tabs" id="nav-tab" role="tablist">
-                {% for index, tab in post.tabs %}
-                    {% set active = index < 1 ? 'active' : '' %}
-                    <button class="rounded-tab col m-0 mt-3 mx-1 px-5 px-xl-4 py-2 border border-2 border-primary {{ active }}"
-                            id="nav-tab-{{ index }}"
-                            data-bs-toggle="tab"
-                            data-bs-target="#nav-{{ index }}"
-                            type="button"
-                            role="tab"
-                            aria-controls="nav-{{ index }}"
-                            aria-selected="{{ index < 1 ? 'true' : 'false' }}">
-                        {{ tab.tab_title }}
-                    </button>
-                {% endfor %}
-            </div>
+        <nav class="nav row p-0 rounded-tabs" id="nav-tab">
+            {% for index, tab in post.tabs %}
+                {% set active = index < 1 ? 'active' : '' %}
+                <button class="rounded-tab col m-0 mt-3 mx-1 px-5 px-xl-4 py-2 border border-2 border-primary {{ active }}"
+                        id="nav-tab-{{ index }}"
+                        data-bs-toggle="tab"
+                        data-bs-target="#nav-{{ index }}"
+                        type="button"
+                        role="tab"
+                        aria-controls="nav-{{ index }}"
+                        aria-selected="{{ index < 1 ? 'true' : 'false' }}">
+                    {{ tab.tab_title }}
+                </button>
+            {% endfor %}
         </nav>
         <section class="row my-5">
             <div class="tab-content col-12" id="nav-tabContent">
