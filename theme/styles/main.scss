@@ -33,7 +33,7 @@ $rfs-base-value: 0.8rem;
     border-top-left-radius: 1.2em !important;
     border-top-right-radius: 1.2em !important;
 
-    .active {
+    &.active {
       background-color: $primary;
       color: $white;
     }
