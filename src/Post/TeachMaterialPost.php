@@ -16,7 +16,7 @@ class TeachMaterialPost extends Post
 
     final public function presentations(): array
     {
-        return carbon_get_the_post_meta('presentation') ?? [];
+        return carbon_get_the_post_meta('presentations') ?? [];
     }
 
     final public function handouts(): array
