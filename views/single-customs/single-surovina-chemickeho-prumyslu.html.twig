@@ -4,15 +4,28 @@
 {% endblock %}
 
 {% block article_content %}
-        <section class="row my-5">
-            <div class="col-12">
-                <h3>
-                    {{- post.title -}}
-                    {{- post.meta('_alternative_names') ? ' (' ~ post.meta('_alternative_names') ~ ')'  : '' -}}
-                </h3>
-                <div>
-                    {{ post.content }}
-                </div>
+    <section class="row my-5">
+        <div class="col-12">
+            <h3>
+                {{- post.title -}}
+                {{- post.meta('_alternative_names') ? ' (' ~ post.meta('_alternative_names') ~ ')'  : '' -}}
+            </h3>
+            <div>
+                {{ post.content }}
             </div>
-        </section>
+        </div>
+        {% set references = post.meta('_references') %}
+        {% if references|length > 0 %}
+            <div class="col-12">
+                <ul>
+                    {% for reference in references %}
+                        <li>
+                            <sup>{{ reference.reference_id }}</sup>
+                            <span>{{ reference.reference_text }}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </section>
 {% endblock %}
