@@ -1,6 +1,6 @@
 <?php
 
-namespace Zakjakub\ChemieZijeTheme\Widgets;
+namespace Zakjakub\ChemieZijeTheme\Widget;
 
 use Timber;
 use WP_Widget;

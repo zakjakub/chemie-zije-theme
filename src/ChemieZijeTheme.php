@@ -15,8 +15,8 @@ use Zakjakub\ChemieZijeTheme\Post\ChemicalIndustryFieldPost;
 use Zakjakub\ChemieZijeTheme\Post\ChemicalIndustryMaterialPost;
 use Zakjakub\ChemieZijeTheme\Post\MapCompanyPost;
 use Zakjakub\ChemieZijeTheme\Post\TeachMaterialPost;
-use Zakjakub\ChemieZijeTheme\Widgets\DepartmentContactsWidget;
-use Zakjakub\ChemieZijeTheme\Widgets\EuMsmtWidget;
+use Zakjakub\ChemieZijeTheme\Widget\DepartmentContactsWidget;
+use Zakjakub\ChemieZijeTheme\Widget\EuMsmtWidget;
 
 class ChemieZijeTheme extends Site
 {
