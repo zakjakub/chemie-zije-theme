@@ -15,9 +15,9 @@ if (GSHEET_URL) {
     $sheet = curl_exec($curl);
     curl_close($curl);
     preg_match('/(<table[^>]+>)(.+)(<\/table>)/', $sheet, $matches);
-    $data = $matches['0'];
+    $elements = $matches['0'];
     try {
-        $cells_xml = new SimpleXMLElement($data);
+        $cells_xml = new SimpleXMLElement($elements);
         $cells_json = json_encode($cells_xml, JSON_THROW_ON_ERROR);
         $cells = json_decode($cells_json, true, 512, JSON_THROW_ON_ERROR);
     } catch (Exception $e) {
