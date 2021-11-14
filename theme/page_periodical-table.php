@@ -23,8 +23,13 @@ if (GSHEET_URL) {
     } catch (Exception $e) {
     }
 }
+
+die(var_export($cells, true));
+
+
 foreach (isset($cells) && is_array($cells) ? $cells['tbody']['tr'] : [] as $rowIndex => $row) {
     $columnIndex = 'A';
+
     foreach ($row['td'] as $column_index => $cell) {
         if (!is_array($cell)) {
             $elementsData[($rowIndex + 1)][$columnIndex++] = $cell;
@@ -32,6 +37,8 @@ foreach (isset($cells) && is_array($cells) ? $cells['tbody']['tr'] : [] as $rowI
             $elementsData[($rowIndex + 1)][$columnIndex++] = $cell['div'];
         }
     }
+
+    $columnIndex++;
 }
 
 die(var_export($elementsData, true));
