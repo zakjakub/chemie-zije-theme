@@ -24,9 +24,6 @@ if (GSHEET_URL) {
     }
 }
 
-die(var_export($cells['tbody']['tr'], true));
-
-
 foreach (isset($cells) && is_array($cells) ? $cells['tbody']['tr'] : [] as $rowIndex => $row) {
     $columnIndex = 'A';
 
