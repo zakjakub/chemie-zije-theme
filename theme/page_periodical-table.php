@@ -34,7 +34,7 @@ foreach (isset($cells) && is_array($cells) ? $cells['tbody']['tr'] : [] as $rowI
     }
 }
 
-die(var_export($data, true));
+die(var_export($elementsData, true));
 
 $context = Timber::context();
 $context['elements'] = $data;
