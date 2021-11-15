@@ -9,11 +9,13 @@
             {{ site.name }}
         </h1>
         <h2 class="p-5 pt-2 pb-3 {{ isHome ? ' d-none ' : '' }}">
+            {#
             {%- if post.type.labels.name_as_subtitle|default or subtitle -%}
                 <small class="d-block pb-3">
                     {{ subtitle|default(post.type.labels.name_as_subtitle) }}
                 </small>
             {%- endif -%}
+            #}
             {{- post.title -}}
         </h2>
     </div>
