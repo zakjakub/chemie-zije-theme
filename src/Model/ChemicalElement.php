@@ -5,6 +5,8 @@ namespace Zakjakub\ChemieZijeTheme\Model;
 class ChemicalElement
 {
     public int $protonNumber;
+    public int $period;
+    public int $periodicalGroup;
     public string $symbol;
     public string $nameCz;
     public string $nameEn;
@@ -24,6 +26,8 @@ class ChemicalElement
 
     public function __construct(
         int|string $proton_number,
+        int|string $period,
+        int|string $periodicalGroup,
         string $symbol,
         string $nameCz,
         string $nameEn,
@@ -42,6 +46,8 @@ class ChemicalElement
         float|string|null $electronAffinity
     ) {
         $this->protonNumber = $proton_number;
+        $this->period = $period;
+        $this->periodicalGroup = $periodicalGroup;
         $this->symbol = $symbol;
         $this->nameCz = $nameCz;
         $this->nameEn = $nameEn;
@@ -69,6 +75,8 @@ class ChemicalElement
     {
         return new ChemicalElement(
             $elementData[$keys['proton_number']] ?? null,
+            $elementData[$keys['period']] ?? null,
+            $elementData[$keys['periodical_group']] ?? null,
             $elementData[$keys['symbol']] ?? null,
             $elementData[$keys['name_cz']] ?? null,
             $elementData[$keys['name_en']] ?? null,
