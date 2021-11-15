@@ -15,15 +15,9 @@
     {% endfor %}
 
     {% for element in elements %}
-        {% if element.period and element.periodical_group %}
-            {% set col = element.periodical_group + 1 %}
+        {% if element.period and element.periodicalGroup %}
+            {% set col = element.periodicalGroup + 1 %}
             {% set row = element.period + 1 %}
-        {% elseif element.protonNumber >= 58 and element.protonNumber <= 71 %}
-            {% set col = element.protonNumber - 54 %}
-            {% set row = 10 %}
-        {% elseif element.protonNumber >= 90 and element.protonNumber <= 103 %}
-            {% set col = element.protonNumber - 86 %}
-            {% set row = 11 %}
         {% endif %}
         {% if row and col %}
             <div class="element" style="grid-column: {{ col }}; grid-row: {{ row }};">
