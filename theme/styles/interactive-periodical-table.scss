@@ -57,6 +57,7 @@
   .element {
     overflow: hidden;
     background-color: grey;
+    color: inherit;
     clip-path: polygon(
                     0% 0%, /* top left */
                     100% 0%, /* top right */
