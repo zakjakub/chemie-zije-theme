@@ -33,9 +33,6 @@ if (GSHEET_URL) {
             }
             $columnLetter++;
         }
-
-        dd($elementsData);
-        die();
         $keys = array_flip(array_shift($elementsData));
         foreach ($elementsData as $elementData) {
             $elements[] = ChemicalElement::fromRow($elementData, $keys);
@@ -43,8 +40,7 @@ if (GSHEET_URL) {
     } catch (Exception $e) {
     }
 }
-var_dump($elements);
-die();
+dd($elements);
 
 $context = Timber::context();
 $context['elements'] = $elements;
