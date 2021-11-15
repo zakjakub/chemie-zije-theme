@@ -38,6 +38,9 @@ if (GSHEET_URL) {
     } catch (Exception $e) {
     }
 }
+var_dump($elements);
+die();
+
 $context = Timber::context();
 $context['elements'] = $elements;
 $templates = ["custom-templates/periodical-table.html.twig", 'post-types/page-layout.html.twig'];
