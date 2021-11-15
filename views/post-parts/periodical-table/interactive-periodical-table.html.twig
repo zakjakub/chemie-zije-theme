@@ -19,7 +19,7 @@
             {% set col = element.periodical_group + 1 %}
             {% set row = element.period + 1 %}
         {% elseif element.atomic_number >= 58 and element.atomic_number <= 71 %}
-            {% set col = element.atomic_number - 54 %}
+            {% set col = element.proton_number - 54 %}
             {% set row = 10 %}
         {% elseif element.atomic_number >= 90 and element.atomic_number <= 103 %}
             {% set col = element.atomic_number - 86 %}
