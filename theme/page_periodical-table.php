@@ -42,8 +42,6 @@ if (GSHEET_URL) {
     }
 }
 
-dd($elementsData);
-
 $context = Timber::context();
 $context['elements'] = $elements;
 $templates = ["custom-templates/periodical-table.html.twig", 'post-types/page-layout.html.twig'];

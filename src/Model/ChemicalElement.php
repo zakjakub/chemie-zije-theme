@@ -13,6 +13,7 @@ class ChemicalElement
     public string $nameLa;
     public string $relativeAtomicWeight;
     public string $electronConfiguration;
+    public ?string $color = null;
     public ?float $meltingPoint = null;
     public bool $sublimates;
     public ?float $boilingPoint = null;
@@ -34,36 +35,43 @@ class ChemicalElement
         string $nameLa,
         string $relativeAtomicWeight,
         string $electronConfiguration,
-        float|string|null $meltingPoint,
-        bool|string|null $sublimates,
-        float|string|null $boilingPoint,
-        float|string|null $density,
-        string|null $typicalOxidationStates,
-        float|string|null $electronegativity,
-        float|string|null $ionizationEnergy1,
-        float|string|null $ionizationEnergy2,
-        float|string|null $ionizationEnergy3,
-        float|string|null $electronAffinity
+        string|null $color = null,
+        float|string|null $meltingPoint = null,
+        bool|string|null $sublimates = null,
+        float|string|null $boilingPoint = null,
+        float|string|null $density = null,
+        string|null $typicalOxidationStates = null,
+        float|string|null $electronegativity = null,
+        float|string|null $ionizationEnergy1 = null,
+        float|string|null $ionizationEnergy2 = null,
+        float|string|null $ionizationEnergy3 = null,
+        float|string|null $electronAffinity = null
     ) {
-        $this->protonNumber = $proton_number;
-        $this->period = $period;
-        $this->periodicalGroup = $periodicalGroup;
-        $this->symbol = $symbol;
-        $this->nameCz = $nameCz;
-        $this->nameEn = $nameEn;
-        $this->nameLa = $nameLa;
-        $this->relativeAtomicWeight = $relativeAtomicWeight;
-        $this->electronConfiguration = $electronConfiguration;
-        $this->meltingPoint = self::inputToFloat($meltingPoint);
-        $this->sublimates = !empty($sublimates);
-        $this->boilingPoint = self::inputToFloat($boilingPoint);
-        $this->density = self::inputToFloat($density) ? null : (float)$density;
-        $this->typicalOxidationStates = empty($typicalOxidationStates) ? null : $typicalOxidationStates;
-        $this->electronegativity = self::inputToFloat($electronegativity);
-        $this->ionizationEnergy1 = self::inputToFloat($ionizationEnergy1);
-        $this->ionizationEnergy2 = self::inputToFloat($ionizationEnergy2);
-        $this->ionizationEnergy3 = self::inputToFloat($ionizationEnergy3);
-        $this->electronAffinity = self::inputToFloat($electronAffinity);
+        $this->protonNumber = (int)self::cleanString($proton_number);
+        $this->period = (int)self::cleanString($period);
+        $this->periodicalGroup = (int)self::cleanString($periodicalGroup);
+        $this->symbol = self::cleanString($symbol);
+        $this->nameCz = self::cleanString($nameCz);
+        $this->nameEn = self::cleanString($nameEn);
+        $this->nameLa = self::cleanString($nameLa);
+        $this->relativeAtomicWeight = self::cleanString($relativeAtomicWeight);
+        $this->electronConfiguration = self::cleanString($electronConfiguration);
+        $this->color = self::cleanString($color);
+        $this->meltingPoint = self::inputToFloat(self::cleanString($meltingPoint));
+        $this->sublimates = !empty(self::cleanString($sublimates));
+        $this->boilingPoint = self::inputToFloat(self::cleanString($boilingPoint));
+        $this->density = self::inputToFloat(self::cleanString($density));
+        $this->typicalOxidationStates = self::cleanString($typicalOxidationStates);
+        $this->electronegativity = self::inputToFloat(self::cleanString($electronegativity));
+        $this->ionizationEnergy1 = self::inputToFloat(self::cleanString($ionizationEnergy1));
+        $this->ionizationEnergy2 = self::inputToFloat(self::cleanString($ionizationEnergy2));
+        $this->ionizationEnergy3 = self::inputToFloat(self::cleanString($ionizationEnergy3));
+        $this->electronAffinity = self::inputToFloat(self::cleanString($electronAffinity));
+    }
+
+    private static function cleanString(mixed $columnContent = null): string|null
+    {
+        return empty($columnContent = trim($columnContent)) ? null : (string)$columnContent;
     }
 
     private static function inputToFloat(mixed $input): float|null
@@ -83,6 +91,7 @@ class ChemicalElement
             $elementData[$keys['name_la']] ?? null,
             $elementData[$keys['relative_atomic_weight']] ?? null,
             $elementData[$keys['electron_configuration']] ?? null,
+            $elementData[$keys['color']] ?? null,
             $elementData[$keys['melting_point']] ?? null,
             $elementData[$keys['sublimates']] ?? null,
             $elementData[$keys['boiling_point']] ?? null,

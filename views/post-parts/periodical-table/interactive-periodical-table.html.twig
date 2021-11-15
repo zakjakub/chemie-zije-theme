@@ -20,7 +20,8 @@
             {% set row = element.period + 1 %}
         {% endif %}
         {% if row and col %}
-            <div class="element" style="grid-column: {{ col }}; grid-row: {{ row }};">
+            {% set color = element.color|default ? ' color: ' ~ element.color ~ '; ' : '' %}
+            <div class="element" style="grid-column: {{ col }}; grid-row: {{ row }};{{ color }}">
                 <div class="element-content">
                     <span class="atomic-number">
                         {{ element.protonNumber }}
