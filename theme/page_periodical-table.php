@@ -31,7 +31,8 @@ if (GSHEET_URL) {
             }
             $columnLetter++;
         }
-        var_dump($elementsData);
+
+        dd($elementsData);
         die();
         $keys = array_flip(array_shift($elementsData));
         foreach ($elementsData as $elementData) {
