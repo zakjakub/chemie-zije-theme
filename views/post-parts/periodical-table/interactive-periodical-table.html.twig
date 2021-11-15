@@ -7,7 +7,7 @@
         </div>
     {% endfor %}
     {% for rowIndex in 1..10 %}
-        {% if rowIndex != 8 %}
+        {% if rowIndex < 8 %}
             <div class="index index-row" style="grid-row: {{ rowIndex + 1 }}; grid-column: 1; text-align: right;">
                 {{ rowIndex }}
             </div>
