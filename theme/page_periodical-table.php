@@ -27,7 +27,7 @@ if (GSHEET_URL) {
         foreach (isset($cells) && is_array($cells) ? $cells['tbody']['tr'] : [] as $rowIndex => $row) {
             $columnLetter = 'A';
             foreach ($row['td'] as $columnIndex => $cell) {
-                if (!is_array($cell) || $cell['div']) {
+                if (!is_array($cell) || ($cell['div'] ?? false)) {
                     $elementsData[($rowIndex)][$columnIndex++] = !is_array($cell) ? $cell : $cell['div'];
                 }
             }
