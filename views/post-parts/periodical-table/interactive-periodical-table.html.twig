@@ -21,7 +21,7 @@
         {% endif %}
         {% if row and col %}
             {% set color = element.color|default ? ' background-color: ' ~ element.color ~ '; ' : '' %}
-            <div class="element" style="grid-column: {{ col }}; grid-row: {{ row }};{{ color }}">
+            <a class="element" style="grid-column: {{ col }}; grid-row: {{ row }};{{ color }}" href="/prvek/{{ element.nameCz }}">
                 <div class="element-content">
                     <span class="atomic-number">
                         {{ element.protonNumber }}
@@ -37,7 +37,7 @@
                     </span>
                     <span class="d-md-none"></span>
                 </div>
-            </div>
+            </a>
         {% endif %}
     {% endfor %}
 
