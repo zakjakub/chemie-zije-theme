@@ -40,7 +40,6 @@ if (GSHEET_URL) {
     } catch (Exception $e) {
     }
 }
-dd($elements);
 
 $context = Timber::context();
 $context['elements'] = $elements;
