@@ -4,7 +4,7 @@ namespace Zakjakub\ChemieZijeTheme\Model;
 
 class ChemicalElement
 {
-    public int $proton_number;
+    public int $protonNumber;
     public string $symbol;
     public string $nameCz;
     public string $nameEn;
@@ -41,7 +41,7 @@ class ChemicalElement
         float|string|null $ionizationEnergy3,
         float|string|null $electronAffinity
     ) {
-        $this->proton_number = $proton_number;
+        $this->protonNumber = $proton_number;
         $this->symbol = $symbol;
         $this->nameCz = $nameCz;
         $this->nameEn = $nameEn;
