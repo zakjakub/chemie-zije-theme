@@ -31,6 +31,8 @@ if (GSHEET_URL) {
             }
             $columnLetter++;
         }
+        var_dump($elementsData);
+        die();
         $keys = array_flip(array_shift($elementsData));
         foreach ($elementsData as $elementData) {
             $elements[] = ChemicalElement::fromRow($elementData, $keys);
