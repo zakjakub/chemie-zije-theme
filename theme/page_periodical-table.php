@@ -38,7 +38,7 @@ if (GSHEET_URL) {
             $elements[] = ChemicalElement::fromRow($elementData, $keys);
         }
     } catch (Exception $e) {
-        die('ERROR_ELEMENT: ', $e->getMessage());
+        die('ERROR_ELEMENT: ' . $e->getMessage());
     }
 }
 
