@@ -55,7 +55,7 @@
                 {% for company in companies %}
                     <article class="col-12 col-md-6 col-lg-4">
                         <a class="card signpost-card border-0 h-100 text-dark text-decoration-none" href="{{ company.path }}">
-                            {% set image_src = company.logo|default(company.thumbnail.src|default) %}
+                            {% set image_src = get_image(post.meta('_company_logo')).src|default(company.thumbnail.src|default) %}
                             {% if image_src|default %}
                                 <div class="w-100 card-img card-img-top mx-auto mt-4 ratio ratio-16x9 rounded rounded-2"
                                      style="background-image: url({{ image_src }})">
@@ -74,3 +74,7 @@
 
     </article>
 {% endblock article_content %}
+
+{% block article_signpost %}
+{% endblock %}
+
