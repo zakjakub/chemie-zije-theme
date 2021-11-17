@@ -60,6 +60,7 @@ a {
     border-top-right-radius: 1.2em !important;
 
     &.active {
+      font-weight: bold;
       background-color: $white;
       color: $primary;
     }
