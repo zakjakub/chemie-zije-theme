@@ -4,7 +4,9 @@ $rfs-base-value: 0.8rem;
 @import "interactive-periodical-table";
 @import "~swiper/swiper-bundle.min.css";
 
-
+html {
+  overflow-x: hidden;
+}
 
 p {
   text-align: justify;
