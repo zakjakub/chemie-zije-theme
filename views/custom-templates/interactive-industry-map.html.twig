@@ -19,17 +19,19 @@
             </button>
         {% endfor %}
     </nav>
-    <div class="row">
-        <div class="col-12">
-            {{ post.content }}
+    {% if post.content|default %}
+        <div class="row">
+            <div class="col-12">
+                {{ post.content }}
+            </div>
         </div>
-    </div>
-    <article class="row mt-3 mb-5 g-5 justify-content-md-center tab-content" id="nav-tabContent">
+    {% endif %}
+    <article class="row mt-1 mb-3 g-5 justify-content-md-center tab-content" id="nav-tabContent">
         <section class="col-12 tab-pane fade show active" id="nav-0" role="tabpanel" aria-labelledby="nav-tab-0">
-            <p>
+            <p style="z-index: 10">
                 V této mapě jsou uvedeny jednotlivé chemické podniky. Po kliknutí na daný bod můžete získat stručné informace o podniku a o exkurzích, které podnik poskytuje.
             </p>
-            <p>
+            <p style="z-index: 10">
                 Chcete-li získat materiály pro dané exkurze, přejděte na kartu – podklady pro exkurze.
             </p>
             <div class="ratio ratio-1x1">
@@ -37,7 +39,7 @@
                 <iframe src="https://storymaps.arcgis.com/stories/c3a96e21120e4b8484660bafdde7660d"
                         id="interactive-map"
                         allowfullscreen
-                        style="border: 0 none; width: 100%; overflow: hidden; margin-top: -5em; margin-bottom: -5em; z-index: -100"
+                        style="border: 0 none; width: 100%; overflow: hidden; margin-top: -5em; margin-bottom: -2em;"
                         scrolling="no"
                         allow="geolocation">
                     Interaktivní mapa chemických podniků se načítá...
