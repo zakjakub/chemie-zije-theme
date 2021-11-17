@@ -11,7 +11,8 @@
             <script>
               document.querySelector('#interactive-map').addEventListener("load", ev => {
                 const new_style_element = document.createElement("style");
-                new_style_element.textContent = ".story > *:first-child, .story > *:last-child {display: none !important;}"
+                new_style_element.textContent = " .story > *:first-child, .story > *:last-child {display: none !important;} "
+                new_style_element.textContent += " .viewer-main {min-height: auto !important;} "
                 ev.target.contentDocument.head.appendChild(new_style_element);
               });
             </script>
