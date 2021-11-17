@@ -58,9 +58,28 @@
 
 
 .periodical-table-element {
-    overflow: hidden;
-    background-color: grey;
-    color: inherit;
+  overflow: hidden;
+  background-color: grey;
+  color: inherit;
+  text-align: center;
+  clip-path: polygon(
+                  0% 0%, /* top left */
+                  100% 0%, /* top right */
+                  100% 100%, /* bottom right */
+                  1em 100%, /* bottom left */
+                  0 calc(100% - 1em) /* bottom left */
+  );
+
+  .periodical-table-element-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - .8em);
+    height: calc(100% - .8em);
+    margin: .4em;
+    padding: 0 .2em .2em;
+    background-color: rgba(255, 255, 255, 0.6);
     clip-path: polygon(
                     0% 0%, /* top left */
                     100% 0%, /* top right */
@@ -69,58 +88,40 @@
                     0 calc(100% - 1em) /* bottom left */
     );
 
-    .periodical-table-element-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      width: calc(100% - .8em);
-      height: calc(100% - .8em);
-      margin: .4em;
-      padding: 0 .2em .2em;
-      background-color: rgba(255, 255, 255, 0.6);
-      clip-path: polygon(
-                      0% 0%, /* top left */
-                      100% 0%, /* top right */
-                      100% 100%, /* bottom right */
-                      1em 100%, /* bottom left */
-                      0 calc(100% - 1em) /* bottom left */
-      );
-
-      > * {
-        display: block;
-        width: 100%;
-        max-width: 100%;
-      }
-
-      .atomic-number {
-        font-size: .8em;
-        font-weight: bold;
-        text-align: left;
-      }
-
-      .atomic-weight {
-        font-size: .6em;
-      }
-
-      .symbol {
-        font-size: 1.1em;
-        font-weight: bold;
-      }
-
-      .name {
-        font-size: .65em;
-        font-weight: bold;
-        width: auto;
-        max-width: calc(100% + 1.6em);
-      }
+    > * {
+      display: block;
+      width: 100%;
+      max-width: 100%;
     }
 
-    &:hover {
-      .periodical-table-element-content {
-        background-color: rgba(255, 255, 255, 0.7);
-      }
+    .atomic-number {
+      font-size: .8em;
+      font-weight: bold;
+      text-align: left;
     }
 
+    .atomic-weight {
+      font-size: .6em;
+    }
+
+    .symbol {
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+
+    .name {
+      font-size: .65em;
+      font-weight: bold;
+      width: auto;
+      max-width: calc(100% + 1.6em);
+    }
   }
+
+  &:hover {
+    .periodical-table-element-content {
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+  }
+
+}
 
