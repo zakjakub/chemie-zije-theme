@@ -13,7 +13,13 @@
  */
 $context = Timber::context();
 $postSlug = $context['post']->slug;
-$templates = ["page-customs/page-$postSlug.html.twig", 'post-types/page.html.twig'];
+$templates = [
+    "page-customs/page-$postSlug.html.twig",
+    'page-customs/page-'.$post->ID.'.html.twig',
+    'page-customs/page-'.$post->post_type.'.html.twig',
+    'page-customs/page-'.$post->slug.'.html.twig',
+    'post-types/page.html.twig',
+];
 if (is_home() || is_front_page()) {
     $context['isHome'] = true;
     $context['posts'] = Timber::get_posts(['type' => 'page']);
