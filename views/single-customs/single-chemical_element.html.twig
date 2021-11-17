@@ -5,7 +5,7 @@
 {% block article_header %}
     <header class="row page-banner bg-primary mb-3 border border-primary border-2">
 
-        <div class="col-2 col-lg-2 bg-white px-2 py-1" style="font-size: .9em;">
+        <div class="col-2 col-lg-1 bg-white px-2 py-1" style="font-size: .9em;">
             {% set color = element.color|default ? ' background-color: ' ~ element.color|default('grey') ~ '; ' : '' %}
             <div class="periodical-table-element" style="{{ color }}">
                 <div class="periodical-table-element-content">
@@ -31,7 +31,7 @@
             <h2 class="p-3 text-capitalize">{{- post.title ?? 'Stránka nenalezena' -}}</h2>
         </div>
 
-        <div class="col-2 col-lg-2 bg-white">
+        <div class="col-2 col-lg-1 bg-white">
             <img alt="{{- post.title ?? 'Obrázek prvku' -}}" class="img-fluid m-auto" src="{{ imageSrc }}">
         </div>
 
