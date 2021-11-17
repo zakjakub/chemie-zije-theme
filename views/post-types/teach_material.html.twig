@@ -7,12 +7,14 @@
         <div class="row my-2">
             <div class="col-12 col-md-2 d-flex flex-column align-items-center justify-content-center">
                 {% for symbol in post.difficultySymbols %}
-                    <img src="{{ get_image(symbol.symbol).src }}" class="d-block img-fluid" alt="Náročnost experimentu">
+                    <div class="p-3">
+                        <img src="{{ get_image(symbol.symbol).src }}" class="img-fluid" alt="Náročnost experimentu">
+                    </div>
                 {% endfor %}
             </div>
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-md-8 ratio ratio-16x9">
                 <!--suppress HtmlDeprecatedAttribute -->
-                <iframe class="w-100 ratio ratio-16x9"
+                <iframe class="w-100 h-100"
                         src="https://www.youtube.com/embed/{{ post.meta('_youtube_video_url') }}"
                         title="{{ post.title }}"
                         frameborder="0"
@@ -22,7 +24,7 @@
             </div>
             <div class="col-12 col-md-2">
                 {% for symbol in post.safetySymbols %}
-                    <div>
+                    <div class="p-3">
                         <img src="{{ get_image(symbol.symbol).src }}" class="img-fluid" alt="Bezpečnostní pokyny">
                     </div>
                 {% endfor %}
