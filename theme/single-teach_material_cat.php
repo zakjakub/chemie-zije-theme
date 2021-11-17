@@ -9,7 +9,7 @@ $context['subtypes'] = $context['post']->terms('teach_mat_sub_type');
 usort($context['subtypes'], static fn(Term $a, Term $b) => $a->description() <=> $b->description());
 $firstSubType = $context['subtypes'][0];
 assert($firstSubType instanceof Term);
-$context['subtype'] = get_query_var('oblast', $firstSubType->name) ?? $firstSubType->name;
+$context['subtype'] = get_query_var('oblast', $firstSubType->path()) ?? $firstSubType->path();
 $context['materials'] = Timber::get_posts(
     new WP_Query([
         'post_type' => 'teach_material',
