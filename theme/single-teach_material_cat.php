@@ -8,8 +8,10 @@ $terms = $context['post']->terms('teach_mat_cat_type');
 $context['subtypes'] = $context['post']->terms('teach_mat_sub_type');
 usort($context['subtypes'], static fn(Term $a, Term $b) => $a->description() <=> $b->description());
 $parts = explode('/', $context['subtypes'][0]?->path() ?? '');
-die(var_dump($parts));
-$firstSubTypeSlug = $parts[array_key_last($parts)] ?? $parts[array_key_last($parts) - 1] ?? 'ostatni';
+$firstSubTypeSlug = $parts[array_key_last($parts)] ?? null;
+if (empty($firstSubTypeSlug)) {
+    $firstSubTypeSlug = $parts[array_key_last($parts) - 1] ?? 'ostatni';
+}
 $context['subtype'] = get_query_var('oblast', $firstSubTypeSlug) ?? $firstSubTypeSlug;
 $context['materials'] = Timber::get_posts(
     new WP_Query([
