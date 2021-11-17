@@ -3,7 +3,7 @@
 {# Page with interactive industry map. #}
 
 {% block article_content %}
-    <nav class="nav row p-0 rounded-tabs" id="nav-tab">
+    <nav class="nav row rounded-tabs" id="nav-tab">
         {% set tabs = ['Mapa', 'Podklady pro exkurze'] %}
         {% for index, tab in tabs %}
             {% set active = index < 1 ? 'active' : '' %}
@@ -25,7 +25,7 @@
         </div>
     </div>
     <article class="row mt-3 mb-5 g-5 justify-content-md-center tab-content" id="nav-tabContent">
-        <section class="col-12 m-0 p-0 tab-pane fade show active" id="nav-0" role="tabpanel" aria-labelledby="nav-tab-0">
+        <section class="col-12 tab-pane fade show active" id="nav-0" role="tabpanel" aria-labelledby="nav-tab-0">
             <p>
                 V této mapě jsou uvedeny jednotlivé chemické podniky. Po kliknutí na daný bod můžete získat stručné informace o podniku a o exkurzích, které podnik poskytuje.
             </p>
@@ -44,7 +44,7 @@
                 </iframe>
             </div>
         </section>
-        <section class="col-12 m-0 p-0 tab-pane fade" id="nav-1" role="tabpanel" aria-labelledby="nav-tab-1">
+        <section class="col-12 tab-pane fade" id="nav-1" role="tabpanel" aria-labelledby="nav-tab-1">
             <p>
                 Chcete získat podklady pro jednotlivé exkurze? Po kliknutí na daný podnik se Vám otevře stránka, na které můžete získat jednotlivé dokumenty a zjistit
                 zajímavé informace o daných podnicích.
