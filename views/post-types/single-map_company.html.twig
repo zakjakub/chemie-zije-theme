@@ -2,7 +2,7 @@
 
 {% block article_content %}
     <section class="row my-3">
-        <div class="col border border-5 border-dark p-3 pb-0 m-2 text-justify">
+        <div class="col pb-0 text-justify">
             <p>{{ post.post_excerpt|default }}</p>
         </div>
         {% if get_image(post.meta('_company_logo')).src|default %}
