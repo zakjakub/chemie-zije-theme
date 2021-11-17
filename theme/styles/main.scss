@@ -4,6 +4,29 @@ $rfs-base-value: 0.8rem;
 @import "interactive-periodical-table";
 @import "~swiper/swiper-bundle.min.css";
 
+
+
+p {
+  text-align: justify;
+}
+
+
+a {
+  text-decoration: none;
+
+  &.hover-bold:hover {
+    font-weight: bold;
+  }
+}
+
+.hover-bold {
+  a {
+    &:hover {
+      font-weight: bold;
+    }
+  }
+}
+
 .footer-eu-msmt-image {
   max-height: 6em;
 }
@@ -40,12 +63,6 @@ $rfs-base-value: 0.8rem;
       background-color: $white;
       color: $primary;
     }
-  }
-}
-
-#main-content {
-  p {
-    text-align: justify;
   }
 }
 
@@ -98,22 +115,6 @@ $rfs-base-value: 0.8rem;
           color: $secondary;
         }
       }
-    }
-  }
-}
-
-a {
-  text-decoration: none;
-
-  &.hover-bold:hover {
-    font-weight: bold;
-  }
-}
-
-.hover-bold {
-  a {
-    &:hover {
-      font-weight: bold;
     }
   }
 }
