@@ -22,7 +22,9 @@
             </div>
             <div class="col-12 col-md-2">
                 {% for symbol in post.safetySymbols %}
-                    <img src="{{ get_image(symbol.symbol).src }}" class="d-block img-fluid" alt="Bezpečnostní pokyny">
+                    <div>
+                        <img src="{{ get_image(symbol.symbol).src }}" class="img-fluid" alt="Bezpečnostní pokyny">
+                    </div>
                 {% endfor %}
             </div>
         </div>
