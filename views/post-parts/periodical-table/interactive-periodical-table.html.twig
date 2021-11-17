@@ -21,8 +21,8 @@
         {% endif %}
         {% if row and col %}
             {% set color = element.color|default ? ' background-color: ' ~ element.color ~ '; ' : '' %}
-            <a class="element" style="grid-column: {{ col }}; grid-row: {{ row }};{{ color }}" href="/prvek/{{ element.nameCz|sanitize }}">
-                <div class="element-content">
+            <a class="periodical-table-element" style="grid-column: {{ col }}; grid-row: {{ row }};{{ color }}" href="/prvek/{{ element.nameCz|sanitize }}">
+                <div class="periodical-table-element-content">
                     <span class="atomic-number">
                         {{ element.protonNumber }}
                     </span>

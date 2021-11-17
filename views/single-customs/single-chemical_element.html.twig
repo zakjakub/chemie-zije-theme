@@ -6,6 +6,24 @@
     <header class="row page-banner bg-primary text-white mb-3 border border-primary border-2">
 
         <div class="col-1 bg-white">
+            {% set color = element.color|default ? ' background-color: ' ~ element.color|default('grey') ~ '; ' : '' %}
+            <div class="periodical-table-element" style="{{ color }}">
+                <div class="periodical-table-element-content">
+                    <span class="atomic-number">
+                        {{ element.protonNumber }}
+                    </span>
+                    <span class="symbol">
+                        {{ element.symbol }}
+                    </span>
+                    <span class="name d-none d-md-block">
+                        {{ element.nameCz }}
+                    </span>
+                    <span class="atomic-weight d-none d-md-block">
+                        {{ element.relativeAtomicWeight }}
+                    </span>
+                    <span class="d-md-none"></span>
+                </div>
+            </div>
         </div>
 
         <div class="col-10 d-flex flex-column justify-content-center text-center align-items-center">
