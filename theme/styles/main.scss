@@ -28,12 +28,12 @@ a {
 }
 
 .footer-eu-msmt-image, .footer-eu-eu-msmt-widget-image {
-  max-height: 6em;
+  max-height: 10em;
   @media all and (max-width: 900px) {
-    max-height: 5em;
+    max-height: 8em;
   }
   @media all and (max-width: 700px) {
-    max-height: 4em;
+    max-height: 6em;
   }
 }
 
