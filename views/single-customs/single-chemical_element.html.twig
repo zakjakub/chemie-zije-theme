@@ -3,7 +3,7 @@
 {% set imageSrc = image.src|default %}
 
 {% block article_header %}
-    <header class="row page-banner bg-primary text-white mb-3 border border-primary border-2">
+    <header class="row page-banner bg-primary mb-3 border border-primary border-2">
 
         <div class="col-1 bg-white">
             {% set color = element.color|default ? ' background-color: ' ~ element.color|default('grey') ~ '; ' : '' %}
@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        <div class="col-10 d-flex flex-column justify-content-center text-center align-items-center">
+        <div class="col-10 d-flex flex-column justify-content-center text-center align-items-center text-white">
             <h1 class="d-none">{{ site.name }}</h1>
             <h2 class="p-3 text-capitalize">{{- post.title ?? 'Stránka nenalezena' -}}</h2>
         </div>
