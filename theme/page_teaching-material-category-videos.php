@@ -10,7 +10,7 @@ use Timber\Term;
 $context = Timber::context();
 $context['subtype'] = get_query_var('oblast', 'ostatni');
 $templates = [
-    'custom-templates/teach_material_cat_photos.html.twig',
+    'custom-templates/teach_material_cat_videos.html.twig',
     'post-types/teach_material_cat.html.twig',
     'post-types/page.html.twig',
 ];
