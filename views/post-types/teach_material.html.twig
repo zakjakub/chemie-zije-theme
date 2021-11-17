@@ -88,7 +88,7 @@
                         role="tab"
                         aria-controls="nav-{{ index }}"
                         aria-selected="{{ iter < 1 ? 'true' : 'false' }}">
-                    {{ tab.meta('_title') }}
+                    {{ tab.tab_title }}
                 </button>
                 {% set iter = iter + 1 %}
             {% endfor %}
@@ -101,7 +101,7 @@
                          id="nav-{{ index }}"
                          role="tabpanel"
                          aria-labelledby="nav-tab-{{ iter }}">
-                        {{ tab.meta('_content') }}
+                        {{ tab.tab_content }}
                     </div>
                     {% set iter = iter + 1 %}
                 {% endfor %}
