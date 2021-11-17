@@ -3,7 +3,7 @@
 {# Page with interactive industry map. #}
 
 {% block article_content %}
-    <nav class="nav row rounded-tabs" id="nav-tab">
+    <nav class="nav row mt-3 rounded-tabs" id="nav-tab">
         {% set tabs = ['Mapa', 'Podklady pro exkurze'] %}
         {% for index, tab in tabs %}
             {% set active = index < 1 ? 'active' : '' %}
