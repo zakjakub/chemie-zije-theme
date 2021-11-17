@@ -7,7 +7,7 @@
         <div class="row my-2">
             <div class="col-12 col-md-2 d-flex flex-column align-items-center justify-content-center">
                 {% for symbol in post.difficultySymbols %}
-                    <img src="{{ get_image(symbol.symbol).src }}" alt="Náročnost experimentu">
+                    <img src="{{ get_image(symbol.symbol).src }}" class="d-block img-fluid" alt="Náročnost experimentu">
                 {% endfor %}
             </div>
             <div class="col-12 col-md-8">
@@ -22,7 +22,7 @@
             </div>
             <div class="col-12 col-md-2">
                 {% for symbol in post.safetySymbols %}
-                    <img src="{{ get_image(symbol.symbol).src }}" alt="Bezpečnostní pokyny">
+                    <img src="{{ get_image(symbol.symbol).src }}" class="d-block img-fluid" alt="Bezpečnostní pokyny">
                 {% endfor %}
             </div>
         </div>
