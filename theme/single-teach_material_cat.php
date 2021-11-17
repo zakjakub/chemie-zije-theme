@@ -7,8 +7,9 @@ $templates = ['post-types/teach_material_cat.html.twig', 'post-types/page.html.t
 $terms = $context['post']->terms('teach_mat_cat_type');
 $context['subtypes'] = $context['post']->terms('teach_mat_sub_type');
 usort($context['subtypes'], static fn(Term $a, Term $b) => $a->description() <=> $b->description());
-die(var_export(get_query_var('oblast', $context['subtypes'][0]), true));
-$context['subtype'] = get_query_var('oblast', $context['subtypes'][0]->slug());
+$firstSubType = $context['subtypes'][0];
+assert($firstSubType instanceof Term);
+$context['subtype'] = get_query_var('oblast', $firstSubType->__toString());
 $context['materials'] = Timber::get_posts(
     new WP_Query([
         'post_type' => 'teach_material',
