@@ -211,7 +211,6 @@ class ChemieZijeTheme extends Site
     {
         $twig->addExtension(new StringLoaderExtension());
 
-        // $twig->addFilter(new TwigFilter('myFunction', array($this, 'myFunction')));
         return $twig;
     }
 }
