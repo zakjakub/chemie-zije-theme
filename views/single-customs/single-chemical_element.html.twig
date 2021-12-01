@@ -2,41 +2,41 @@
 
 {% set imageSrc = image.src|default %}
 
-{% block article_header %}
-    <header class="row page-banner bg-primary mb-3 border border-primary border-2">
+{#{% block article_header %}#}
+{#    <header class="row page-banner bg-primary mb-3 border border-primary border-2">#}
 
-        <div class="col-2 col-lg-1 bg-white px-3 py-1" style="font-size: .9em;">
-            {% set color = element.color|default ? ' background-color: ' ~ element.color|default('grey') ~ '; ' : '' %}
-            <div class="periodical-table-element" style="{{ color }}">
-                <div class="periodical-table-element-content">
-                    <span class="atomic-number">
-                        {{ element.protonNumber }}
-                    </span>
-                    <span class="symbol">
-                        {{ element.symbol }}
-                    </span>
-                    <span class="name d-none d-md-block">
-                        {{ element.nameCz }}
-                    </span>
-                    <span class="atomic-weight d-none d-md-block">
-                        {{ element.relativeAtomicWeight }}
-                    </span>
-                    <span class="d-md-none"></span>
-                </div>
-            </div>
-        </div>
+{#        <div class="col-2 col-lg-1 bg-white px-3 py-1" style="font-size: .9em;">#}
+{#            {% set color = element.color|default ? ' background-color: ' ~ element.color|default('grey') ~ '; ' : '' %}#}
+{#            <div class="periodical-table-element" style="{{ color }}">#}
+{#                <div class="periodical-table-element-content">#}
+{#                    <span class="atomic-number">#}
+{#                        {{ element.protonNumber }}#}
+{#                    </span>#}
+{#                    <span class="symbol">#}
+{#                        {{ element.symbol }}#}
+{#                    </span>#}
+{#                    <span class="name d-none d-md-block">#}
+{#                        {{ element.nameCz }}#}
+{#                    </span>#}
+{#                    <span class="atomic-weight d-none d-md-block">#}
+{#                        {{ element.relativeAtomicWeight }}#}
+{#                    </span>#}
+{#                    <span class="d-md-none"></span>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
 
-        <div class="col-8 col-lg-10 d-flex flex-column justify-content-center text-center align-items-center text-white">
-            <h1 class="d-none">{{ site.name }}</h1>
-            <h2 class="p-3 text-capitalize">{{- post.title ?? 'Stránka nenalezena' -}}</h2>
-        </div>
+{#        <div class="col-8 col-lg-10 d-flex flex-column justify-content-center text-center align-items-center text-white">#}
+{#            <h1 class="d-none">{{ site.name }}</h1>#}
+{#            <h2 class="p-3 text-capitalize">{{- post.title ?? 'Stránka nenalezena' -}}</h2>#}
+{#        </div>#}
 
-        <div class="col-2 col-lg-1 bg-white">
-            <img alt="{{- post.title ?? 'Obrázek prvku' -}}" class="img-fluid m-auto" src="{{ imageSrc }}">
-        </div>
+{#        <div class="col-2 col-lg-1 bg-white">#}
+{#            <img alt="{{- post.title ?? 'Obrázek prvku' -}}" class="img-fluid m-auto" src="{{ imageSrc }}">#}
+{#        </div>#}
 
-    </header>
-{% endblock %}
+{#    </header>#}
+{#{% endblock %}#}
 
 {% block article_signpost %}
 {% endblock %}
@@ -53,9 +53,10 @@
     {% endif %}
 
     {% if post.children|length > 0 %}
+        {% set subPages = post.children|sort((a, b) => a.priority <=> b.priority) %}
         <nav class="nav row p-0 rounded-tabs" id="nav-tab">
             {% set iter = 0 %}
-            {% for index, tab in post.children %}
+            {% for index, tab in subPages %}
                 {% set active = iter < 1 ? 'active' : '' %}
                 <button class="rounded-tab col m-0 mt-3 mx-1 px-5 px-xl-4 py-2 border border-2 border-primary {{ active }}"
                         id="nav-tab-{{ index }}"
@@ -73,7 +74,7 @@
         <section class="row my-5">
             <div class="tab-content col-12" id="nav-tabContent">
                 {% set iter = 0 %}
-                {% for index, tab in post.children %}
+                {% for index, tab in subPages %}
                     <div class="tab-pane fade {{ iter < 1 ? ' show active' : '' }}"
                          id="nav-{{ index }}"
                          role="tabpanel"

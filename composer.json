@@ -22,9 +22,7 @@
     "php": ">=8.0",
     "timber/timber": "^2.x-dev",
     "wpackio/enqueue": "^3.4.0",
-    "hellonico/timber-dump-extension": "dev-master",
-    "ext-curl": "*",
-    "ext-simplexml": "*"
+    "hellonico/timber-dump-extension": "dev-master"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
