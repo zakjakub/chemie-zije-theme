@@ -14,21 +14,21 @@
     font-size: 1.1em;
   }
 
-  @media (max-width: 1400px) {
+  @media (max-width: 1700px) {
     font-size: 0.85em;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1400px) {
     font-size: 0.75em;
   }
 
-  @media (max-width: 760px) {
-    font-size: 0.65em;
+  @media (max-width: 1000px) {
+    font-size: 0.6em;
     grid-template-rows: 1fr repeat(7, 2fr) 1fr repeat(2, 2fr);
   }
 
-  @media (max-width: 600px) {
-    font-size: 0.55em;
+  @media (max-width: 800px) {
+    font-size: 0.5em;
   }
 
   * {
