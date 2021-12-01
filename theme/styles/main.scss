@@ -44,13 +44,11 @@ a {
 }
 
 .page-banner {
-  .title-box {
-    h1 {
-      font-size: 4em;
+  h1 {
+    font-size: 4em;
 
-      &.single-heading {
-        font-size: 6em;
-      }
+    &.single-heading {
+      font-size: 6em;
     }
   }
 }
