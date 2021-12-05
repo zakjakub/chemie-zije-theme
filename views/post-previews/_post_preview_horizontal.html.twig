@@ -10,7 +10,7 @@
             </h3>
         </a>
         <div style="text-align: justify;">
-            {{ post.excerpt }}
+            {{ post.excerpt{ words: 200, read_more: "[více&nbsp;informací]" }) } }}
         </div>
         <nav class="mt-1">
             [<a href="{{ post.link }}" title="{{ post.title }}">více informací</a>]
