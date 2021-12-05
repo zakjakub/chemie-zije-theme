@@ -16,6 +16,4 @@ $context = Timber::context();
 $context['title'] = 'Hledání '.get_search_query();
 $context['posts'] = new PostQuery(new WP_Query(get_search_query()));
 
-dd($context['posts']);
-
 Timber::render($templates, $context);
