@@ -11,24 +11,24 @@
   text-align: center;
 
   &.big {
-    font-size: 1.1em;
+    font-size: 1.05em;
   }
 
   @media (max-width: 1700px) {
-    font-size: 0.85em;
+    font-size: 0.82em;
   }
 
   @media (max-width: 1400px) {
-    font-size: 0.75em;
+    font-size: 0.72em;
   }
 
   @media (max-width: 1000px) {
-    font-size: 0.6em;
+    font-size: 0.58em;
     grid-template-rows: 1fr repeat(7, 2fr) 1fr repeat(2, 2fr);
   }
 
   @media (max-width: 800px) {
-    font-size: 0.5em;
+    font-size: 0.48em;
   }
 
   * {
