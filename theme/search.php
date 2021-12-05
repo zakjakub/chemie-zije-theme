@@ -14,7 +14,6 @@ use Timber\PostQuery;
 $templates = ['post-types/search.html.twig', 'post-types/archive.html.twig', 'post-types/page.html.twig'];
 $context = Timber::context();
 $context['title'] = 'Vyhledávání "'.get_search_query().'"';
-/** @noinspection PhpParamsInspection */
-$context['posts'] = new Timber\PostQuery();
+$context['posts'] = new Timber\PostQuery(null);
 
 Timber::render($templates, $context);
