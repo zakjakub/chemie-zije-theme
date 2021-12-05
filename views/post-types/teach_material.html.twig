@@ -78,7 +78,7 @@
         </div>
     {% endif %}
 
-    {% include 'navigations/sub-tabs/sub-content-tabs.html.twig' {tabs: post.tabs} %}
+    {% include 'navigations/sub-tabs/sub-content-tabs.html.twig' with {tabs: post.tabs} %}
 
 {% endblock article_content %}
 
