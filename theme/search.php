@@ -13,6 +13,6 @@ use Timber\PostQuery;
 
 $templates = ['post-types/search.html.twig', 'post-types/archive.html.twig', 'post-types/page.html.twig'];
 $context = Timber::context();
-$context['title'] = 'Search results for '.get_search_query();
+$context['title'] = 'Hledání '.get_search_query();
 $context['posts'] = new PostQuery(new WP_Query());
 Timber::render($templates, $context);
