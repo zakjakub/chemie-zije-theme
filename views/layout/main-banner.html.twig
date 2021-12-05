@@ -18,7 +18,7 @@
                 </small>
             {%- endif -%}
             #}
-            {{- post.title ?? 'Stránka nenalezena' -}}
+            {{- title|default(post.title) ?? 'Stránka nenalezena' -}}
         </h2>
     </div>
 </header>
