@@ -4,7 +4,7 @@
     <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
         {% block article_header %}
             {% include 'layout/main-banner.html.twig'
-                with {image: post ? post.thumbnail : null, title: title|default(post ? post.title : 'Stránka nenalezena')} %}
+                with {image: post ? post.thumbnail : null, title: title|default(post.title|default('Stránka nenalezena'))} %}
         {% endblock article_header %}
         {% block article_content %}
             {% if (post.content|default and post.content|length > 0) or (content|default and content|length > 0) %}
