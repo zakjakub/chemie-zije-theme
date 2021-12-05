@@ -16,5 +16,5 @@ if (!isset($timberContext)) {
     throw new RuntimeException('Timber context not set in footer.');
 }
 $timberContext['content'] = ob_get_clean();
-$templates = array('page-customs/page-plugin.html.twig');
+$templates = ['page-customs/page-plugin.html.twig'];
 Timber::render($templates, $timberContext);

@@ -14,39 +14,6 @@
         </section>
     {% endif %}
 
-    {% set subPosts = post.children('industry_field') %}
-    {% if subPosts|length > 0 %}
-        {% set iter = 0 %}
-        <nav class="nav row p-0 rounded-tabs" id="nav-tab">
-            {% for index, tab in subPosts %}
-                {% set active = iter < 1 ? 'active' : '' %}
-                <button class="rounded-tab col m-0 mt-3 mx-1 px-5 px-xl-4 py-2 border border-2 border-primary {{ active }}"
-                        id="nav-tab-{{ index }}"
-                        data-bs-toggle="tab"
-                        data-bs-target="#nav-{{ index }}"
-                        type="button"
-                        role="tab"
-                        aria-controls="nav-{{ index }}"
-                        aria-selected="{{ iter < 1 ? 'true' : 'false' }}">
-                    {{ tab.title }}
-                </button>
-                {% set iter = iter + 1 %}
-            {% endfor %}
-        </nav>
-        <section class="row my-5">
-            <div class="tab-content col-12" id="nav-tabContent">
-                {% set iter = 0 %}
-                {% for index, tab in subPosts %}
-                    <div class="tab-pane fade {{ iter < 1 ? ' show active' : '' }}"
-                         id="nav-{{ index }}"
-                         role="tabpanel"
-                         aria-labelledby="nav-tab-{{ index }}">
-                        {{ tab.content }}
-                    </div>
-                    {% set iter = iter + 1 %}
-                {% endfor %}
-            </div>
-        </section>
-    {% endif %}
+    {% include 'navigations/sub-tabs/sub-content-tabs.html.twig' with {tabs: post.children('industry_field')} %}
 
 {% endblock %}

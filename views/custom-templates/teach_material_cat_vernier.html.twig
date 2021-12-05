@@ -12,12 +12,12 @@
     {% include 'navigations/sub-tabs/sub-tabs.html.twig' %}
 
     {% for material in materials %}
-        {% include 'post-previews/_video_preview_horizontal.html.twig' %}
+        {% include 'post-previews/_vernier_preview_horizontal.html.twig' %}
     {% endfor %}
     {% if materials|length < 1 %}
         <section class="row my-5">
             <div class="col-12">
-                <p><strong>V této kategorii bohužel zatím nejsou žádná videa.</strong></p>
+                <p><strong>V této kategorii bohužel zatím nejsou žádné materiály.</strong></p>
             </div>
         </section>
     {% endif %}

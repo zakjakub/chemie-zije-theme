@@ -33,7 +33,7 @@ if (!class_exists('Timber')) {
 
     return;
 }
-Timber::$dirname = array('../views');
+Timber::$dirname = ['../views'];
 //
 // Initialize theme:
 new ChemieZijeTheme();

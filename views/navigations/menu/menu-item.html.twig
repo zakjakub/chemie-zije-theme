@@ -2,5 +2,5 @@
     <a target="{{ item.target }}" href="{{ item.link }}" itemprop="url" class="px-4 py-2">
         <span itemprop="name">{{ item.title }}</span>
     </a>
-    {% include "post-parts/layout/menu.html.twig" with {'items': item.children, 'fontSize': '0.9em'} %}
+    {% include "navigations/menu/menu.html.twig" with {'items': item.children, 'fontSize': '0.9em'} %}
 </li>

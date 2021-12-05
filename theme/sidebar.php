@@ -6,4 +6,4 @@
  * @package     WordPress
  * @subpackage  Timber
  */
-Timber::render(array('post-parts/sidebar.html.twig'), $data ?? null);
+Timber::render(['post-parts/sidebar.html.twig'], $data ?? null);

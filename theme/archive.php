@@ -16,7 +16,7 @@
 
 use Timber\PostQuery;
 
-$templates = array('post-types/archive.html.twig', 'post-types/index.html.twig');
+$templates = ['post-types/archive.html.twig', 'post-types/index.html.twig'];
 $context = Timber::context();
 $context['title'] = __('Archive');
 if (is_day()) {

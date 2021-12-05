@@ -10,7 +10,7 @@
 }
 
 .alignright {
-  float:right;
+  float: right;
   margin: 5px 0 20px 20px;
 }
 
@@ -31,23 +31,23 @@ a {
       float: right;
       margin: 5px 0 20px 20px;
     }
-  
+
     &.alignnone {
       margin: 5px 20px 20px 0;
     }
-  
+
     &.alignleft {
       float: left;
       margin: 5px 20px 20px 0;
     }
-  
+
     &.aligncenter {
       display: block;
       margin-left: auto;
       margin-right: auto
     }
   }
-  
+
 }
 
 .wp-caption {
@@ -84,5 +84,5 @@ a {
     margin: 0;
     padding: 0 4px 5px;
   }
-  
+
 }

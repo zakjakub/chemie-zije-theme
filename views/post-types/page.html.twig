@@ -1,9 +1,9 @@
-{% extends "layouts/page-layout.html.twig" %}
+{% extends "page-layout.html.twig" %}
 
 {% block page_content %}
     <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
         {% block article_header %}
-            {% include 'post-parts/layout/main-banner-row.html.twig'
+            {% include 'layout/main-banner.html.twig'
                 with {image: post ? post.thumbnail : null, title: post ? post.title : 'Stránka nenalezena'} %}
         {% endblock article_header %}
         {% block article_content %}
@@ -17,8 +17,8 @@
         {% endblock article_content %}
         {% block article_signpost %}
             {% set subPosts = posts|default and posts|length > 0 ? posts : post.children %}
-            {% include 'post-parts/layout/signpost.html.twig' with {posts: subPosts} %}
-            {% include 'post-parts/layout/pagination-row.html.twig'
+            {% include 'navigations/signpost/signpost.html.twig' with {posts: subPosts} %}
+            {% include 'layout/pagination-row.html.twig'
                 with { pagination: subPosts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
         {% endblock article_signpost %}
     </article>

@@ -1,0 +1,27 @@
+<article class="row my-5 py-3 bg-dark bg-opacity-10">
+    <div class="col-12 col-md-8 col-lg-7 d-flex align-items-start flex-column">
+        <a href="{{ material.link }}" class="text-dark text-decoration-none">
+            <h3>{{ material.title }}</h3>
+        </a>
+        <div style="text-align: justify;">
+            {{ material.post_excerpt }}
+        </div>
+    </div>
+    <div class="col-12 col-md-2 col-lg-3 d-flex flex-column justify-content-center order-lg-first">
+        {% set image_src = material.thumbnail.src|default(get_image(material.meta('_menu_image')).src|default) %}
+        {% if image_src|default and image_src|length > 0 %}
+            <a href="{{ material.link }}"
+               title="{{ material.title }}"
+               class="ratio ratio-16x9 d-block w-100 p-2"
+               style="background-image: url({{ image_src }}); background-size: cover; background-position: center center;">
+            </a>
+        {% endif %}
+    </div>
+    <div class="col-12 col-md-2 d-flex flex-row justify-content-center align-items-center">
+        {% for symbol in material.difficultySymbols %}
+            <div class="p-2">
+                <img class="img-fluid" src="{{ get_image(symbol.symbol).src }}" alt="Náročnost experimentu">
+            </div>
+        {% endfor %}
+    </div>
+</article>

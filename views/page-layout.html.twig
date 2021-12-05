@@ -16,7 +16,7 @@ DEFAULT PAGE TEMPLATE - Used (directly or through inheritance) by every other pa
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name='format-detection' content='telephone=yes'>
     <meta name='DC.Language' content='{{ html_lang }}'>
-    <meta name="description" content="{% block html_description %}{{ description|default(default_description|default(oswis.web.description)) }}{% endblock html_description %}">
+    <meta name="description" content="{% block html_description %}{{ description|default }}{% endblock html_description %}">
     <meta name='author' content='{% block meta_author %}{{ author|default('Jakub Zak (https://jakubzak.cz)') }}{% endblock meta_author %}'>
     <meta name='copyright' content='{% block meta_copyright %}{{ copyright|default('Jakub Zak (https://jakubzak.cz)') }}{% endblock meta_copyright %}'>
     <meta name='Designer' content='{% block meta_designer %}{{ designer|default('Jakub Zak (https://jakubzak.cz)') }}{% endblock meta_designer %}'>
@@ -24,7 +24,7 @@ DEFAULT PAGE TEMPLATE - Used (directly or through inheritance) by every other pa
     <link rel="pingback" href="{{ site.pingback_url }}"/>
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <meta name='Revisit-After' content='{% block meta_revisit_after %}{{ revisit_after|default('1 day') }}{% endblock meta_revisit_after %}'>
-    <meta name="application-name" content="{% block meta_app_name %}{{ oswis.app.name|default(title) }}{% endblock %}">
+    <meta name="application-name" content="{% block meta_app_name %}{{ title|default }}{% endblock %}">
     <meta name="apple-mobile-web-app-title" content="{% block meta_app_title_apple %}{{ block('meta_app_name') }}{% endblock %}">
     <meta property="og:site_name" content="{{ block('meta_app_name') }}">
     <meta property="og:title" content="{{ title }}">
@@ -50,7 +50,7 @@ DEFAULT PAGE TEMPLATE - Used (directly or through inheritance) by every other pa
 {% endblock skip_to_content %}
 
 {% block body_header %}
-    {% include 'post-parts/layout/header.html.twig' %}
+    {% include 'layout' %}
 {% endblock body_header %}
 
 {% block body_content %}
@@ -62,7 +62,7 @@ DEFAULT PAGE TEMPLATE - Used (directly or through inheritance) by every other pa
 {% endblock body_content %}
 
 {% block body_footer %}
-    {% include 'post-parts/layout/footer.html.twig' %}
+    {% include 'layout' %}
     {{ function('wp_footer') }}
 {% endblock body_footer %}
 

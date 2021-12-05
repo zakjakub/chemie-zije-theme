@@ -1,0 +1,37 @@
+<article class="row my-5">
+
+    {% set image_src = post.thumbnail.src|default(get_image(post.meta('_menu_image')).src|default) %}
+
+    <div class="col-12 col-md d-flex align-items-start flex-column py-1">
+        <a href="{{ post.link }}" class="text-dark text-decoration-none">
+            <h3>
+                {{- post.title -}}
+                {{- post.meta('_alternative_names')|default ? ' <small>(' ~ post.meta('_alternative_names') ~ ')</small>'  : '' -}}
+            </h3>
+        </a>
+        <div style="text-align: justify;">
+            {{ post.content }}
+        </div>
+        <nav class="mt-auto">
+            [<a href="{{ post.link }}" title="{{ post.title }}">více informací</a>]
+        </nav>
+    </div>
+
+    <div class="col-12 col-md-4 col-lg-3 d-flex flex-column justify-content-center order-lg-first">
+        {% if image_src|default and image_src|length > 0 %}
+            <a href="{{ post.link }}"
+               title="{{ post.title }}"
+               class="mb-3 d-block w-100 ratio ratio-16x9 p-2 img-thumbnail"
+               style="background-size: cover; background-position: center center; background-image: url({{ image_src }});">
+            </a>
+        {% endif %}
+        {% for document in post.documents %}
+            <p class="text-center mb-2">
+                <a href="{{ get_attachment(document.document_file).src }}" target="_blank">
+                    <strong><small>{{ document.document_name }}</small></strong>
+                </a>
+            </p>
+        {% endfor %}
+    </div>
+
+</article>
