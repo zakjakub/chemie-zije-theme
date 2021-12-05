@@ -2,7 +2,7 @@
 /**
  * Search results page
  *
- * Methods for TimberHelper can be found in the /lib sub-directory
+ * Methods for TimberHelper can be found in the /lib subdirectory
  *
  * @package     WordPress
  * @subpackage  Timber
@@ -11,9 +11,9 @@
 
 use Timber\PostQuery;
 
+$search = get_search_query();
 $templates = ['post-types/search.html.twig', 'post-types/archive.html.twig', 'post-types/page.html.twig'];
 $context = Timber::context();
-$context['title'] = 'Vyhledávání "'.get_search_query().'"';
-$context['posts'] = new Timber\PostQuery(null);
-
+$context['title'] = "Vyhledávání \"$search\"";
+$context['posts'] = new PostQuery(new WP_Query(['s' => $search]));
 Timber::render($templates, $context);
