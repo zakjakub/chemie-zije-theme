@@ -7,5 +7,5 @@
         {% include 'post-parts/tease-include.html.twig' with {post_type: post.post_type} %}
     {% endfor %}
 
-    {% include 'layout' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+    {% include 'layout/pagination-row.html.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
 {% endblock %}

@@ -50,7 +50,7 @@ DEFAULT PAGE TEMPLATE - Used (directly or through inheritance) by every other pa
 {% endblock skip_to_content %}
 
 {% block body_header %}
-    {% include 'layout' %}
+    {% include 'layout/header.html.twig' %}
 {% endblock body_header %}
 
 {% block body_content %}
@@ -62,7 +62,7 @@ DEFAULT PAGE TEMPLATE - Used (directly or through inheritance) by every other pa
 {% endblock body_content %}
 
 {% block body_footer %}
-    {% include 'layout' %}
+    {% include 'layout/footer.html.twig' %}
     {{ function('wp_footer') }}
 {% endblock body_footer %}
 
