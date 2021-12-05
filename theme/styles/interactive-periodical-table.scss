@@ -45,12 +45,12 @@
   }
 
   .index-column {
-    height: 2em;
+    height: 1.8em;
     margin-top: auto;
   }
 
   .index-row {
-    width: 2em;
+    width: 1.8em;
     margin-left: auto;
   }
 
@@ -66,8 +66,8 @@
                   0% 0%, /* top left */
                   100% 0%, /* top right */
                   100% 100%, /* bottom right */
-                  1em 100%, /* bottom left */
-                  0 calc(100% - 1em) /* bottom left */
+                  .8em 100%, /* bottom left */
+                  0 calc(100% - .8em) /* bottom left */
   );
 
   .periodical-table-element-content {
@@ -75,17 +75,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: calc(100% - .8em);
-    height: calc(100% - .8em);
-    margin: .4em;
+    width: calc(100% - .6em);
+    height: calc(100% - .6em);
+    margin: .2em;
     padding: 0 .2em .2em;
     background-color: rgba(255, 255, 255, 0.6);
     clip-path: polygon(
                     0% 0%, /* top left */
                     100% 0%, /* top right */
                     100% 100%, /* bottom right */
-                    1em 100%, /* bottom left */
-                    0 calc(100% - 1em) /* bottom left */
+                    .8em 100%, /* bottom left */
+                    0 calc(100% - .8em) /* bottom left */
     );
 
     > * {
@@ -110,7 +110,7 @@
     }
 
     .name {
-      font-size: .55em;
+      font-size: .5em;
       font-weight: bold;
       width: auto;
       max-width: calc(100% + 2em);
