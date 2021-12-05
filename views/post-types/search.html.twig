@@ -1,3 +1,16 @@
-{# see `archive.twig` for an alternative strategy of extending templates #}
 {% extends "post-types/page.html.twig" %}
+
+{% block article_signpost %}
+    {% set subPosts = posts|default and posts|length > 0 ? posts : post.children %}
+    {% if posts|default and posts|length > 0 %}
+        <nav>
+            <section class="row mt-3 mb-5 g-5 justify-content-md-center">
+                {% for post in posts %}
+                    {% include 'post-previews/_post_preview_horizontal.html.twig' %}
+                {% endfor %}
+            </section>
+        </nav>
+    {% endif %}
+{% endblock article_signpost %}
+
 
