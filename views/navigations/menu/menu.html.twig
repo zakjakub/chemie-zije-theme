@@ -6,7 +6,7 @@
         {% for item in items %}
             {% include 'navigations/menu/menu-item.html.twig' %}
         {% endfor %}
-        {% if is_menu|default %}
+        {% if is_header|default %}
             <li class="{{ item.classes | join(' ') }}">
                 <!--suppress HtmlUnknownAnchorTarget -->
                 <a itemprop="url"
