@@ -10,8 +10,11 @@
             </h3>
         </a>
         <div style="text-align: justify;">
-            {{ post.excerpt({ words: 500, read_more: "[více&nbsp;informací]" })  }}
+            {{ post.post_excerpt }}
         </div>
+        <nav class="mt-1">
+            [<a href="{{ post.link }}" title="{{ post.title }}">více informací</a>]
+        </nav>
     </div>
 
     <div class="col-12 col-md-4 col-lg-3 d-flex flex-column justify-content-center order-lg-first">
