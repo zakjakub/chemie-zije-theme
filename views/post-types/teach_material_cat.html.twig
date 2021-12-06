@@ -4,7 +4,7 @@
 
 {% block article_content %}
     {% if (post.content|default and post.content|length > 0) or (content|default and content|length > 0) %}
-        <section class="row my-3">
+        <section class="row my-3 mt-5">
             <div class="col-12">
                 {{ post.content|default(content|default) }}
             </div>
