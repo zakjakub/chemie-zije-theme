@@ -13,5 +13,22 @@
             {% include "navigations/menu/menu.html.twig" with {'items': menu.primary.get_items} %}
         </nav>
     </div>
+    <div class="row collapse" id="searchCollapse">
+        <form action="/" method="get">
+            <div class="form-group">
+                <div class="col-12 input-group my-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">🔎</span>
+                    </div>
+                    <input type="search"
+                           name="s"
+                           class="form-control"
+                           placeholder="Hledané slovo"
+                           aria-label="Vyhledávání"
+                           aria-describedby="basic-addon1">
+                </div>
+            </div>
+        </form>
+    </div>
 </header>
 

@@ -6,5 +6,19 @@
         {% for item in items %}
             {% include 'navigations/menu/menu-item.html.twig' %}
         {% endfor %}
+        {% if is_menu|default %}
+            <li class="{{ item.classes | join(' ') }}">
+                <!--suppress HtmlUnknownAnchorTarget -->
+                <a itemprop="url"
+                   class="px-4 py-2"
+                   data-toggle="collapse"
+                   href="#searchCollapse"
+                   role="button"
+                   aria-expanded="false"
+                   aria-controls="searchCollapse">
+                    <span itemprop="name">🔎</span>
+                </a>
+            </li>
+        {% endif %}
     </ul>
 {% endif %}
