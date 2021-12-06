@@ -10,7 +10,7 @@
             </div>
         </div>
     {% endif %}
-    <nav class="nav row my-2 rounded-tabs" id="nav-tab">
+    <nav class="nav row mt-2 rounded-tabs" id="nav-tab">
         {% set tabs = ['Mapa', 'Podklady pro exkurze'] %}
         {% for index, tab in tabs %}
             {% set active = index < 1 ? 'active' : '' %}
@@ -26,7 +26,7 @@
             </button>
         {% endfor %}
     </nav>
-    <article class="row mt-1 mb-3 g-5 justify-content-md-center tab-content" id="nav-tabContent">
+    <article class="row my-0 py-0 mb-3 g-5 justify-content-md-center tab-content" id="nav-tabContent">
         <section class="col-12 tab-pane fade show active" id="nav-0" role="tabpanel" aria-labelledby="nav-tab-0">
             <div class="ratio ratio-1x1">
                 <!--suppress HtmlDeprecatedAttribute -->
