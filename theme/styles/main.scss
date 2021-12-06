@@ -127,6 +127,10 @@ a {
         }
       }
     }
+
+    @media (max-width: 1000px) {
+      font-size: .9em;
+    }
   }
 }
 
