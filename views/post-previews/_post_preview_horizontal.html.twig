@@ -1,6 +1,6 @@
 <article class="row my-5">
 
-    {% set image_src = post.thumbnail.src|default(get_image(post.meta('_menu_image')).src|default) %}
+    {% set image_src = post.thumbnail.src|default(get_image(post.meta('_menu_image')|default('https://via.placeholder.com/160x90')).src|default) %}
 
     <div class="col-12 col-md d-flex align-items-start flex-column py-1">
         <a href="{{ post.link }}" class="text-dark text-decoration-none">
