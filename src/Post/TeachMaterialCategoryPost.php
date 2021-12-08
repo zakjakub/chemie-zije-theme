@@ -9,13 +9,15 @@ class TeachMaterialCategoryPost extends Post
     final public function tabThumbnail(string $slug): mixed
     {
         $thumbnails = $this->tabThumbnails();
-        error_log('ALL: ');
-        error_log(var_export($thumbnails, true));
+//        error_log('ALL: ');
+//        error_log(var_export($thumbnails, true));
         $imageKey = array_search(
             static fn(array $tabThumbnail) => $tabThumbnail['tab_slug'] === $slug,
             $thumbnails,
             true,
         );
+        error_log('KEY: ');
+        error_log($imageKey);
 
         return false !== $imageKey ? ($thumbnails[$imageKey] ?? null) : null;
     }
