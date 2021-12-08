@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Výukové materiály - videa
+ * Template Name: Výukové materiály - Vernier
  * Description: Stránka se seznamem videí sloužících jako výukové materiály.
  * Template Post Type: teach_material_cat
  */
