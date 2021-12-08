@@ -1,12 +1,9 @@
 {% extends "post-types/teach_material_cat.html.twig" %}
 
 {% block article_header %}
-    <!-- DUMP HERE: -->
-    {{  dump(post.tabThumbnails) }}
     {% set thumbnail = post.tabThumbnail(subtype) %}
-    {{  dump(thumbnail) }}
     {% include 'layout/main-banner.html.twig'
-        with {image: thumbnail ? thumbnail.src : (post ? post.thumbnail : null), title: title|default(post.title)} %}
+        with {image: thumbnail ? get_image(thumbnail).src : (post ? post.thumbnail : null), title: title|default(post.title)} %}
 {% endblock article_header %}
 
 {% block article_content %}
