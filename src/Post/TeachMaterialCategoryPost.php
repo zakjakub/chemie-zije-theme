@@ -16,8 +16,7 @@ class TeachMaterialCategoryPost extends Post
             $thumbnails,
             true,
         );
-        error_log("KEY for $slug: ");
-        error_log($imageKey);
+        error_log("KEY for $slug: '$imageKey'");
 
         return false !== $imageKey ? ($thumbnails[$imageKey] ?? null) : null;
     }
