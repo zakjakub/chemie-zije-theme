@@ -20,6 +20,7 @@ class TeachMaterialCategoryPost extends Post
 
     final public function tabThumbnails(): array
     {
+        dd(carbon_get_the_post_meta('tab_thumbnails'));
         return carbon_get_the_post_meta('tab_thumbnails') ?? [];
     }
 }
