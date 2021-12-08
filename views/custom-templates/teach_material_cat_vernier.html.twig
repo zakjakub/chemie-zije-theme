@@ -2,8 +2,8 @@
 
 {% block article_header %}
     <!-- DUMP HERE: -->
-    {{  dump(thumbnails) }}
-    {% set thumbnail = tabThumbnail(subtype) %}
+    {{  dump(post.thumbnails) }}
+    {% set thumbnail = post.tabThumbnail(subtype) %}
     {% include 'layout/main-banner.html.twig'
         with {image: thumbnail ? thumbnail.src : (post ? post.thumbnail : null), title: title|default(post.title)} %}
 {% endblock article_header %}
