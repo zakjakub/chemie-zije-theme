@@ -10,7 +10,7 @@ class TeachMaterialCategoryPost extends Post
     {
         $thumbnails = $this->tabThumbnails();
         error_log('ALL: ');
-        error_log($thumbnails);
+        error_log(var_export($thumbnails, true));
         $imageKey = array_search(
             static fn(array $tabThumbnail) => $tabThumbnail['tab_slug'] === $slug,
             $thumbnails,
