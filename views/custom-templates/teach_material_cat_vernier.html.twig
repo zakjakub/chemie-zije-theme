@@ -2,7 +2,7 @@
 
 {% block article_header %}
     <!-- DUMP HERE: -->
-    {% dump(thumbnails) %}
+    {{  dump(thumbnails) }}
     {% set thumbnail = tabThumbnail(subtype) %}
     {% include 'layout/main-banner.html.twig'
         with {image: thumbnail ? thumbnail.src : (post ? post.thumbnail : null), title: title|default(post.title)} %}
