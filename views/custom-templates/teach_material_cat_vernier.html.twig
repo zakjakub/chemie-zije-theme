@@ -1,6 +1,7 @@
 {% extends "post-types/teach_material_cat.html.twig" %}
 
 {% block article_header %}
+    {% dump(thumbnails) %}
     {% set thumbnail = tabThumbnail(subtype) %}
     {% include 'layout/main-banner.html.twig'
         with {image: thumbnail ? thumbnail.src : (post ? post.thumbnail : null), title: title|default(post.title)} %}
