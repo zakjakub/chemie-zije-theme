@@ -10,7 +10,7 @@ class TeachMaterialCategoryPost extends Post
     {
         $thumbnails = $this->tabThumbnails();
         $imageKey = array_search(
-            static fn(array $tabThumbnail) => $tabThumbnail['tab_thumbnail'] === $slug,
+            static fn(array $tabThumbnail) => $tabThumbnail['tab_slug'] === $slug,
             $thumbnails,
             true,
         );
@@ -20,6 +20,7 @@ class TeachMaterialCategoryPost extends Post
 
     final public function tabThumbnails(): array
     {
+        dd(carbon_get_the_post_meta('tab_thumbnails'));
         return carbon_get_the_post_meta('tab_thumbnails') ?? [];
     }
 }
