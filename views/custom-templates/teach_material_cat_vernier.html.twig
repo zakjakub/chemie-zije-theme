@@ -1,12 +1,13 @@
 {% extends "post-types/teach_material_cat.html.twig" %}
 
 {% block article_header %}
+    <!-- DUMP HERE: -->
     {% dump(thumbnails) %}
     {% set thumbnail = tabThumbnail(subtype) %}
     {% include 'layout/main-banner.html.twig'
         with {image: thumbnail ? thumbnail.src : (post ? post.thumbnail : null), title: title|default(post.title)} %}
 {% endblock article_header %}
-s
+
 {% block article_content %}
     {% if (post.content|default and post.content|length > 0) or (content|default and content|length > 0) %}
         <section class="row my-3">
