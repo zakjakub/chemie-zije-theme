@@ -17,7 +17,7 @@ class TeachMaterialCategoryPost extends Post
             ARRAY_FILTER_USE_BOTH,
         );
         error_log($imageKeys);
-        return;
+        return null;
 
         $imageKey = $imageKeys[0] ?? false;
         error_log("KEY for $slug: '$imageKey'");
