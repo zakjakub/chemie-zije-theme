@@ -16,7 +16,8 @@ class TeachMaterialCategoryPost extends Post
             static fn(array $tabThumbnail) => $tabThumbnail['tab_slug'] === $slug,
             ARRAY_FILTER_USE_BOTH,
         );
-        dd($imageKeys);
+        error_log($imageKeys);
+        return;
 
         $imageKey = $imageKeys[0] ?? false;
         error_log("KEY for $slug: '$imageKey'");
