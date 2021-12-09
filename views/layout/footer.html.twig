@@ -33,16 +33,6 @@
                     </nav>
                 {% endif %}
             </aside>
-            <aside class="col-12 col-lg">
-                {% if sidebars.footer_right|default %}
-                    {{ sidebars.footer_right|default }}
-                {% endif %}
-                {% if menu.footer_right.get_items %}
-                    <nav role="navigation">
-                        {% include "navigations/menu/menu.html.twig" with {'items': menu.footer_right.get_items} %}
-                    </nav>
-                {% endif %}
-            </aside>
         </div>
     </div>
 </footer>
