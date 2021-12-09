@@ -11,16 +11,13 @@ class TeachMaterialCategoryPost extends Post
         $thumbnails = $this->tabThumbnails();
 //        error_log('ALL: ');
 //        error_log(var_export($thumbnails, true));
-        $imageKeys = array_filter(
+        $image = array_filter(
             $thumbnails,
             static fn(array $tabThumbnail) => $tabThumbnail['tab_slug'] === $slug,
             ARRAY_FILTER_USE_BOTH,
-        );
+        )[0] ?? false;
 
-        $imageKey = $imageKeys[0] ?? false;
-        error_log("KEY for $slug: '$imageKey'");
-
-        return false !== $imageKey ? ($thumbnails[$imageKey] ?? null) : null;
+        return false !== $image ? ($image['tab_thumbnail'] ?? null) : null;
     }
 
     final public function tabThumbnails(): array
