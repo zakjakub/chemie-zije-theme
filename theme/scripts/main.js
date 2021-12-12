@@ -3,7 +3,7 @@
 import * as bootstrap from 'bootstrap';
 import Swiper from 'swiper/bundle';
 import '../styles/main.scss';
-import { analyseMF, getInfo } from "chemcalc";
+import { analyseMF, getInfo } from 'chemcalc';
 
 const swiper = new Swiper('.swiper-container', {
     direction: 'horizontal',
@@ -17,7 +17,6 @@ const swiper = new Swiper('.swiper-container', {
     },
 });
 
-
 const elements = getInfo().elements;
 
 function getElement(symbol)
@@ -28,14 +27,28 @@ function getElement(symbol)
     return element;
 }
 
+// noinspection JSUnresolvedVariable
 function processFormula(table, formula)
 {
     table.innerHTML = '';
-    const result = analyseMF(formula);
-    console.log('Formula:', formula, 'Result:', result);
+
+    const tableHead = document.createElement('thead');
+    const tableBody = document.createElement('tbody');
+    const tableFoot = document.createElement('tfoot');
+
+    tableHead.innerHTML = `<tr>
+            <td>Počet atomů</td>
+            <td>Prvek</td>
+            <td>A<sub>r</sub> prvku </td>
+            <td>M<sub>r</sub> mezisoučet </td>
+        </tr>`;
+
+    tableFoot.innerHTML = `<tr>
+            <td colspan="3">Relativní molekulová hmotnost</td>
+        </tr>`;
+
     // noinspection JSUnresolvedVariable
-    result.ea.forEach(part => {
-        console.log('Part is', part);
+    analyseMF(formula).ea.forEach(part => {
         const element = getElement(part.element);
         const row = document.createElement('tr');
 
@@ -54,10 +67,12 @@ function processFormula(table, formula)
         const massSumCell = document.createElement('td');
         massSumCell.innerText = (Number(part.number) * Number(element.mass)).toFixed(3);
         row.appendChild(massSumCell);
-
-        table.appendChild(row);
+        tableBody.appendChild(row);
     });
 
+    table.appendChild(tableHead);
+    table.appendChild(tableBody);
+    table.appendChild(tableFoot);
 }
 
 function initCalcs()
@@ -66,7 +81,7 @@ function initCalcs()
         const table = molcalc.querySelector('.molcalc_table');
         molcalc.querySelector('.molcalc_formula').addEventListener('change', event => {
             processFormula(table, event.target.value);
-        })
+        });
     });
 }
 
