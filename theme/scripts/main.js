@@ -22,7 +22,10 @@ const elements = getInfo().elements;
 
 function getElement(symbol)
 {
-    return elements.find(element => element.symbol === symbol);
+    const element = elements.find(element => element.symbol === symbol);
+    console.log('For', symbol, 'its', element);
+
+    return element;
 }
 
 function processFormula(table, formula)
