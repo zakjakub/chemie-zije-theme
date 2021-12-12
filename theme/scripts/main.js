@@ -67,7 +67,7 @@ function processFormula(table, formula)
         row.appendChild(massSumCell);
 
         tableBody.appendChild(row);
-        sum += (Number(part.number) * Number(element.mass)).toFixed(3);
+        sum += (Number(part.number) * Number(element.mass));
     });
 
     tableFoot.innerHTML = `<tr>
