@@ -7,9 +7,11 @@
                 {{- post.meta('_alternative_names')|default ? ' <small>(' ~ post.meta('_alternative_names') ~ ')</small>'  : '' -}}
             </h3>
             {% if post.parent %}
-            <h4>
-                <small>{{ post.parent.title }}</small>
-            </h4>
+                <a href="{{ post.parent.link }}" class="text-muted text-decoration-none">
+                    <h4>
+                        <small>{{ post.parent.title }}</small>
+                    </h4>
+                </a>
             {% endif %}
         </a>
         <div style="text-align: justify;">
