@@ -13,23 +13,21 @@
             {% include "navigations/menu/menu.html.twig" with {'items': menu.primary.get_items, is_header: true} %}
         </nav>
     </div>
-    <div class="row collapse" id="searchCollapse">
-        <form action="/" method="get">
-            <div class="col-12 input-group my-2">
-                <label for="search-input" class="btn btn-outline-primary" id="basic-addon1">🔎</label>
-                <input type="search"
-                       required
-                       id="search-input"
-                       name="s"
-                       class="form-control"
-                       placeholder="Hledané slovo"
-                       aria-label="Vyhledávání"
-                       aria-describedby="basic-addon1">
-                <button class="btn btn-outline-primary" type="submit">
-                    Hledat
-                </button>
-            </div>
-        </form>
-    </div>
+    <form action="/" method="get" class="row collapse" id="searchCollapse">
+        <div class="col-12 input-group my-2 px-0">
+            <label for="search-input" class="btn btn-outline-primary" id="basic-addon1">🔎</label>
+            <input type="search"
+                   required
+                   id="search-input"
+                   name="s"
+                   class="form-control"
+                   placeholder="Hledané slovo"
+                   aria-label="Vyhledávání"
+                   aria-describedby="basic-addon1">
+            <button class="btn btn-outline-primary" type="submit">
+                Hledat
+            </button>
+        </div>
+    </form>
 </header>
 
