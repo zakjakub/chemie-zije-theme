@@ -68,6 +68,7 @@ a {
     color: $white;
     border-top-left-radius: 1.2em !important;
     border-top-right-radius: 1.2em !important;
+    max-width: 10em;
 
     &.active {
       font-weight: bold;
