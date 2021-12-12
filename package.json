@@ -20,9 +20,9 @@
   "dependencies": {
     "@popperjs/core": "^2.10.2",
     "@wordpress/block-editor": "^8.0.7",
-    "@wordpress/blocks": "^11.1.4",
     "@wpackio/entrypoint": "^6.4.0",
     "bootstrap": "^5.1.0",
+    "chemcalc": "^3.4.1",
     "swiper": "^6.7.0"
   }
 }

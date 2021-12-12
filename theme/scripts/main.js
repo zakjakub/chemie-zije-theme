@@ -3,16 +3,35 @@
 import * as bootstrap from 'bootstrap';
 import Swiper from 'swiper/bundle';
 import '../styles/main.scss';
+import { analyseMF, getInfo } from "chemcalc";
 
 const swiper = new Swiper('.swiper-container', {
-  direction: 'horizontal',
-  loop: false,
-  pagination: {
-    el: '.swiper-pagination',
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+    direction: 'horizontal',
+    loop: false,
+    pagination: {
+        el: '.swiper-pagination',
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
 });
+
+
+
+
+function initCalcs()
+{
+    document.querySelectorAll('.molcalc').forEach(molcalc => {
+        molcalc.querySelector('.molcalc_formula').addEventListener('change', event => {
+            const formula = event.target.value;
+            console.log(getInfo());
+            console.log(analyseMF("C2H6O"));
+        })
+    });
+}
+
+
+
+
 
