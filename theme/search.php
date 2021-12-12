@@ -12,7 +12,6 @@
 use Timber\PostQuery;
 
 $templates = ['post-types/search.html.twig', 'post-types/archive.html.twig', 'post-types/page.html.twig'];
-
 $context = Timber::context();
 $context['search'] = $search = get_search_query();
 $context['title'] = "Vyhledávání \"$search\"";
@@ -22,7 +21,4 @@ $context['posts'] = new PostQuery(
         'numberposts' => -1,
     ]),
 );
-
-dd($context['posts']);
-
 Timber::render($templates, $context);
