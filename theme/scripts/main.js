@@ -38,7 +38,7 @@ function processFormula(table, formula)
     const tableBody = document.createElement('tbody');
     const tableFoot = document.createElement('tfoot');
 
-    tableHead.innerHTML = `<tr>
+    tableHead.innerHTML = `<tr class="text-center">
             <td>Počet atomů</td>
             <td>Prvek</td>
             <td>A<sub>r</sub> prvku </td>
