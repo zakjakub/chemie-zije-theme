@@ -6,12 +6,12 @@
             {% set classes = classes_common ~ " " ~ classes_border %}
             {% if subtype == oneSubType.slug %}
                 <a class="{{ classes }} bg-white text-primary" href="?oblast={{ oneSubType.slug }}"
-                   style="border-top-left-radius: 1.2em !important; border-top-right-radius: 1.2em !important; max-width: 10em;">
+                   style="border-top-left-radius: 1.2em !important; border-top-right-radius: 1.2em !important; max-width: 15em;">
                     <strong>{{ oneSubType.name }}</strong>
                 </a>
             {% else %}
                 <a class="{{ classes }} bg-primary text-white" href="?oblast={{ oneSubType.slug }}"
-                   style="border-top-left-radius: 1.2em !important; border-top-right-radius: 1.2em !important; max-width: 10em;">
+                   style="border-top-left-radius: 1.2em !important; border-top-right-radius: 1.2em !important; max-width: 15em;">
                     {{ oneSubType.name }}
                 </a>
             {% endif %}
