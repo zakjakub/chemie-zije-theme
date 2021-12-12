@@ -2,7 +2,13 @@
 
 {# Page with list of teaching materials. #}
 
+{% block body_header %}
+    {{ block('body_header') }}
+    <!-- CATEGORY: '{{ dump(categories) }}', SUB: '{{ subtype }}' -->
+{% endblock %}
+
 {% block article_content %}
+
     {% if (post.content|default and post.content|length > 0) or (content|default and content|length > 0) %}
         <section class="row my-3 mt-5">
             <div class="col-12">
