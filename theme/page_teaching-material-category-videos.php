@@ -15,6 +15,9 @@ $templates = [
 ];
 $context['categories'] = $context['post']->terms('teach_mat_cat_type');
 $context['categoryNames'] = array_map(static fn(Term $term) => $term->__toString(), $context['categories']);
+
+dd($context['categoryNames']);
+
 $context['subtypes'] = $context['post']->terms('teach_mat_sub_type');
 usort($context['subtypes'], static fn(Term $a, Term $b) => $a->description() <=> $b->description());
 $parts = explode('/', $context['subtypes'][0]?->path() ?? '');
