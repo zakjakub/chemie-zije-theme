@@ -35,6 +35,7 @@ function processFormula(table, formula)
     console.log('Formula:', formula, 'Result:', result);
     // noinspection JSUnresolvedVariable
     result.ea.forEach(part => {
+        console.log('Part is', part);
         const element = getElement(part.symbol);
         const row = document.createElement('tr');
 
