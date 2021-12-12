@@ -14,6 +14,16 @@ class TeachMaterialPost extends Post
         );
     }
 
+    final public function presentations(): array
+    {
+        return carbon_get_the_post_meta('presentations') ?? [];
+    }
+
+    final public function handouts(): array
+    {
+        return carbon_get_the_post_meta('handouts') ?? [];
+    }
+
     final public function safetySymbols(): array
     {
         return carbon_get_the_post_meta('safety_symbols') ?? [];
@@ -27,15 +37,5 @@ class TeachMaterialPost extends Post
     final public function tabs(): array
     {
         return carbon_get_the_post_meta('tabs') ?? [];
-    }
-
-    final public function presentations(): array
-    {
-        return carbon_get_the_post_meta('presentations') ?? [];
-    }
-
-    final public function handouts(): array
-    {
-        return carbon_get_the_post_meta('handouts') ?? [];
     }
 }

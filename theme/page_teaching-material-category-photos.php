@@ -32,7 +32,7 @@ $context['materials'] = Timber::get_posts(
             'relation' => 'AND',
             [
                 'taxonomy' => 'teach_mat_cat_type',
-                'field'    => 'title',
+                'field'    => 'name',
                 'terms'    => array_map(static fn(Term $term) => $term->__toString(), $context['categories']),
             ],
             [

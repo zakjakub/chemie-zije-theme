@@ -15,12 +15,7 @@ class TeachMaterialCategoryPost extends Post
             ARRAY_FILTER_USE_BOTH,
         )[0] ?? false;
 
-        $result =  false !== $image ? ($image['tab_thumbnail'] ?? null) : null;
-
-        error_log('RESULT: ');
-        error_log($result);
-
-        return $result;
+        return false !== $image ? ($image['tab_thumbnail'] ?? null) : null;
     }
 
     final public function tabThumbnails(): array
