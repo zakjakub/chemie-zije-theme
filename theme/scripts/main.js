@@ -36,7 +36,7 @@ function processFormula(table, formula)
     // noinspection JSUnresolvedVariable
     result.ea.forEach(part => {
         console.log('Part is', part);
-        const element = getElement(part.symbol);
+        const element = getElement(part.element);
         const row = document.createElement('tr');
 
         const countCell = document.createElement('td');
@@ -44,7 +44,7 @@ function processFormula(table, formula)
         row.appendChild(countCell);
 
         const elementCell = document.createElement('td');
-        elementCell.innerText = part.symbol;
+        elementCell.innerText = part.element;
         row.appendChild(elementCell);
 
         const massCell = document.createElement('td');
