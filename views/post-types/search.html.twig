@@ -2,17 +2,15 @@
 
 {% block article_signpost %}
     {% set subPosts = posts|default and posts|length > 0 ? posts : post.children %}
-    {% if posts|default and posts|length > 0 %}
-        <nav>
-            <section class="row mt-3 mb-5 g-5 justify-content-md-center">
-                {% for post in posts %}
-                    {% include 'post-previews/_post_preview_horizontal_search.html.twig' %}
-                {% else %}
-                    <div class="col-12">
-                        <p>Nebyly nalezeny žádné stránky odpovídající vyhledávacím kritériím.</p>
-                    </div>
-                {% endfor %}
-            </section>
-        </nav>
-    {% endif %}
+    <nav class="row mt-3 mb-5 g-5 justify-content-md-center">
+        {% if posts|default and posts|length > 0 %}
+            {% for post in posts %}
+                {% include 'post-previews/_post_preview_horizontal_search.html.twig' %}
+            {% endfor %}
+        {% else %}
+            <div class="col-12">
+                <p>Nebyly nalezeny žádné stránky odpovídající vyhledávacím kritériím.</p>
+            </div>
+        {% endif %}
+    </nav>
 {% endblock article_signpost %}
