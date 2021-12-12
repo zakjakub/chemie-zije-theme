@@ -10,8 +10,9 @@
             <li class="{{ item.classes | join(' ') }}">
                 <!--suppress HtmlUnknownAnchorTarget -->
                 <a itemprop="url"
-                   class="px-4 py-2"
+                   class="px-4 py-2 {{ search|default ? 'show' : '' }}"
                    data-bs-toggle="collapse"
+                   data-bs-
                    href="#searchCollapse"
                    role="button"
                    aria-expanded="{{ search|default ? true : false }}"
