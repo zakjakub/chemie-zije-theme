@@ -18,7 +18,7 @@ const swiper = new Swiper('.swiper-container', {
 });
 
 
-const elements = getInfo();
+const elements = getInfo().elements;
 
 function getElement(symbol)
 {
