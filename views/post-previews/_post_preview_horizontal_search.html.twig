@@ -1,0 +1,29 @@
+<article class="row my-5">
+
+    <div class="col-12 col-md d-flex align-items-start flex-column py-1">
+        <a href="{{ post.link }}" class="text-dark text-decoration-none">
+            <h3>
+                {{- post.title -}}
+                {{- post.meta('_alternative_names')|default ? ' <small>(' ~ post.meta('_alternative_names') ~ ')</small>'  : '' -}}
+            </h3>
+        </a>
+        <div style="text-align: justify;">
+            {{ post.post_excerpt }}
+        </div>
+        <nav class="mt-1">
+            [<a href="{{ post.link }}" title="{{ post.title }}">více informací</a>]
+        </nav>
+    </div>
+
+    {% set image_src = post.thumbnail.src|default(get_image(post.meta('_menu_image')).src|default %}
+    {% if image_src|default and image_src|length > 0 %}
+        <div class="col-12 col-md-4 col-lg-3 d-flex flex-column justify-content-center">
+            <a href="{{ post.link }}"
+               title="{{ post.title }}"
+               class="mb-3 d-block w-100 ratio ratio-16x9 p-2 img-thumbnail"
+               style="background-size: cover; background-position: center center; background-image: url({{ image_src }});">
+            </a>
+        </div>
+    {% endif %}
+
+</article>
