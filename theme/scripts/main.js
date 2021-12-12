@@ -24,14 +24,13 @@ function initCalcs()
 {
     document.querySelectorAll('.molcalc').forEach(molcalc => {
         molcalc.querySelector('.molcalc_formula').addEventListener('change', event => {
-            const formula = event.target.value;
             console.log(getInfo());
-            console.log(analyseMF("C2H6O"));
+            console.log(analyseMF(event.target.value));
         })
     });
 }
 
-
+initCalcs();
 
 
 
