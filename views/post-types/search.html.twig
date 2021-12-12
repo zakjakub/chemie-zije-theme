@@ -6,7 +6,6 @@
         {% if posts|default and posts|length > 0 %}
             {% for post in posts %}
                 {% include 'post-previews/_post_preview_horizontal_search.html.twig' %}
-                {{ dump(post) }}
             {% endfor %}
         {% else %}
             <div class="col-12">

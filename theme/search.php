@@ -22,4 +22,7 @@ $context['posts'] = new PostQuery(
         'numberposts' => -1,
     ]),
 );
+
+dd($context['posts']);
+
 Timber::render($templates, $context);
