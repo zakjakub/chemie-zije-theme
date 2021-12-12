@@ -18,19 +18,53 @@ const swiper = new Swiper('.swiper-container', {
 });
 
 
+const elements = getInfo();
 
+function getElement(symbol)
+{
+    return elements.find(element => element.symbol === symbol);
+}
+
+function processFormula(table, formula)
+{
+    table.innerHTML = '';
+    const result = analyseMF(formula);
+    console.log('Formula:', formula, 'Result:', result);
+    // noinspection JSUnresolvedVariable
+    result.ea.forEach(part => {
+        const element = getElement(part.symbol);
+        const row = document.createElement('tr');
+
+        const countCell = document.createElement('td');
+        countCell.innerText = Number(part.number).toFixed(3);
+        row.appendChild(countCell);
+
+        const elementCell = document.createElement('td');
+        elementCell.innerText = part.symbol;
+        row.appendChild(elementCell);
+
+        const massCell = document.createElement('td');
+        massCell.innerText = Number(element.mass).toFixed(3);
+        row.appendChild(massCell);
+
+        const massSumCell = document.createElement('td');
+        massSumCell.innerText = (Number(part.number) * Number(element.mass)).toFixed(3);
+        row.appendChild(massSumCell);
+
+        table.appendChild(row);
+    });
+
+}
 
 function initCalcs()
 {
     document.querySelectorAll('.molcalc').forEach(molcalc => {
+        const table = molcalc.querySelector('.molcalc_table');
         molcalc.querySelector('.molcalc_formula').addEventListener('change', event => {
-            console.log(getInfo());
-            console.log(analyseMF(event.target.value));
+            processFormula(table, event.target.value);
         })
     });
 }
 
 initCalcs();
-
-
 
