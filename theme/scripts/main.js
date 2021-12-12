@@ -32,6 +32,8 @@ function processFormula(table, formula)
 {
     table.innerHTML = '';
 
+    let sum = 0;
+
     const tableHead = document.createElement('thead');
     const tableBody = document.createElement('tbody');
     const tableFoot = document.createElement('tfoot');
@@ -67,7 +69,9 @@ function processFormula(table, formula)
         const massSumCell = document.createElement('td');
         massSumCell.innerText = (Number(part.number) * Number(element.mass)).toFixed(3);
         row.appendChild(massSumCell);
+
         tableBody.appendChild(row);
+        sum += (Number(part.number) * Number(element.mass)).toFixed(3);
     });
 
     table.appendChild(tableHead);
