@@ -14,7 +14,7 @@
         </nav>
     </div>
     <form action="/" method="get" class="row collapse" id="searchCollapse">
-        <div class="col-12 input-group my-2 px-0">
+        <div class="col-12 input-group my-2 px-0  {{ search|default ? 'show' : '' }}">
             <label for="search-input" class="btn btn-outline-primary" id="basic-addon1">🔎</label>
             <input type="search"
                    value="{{ search|default }}"
