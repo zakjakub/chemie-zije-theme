@@ -11,9 +11,10 @@
 
 use Timber\PostQuery;
 
-$search = get_search_query();
 $templates = ['post-types/search.html.twig', 'post-types/archive.html.twig', 'post-types/page.html.twig'];
+
 $context = Timber::context();
+$context['search'] = $search = get_search_query();
 $context['title'] = "Vyhledávání \"$search\"";
 $context['posts'] = new PostQuery(
     new WP_Query([

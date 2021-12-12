@@ -14,7 +14,7 @@
                    data-bs-toggle="collapse"
                    href="#searchCollapse"
                    role="button"
-                   aria-expanded="false"
+                   aria-expanded="{{ search|default ? true : false }}"
                    aria-controls="searchCollapse">
                     <span itemprop="name">🔎</span>
                 </a>
