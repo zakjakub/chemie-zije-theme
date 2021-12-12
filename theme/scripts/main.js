@@ -51,18 +51,22 @@ function processFormula(table, formula)
         const row = document.createElement('tr');
 
         const countCell = document.createElement('td');
+        countCell.classList.add('text-center');
         countCell.innerText = Number(part.number).toFixed(3);
         row.appendChild(countCell);
 
         const elementCell = document.createElement('td');
+        elementCell.classList.add('text-center');
         elementCell.innerText = part.element;
         row.appendChild(elementCell);
 
         const massCell = document.createElement('td');
+        massCell.classList.add('text-end');
         massCell.innerText = Number(element.mass).toFixed(3);
         row.appendChild(massCell);
 
         const massSumCell = document.createElement('td');
+        massSumCell.classList.add('text-end');
         massSumCell.innerText = (Number(part.number) * Number(element.mass)).toFixed(3);
         row.appendChild(massSumCell);
 
@@ -72,7 +76,7 @@ function processFormula(table, formula)
 
     tableFoot.innerHTML = `<tr>
             <td colspan="3">Relativní molekulová hmotnost</td>
-            <td>${sum}</td>
+            <td class="text-end">${sum.toFixed(3)}</td>
         </tr>`;
 
     table.appendChild(tableHead);
