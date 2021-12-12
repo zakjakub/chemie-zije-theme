@@ -52,7 +52,7 @@ function processFormula(table, formula)
 
         const countCell = document.createElement('td');
         countCell.classList.add('text-center');
-        countCell.innerText = Number(part.number).toFixed(3);
+        countCell.innerText = Number(part.number).toFixed(1);
         row.appendChild(countCell);
 
         const elementCell = document.createElement('td');
@@ -76,7 +76,7 @@ function processFormula(table, formula)
 
     tableFoot.innerHTML = `<tr>
             <td colspan="3">Relativní molekulová hmotnost</td>
-            <td class="text-end">${sum.toFixed(3)}</td>
+            <td class="text-end"><strong>${sum.toFixed(3)}</strong></td>
         </tr>`;
 
     table.appendChild(tableHead);
