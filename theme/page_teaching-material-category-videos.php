@@ -14,6 +14,7 @@ $templates = [
     'post-types/page.html.twig',
 ];
 $context['categories'] = $context['post']->terms('teach_mat_cat_type');
+$context['categoryNames'] = array_map(static fn(Term $term) => $term->__toString(), $context['categories']);
 $context['subtypes'] = $context['post']->terms('teach_mat_sub_type');
 usort($context['subtypes'], static fn(Term $a, Term $b) => $a->description() <=> $b->description());
 $parts = explode('/', $context['subtypes'][0]?->path() ?? '');
@@ -33,7 +34,7 @@ $context['materials'] = Timber::get_posts(
             [
                 'taxonomy' => 'teach_mat_cat_type',
                 'field'    => 'title',
-                'terms'    => array_map(static fn(Term $term) => $term->__toString(), $context['categories']),
+                'terms'    => $context['categoryNames'],
             ],
             [
                 'taxonomy' => 'teach_mat_sub_type',
