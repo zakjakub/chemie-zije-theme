@@ -32,7 +32,7 @@ $query =     new WP_Query([
         'relation' => 'AND',
         [
             'taxonomy' => 'teach_mat_cat_type',
-            'field'    => 'title',
+            'field'    => 'name',
             'terms'    => $context['categoryNames'],
         ],
         [
