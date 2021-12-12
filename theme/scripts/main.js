@@ -45,11 +45,7 @@ function processFormula(table, formula)
             <td>M<sub>r</sub> mezisoučet </td>
         </tr>`;
 
-    tableFoot.innerHTML = `<tr>
-            <td colspan="3">Relativní molekulová hmotnost</td>
-        </tr>`;
-
-    // noinspection JSUnresolvedVariable
+  // noinspection JSUnresolvedVariable
     analyseMF(formula).ea.forEach(part => {
         const element = getElement(part.element);
         const row = document.createElement('tr');
@@ -73,6 +69,11 @@ function processFormula(table, formula)
         tableBody.appendChild(row);
         sum += (Number(part.number) * Number(element.mass)).toFixed(3);
     });
+
+    tableFoot.innerHTML = `<tr>
+            <td colspan="3">Relativní molekulová hmotnost</td>
+            <td>${sum}</td>
+        </tr>`;
 
     table.appendChild(tableHead);
     table.appendChild(tableBody);
