@@ -10,7 +10,7 @@
 {% block article_content %}
 
     {% if (post.content|default and post.content|length > 0) or (content|default and content|length > 0) %}
-        <section class="row my-3 mt-5">
+        <section class="row">
             <div class="col-12">
                 {{ post.content|default(content|default) }}
             </div>
@@ -18,7 +18,7 @@
     {% endif %}
 
     {% if subtypes|length > 1 %}
-        <div class="row px-2 mt-0 mb-0" style="line-height: 1.1;">
+        <div class="row px-2" style="line-height: 1.1;">
             <!-- {{ subtype }} -->
             {% for oneSubType in subtypes %}
                 <!-- ONE SUBTYPE -->

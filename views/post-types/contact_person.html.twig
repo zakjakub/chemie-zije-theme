@@ -1,7 +1,7 @@
 {% extends "post-types/page.html.twig" %}
 
 {% block article_content %}
-    <section class="row my-3">
+    <section class="row">
         <div class="col-12">
             <h3>Kontaktní údaje</h3>
             {% if post.meta('_position') %}
@@ -18,7 +18,7 @@
             {% endif %}
         </div>
     </section>
-    <section class="row my-3">
+    <section class="row mt-3">
         <div class="col-12">
             {{ post.content }}
         </div>

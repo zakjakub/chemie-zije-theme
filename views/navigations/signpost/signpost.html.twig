@@ -1,6 +1,6 @@
 {% if posts|default and posts|length > 0 %}
     <nav>
-        <section class="row mt-3 mb-5 g-5 justify-content-md-center">
+        <section class="row my-3 g-5 justify-content-md-center">
             {% for post in posts %}
                 {% include 'navigations/signpost/signpost-item.html.twig' %}
             {% endfor %}

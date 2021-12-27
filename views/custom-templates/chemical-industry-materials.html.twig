@@ -13,7 +13,7 @@ This page theme can be selected as custom theme of single "page" type post (due 
         {% endfor %}
     </section>
     {% if (post.content|default and post.content|length > 0) or (content|default and content|length > 0) %}
-        <section class="row my-5">
+        <section class="row">
             <div class="col-12">
                 {{ post.content|default(content|default) }}
             </div>

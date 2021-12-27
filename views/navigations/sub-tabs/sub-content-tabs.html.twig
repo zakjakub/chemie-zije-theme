@@ -1,5 +1,5 @@
 {% if tabs|length > 0 %}
-    <nav class="nav row p-0 rounded-tabs" id="nav-tab">
+    <nav class="nav row my-3 p-0 rounded-tabs" id="nav-tab">
         {% set iter = 0 %}
         {% for index, tab in tabs %}
             {% set active = iter < 1 ? 'active' : '' %}
@@ -16,7 +16,7 @@
             {% set iter = iter + 1 %}
         {% endfor %}
     </nav>
-    <section class="row my-5">
+    <section class="row">
         <div class="tab-content col-12" id="nav-tabContent">
             {% set iter = 0 %}
             {% for index, tab in tabs %}
