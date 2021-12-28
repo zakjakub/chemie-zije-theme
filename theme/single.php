@@ -11,6 +11,11 @@
  */
 $context = Timber::context();
 $post = Timber::get_post();
+$redirectUrl = carbon_get_the_post_meta('redirect_url');
+if (!empty($redirectUrl)) {
+    wp_redirect($redirectUrl);
+    exit;
+}
 if (post_password_required($post->ID)) {
     Timber::render('post-types/single-password.html.twig', $context);
 } else {
