@@ -1,25 +1,23 @@
 {% extends "page-layout.html.twig" %}
 
 {% block page_content %}
-    <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-        {% block article_header %}
-            {% include 'layout/main-banner.html.twig'
-                with {image: post ? post.thumbnail : null, title: title|default(post.title)} %}
-        {% endblock article_header %}
-        {% block article_content %}
-            {% if (post.content|default and post.content|length > 0) or (content|default and content|length > 0) %}
-                <div class="row my-5">
-                    <div class="col-12">
-                        {{ post.content|default(content|default) }}
-                    </div>
+    {% block article_header %}
+        {% include 'layout/main-banner.html.twig'
+            with {image: post ? post.thumbnail : null, title: title|default(post.title)} %}
+    {% endblock article_header %}
+    {% block article_content %}
+        {% if (post.content|default and post.content|length > 0) or (content|default and content|length > 0) %}
+            <article class="row my-3">
+                <div class="col-12">
+                    {{ post.content|default(content|default) }}
                 </div>
-            {% endif %}
-        {% endblock article_content %}
-        {% block article_signpost %}
-            {% set subPosts = posts|default and posts|length > 0 ? posts : post.children %}
-            {% include 'navigations/signpost/signpost.html.twig' with {posts: subPosts} %}
-            {% include 'layout/pagination-row.html.twig'
-                with { pagination: subPosts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
-        {% endblock article_signpost %}
-    </article>
+            </article>
+        {% endif %}
+    {% endblock article_content %}
+    {% block article_signpost %}
+        {% set subPosts = posts|default and posts|length > 0 ? posts : post.children %}
+        {% include 'navigations/signpost/signpost.html.twig' with {posts: subPosts} %}
+        {% include 'layout/pagination-row.html.twig'
+            with { pagination: subPosts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+    {% endblock article_signpost %}
 {% endblock page_content %}
