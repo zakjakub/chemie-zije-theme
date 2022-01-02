@@ -48,17 +48,17 @@
             </div>
 
             {% if post.meta('_show_calculator') %}
-                <div class="tab-pane fade" id="nav-1" role="tabpanel" aria-labelledby="nav-tab-1">
+                <div class="tab-pane fade w-100" id="nav-1" role="tabpanel" aria-labelledby="nav-tab-1">
                     {# -------------------------- #}
                     {#            CALC            #}
-                    <div class="molcalc">
+                    <div class="molcalc w-100 my-3">
                         <div>
-                            <h3>Kalkulačka</h3>
+                            <h3>Kalkulačka molekulární hmotnosti</h3>
                         </div>
-                        <label>
+                        <label class="d-block w-100">
                             <input name="formula" class="molcalc_formula form-control">
                         </label>
-                        <table class="col-12 table table-hover my-3 molcalc_table">
+                        <table class="d-block w-100 table table-hover my-3 molcalc_table">
                             <!-- Results are placed here by JS. -->
                         </table>
                     </div>
