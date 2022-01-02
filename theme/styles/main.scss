@@ -144,6 +144,6 @@ a {
   text-align: justify !important;
 }
 
-.molcalc_table > * {
+.molcalc_table > *, .molcalc_table > * > * {
   width: 100%;
 }
