@@ -94,5 +94,3 @@ function initCalcs()
     });
 }
 
-initCalcs();
-

@@ -1,8 +1,6 @@
 
 <
 package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
-E
-theme/scripts/main.js,e/c/ec10e5b0519d7948b53b1d55692f2de9bb9a8e96
 X
 (views/custom-templates/contact.html.twig,c/9/c9a0919226122594e0a32d8d896b16ce05dc5e23
 `
