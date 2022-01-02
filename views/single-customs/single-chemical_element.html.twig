@@ -14,9 +14,55 @@
         </section>
     {% endif %}
 
-    {% if post.children|length > 0 %}
-        {% set tabs = post.children|sort((a, b) => a.priority <=> b.priority) %}
-        {% include 'navigations/sub-tabs/sub-content-tabs.html.twig' %}
-    {% endif %}
+    {% set tabs = [
+        {key: 'history', name: 'Historie'},
+        {key: 'physico_chemical_properties', name: 'Fyzikálně chemické vlastnosti'},
+        {key: 'chemical_properties', name: 'Chemické vlastosti'},
+        {key: 'compounds', name: 'Sloučeniny'},
+        {key: 'preparation_and_production', name: 'Příprava a výroba'},
+        {key: 'utilization', name: 'Využití'},
+        {key: 'natural_occurrence', name: 'Výskyt v přírodě'},
+        {key: 'biological_function', name: 'Biologická funkce'},
+    ] %}
+
+    <nav class="nav row my-3 p-0 rounded-tabs" id="nav-tab">
+        {% set iter = 0 %}
+        {% for index, tab in tabs %}
+            {% set tabContent = post.meta(tab.key)|default %}
+            {% if tabContent %}
+                {% set active = iter < 1 ? 'active' : '' %}
+                <button class="rounded-tab col m-0 mt-3 mx-1 px-5 px-xl-4 py-2 border border-2 border-primary {{ active }}"
+                        id="nav-tab-{{ index }}"
+                        data-bs-toggle="tab"
+                        data-bs-target="#nav-{{ index }}"
+                        type="button"
+                        role="tab"
+                        aria-controls="nav-{{ index }}"
+                        aria-selected="{{ iter < 1 ? 'true' : 'false' }}">
+                    {{ tab.name|default }}
+                </button>
+                {% set iter = iter + 1 %}
+            {% endif %}
+        {% endfor %}
+    </nav>
+    <section class="row">
+        <div class="tab-content col-12" id="nav-tabContent">
+            {% set iter = 0 %}
+            {% for index, tab in tabs %}
+                {% set tabContent = post.meta(tab.key)|default %}
+                {% if tabContent %}
+                    <div class="tab-pane fade {{ iter < 1 ? ' show active' : '' }}"
+                         id="nav-{{ index }}"
+                         role="tabpanel"
+                         aria-labelledby="nav-tab-{{ index }}">
+                        {{ post.meta(tab.key)|default }}
+                    </div>
+                    {% set iter = iter + 1 %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+
+
 
 {% endblock %}
