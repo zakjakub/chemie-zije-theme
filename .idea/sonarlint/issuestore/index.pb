@@ -3,8 +3,6 @@
 package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
 E
 theme/scripts/main.js,e/c/ec10e5b0519d7948b53b1d55692f2de9bb9a8e96
-g
-7views/custom-templates/chemical-nomenclatures.html.twig,f/1/f150007b4827eb51037f58977ce342e5f264c68f
 X
 (views/custom-templates/contact.html.twig,c/9/c9a0919226122594e0a32d8d896b16ce05dc5e23
 `
@@ -29,24 +27,18 @@ k
 ;views/custom-templates/teach_material_cat_vernier.html.twig,2/a/2a82313c38de6d1104b9aefcc779ac08e25ac859
 Y
 )views/post-types/teach_material.html.twig,8/9/89cfdfc52eaa2e49571f6f66acebe69dad2d2e7e
-a
-1views/custom-templates/periodical-table.html.twig,f/f/ffdd201d0d8c21f82e7de08183b4bca8a9c1ca36
 j
 :views/custom-templates/teach_material_cat_photos.html.twig,4/5/458380a04a04ee73a8d38e40b2e11501bd759054
 ]
 -views/post-types/single-map_company.html.twig,4/f/4f34be42e4895c513d1c0597fe0d35231eb15817
 Y
 )views/post-types/contact_person.html.twig,9/3/9384b4b3227ebd548ff661fc0bf08c69ca7e00f1
-g
-7views/single-customs/single-equation-category.html.twig,7/3/7318a034781ae5b4cacb5be36bc94222f10c1a4b
 d
 4views/single-customs/single-industry_field.html.twig,b/4/b4cd5f05ba0744668f5892cf28fee520c9310efe
 i
 9views/custom-templates/interactive-industry-map.html.twig,b/2/b211ae3920e8a2335484799287f5137cac38ced4
 j
 :views/custom-templates/teach_material_cat_videos.html.twig,d/f/dfeb8de85c8f372da7b3fd1636899794071ad50b
-]
--views/navigations/sub-tabs/sub-tabs.html.twig,7/0/703028671d0bd8cd44ff72ff8c0951a24c332834
 ]
 -views/navigations/signpost/signpost.html.twig,9/7/9764313689c6ff6ec1440b0226d5d2462a707475
 M
@@ -55,8 +47,6 @@ K
 views/page-layout.html.twig,a/3/a3bd88f1f3ffe11f778f0af53433acd9fec8d6fc
 E
 views/index.html.twig,e/2/e2a74844d7ebfd61700a36e03fa2b9498d4073fa
-O
-views/post-types/page.html.twig,1/e/1ed844bf847089272b180a4551ddaecf9fdb62ac
 F
 theme/styles/main.scss,3/6/368d36b29228e0c67f0204c694fe46637b37f654
 A
