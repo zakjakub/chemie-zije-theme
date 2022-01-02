@@ -2,110 +2,108 @@
 
 {% block article_content %}
 
-    {% if tabs|length > 0 %}
-        <nav class="nav row my-3 p-0 rounded-tabs" id="nav-tab">
+    <nav class="nav row my-3 p-0 rounded-tabs" id="nav-tab">
 
-            <button class="rounded-tab col m-0 mt-3 mx-1 px-5 px-xl-4 py-2 border border-2 border-primary active"
-                    id="nav-tab-0"
+        <button class="rounded-tab col m-0 mt-3 mx-1 px-5 px-xl-4 py-2 border border-2 border-primary active"
+                id="nav-tab-0"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-0"
+                type="button"
+                role="tab"
+                aria-controls="nav-0"
+                aria-selected="true">
+            Teorie
+        </button>
+
+        {% if post.meta('_show_calculator') %}
+            <button class="rounded-tab col m-0 mt-3 mx-1 px-5 px-xl-4 py-2 border border-2 border-primary"
+                    id="nav-tab-{{ index }}"
                     data-bs-toggle="tab"
-                    data-bs-target="#nav-0"
+                    data-bs-target="#nav-{{ index }}"
                     type="button"
                     role="tab"
-                    aria-controls="nav-0"
-                    aria-selected="true">
-                Teorie
+                    aria-controls="nav-{{ index }}"
+                    aria-selected="{{ iter < 1 ? 'true' : 'false' }}">
+                Kalkulačka relativní molekulové hmotnosti
             </button>
+        {% endif %}
+
+        <button class="rounded-tab col m-0 mt-3 mx-1 px-5 px-xl-4 py-2 border border-2 border-primary"
+                id="nav-tab-2"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-2"
+                type="button"
+                role="tab"
+                aria-controls="nav-2"
+                aria-selected="false">
+            Databáze řešených příkladů
+        </button>
+
+    </nav>
+    <section class="row">
+        <div class="tab-content col-12" id="nav-tabContent">
+
+            <div class="tab-pane fade show active" id="nav-0" role="tabpanel" aria-labelledby="nav-tab-0">
+                {{ post.content|default(content|default) }}
+            </div>
 
             {% if post.meta('_show_calculator') %}
-                <button class="rounded-tab col m-0 mt-3 mx-1 px-5 px-xl-4 py-2 border border-2 border-primary"
-                        id="nav-tab-{{ index }}"
-                        data-bs-toggle="tab"
-                        data-bs-target="#nav-{{ index }}"
-                        type="button"
-                        role="tab"
-                        aria-controls="nav-{{ index }}"
-                        aria-selected="{{ iter < 1 ? 'true' : 'false' }}">
-                    Kalkulačka relativní molekulové hmotnosti
-                </button>
+                <div class="tab-pane fade" id="nav-1" role="tabpanel" aria-labelledby="nav-tab-1">
+                    {# -------------------------- #}
+                    {#            CALC            #}
+                    <div class="molcalc">
+                        <div>
+                            <h3>Kalkulačka</h3>
+                        </div>
+                        <label>
+                            <input name="formula" class="molcalc_formula form-control">
+                        </label>
+                        <table class="col-12 table table-hover my-3 molcalc_table">
+                            <!-- Results are placed here by JS. -->
+                        </table>
+                    </div>
+                    {#         CALC END           #}
+                    {# -------------------------- #}
+                </div>
             {% endif %}
 
-            <button class="rounded-tab col m-0 mt-3 mx-1 px-5 px-xl-4 py-2 border border-2 border-primary"
-                    id="nav-tab-2"
-                    data-bs-toggle="tab"
-                    data-bs-target="#nav-2"
-                    type="button"
-                    role="tab"
-                    aria-controls="nav-2"
-                    aria-selected="false">
-                Databáze řešených příkladů
-            </button>
+            <div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav-tab-2">
 
-        </nav>
-        <section class="row">
-            <div class="tab-content col-12" id="nav-tabContent">
-
-                <div class="tab-pane fade show active" id="nav-0" role="tabpanel" aria-labelledby="nav-tab-0">
-                    {{ post.content|default(content|default) }}
-                </div>
-
-                {% if post.meta('_show_calculator') %}
-                    <div class="tab-pane fade" id="nav-1" role="tabpanel" aria-labelledby="nav-tab-1">
-                        {# -------------------------- #}
-                        {#            CALC            #}
-                        <div class="molcalc">
-                            <div>
-                                <h3>Kalkulačka</h3>
-                            </div>
-                            <label>
-                                <input name="formula" class="molcalc_formula form-control">
-                            </label>
-                            <table class="col-12 table table-hover my-3 molcalc_table">
-                                <!-- Results are placed here by JS. -->
-                            </table>
+                {% if equations|length > 0 %}
+                    <h3 class="mt-3 mb-2">Řešené příklady</h3>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper p-4">
+                            {% for index, equation in equations %}
+                                <div class="swiper-slide p-5">
+                                    <div class="my-1">
+                                        {{ equation.assignment|apply_filters('the_content') }}
+                                        <p class="my-5">
+                                            <a class="btn btn-primary"
+                                               data-bs-toggle="collapse"
+                                               href="#solution{{ index }}"
+                                               role="button"
+                                               aria-expanded="false"
+                                               aria-controls="solution{{ index }}">
+                                                Zobrazit řešení
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="my-1 collapse" id="solution{{ index }}">
+                                        {{ equation.solution|apply_filters('the_content') }}
+                                    </div>
+                                </div>
+                            {% endfor %}
                         </div>
-                        {#         CALC END           #}
-                        {# -------------------------- #}
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
                     </div>
                 {% endif %}
 
-                <div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav-tab-2">
-
-                    {% if equations|length > 0 %}
-                        <h3 class="mt-3 mb-2">Řešené příklady</h3>
-                        <div class="swiper-container">
-                            <div class="swiper-wrapper p-4">
-                                {% for index, equation in equations %}
-                                    <div class="swiper-slide p-5">
-                                        <div class="my-1">
-                                            {{ equation.assignment|apply_filters('the_content') }}
-                                            <p class="my-5">
-                                                <a class="btn btn-primary"
-                                                   data-bs-toggle="collapse"
-                                                   href="#solution{{ index }}"
-                                                   role="button"
-                                                   aria-expanded="false"
-                                                   aria-controls="solution{{ index }}">
-                                                    Zobrazit řešení
-                                                </a>
-                                            </p>
-                                        </div>
-                                        <div class="my-1 collapse" id="solution{{ index }}">
-                                            {{ equation.solution|apply_filters('the_content') }}
-                                        </div>
-                                    </div>
-                                {% endfor %}
-                            </div>
-                            <div class="swiper-pagination"></div>
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
-                        </div>
-                    {% endif %}
-
-                </div>
-
             </div>
-        </section>
-    {% endif %}
+
+        </div>
+    </section>
 
 {% endblock %}
 
