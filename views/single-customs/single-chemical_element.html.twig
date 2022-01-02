@@ -28,7 +28,7 @@
     <nav class="nav row my-3 p-0 rounded-tabs" id="nav-tab">
         {% set iter = 0 %}
         {% for index, tab in tabs %}
-            {% set tabContent = post.meta(tab.key)|default %}
+            {% set tabContent = post.meta('_' ~ tab.key)|default %}
             {% if tabContent %}
                 {% set active = iter < 1 ? 'active' : '' %}
                 <button class="rounded-tab col m-0 mt-3 mx-1 px-5 px-xl-4 py-2 border border-2 border-primary {{ active }}"
@@ -49,7 +49,7 @@
         <div class="tab-content col-12" id="nav-tabContent">
             {% set iter = 0 %}
             {% for index, tab in tabs %}
-                {% set tabContent = post.meta(tab.key)|default %}
+                {% set tabContent = post.meta('_' ~ tab.key)|default %}
                 {% if tabContent %}
                     <div class="tab-pane fade {{ iter < 1 ? ' show active' : '' }}"
                          id="nav-{{ index }}"
