@@ -94,5 +94,8 @@ function initCalcs()
     });
 }
 
-initCalcs();
+window.addEventListener('load', () => {
+    initCalcs();
+});
+
 
