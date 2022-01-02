@@ -45,8 +45,6 @@ K
 views/page-layout.html.twig,a/3/a3bd88f1f3ffe11f778f0af53433acd9fec8d6fc
 E
 views/index.html.twig,e/2/e2a74844d7ebfd61700a36e03fa2b9498d4073fa
-F
-theme/styles/main.scss,3/6/368d36b29228e0c67f0204c694fe46637b37f654
 A
 package-lock.json,f/a/fa288d1472d29beccb489a676f68739ad365fc47
 R
