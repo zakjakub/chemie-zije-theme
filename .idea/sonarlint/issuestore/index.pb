@@ -39,8 +39,6 @@ Y
 )views/post-types/contact_person.html.twig,9/3/9384b4b3227ebd548ff661fc0bf08c69ca7e00f1
 g
 7views/single-customs/single-equation-category.html.twig,7/3/7318a034781ae5b4cacb5be36bc94222f10c1a4b
-g
-7views/single-customs/single-industry-material.html.twig,8/6/867c02714db482abb3b1924c136a9cd4a2a421b1
 d
 4views/single-customs/single-industry_field.html.twig,b/4/b4cd5f05ba0744668f5892cf28fee520c9310efe
 i
