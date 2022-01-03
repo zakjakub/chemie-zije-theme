@@ -49,8 +49,6 @@ A
 package-lock.json,f/a/fa288d1472d29beccb489a676f68739ad365fc47
 R
 "views/layout/main-banner.html.twig,9/e/9ec95b8fa6e00e2376b31a9f23dcdae173caacc1
-M
-views/layout/header.html.twig,3/8/38f6c3574262b14b4085d19f20a11a052542eb74
 Y
 )src/Post/ChemicalIndustryMaterialPost.php,5/1/51b0d9293b757ed139b02da7a9e8587e431adeeb
 @
@@ -59,3 +57,30 @@ a
 1theme/page_teaching-material-category-vernier.php,b/4/b450516256df18fc769f127377ae469967c187c7
 N
 theme/page_industry-fields.php,9/2/9231ff8de81d774b84d6290e879b66c521d06d19
+g
+7views/single-customs/single-industry-material.html.twig,8/6/867c02714db482abb3b1924c136a9cd4a2a421b1
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+f
+6views/single-customs/single-chemical_element.html.twig,1/d/1d2145cdb2bb2084362311eeb5776c7a6bc7c124
+g
+7views/custom-templates/chemical-nomenclatures.html.twig,f/1/f150007b4827eb51037f58977ce342e5f264c68f
+U
+%theme/page_chemical-nomenclatures.php,f/d/fd7a5728fdcc8df5bf441f5b463356a52e953c24
+]
+-views/navigations/sub-tabs/sub-tabs.html.twig,7/0/703028671d0bd8cd44ff72ff8c0951a24c332834
+e
+5views/navigations/sub-tabs/sub-content-tabs.html.twig,e/3/e380946f4a4821a72fd13990ea138a258634241c
+O
+views/post-types/page.html.twig,1/e/1ed844bf847089272b180a4551ddaecf9fdb62ac
+R
+"theme/single-equation_category.php,a/5/a54b8a62ff302380389d349d857b347a79b2aeb9
+x
+Hviews/post-parts/periodical-table/interactive-periodical-table.html.twig,0/a/0a165210b8897b2134534c31759529331808ae5c
+E
+theme/scripts/main.js,e/c/ec10e5b0519d7948b53b1d55692f2de9bb9a8e96
+O
+theme/page_periodical-table.php,1/7/17d13379a5b7c849226a098e4802b4fa71beeec4
+F
+theme/styles/main.scss,3/6/368d36b29228e0c67f0204c694fe46637b37f654
