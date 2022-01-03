@@ -11,7 +11,10 @@ class TeachMaterialCategoryPost extends Post
         $thumbnails = $this->tabThumbnails();
         $image = array_filter(
             $thumbnails,
-            static fn(array $tabThumbnail) => $tabThumbnail['tab_slug'] === $slug,
+            static function (array $tabThumbnail) use ($slug) {
+                error_log('IMAGE_GETTER: ' . $slug . ', ' . $tabThumbnail['tab_slug']);
+                return $tabThumbnail['tab_slug'] === $slug;
+            },
             ARRAY_FILTER_USE_BOTH,
         )[0] ?? false;
 
