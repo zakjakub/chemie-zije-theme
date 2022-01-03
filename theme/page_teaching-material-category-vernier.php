@@ -22,6 +22,7 @@ if (empty($firstSubTypeSlug)) {
     $firstSubTypeSlug = $parts[array_key_last($parts) - 1] ?? 'ostatni';
 }
 $context['subtype'] = get_query_var('oblast', $firstSubTypeSlug) ?? $firstSubTypeSlug;
+$context['subtype'] = trim($context['subtype']);
 $context['materials'] = Timber::get_posts(
     new WP_Query([
         'post_type'      => 'teach_material',

@@ -21,12 +21,8 @@ C
 theme/functions.php,7/c/7ccbbe5fe5677abe7b94804d7e2820d6b7ad471d
 l
 <views/custom-templates/chemical-industry-materials.html.twig,9/e/9e0d12c24bfd4b7615c5c8cb8af10de9f728e2b6
-k
-;views/custom-templates/teach_material_cat_vernier.html.twig,2/a/2a82313c38de6d1104b9aefcc779ac08e25ac859
 Y
 )views/post-types/teach_material.html.twig,8/9/89cfdfc52eaa2e49571f6f66acebe69dad2d2e7e
-j
-:views/custom-templates/teach_material_cat_photos.html.twig,4/5/458380a04a04ee73a8d38e40b2e11501bd759054
 ]
 -views/post-types/single-map_company.html.twig,4/f/4f34be42e4895c513d1c0597fe0d35231eb15817
 Y
@@ -35,8 +31,6 @@ d
 4views/single-customs/single-industry_field.html.twig,b/4/b4cd5f05ba0744668f5892cf28fee520c9310efe
 i
 9views/custom-templates/interactive-industry-map.html.twig,b/2/b211ae3920e8a2335484799287f5137cac38ced4
-j
-:views/custom-templates/teach_material_cat_videos.html.twig,d/f/dfeb8de85c8f372da7b3fd1636899794071ad50b
 ]
 -views/navigations/signpost/signpost.html.twig,9/7/9764313689c6ff6ec1440b0226d5d2462a707475
 M
@@ -53,8 +47,6 @@ Y
 )src/Post/ChemicalIndustryMaterialPost.php,5/1/51b0d9293b757ed139b02da7a9e8587e431adeeb
 @
 theme/single.php,9/a/9a0185be5210ed319c01f66b698e9f4b8b1f9ab8
-a
-1theme/page_teaching-material-category-vernier.php,b/4/b450516256df18fc769f127377ae469967c187c7
 N
 theme/page_industry-fields.php,9/2/9231ff8de81d774b84d6290e879b66c521d06d19
 g
