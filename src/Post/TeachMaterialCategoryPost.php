@@ -17,7 +17,7 @@ class TeachMaterialCategoryPost extends Post
             ARRAY_FILTER_USE_BOTH,
         );
 
-        dd($images);
+        die(var_export($images, true));
 
 
         return false !== $image ? ($image['tab_thumbnail'] ?? null) : null;
