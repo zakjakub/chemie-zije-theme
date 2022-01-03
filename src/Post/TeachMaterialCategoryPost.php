@@ -12,11 +12,12 @@ class TeachMaterialCategoryPost extends Post
         $image = array_filter(
             $thumbnails,
             static function (array $tabThumbnail) use ($slug) {
-                error_log('IMAGE_GETTER: ' . $slug . ', ' . $tabThumbnail['tab_slug']);
                 return $tabThumbnail['tab_slug'] === $slug;
             },
             ARRAY_FILTER_USE_BOTH,
         )[0] ?? false;
+
+        dd($image);
 
         return false !== $image ? ($image['tab_thumbnail'] ?? null) : null;
     }
