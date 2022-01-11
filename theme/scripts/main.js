@@ -6,6 +6,8 @@ import '../styles/main.scss';
 import { analyseMF, getInfo } from 'chemcalc';
 
 const swiper = new Swiper('.swiper-container', {
+    observer: true,
+    observeParents: true,
     direction: 'horizontal',
     loop: false,
     allowTouchMove: false,
