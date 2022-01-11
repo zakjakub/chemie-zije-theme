@@ -9,11 +9,13 @@ const swiper = new Swiper('.swiper-container', {
     observer: true,
     observeParents: true,
     direction: 'horizontal',
+    centeredSlides: true,
     loop: false,
     allowTouchMove: false,
     freeMode: false,
     pagination: {
         el: '.swiper-pagination',
+        clickable: true,
     },
     navigation: {
         nextEl: '.swiper-button-next',
