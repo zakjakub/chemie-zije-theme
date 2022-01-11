@@ -8,6 +8,8 @@ import { analyseMF, getInfo } from 'chemcalc';
 const swiper = new Swiper('.swiper-container', {
     direction: 'horizontal',
     loop: false,
+    allowTouchMove: false,
+    freeMode: false,
     pagination: {
         el: '.swiper-pagination',
     },

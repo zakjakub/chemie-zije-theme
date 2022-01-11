@@ -1,6 +1,4 @@
 
-<
-package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
 X
 (views/custom-templates/contact.html.twig,c/9/c9a0919226122594e0a32d8d896b16ce05dc5e23
 `
@@ -39,8 +37,6 @@ K
 views/page-layout.html.twig,a/3/a3bd88f1f3ffe11f778f0af53433acd9fec8d6fc
 E
 views/index.html.twig,e/2/e2a74844d7ebfd61700a36e03fa2b9498d4073fa
-A
-package-lock.json,f/a/fa288d1472d29beccb489a676f68739ad365fc47
 R
 "views/layout/main-banner.html.twig,9/e/9ec95b8fa6e00e2376b31a9f23dcdae173caacc1
 Y
@@ -76,3 +72,5 @@ a
 1views/custom-templates/periodical-table.html.twig,f/f/ffdd201d0d8c21f82e7de08183b4bca8a9c1ca36
 M
 views/layout/header.html.twig,3/8/38f6c3574262b14b4085d19f20a11a052542eb74
+j
+:views/custom-templates/teach_material_cat_photos.html.twig,4/5/458380a04a04ee73a8d38e40b2e11501bd759054
