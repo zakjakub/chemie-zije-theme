@@ -22,7 +22,7 @@ const swiper = new Swiper('.swiper-container', {
         prevEl: '.swiper-button-prev',
     },
     on: {
-        afterInit: function (initializedSwiper) {
+        imagesReady: function (initializedSwiper) {
             initSwiper(initializedSwiper.el);
         }
     },
