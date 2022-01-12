@@ -121,6 +121,7 @@ function initSelects()
         controlInput: null,
         onItemAdd: function () {
             this.setTextboxValue('');
+            this.close();
             this.refreshOptions();
         },
     });
