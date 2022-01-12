@@ -22,7 +22,7 @@ const swiper = new Swiper('.swiper-container', {
         prevEl: '.swiper-button-prev',
     },
     on: {
-        imagesReady: function (initializedSwiper) {
+        paginationUpdate: function (initializedSwiper) {
             initSwiper(initializedSwiper.el);
         }
     },
