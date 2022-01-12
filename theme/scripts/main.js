@@ -100,8 +100,39 @@ function initCalcs()
     });
 }
 
+function getLevelBackgroundClass(level)
+{
+    if (Number.parseInt(level) < 3) {
+        return 'bg-success';
+    }
+    if (Number.parseInt(level) < 5) {
+        return 'bg-warning';
+    }
+    if (Number.parseInt(level) >= 5) {
+        return 'bg-danger';
+    }
+
+    return 'bg-primary';
+}
+
+function initSwipers()
+{
+    document.querySelectorAll('.swiper-container').forEach(swiperContainer => {
+        const colors = [];
+        swiperContainer.querySelectorAll('.swiper-slide').forEach(swiperSlide => {
+            colors.push(getLevelBackgroundClass(swiperSlide.dataset.level ?? 'level-attr-is-unknown'));
+            console.log('Get level attr: ', swiperSlide.dataset.level ?? '[]');
+        });
+        swiperContainer.querySelectorAll('.swiper-pagination-bullet').forEach((bullet, index) => {
+            bullet.classList.add(colors[index] ?? 'level-class-is-unknown');
+            console.log('Get level color: ', colors[index] ?? '[]');
+        });
+    });
+}
+
 window.addEventListener('load', () => {
     initCalcs();
+    initSwipers();
 });
 
 
