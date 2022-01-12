@@ -21,13 +21,18 @@ const swiper = new Swiper('.swiper-container', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
+    on: {
+        init: function (initializedSwiper) {
+            initSwiper(initializedSwiper.el);
+        }
+    },
 });
 
 const elements = getInfo().elements;
 
 function getElement(symbol)
 {
-    const element = elements.find(element => element.symbol === symbol);
+    const element = elements.find(el => el.symbol === symbol);
     console.log('For', symbol, 'its', element);
 
     return element;
@@ -115,24 +120,20 @@ function getLevelBackgroundClass(level)
     return 'bg-primary';
 }
 
-function initSwipers()
+function initSwiper(swiperContainer)
 {
-    document.querySelectorAll('.swiper-container').forEach(swiperContainer => {
-        const colors = [];
-        swiperContainer.querySelectorAll('.swiper-slide').forEach(swiperSlide => {
-            colors.push(getLevelBackgroundClass(swiperSlide.dataset.level ?? 'level-attr-is-unknown'));
-            console.log('Get level attr: ', swiperSlide.dataset.level ?? '[]');
-        });
-        swiperContainer.querySelectorAll('.swiper-pagination-bullet').forEach((bullet, index) => {
-            bullet.classList.add(colors[index] ?? 'level-class-is-unknown');
-            console.log('Get level color: ', colors[index] ?? '[]');
-        });
+    const colors = [];
+    swiperContainer.querySelectorAll('.swiper-slide').forEach(swiperSlide => {
+        colors.push(getLevelBackgroundClass(swiperSlide.dataset.level ?? 'level-attr-is-unknown'));
+        console.log('Get level attr: ', swiperSlide.dataset.level ?? '[]');
+    });
+    swiperContainer.querySelectorAll('.swiper-pagination-bullet').forEach((bullet, index) => {
+        bullet.classList.add(colors[index] ?? 'level-class-is-unknown');
+        console.log('Get level color: ', colors[index] ?? '[]');
     });
 }
 
 window.addEventListener('load', () => {
     initCalcs();
-    initSwipers();
 });
-
 
