@@ -1,7 +1,7 @@
 <?php
 /*
  * Template Name: Test - názvosloví
- * Template Post Type: page, nomenclat_equation
+ * Template Post Type: page, chem_nomenclature
  */
 
 $context = Timber::context();
