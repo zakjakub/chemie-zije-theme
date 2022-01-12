@@ -20,6 +20,7 @@
     "@wpackio/entrypoint": "^6.4.0",
     "bootstrap": "^5.1.0",
     "chemcalc": "^3.4.1",
-    "swiper": "^6.8.4"
+    "swiper": "^6.8.4",
+    "tom-select": "^2.0.0"
   }
 }

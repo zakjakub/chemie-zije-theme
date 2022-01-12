@@ -1,0 +1,105 @@
+{% extends "post-types/page.html.twig" %}
+
+{% block article_content %}
+
+    <nav class="nav row my-3 p-0 rounded-tabs" id="nav-tab">
+
+        <button class="rounded-tab col m-0 mt-3 mx-1 px-5 px-xl-4 py-2 border border-2 border-primary active"
+                id="nav-tab-0"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-0"
+                type="button"
+                role="tab"
+                aria-controls="nav-0"
+                aria-selected="true">
+            Teorie
+        </button>
+
+        {% if post.meta('_show_calculator') %}
+            <button class="rounded-tab col m-0 mt-3 mx-1 px-5 px-xl-4 py-2 border border-2 border-primary"
+                    id="nav-tab-1"
+                    data-bs-toggle="tab"
+                    data-bs-target="#nav-1"
+                    type="button"
+                    role="tab"
+                    aria-controls="nav-1"
+                    aria-selected="false">
+                Kalkulačka relativní molekulové hmotnosti
+            </button>
+        {% endif %}
+
+        <button class="rounded-tab col m-0 mt-3 mx-1 px-5 px-xl-4 py-2 border border-2 border-primary"
+                id="nav-tab-2"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-2"
+                type="button"
+                role="tab"
+                aria-controls="nav-2"
+                aria-selected="false">
+            Databáze řešených příkladů
+        </button>
+
+    </nav>
+    <section class="row">
+        <div class="tab-content col-12" id="nav-tabContent">
+
+            <div class="tab-pane fade show active" id="nav-0" role="tabpanel" aria-labelledby="nav-tab-0">
+                {{ post.content|default(content|default) }}
+            </div>
+
+            {% if post.meta('_show_calculator') %}
+                <div class="tab-pane fade w-100" id="nav-1" role="tabpanel" aria-labelledby="nav-tab-1">
+                    <div class="molcalc w-100">
+                        <label class="d-block w-100 my-4">
+                            <input name="formula" class="molcalc_formula form-control">
+                        </label>
+                        <div class="d-block w-100 my-4">
+                            <table class="w-100 table table-hover my-3 molcalc_table">
+                                <!-- Results are placed here by JS. -->
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+            <div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav-tab-2">
+
+                {% if equations|length > 0 %}
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper p-4">
+                            {% for index, equation in equations %}
+                                <div class="swiper-slide p-5" data-level="{{ equation.meta('_level') }}">
+                                    <div class="my-1">
+                                        {{ equation.content|apply_filters('the_content') }}
+                                        <p class="my-5">
+                                            <a class="btn btn-primary"
+                                               data-bs-toggle="collapse"
+                                               href="#solution{{ index }}"
+                                               role="button"
+                                               aria-expanded="false"
+                                               aria-controls="solution{{ index }}">
+                                                Zobrazit řešení
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="my-1 collapse" id="solution{{ index }}">
+                                        {{ equation.meta('_solution')|apply_filters('the_content') }}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                {% endif %}
+
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block article_signpost %}
+{% endblock %}

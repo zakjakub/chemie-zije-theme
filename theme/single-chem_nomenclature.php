@@ -3,7 +3,7 @@
 use Timber\Term;
 
 $context = Timber::context();
-$templates = ['single-customs/single-equation-category.html.twig', 'post-types/page.html.twig'];
+$templates = ['single-customs/single-nomenclature.html.twig', 'post-types/page.html.twig'];
 
 $context['categories'] = $context['post']->terms('nomenclature_cat');
 

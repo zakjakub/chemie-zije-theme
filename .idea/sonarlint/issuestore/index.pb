@@ -15,8 +15,6 @@ G
 src/ChemieZijeTheme.php,7/4/74c9ea92b0be8839cd978a4b7d116878ce03bca4
 ]
 -views/post-types/teach_material_cat.html.twig,b/8/b83701a313beca9b49feb4fe70e714632f203a5a
-C
-theme/functions.php,7/c/7ccbbe5fe5677abe7b94804d7e2820d6b7ad471d
 l
 <views/custom-templates/chemical-industry-materials.html.twig,9/e/9e0d12c24bfd4b7615c5c8cb8af10de9f728e2b6
 Y
@@ -52,8 +50,6 @@ g
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 f
 6views/single-customs/single-chemical_element.html.twig,1/d/1d2145cdb2bb2084362311eeb5776c7a6bc7c124
-g
-7views/custom-templates/chemical-nomenclatures.html.twig,f/1/f150007b4827eb51037f58977ce342e5f264c68f
 U
 %theme/page_chemical-nomenclatures.php,f/d/fd7a5728fdcc8df5bf441f5b463356a52e953c24
 ]
@@ -66,8 +62,6 @@ x
 Hviews/post-parts/periodical-table/interactive-periodical-table.html.twig,0/a/0a165210b8897b2134534c31759529331808ae5c
 O
 theme/page_periodical-table.php,1/7/17d13379a5b7c849226a098e4802b4fa71beeec4
-F
-theme/styles/main.scss,3/6/368d36b29228e0c67f0204c694fe46637b37f654
 a
 1views/custom-templates/periodical-table.html.twig,f/f/ffdd201d0d8c21f82e7de08183b4bca8a9c1ca36
 M
@@ -76,5 +70,3 @@ j
 :views/custom-templates/teach_material_cat_photos.html.twig,4/5/458380a04a04ee73a8d38e40b2e11501bd759054
 j
 :views/custom-templates/teach_material_cat_videos.html.twig,d/f/dfeb8de85c8f372da7b3fd1636899794071ad50b
-A
-package-lock.json,f/a/fa288d1472d29beccb489a676f68739ad365fc47

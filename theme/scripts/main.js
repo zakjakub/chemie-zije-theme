@@ -4,6 +4,7 @@ import * as bootstrap from 'bootstrap';
 import Swiper from 'swiper/bundle';
 import '../styles/main.scss';
 import { analyseMF, getInfo } from 'chemcalc';
+import TomSelect from 'tom-select';
 
 const swiper = new Swiper('.swiper-container', {
     observer: true,
@@ -24,7 +25,7 @@ const swiper = new Swiper('.swiper-container', {
     on: {
         paginationUpdate: function (initializedSwiper) {
             initSwiper(initializedSwiper.el);
-        }
+        },
     },
 });
 
@@ -105,6 +106,27 @@ function initCalcs()
     });
 }
 
+function initSelects()
+{
+    const tomSelect = new TomSelect('#categories', {
+        plugins: ['remove_button'],
+        create: true,
+        onItemAdd: function () {
+            this.setTextboxValue('');
+            this.refreshOptions();
+        },
+        render: {
+            option: function (data, escape) {
+                return '<div class="d-flex"><span>' + escape(data.value) + '</span><span class="ms-auto text-muted">' +
+                escape(data.date) + '</span></div>';
+            },
+            item: function (data, escape) {
+                return '<div>' + escape(data.value) + '</div>';
+            },
+        },
+    });
+}
+
 function getLevelBackgroundClass(level)
 {
     if (Number.parseInt(level) < 3) {
@@ -135,5 +157,6 @@ function initSwiper(swiperContainer)
 
 window.addEventListener('load', () => {
     initCalcs();
+    initSelects();
 });
 
