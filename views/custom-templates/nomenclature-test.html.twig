@@ -20,7 +20,7 @@
 
             <div class="tab-pane fade show active" id="nav-0" role="tabpanel" aria-labelledby="nav-tab-0">
 
-                <div class="container-fluid">
+                <div class="w-100 m-0 container-fluid">
 
                     {% if post.content|default %}
                     <div class="row">
@@ -31,10 +31,10 @@
                     {% endif %}
 
                     <form class="row">
-                        <label class="col-12" for="categories">
-                            Obsah zadání
+                        <label class="col-12 mt-3" for="categories">
+                            <strong>Obsah zadání</strong>
                         </label>
-                        <select id="categories" class="col-12" multiple placeholder="Best movies and TV shows" name="categories">
+                        <select id="categories" class="col-12 mb-2" multiple placeholder="" name="categories">
                             <optgroup label="TV Shows">
                                 <option value="Blue Bloods" data-date="2010-2021">Blue Bloods (2010-2021)</option>
                                 <option value="Magnum P.I." data-date="1980-1988" selected>Magnum P.I. (1980-1988)</option>
@@ -48,18 +48,25 @@
                                 <option value="Three Men and a Baby" data-date="1987">Three Men and a Baby (1987)</option>
                             </optgroup>
                         </select>
-                        <label class="col-12 col-md-6">
-                            <span class="d-block">Počet příkladů</span>
-                            <input type="number" name="count" min="1" max="20">
-                        </label>
-                        <label class="col-12 col-md-6">
-                            <span class="d-block">Obtížnost</span>
-                            <select id="level" class="col-12" name="level">
-                                <option value="1">Lehká</option>
-                                <option value="3">Středně těžká</option>
-                                <option value="5">Těžká</option>
-                            </select>
-                        </label>
+
+                        <div class="form-group col-12 col-md-6">
+                            <label>
+                                <strong class="d-block">Počet příkladů</strong>
+                                <input class="d-block form-control" type="number" name="count" min="1" max="20">
+                            </label>
+                        </div>
+
+                        <div class="form-group col-12 col-md-6">
+                            <label for="level">
+                                <span class="d-block">Obtížnost</span>
+                                <select id="level" class="d-block form-control" name="level">
+                                    <option value="1">Lehká</option>
+                                    <option value="3">Středně těžká</option>
+                                    <option value="5">Těžká</option>
+                                </select>
+                            </label>
+                        </div>
+
                     </form>
 
 
