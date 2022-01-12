@@ -22,7 +22,7 @@ const swiper = new Swiper('.swiper-container', {
         prevEl: '.swiper-button-prev',
     },
     on: {
-        init: function (initializedSwiper) {
+        afterInit: function (initializedSwiper) {
             initSwiper(initializedSwiper.el);
         }
     },
