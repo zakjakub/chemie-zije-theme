@@ -125,6 +125,15 @@ function initSelects()
             this.refreshOptions();
         },
     });
+    const tomSelect3 = new TomSelect('#count', {
+        create: true,
+        controlInput: null,
+        onItemAdd: function () {
+            this.setTextboxValue('');
+            this.close();
+            this.refreshOptions();
+        },
+    });
 }
 
 function getLevelBackgroundClass(level)
