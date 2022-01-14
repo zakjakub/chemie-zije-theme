@@ -23,11 +23,11 @@
                 <div class="w-100 m-0 container-fluid p-0">
 
                     {% if post.content|default %}
-                    <div class="row">
-                        <div class="col-12">
-                            {{ post.content|default(content|default) }}
+                        <div class="row">
+                            <div class="col-12">
+                                {{ post.content|default(content|default) }}
+                            </div>
                         </div>
-                    </div>
                     {% endif %}
 
                     <form class="row">
@@ -36,26 +36,20 @@
                             <label for="categories" class="w-100">
                                 <strong>Obsah zadání</strong>
                                 <select id="categories" class="form-control w-100" multiple placeholder="" name="categories">
-                                    <optgroup label="TV Shows">
-                                        <option value="Blue Bloods" data-date="2010-2021">Blue Bloods (2010-2021)</option>
-                                        <option value="Magnum P.I." data-date="1980-1988" selected>Magnum P.I. (1980-1988)</option>
-                                    </optgroup>
-                                    <optgroup label="Movies">
-                                        <option value="An Innocent Man" data-date="1989">An Innocent Man (1989)</option>
-                                        <option value="In & Out" data-date="1997">In & Out (1997)</option>
-                                        <option value="Lassiter" data-date="1984">Lassiter (1984)</option>
-                                        <option value="Mr. Baseball" data-date="1992">Mr. Baseball (1992)</option>
-                                        <option value="Quigley Down Under" data-date="1990">Quigley Down Under (1990)</option>
-                                        <option value="Three Men and a Baby" data-date="1987">Three Men and a Baby (1987)</option>
-                                    </optgroup>
+                                    {% for category in allCategories %}
+                                        <option value="{{ category.slug }}">{{ category.name }}</option>
+                                    {% endfor %}
                                 </select>
                             </label>
                         </div>
 
                         <div class="form-group col-12 col-md-6 my-3">
-                            <label class="w-100" for="count">
-                                <strong class="d-block w-100">Počet příkladů</strong>
-                                <input class="d-block w-100 form-control" type="number" id="count" name="count" min="1" max="20">
+                            <label for="count" class="w-100">
+                                <span class="d-block w-100"><strong>Počet příkladů</strong></span>
+                                <select id="level" class="d-block w-100 form-select" name="count">
+                                    {% for i in range(1, 20) %}
+                                    <option value="{{ i }}">{{ i }}</option>
+                                </select>
                             </label>
                         </div>
 
@@ -79,9 +73,7 @@
                     </form>
 
 
-
                 </div>
-
 
 
             </div>

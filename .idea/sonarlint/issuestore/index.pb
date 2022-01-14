@@ -52,8 +52,6 @@ f
 6views/single-customs/single-chemical_element.html.twig,1/d/1d2145cdb2bb2084362311eeb5776c7a6bc7c124
 U
 %theme/page_chemical-nomenclatures.php,f/d/fd7a5728fdcc8df5bf441f5b463356a52e953c24
-]
--views/navigations/sub-tabs/sub-tabs.html.twig,7/0/703028671d0bd8cd44ff72ff8c0951a24c332834
 e
 5views/navigations/sub-tabs/sub-content-tabs.html.twig,e/3/e380946f4a4821a72fd13990ea138a258634241c
 O
@@ -68,5 +66,17 @@ M
 views/layout/header.html.twig,3/8/38f6c3574262b14b4085d19f20a11a052542eb74
 j
 :views/custom-templates/teach_material_cat_photos.html.twig,4/5/458380a04a04ee73a8d38e40b2e11501bd759054
-j
-:views/custom-templates/teach_material_cat_videos.html.twig,d/f/dfeb8de85c8f372da7b3fd1636899794071ad50b
+C
+theme/functions.php,7/c/7ccbbe5fe5677abe7b94804d7e2820d6b7ad471d
+`
+0theme/page_teaching-material-category-videos.php,5/c/5c04605f5d67cbb1ea22904f5d2bfcc5caa581fb
+S
+#theme/single-teach_material_cat.php,9/2/928bce4abfeec2e2ea7c1a1a044472a39e22944b
+b
+2views/single-customs/single-nomenclature.html.twig,5/2/525bf511ed456db872c463c039a627733feda8a4
+<
+package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
+A
+package-lock.json,f/a/fa288d1472d29beccb489a676f68739ad365fc47
+F
+theme/styles/main.scss,3/6/368d36b29228e0c67f0204c694fe46637b37f654
