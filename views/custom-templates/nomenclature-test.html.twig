@@ -37,7 +37,10 @@
                                 <strong>Obsah zadání</strong>
                                 <select id="categories" class="form-control w-100" multiple placeholder="" name="categories">
                                     {% for category in allCategories %}
-                                        <option value="{{ category.slug }}">{{ category.name }}</option>
+                                        <option value="{{ category.slug }}"
+                                                {{ categories|filter(cat => cat == category.slug)|length > 0 ? 'selected=selected' : '' }}>
+                                            {{ category.name }}
+                                        </option>
                                     {% endfor %}
                                 </select>
                             </label>
@@ -60,7 +63,7 @@
                             <label for="level" class="w-100">
                                 <span class="d-block w-100"><strong>Obtížnost</strong></span>
                                 <select id="level" class="d-block w-100 form-select" name="level">
-                                    {% for level in levels %}
+                                    {% for level in allLevels %}
                                         <option value="{{ level.level }}" {{ level.level == level ? 'selected=selected' : '' }}>
                                             {{ level.name }}
                                         </option>
