@@ -32,5 +32,4 @@ $context['categories'] = get_query_var('categories', []) ?? [];
 if (is_string($context['categories'])) {
     $context['categories'] = [$context['categories']];
 }
-$context['categories'] = (int)$context['categories'];
 Timber::render($templates, $context);
