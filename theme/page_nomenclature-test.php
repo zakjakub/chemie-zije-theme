@@ -7,6 +7,14 @@
 $context = Timber::context();
 $templates = ['custom-templates/nomenclature-test.html.twig', 'post-types/page.html.twig'];
 $context['allCategories'] = \Timber\Timber::get_terms('nomenclature_cat');
+
+// Levels:
+$context['allLevels'] = [
+    ['level' => 1, 'name' => 'Lehká'],
+    ['level' => 3, 'name' => 'Středně těžká'],
+    ['level' => 5, 'name' => 'Těžká'],
+];
+
 // Level.
 $context['level'] = get_query_var('level', '1') ?? 1;
 if (is_iterable($context['level'])) {
