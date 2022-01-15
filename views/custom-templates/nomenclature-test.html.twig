@@ -77,9 +77,28 @@
                 </div>
 
 
-            </div>
+                <div class="w-100 m-0 container-fluid p-0">
 
-        </div>
+                    <div class="row">
+                        <h3>Test:</h3>
+                        <ul>
+                            <li>Level: {{ level }}</li>
+                            <li>Počet: {{ count }}</li>
+                            <li>
+                                Kategorie:
+                                <ul>
+                                    {% for category in categories %}
+                                        <li>{{ category }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+
+            </div>
     </section>
 
 {% endblock %}

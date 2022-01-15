@@ -68,8 +68,6 @@ j
 :views/custom-templates/teach_material_cat_photos.html.twig,4/5/458380a04a04ee73a8d38e40b2e11501bd759054
 C
 theme/functions.php,7/c/7ccbbe5fe5677abe7b94804d7e2820d6b7ad471d
-`
-0theme/page_teaching-material-category-videos.php,5/c/5c04605f5d67cbb1ea22904f5d2bfcc5caa581fb
 S
 #theme/single-teach_material_cat.php,9/2/928bce4abfeec2e2ea7c1a1a044472a39e22944b
 b
@@ -80,3 +78,5 @@ A
 package-lock.json,f/a/fa288d1472d29beccb489a676f68739ad365fc47
 F
 theme/styles/main.scss,3/6/368d36b29228e0c67f0204c694fe46637b37f654
+g
+7views/post-previews/_video_preview_horizontal.html.twig,f/c/fca46e5f1abc8e10b4bb2d449a2872428d0fdc1d
