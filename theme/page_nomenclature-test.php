@@ -33,22 +33,25 @@ if (is_string($context['categories'])) {
     $context['categories'] = [$context['categories']];
 }
 // Test
-$context['equations'] = Timber::get_posts(
+$allEquations = Timber::get_posts(
     new WP_Query([
-        'post_type'      => 'nomenclat_equation',
-        'orderby'        => 'title',
-        'order'          => 'ASC',
-        'posts_per_page' => 1000,
-        'tax_query'      => [
-            'relation' => 'AND',
-            [
-                'taxonomy' => 'nomenclature_cat',
-                'field'    => 'name',
-                'terms'    => $context['categories'],
+            'post_type'      => 'nomenclat_equation',
+            'orderby'        => 'title',
+            'order'          => 'ASC',
+            'posts_per_page' => 1000,
+            'tax_query'      => [
+                'relation' => 'AND',
+                [
+                    'taxonomy' => 'nomenclature_cat',
+                    'field'    => 'name',
+                    'terms'    => $context['categories'],
+                ],
             ],
-        ],
-    ])
+        ])
 ) ?? [];
+foreach ($allEquations as $equation) {
+    $context['equations'][] = $equation;
+}
 // Filter by level.
 $context['equations'] = array_filter(
     $context['equations'],
