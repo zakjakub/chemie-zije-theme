@@ -109,7 +109,7 @@
 
                     <div class="row">
                         <h3>Test:</h3>
-                        <ol>
+                        <ol class="ms-3">
                             {% for equation in equations %}
                                 <li>
                                     {{ equation.content }}
@@ -120,10 +120,10 @@
 
                     <div class="row">
                         <h3>Řešení</h3>
-                        <ol>
+                        <ol class="ms-3">
                             {% for equation in equations %}
                                 <li>
-                                    {{ equation.meta('_answer') }}
+                                    {{ equation.meta('_solution') }}
                                 </li>
                             {% endfor %}
                         </ol>
