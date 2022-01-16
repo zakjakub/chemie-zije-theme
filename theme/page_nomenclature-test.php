@@ -55,7 +55,7 @@ foreach ($allEquations as $equation) {
 // Filter by level.
 $context['equations'] = array_filter(
     $context['equations'],
-    static fn(Post $equation) => $equation->meta('_level') <= $context['level'],
+    static fn(Post $equation) => (int)$equation->meta('_level') <= (int)$context['level'],
 );
 // Randomize order.
 shuffle($context['equations']);
