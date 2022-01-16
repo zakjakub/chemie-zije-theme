@@ -62,8 +62,6 @@ O
 theme/page_periodical-table.php,1/7/17d13379a5b7c849226a098e4802b4fa71beeec4
 a
 1views/custom-templates/periodical-table.html.twig,f/f/ffdd201d0d8c21f82e7de08183b4bca8a9c1ca36
-M
-views/layout/header.html.twig,3/8/38f6c3574262b14b4085d19f20a11a052542eb74
 j
 :views/custom-templates/teach_material_cat_photos.html.twig,4/5/458380a04a04ee73a8d38e40b2e11501bd759054
 C
