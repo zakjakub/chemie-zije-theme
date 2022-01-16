@@ -63,9 +63,9 @@
                             <label for="level" class="w-100">
                                 <span class="d-block w-100"><strong>Obtížnost</strong></span>
                                 <select id="level" class="d-block w-100 form-select" name="level">
-                                    {% for level in allLevels %}
-                                        <option value="{{ level.level }}" {{ ''~level.level == ''~level ? 'selected=selected' : '' }}>
-                                            {{ level.name }}
+                                    {% for oneLevel in allLevels %}
+                                        <option value="{{ oneLevel.level }}" {{ ''~oneLevel.level == ''~level ? 'selected=selected' : '' }}>
+                                            {{ oneLevel.name }}
                                         </option>
                                     {% endfor %}
                                 </select>
