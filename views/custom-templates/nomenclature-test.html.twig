@@ -35,7 +35,7 @@
                         <div class="form-group col-12 my-3">
                             <label for="categories" class="w-100">
                                 <strong>Obsah zadání</strong>
-                                <select id="categories" class="form-control w-100" multiple placeholder="" name="categories">
+                                <select id="categories" class="form-control w-100" multiple placeholder="" name="categories[]">
                                     {% for category in allCategories %}
                                         <option value="{{ category.slug }}"
                                                 {{ categories|filter(cat => cat == category.slug)|length > 0 ? 'selected=selected' : '' }}>
