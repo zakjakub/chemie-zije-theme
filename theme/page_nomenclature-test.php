@@ -41,7 +41,7 @@ $allEquations = Timber::get_posts(
                 'relation' => 'AND',
                 [
                     'taxonomy' => 'nomenclature_cat',
-                    'field'    => 'name',
+                    'field'    => 'slug',
                     'terms'    => $context['categories'],
                 ],
             ],
