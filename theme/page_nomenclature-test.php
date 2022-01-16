@@ -47,6 +47,7 @@ $allEquations = Timber::get_posts(
             ],
         ])
 ) ?? [];
+$context['equations'] = [];
 foreach ($allEquations as $equation) {
     if ((int)$equation->meta('_level') <= $context['level']) {
         $context['equations'][] = $equation;
