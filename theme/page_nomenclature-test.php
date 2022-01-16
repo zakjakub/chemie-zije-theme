@@ -4,8 +4,6 @@
  * Template Post Type: page, chem_nomenclature
  */
 
-dd(get_query_var('categories', []));
-
 $context = Timber::context();
 $templates = ['custom-templates/nomenclature-test.html.twig', 'post-types/page.html.twig'];
 $context['allCategories'] = \Timber\Timber::get_terms('nomenclature_cat');
