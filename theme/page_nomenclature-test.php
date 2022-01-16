@@ -48,7 +48,7 @@ $context['equations'] = Timber::get_posts(
             ],
         ],
     ])
-);
+) ?? [];
 // Filter by level.
 $context['equations'] = array_filter(
     $context['equations'],
