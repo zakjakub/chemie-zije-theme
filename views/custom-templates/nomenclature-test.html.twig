@@ -131,7 +131,7 @@
                         <ol class="ms-4 collapse" id="solutionsCollapse">
                             {% for equation in equations %}
                                 <li>
-                                    {{ equation.meta('_solution') }}
+                                    {{ equation.meta('_solution')|apply_filters('the_content') }}
                                 </li>
                             {% endfor %}
                         </ol>
