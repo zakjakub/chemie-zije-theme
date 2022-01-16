@@ -5,7 +5,6 @@
  */
 
 use Timber\Post;
-use Timber\Term;
 
 $context = Timber::context();
 $templates = ['custom-templates/nomenclature-test.html.twig', 'post-types/page.html.twig'];
@@ -45,7 +44,7 @@ $context['equations'] = Timber::get_posts(
             [
                 'taxonomy' => 'nomenclature_cat',
                 'field'    => 'name',
-                'terms'    => array_map(static fn(Term $term) => $term->__toString(), $context['categories']),
+                'terms'    => $context['categories'],
             ],
         ],
     ])
