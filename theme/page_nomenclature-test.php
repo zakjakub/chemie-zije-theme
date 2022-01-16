@@ -4,8 +4,6 @@
  * Template Post Type: page, chem_nomenclature
  */
 
-use Timber\Post;
-
 $context = Timber::context();
 $templates = ['custom-templates/nomenclature-test.html.twig', 'post-types/page.html.twig'];
 $context['allCategories'] = \Timber\Timber::get_terms('nomenclature_cat');
@@ -50,13 +48,10 @@ $allEquations = Timber::get_posts(
         ])
 ) ?? [];
 foreach ($allEquations as $equation) {
-    $context['equations'][] = $equation;
+    if ((int)$equation->meta('_level') <= $context['level']) {
+        $context['equations'][] = $equation;
+    }
 }
-// Filter by level.
-$context['equations'] = array_filter(
-    $context['equations'],
-    static fn(Post $equation) => (int)$equation->meta('_level') <= (int)$context['level'],
-);
 // Randomize order.
 shuffle($context['equations']);
 // Select required amount.
