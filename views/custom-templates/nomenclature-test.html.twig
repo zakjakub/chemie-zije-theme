@@ -104,6 +104,34 @@
 
                 </div>
 
+
+                <div class="w-100 m-0 container-fluid p-0">
+
+                    <div class="row">
+                        <h3>Test:</h3>
+                        <ol>
+                            {% for equation in equations %}
+                                <li>
+                                    {{ equation.content }}
+                                </li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+
+                    <div class="row">
+                        <h3>Řešení</h3>
+                        <ol>
+                            {% for equation in equations %}
+                                <li>
+                                    {{ equation.meta('_answer') }}
+                                </li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+
+
+                </div>
+
             </div>
     </section>
 
