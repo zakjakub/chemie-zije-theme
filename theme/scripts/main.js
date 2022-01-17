@@ -102,10 +102,14 @@ function initCalcs()
         const table = molcalc.querySelector('.molcalc_table');
         const molcalcFormula = molcalc.querySelector('.molcalc_formula');
         molcalcFormula.addEventListener('change', event => {
-            processFormula(table, event.target.value);
+            if (event.target.value) {
+                processFormula(table, event.target.value);
+            }
         });
     molcalc.querySelector('button').addEventListener('click', event => {
-        processFormula(table, molcalcFormula.value);
+        if (molcalcFormula.value) {
+            processFormula(table, molcalcFormula.value);
+        }
       });
     });
 }
