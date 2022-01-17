@@ -23,8 +23,6 @@ Y
 -views/post-types/single-map_company.html.twig,4/f/4f34be42e4895c513d1c0597fe0d35231eb15817
 Y
 )views/post-types/contact_person.html.twig,9/3/9384b4b3227ebd548ff661fc0bf08c69ca7e00f1
-d
-4views/single-customs/single-industry_field.html.twig,b/4/b4cd5f05ba0744668f5892cf28fee520c9310efe
 i
 9views/custom-templates/interactive-industry-map.html.twig,b/2/b211ae3920e8a2335484799287f5137cac38ced4
 ]
@@ -62,8 +60,6 @@ C
 theme/functions.php,7/c/7ccbbe5fe5677abe7b94804d7e2820d6b7ad471d
 S
 #theme/single-teach_material_cat.php,9/2/928bce4abfeec2e2ea7c1a1a044472a39e22944b
-<
-package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
 A
 package-lock.json,f/a/fa288d1472d29beccb489a676f68739ad365fc47
 g
