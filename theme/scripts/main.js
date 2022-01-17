@@ -53,8 +53,8 @@ function processFormula(table, formula)
     tableHead.innerHTML = `<tr class="text-center">
             <td>Počet atomů</td>
             <td>Prvek</td>
-            <td>A<sub>r</sub> prvku </td>
-            <td>M<sub>r</sub> mezisoučet </td>
+            <td class="text-end">A<sub>r</sub> prvku </td>
+            <td class="text-end">M<sub>r</sub> mezisoučet </td>
         </tr>`;
 
   // noinspection JSUnresolvedVariable
