@@ -1,20 +1,14 @@
 {% if subtypes|length > 1 %}
-    <div class="row px-2 mt-3 mb-0" style="line-height: 1.1;">
+    <div class="row px-2 my-3" style="line-height: 1.1;">
         {% for oneSubType in subtypes %}
             {% set classes_common = "d-flex col m-0 mt-3 mx-1 px-5 px-xl-4 py-2 text-center align-items-center justify-content-center" %}
             {% set classes_border = "border border-2 border-primary" %}
             {% set classes = classes_common ~ " " ~ classes_border %}
-            {% if subtype == oneSubType.slug %}
-                <a class="{{ classes }} bg-white text-primary" href="?oblast={{ oneSubType.slug }}"
-                   style="border-top-left-radius: 1.2em !important; border-top-right-radius: 1.2em !important;">
-                    <strong>{{ oneSubType.name }}</strong>
-                </a>
-            {% else %}
-                <a class="{{ classes }} bg-primary text-white" href="?oblast={{ oneSubType.slug }}"
-                   style="border-top-left-radius: 1.2em !important; border-top-right-radius: 1.2em !important;">
-                    {{ oneSubType.name }}
-                </a>
-            {% endif %}
+            {% set colorClasses = subtype == oneSubType.slug ? 'bg-white text-primary' : 'bg-primary text-white' %}
+            <a class="{{ classes }} {{ colorClasses }}" href="?oblast={{ oneSubType.slug }}"
+               style="border-top-left-radius: 1.2em !important; border-top-right-radius: 1.2em !important;">
+                {{ oneSubType.name }}
+            </a>
         {% endfor %}
     </div>
 {% endif %}

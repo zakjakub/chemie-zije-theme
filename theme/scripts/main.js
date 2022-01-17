@@ -100,9 +100,13 @@ function initCalcs()
 {
     document.querySelectorAll('.molcalc').forEach(molcalc => {
         const table = molcalc.querySelector('.molcalc_table');
-        molcalc.querySelector('.molcalc_formula').addEventListener('change', event => {
+        const molcalcFormula = molcalc.querySelector('.molcalc_formula');
+        molcalcFormula.addEventListener('change', event => {
             processFormula(table, event.target.value);
         });
+    molcalc.querySelector('button').addEventListener('click', event => {
+        processFormula(table, molcalcFormula.nodeValue);
+      });
     });
 }
 

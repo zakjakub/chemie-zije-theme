@@ -48,20 +48,14 @@ g
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
-f
-6views/single-customs/single-chemical_element.html.twig,1/d/1d2145cdb2bb2084362311eeb5776c7a6bc7c124
 U
 %theme/page_chemical-nomenclatures.php,f/d/fd7a5728fdcc8df5bf441f5b463356a52e953c24
-e
-5views/navigations/sub-tabs/sub-content-tabs.html.twig,e/3/e380946f4a4821a72fd13990ea138a258634241c
 O
 views/post-types/page.html.twig,1/e/1ed844bf847089272b180a4551ddaecf9fdb62ac
 x
 Hviews/post-parts/periodical-table/interactive-periodical-table.html.twig,0/a/0a165210b8897b2134534c31759529331808ae5c
 O
 theme/page_periodical-table.php,1/7/17d13379a5b7c849226a098e4802b4fa71beeec4
-a
-1views/custom-templates/periodical-table.html.twig,f/f/ffdd201d0d8c21f82e7de08183b4bca8a9c1ca36
 j
 :views/custom-templates/teach_material_cat_photos.html.twig,4/5/458380a04a04ee73a8d38e40b2e11501bd759054
 C
@@ -72,7 +66,5 @@ S
 package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
 A
 package-lock.json,f/a/fa288d1472d29beccb489a676f68739ad365fc47
-F
-theme/styles/main.scss,3/6/368d36b29228e0c67f0204c694fe46637b37f654
 g
 7views/post-previews/_video_preview_horizontal.html.twig,f/c/fca46e5f1abc8e10b4bb2d449a2872428d0fdc1d
