@@ -33,8 +33,6 @@ K
 views/page-layout.html.twig,a/3/a3bd88f1f3ffe11f778f0af53433acd9fec8d6fc
 E
 views/index.html.twig,e/2/e2a74844d7ebfd61700a36e03fa2b9498d4073fa
-R
-"views/layout/main-banner.html.twig,9/e/9ec95b8fa6e00e2376b31a9f23dcdae173caacc1
 Y
 )src/Post/ChemicalIndustryMaterialPost.php,5/1/51b0d9293b757ed139b02da7a9e8587e431adeeb
 @
