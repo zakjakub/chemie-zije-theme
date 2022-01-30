@@ -16,7 +16,9 @@
         </a>
         {% if post.parent %}
             <div class="text-muted small">
-                <p>{{ post.parent.title }}</p>
+                <p>
+                    Je součástí stránky <strong>{{ post.parent.title }}</strong>
+                </p>
             </div>
         {% endif %}
         <div style="text-align: justify;">
