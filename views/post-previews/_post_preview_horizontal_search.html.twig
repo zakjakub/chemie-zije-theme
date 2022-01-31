@@ -29,8 +29,8 @@
         </nav>
     </div>
 
-    {% set image_src = post.thumbnail.src|default(get_image(post.meta('_menu_image')).src|default) %}
-    {% set image_src = image_src or post.parent.thumbnail.src|default(get_image(post.parent.meta('_menu_image')).src|default) %}
+    {% set image_src = post.thumbnail.src|default(get_image(post.meta('_menu_image')).src) %}
+    {% set image_src = image_src or post.parent.thumbnail.src|default(get_image(post.parent.meta('_menu_image')).src) %}
     {% if image_src|default and image_src|length > 0 %}
         <div class="col-12 col-md-4 col-lg-3 d-flex flex-column justify-content-center">
             <a href="{{ post.link }}"
