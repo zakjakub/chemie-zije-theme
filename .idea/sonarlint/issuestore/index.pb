@@ -72,8 +72,6 @@ U
 %views/navigations/menu/menu.html.twig,7/0/709af92b9aee60f0cb0dab8cd662069798897726
 j
 :views/custom-templates/teach_material_cat_videos.html.twig,d/f/dfeb8de85c8f372da7b3fd1636899794071ad50b
-g
-7views/custom-templates/chemical-nomenclatures.html.twig,f/1/f150007b4827eb51037f58977ce342e5f264c68f
 Q
 !theme/page_chemical-equations.php,b/a/ba5f8ac38b4d13bdd5f00667b182a9c6d30cf687
 b

@@ -49,6 +49,9 @@
 
             {% if post.meta('_show_calculator') %}
                 <div class="tab-pane fade w-100" id="nav-1" role="tabpanel" aria-labelledby="nav-tab-1">
+                    <div>
+                        {{ post.meta('_calculator_description')|apply_filters('the_content') }}
+                    </div>
                     <div class="molcalc w-100 my-3">
                         <label class="d-none" for="formula"></label>
                         <div class="w-100 input-group">
