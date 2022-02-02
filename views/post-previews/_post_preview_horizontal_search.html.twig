@@ -7,12 +7,12 @@
                 {{- post.meta('_alternative_names')|default ? ' <small>(' ~ post.meta('_alternative_names') ~ ')</small>'  : '' -}}
             </h3>
             {% if post.parent or post.type.labels.singular_name|default(post.type.label) %}
-                <a href="{{ post.parent.link }}" class="text-muted text-decoration-none">
-                    <h4>
-                        <small class="d-block">{{ post.type.labels.singular_name|default(post.type.label) }}</small>
+                <h4 class="text-muted text-decoration-none">
+                    <small class="d-block">{{ post.type.labels.singular_name|default(post.type.label) }}</small>
+                    <a href="{{ post.parent.link }}" class="text-muted text-decoration-none">
                         <small class="d-block">{{ post.parent.title }}</small>
-                    </h4>
-                </a>
+                    </a>
+                </h4>
             {% endif %}
         </a>
         {% if post.parent %}
