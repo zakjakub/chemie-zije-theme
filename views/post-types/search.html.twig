@@ -7,7 +7,7 @@
             {% for post in posts %}
                 {% include 'post-previews/_post_preview_horizontal_search.html.twig' %}
                 <div class="col-12">
-                    {{ dump(post.type) }}
+                    {{ post.type }}
                 </div>
             {% endfor %}
         {% else %}
