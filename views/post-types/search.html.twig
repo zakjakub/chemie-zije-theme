@@ -6,9 +6,6 @@
         {% if posts|default and posts|length > 0 %}
             {% for post in posts %}
                 {% include 'post-previews/_post_preview_horizontal_search.html.twig' %}
-                <div class="col-12">
-                    {{ post.type.label }}
-                </div>
             {% endfor %}
         {% else %}
             <div class="col-12">

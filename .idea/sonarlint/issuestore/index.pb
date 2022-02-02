@@ -96,8 +96,6 @@ A
 package-lock.json,f/a/fa288d1472d29beccb489a676f68739ad365fc47
 R
 "views/layout/main-banner.html.twig,9/e/9ec95b8fa6e00e2376b31a9f23dcdae173caacc1
-m
-=views/post-previews/_post_preview_horizontal_search.html.twig,4/f/4fd463bc18503c7ce1723496c647f8306b59e0de
 =
 composer.json,3/9/3957b91a0d8450cea0115cfd5af69eac90d75897
 g
