@@ -74,10 +74,6 @@ j
 :views/custom-templates/teach_material_cat_videos.html.twig,d/f/dfeb8de85c8f372da7b3fd1636899794071ad50b
 b
 2views/custom-templates/nomenclature-test.html.twig,b/8/b8827d0d14eb7dcb301ce3c11534a3d9aae40a9b
-a
-1views/custom-templates/periodical-table.html.twig,f/f/ffdd201d0d8c21f82e7de08183b4bca8a9c1ca36
-f
-6views/single-customs/single-chemical_element.html.twig,1/d/1d2145cdb2bb2084362311eeb5776c7a6bc7c124
 <
 package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
 b
@@ -102,3 +98,5 @@ g
 7views/custom-templates/chemical-nomenclatures.html.twig,f/1/f150007b4827eb51037f58977ce342e5f264c68f
 g
 7views/single-customs/single-equation-category.html.twig,7/3/7318a034781ae5b4cacb5be36bc94222f10c1a4b
+Q
+!theme/page_chemical-equations.php,b/a/ba5f8ac38b4d13bdd5f00667b182a9c6d30cf687

@@ -3,25 +3,20 @@
     <div class="col-12 col-md d-flex align-items-start flex-column py-1">
         <a href="{{ post.link }}" class="text-dark text-decoration-none">
             <h3>
+                {%- if post.parent -%}
+                    <a href="{{ post.parent.link }}" class="text-muted text-decoration-none small">
+                        {{ post.parent.title }} >
+                    </a>
+                {%- endif -%}
                 {{- post.title -}}
                 {{- post.meta('_alternative_names')|default ? ' <small>(' ~ post.meta('_alternative_names') ~ ')</small>'  : '' -}}
             </h3>
             {% if post.parent or post.type.labels.singular_name|default(post.type.label) %}
                 <h4 class="text-muted text-decoration-none">
                     <small class="d-block">{{ post.type.labels.singular_name|default(post.type.label) }}</small>
-                    <a href="{{ post.parent.link }}" class="text-muted text-decoration-none">
-                        <small class="d-block">{{ post.parent.title }}</small>
-                    </a>
                 </h4>
             {% endif %}
         </a>
-        {% if post.parent %}
-            <div class="text-muted small">
-                <p>
-                    Je součástí stránky <strong>{{ post.parent.title }}</strong>
-                </p>
-            </div>
-        {% endif %}
         <div style="text-align: justify;">
             {{ post.post_excerpt }}
         </div>
