@@ -62,8 +62,6 @@ g
 7views/post-previews/_video_preview_horizontal.html.twig,f/c/fca46e5f1abc8e10b4bb2d449a2872428d0fdc1d
 Q
 !theme/page_teaching-materials.php,1/b/1bc77d1fa1f1596f67739e9f413fd73b2ae4f493
-R
-"theme/single-chem_nomenclature.php,3/d/3d7449b7e0b33b93223cad283f8686f70e82f66a
 `
 0theme/page_teaching-material-category-videos.php,5/c/5c04605f5d67cbb1ea22904f5d2bfcc5caa581fb
 P
@@ -82,10 +80,6 @@ d
 4views/single-customs/single-industry_field.html.twig,b/4/b4cd5f05ba0744668f5892cf28fee520c9310efe
 E
 theme/scripts/main.js,e/c/ec10e5b0519d7948b53b1d55692f2de9bb9a8e96
-]
--views/navigations/sub-tabs/sub-tabs.html.twig,7/0/703028671d0bd8cd44ff72ff8c0951a24c332834
-e
-5views/navigations/sub-tabs/sub-content-tabs.html.twig,e/3/e380946f4a4821a72fd13990ea138a258634241c
 M
 views/layout/header.html.twig,3/8/38f6c3574262b14b4085d19f20a11a052542eb74
 A
