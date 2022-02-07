@@ -101,6 +101,9 @@ h5 {
 
   h3 {
     font-size: 1.15em;
+    &:hover {
+      color: $black;
+    }
   }
 
   .card-img {
