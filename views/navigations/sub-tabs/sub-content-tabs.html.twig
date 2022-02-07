@@ -4,7 +4,7 @@
         {% for index, tab in tabs %}
             {% set active = iter < 1 ? 'active' : '' %}
             <h3 class="col m-0">
-                <button class="rounded-tab w-100 h-100 m-0 mt-3 mx-1 px-5 px-xl-4 py-2 border border-2 border-primary {{ active }}"
+                <button class="rounded-tab w-100 m-0 mt-3 mx-1 px-5 px-xl-4 py-2 border border-2 border-primary {{ active }}"
                         id="nav-tab-{{ index }}"
                         data-bs-toggle="tab"
                         data-bs-target="#nav-{{ index }}"
