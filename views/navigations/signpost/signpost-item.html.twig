@@ -8,9 +8,9 @@
         {% endif %}
         {% set classes = image_src|default ? 'justify-content-center': 'justify-content-center align-items-center' %}
         <div class="card-body d-flex flex-column align-middle {{ classes }}" style="min-height: 6em;">
-            <h5 class="card-title {{ post.post_excerpt|default|length > 0 ? '' : 'text-center' }}">
-                {{ post.title }}
-            </h5>
+            <h3 class="card-title {{ post.post_excerpt|default|length > 0 ? '' : 'text-center' }}">
+                <strong>{{ post.title }}</strong>
+            </h3>
             <p class="small card-text {{ post.post_excerpt|default|length > 0 ? 'mt-auto' : '' }}" style="text-align: justify;">
                 {{ post.post_excerpt }}
             </p>
