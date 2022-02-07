@@ -71,9 +71,9 @@
 
                 {% if equations|length > 0 %}
                     <div class="swiper-container">
-                        <div class="swiper-wrapper p-4">
+                        <div class="swiper-wrapper p-3">
                             {% for index, equation in equations %}
-                                <div class="swiper-slide p-5" data-level="{{ equation.meta('_level') }}">
+                                <div class="swiper-slide p-3" data-level="{{ equation.meta('_level') }}">
                                     <div class="my-1">
                                         {{ equation.content|apply_filters('the_content') }}
                                         <p class="my-3">
