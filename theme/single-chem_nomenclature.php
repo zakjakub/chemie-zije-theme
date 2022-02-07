@@ -11,7 +11,7 @@ $context['categories'] = $context['post']->terms('nomenclature_cat');
 $context['equations'] = Timber::get_posts(
     new WP_Query([
         'post_type'      => 'nomenclat_equation',
-        'meta_key'       => 'level',
+        'meta_key'       => '_level',
         'orderby'        => 'meta_value',
         'order'          => 'ASC',
         'posts_per_page' => 1000,
