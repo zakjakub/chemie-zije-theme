@@ -5,9 +5,9 @@
             {% set classes_border = "border border-2 border-primary" %}
             {% set classes = classes_common ~ " " ~ classes_border %}
             {% set colorClasses = subtype == oneSubType.slug ? 'bg-white text-primary' : 'bg-primary text-white' %}
-            <h3 class="{{ classes }} {{ colorClasses }}">
-                <a href="?oblast={{ oneSubType.slug }}"
-                   style="border-top-left-radius: 1.2em !important; border-top-right-radius: 1.2em !important;">
+            <h3 class="{{ classes }} {{ colorClasses }}"
+                style="border-top-left-radius: 1.2em !important; border-top-right-radius: 1.2em !important;">
+                <a href="?oblast={{ oneSubType.slug }}">
                     {{ oneSubType.name }}
                 </a>
             </h3>
