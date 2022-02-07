@@ -1,15 +1,17 @@
 <?php
 
+use Timber\Post;
 use Timber\Term;
 
 $context = Timber::context();
 $templates = ['single-customs/single-nomenclature.html.twig', 'post-types/page.html.twig'];
+
 $context['categories'] = $context['post']->terms('nomenclature_cat');
+
 $context['equations'] = Timber::get_posts(
     new WP_Query([
         'post_type'      => 'nomenclat_equation',
-        'meta_key'       => 'level',
-        'orderby'        => 'meta_value',
+        'orderby'        => 'title',
         'order'          => 'ASC',
         'posts_per_page' => 1000,
         'tax_query'      => [
@@ -22,4 +24,5 @@ $context['equations'] = Timber::get_posts(
         ],
     ])
 );
+
 Timber::render($templates, $context);
