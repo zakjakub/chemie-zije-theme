@@ -7,7 +7,7 @@
             {% set colorClasses = subtype == oneSubType.slug ? 'bg-white text-primary' : 'bg-primary text-white' %}
             <h3 class="{{ classes }} {{ colorClasses }}"
                 style="border-top-left-radius: 1.2em !important; border-top-right-radius: 1.2em !important;">
-                <a href="?oblast={{ oneSubType.slug }}">
+                <a href="?oblast={{ oneSubType.slug }}" style="color: inherit;">
                     {{ oneSubType.name }}
                 </a>
             </h3>
