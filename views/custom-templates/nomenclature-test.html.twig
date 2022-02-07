@@ -87,10 +87,22 @@
                     <div class="row">
                         <h3>Zadání testu</h3>
                         <ol class="ms-4">
-                            {% for equation in equations %}
-                                <li>
-                                    {{ equation.content }}
+                            {% for index, equation in equations %}
+                                <li class="my-1">
+                                    <p>{{ equation.content|apply_filters('the_content') }}</p>
+                                    <p class="my-5">
+                                        <a data-bs-toggle="collapse"
+                                           href="#solution{{ index }}"
+                                           role="button"
+                                           aria-expanded="false"
+                                           aria-controls="solution{{ index }}">
+                                            Zobrazit řešení
+                                        </a>
+                                    </p>
                                 </li>
+                                <ul class="my-1 collapse" id="solution{{ index }}">
+                                    <li>{{ equation.meta('_solution')|apply_filters('the_content') }}</li>
+                                </ul>
                             {% endfor %}
                         </ol>
                     </div>

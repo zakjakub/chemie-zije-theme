@@ -66,12 +66,8 @@ U
 %views/navigations/menu/menu.html.twig,7/0/709af92b9aee60f0cb0dab8cd662069798897726
 j
 :views/custom-templates/teach_material_cat_videos.html.twig,d/f/dfeb8de85c8f372da7b3fd1636899794071ad50b
-b
-2views/custom-templates/nomenclature-test.html.twig,b/8/b8827d0d14eb7dcb301ce3c11534a3d9aae40a9b
 <
 package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
-b
-2views/single-customs/single-nomenclature.html.twig,5/2/525bf511ed456db872c463c039a627733feda8a4
 d
 4views/single-customs/single-industry_field.html.twig,b/4/b4cd5f05ba0744668f5892cf28fee520c9310efe
 E
