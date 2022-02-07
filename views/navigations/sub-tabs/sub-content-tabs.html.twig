@@ -3,17 +3,15 @@
         {% set iter = 0 %}
         {% for index, tab in tabs %}
             {% set active = iter < 1 ? 'active' : '' %}
-            <h3 class="col m-0">
-                <button class="rounded-tab w-100 m-0 mt-3 mx-1 px-5 px-xl-4 py-2 border border-2 border-primary {{ active }}"
-                        id="nav-tab-{{ index }}"
-                        data-bs-toggle="tab"
-                        data-bs-target="#nav-{{ index }}"
-                        type="button"
-                        role="tab"
-                        aria-controls="nav-{{ index }}"
-                        aria-selected="{{ iter < 1 ? 'true' : 'false' }}">
-                    {{ tab.tab_title|default(tab.title) }}
-                </button>
+            <h3 class="rounded-tab col m-0 mt-3 mx-1 px-5 px-xl-4 py-2 border border-2 border-primary {{ active }}"
+                id="nav-tab-{{ index }}"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-{{ index }}"
+                type="button"
+                role="tab"
+                aria-controls="nav-{{ index }}"
+                aria-selected="{{ iter < 1 ? 'true' : 'false' }}">
+                {{ tab.tab_title|default(tab.title) }}
             </h3>
             {% set iter = iter + 1 %}
         {% endfor %}
