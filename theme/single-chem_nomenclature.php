@@ -1,5 +1,6 @@
 <?php
 
+use Timber\Post;
 use Timber\Term;
 
 $context = Timber::context();
@@ -22,6 +23,11 @@ $context['equations'] = Timber::get_posts(
             ],
         ],
     ])
+);
+
+usort(
+    $context['equations'],
+    static fn (Post $a, Post $b) => $a->meta('level') <=> $b->meta('level'),
 );
 
 Timber::render($templates, $context);
