@@ -31,20 +31,21 @@ if (is_string($context['categories'])) {
     $context['categories'] = [$context['categories']];
 }
 // Test
+$taxQuery = count($context['categories']) ? [
+    'relation' => 'AND',
+    [
+        'taxonomy' => 'nomenclature_cat',
+        'field'    => 'slug',
+        'terms'    => $context['categories'],
+    ],
+] : null;
 $allEquations = Timber::get_posts(
     new WP_Query([
             'post_type'      => 'nomenclat_equation',
             'orderby'        => 'title',
             'order'          => 'ASC',
             'posts_per_page' => 1000,
-            'tax_query'      => [
-                'relation' => 'AND',
-                [
-                    'taxonomy' => 'nomenclature_cat',
-                    'field'    => 'slug',
-                    'terms'    => $context['categories'],
-                ],
-            ],
+            'tax_query'      => $taxQuery,
         ])
 ) ?? [];
 $context['equations'] = [];
