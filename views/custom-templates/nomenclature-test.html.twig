@@ -85,7 +85,6 @@
                 <div class="w-100 m-0 mt-3 container-fluid p-0">
 
                     <div class="row">
-                        <h3>Zadání testu</h3>
                         <ol class="ms-4">
                             {% for index, equation in equations %}
                                 <li class="my-1">
@@ -103,25 +102,6 @@
                                 <ul class="my-1 collapse" id="solution{{ index }}">
                                     <li>{{ equation.meta('_solution')|apply_filters('the_content') }}</li>
                                 </ul>
-                            {% endfor %}
-                        </ol>
-                    </div>
-
-                    <div class="row">
-                        <h3>Řešení testu</h3>
-                        <a class="mb-3 text-primary fw-bolder"
-                           data-bs-toggle="collapse"
-                           href="#solutionsCollapse"
-                           role="button"
-                           aria-expanded="false"
-                           aria-controls="solutionsCollapse">
-                            Zobrazit/skrýt řešení
-                        </a>
-                        <ol class="ms-4 collapse" id="solutionsCollapse">
-                            {% for equation in equations %}
-                                <li>
-                                    {{ equation.meta('_solution')|apply_filters('the_content') }}
-                                </li>
                             {% endfor %}
                         </ol>
                     </div>
