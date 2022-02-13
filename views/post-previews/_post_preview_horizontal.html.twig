@@ -4,7 +4,7 @@
 
     <div class="col-12 col-md d-flex align-items-start flex-column py-1">
         <a href="{{ post.link }}" class="text-dark text-decoration-none">
-            <h3>
+            <h3 class="fw-bold fs-4 my-0 mb-1 text-muted">
                 {{- post.title -}}
                 {{- post.meta('_alternative_names')|default ? ' <small>(' ~ post.meta('_alternative_names') ~ ')</small>'  : '' -}}
             </h3>
