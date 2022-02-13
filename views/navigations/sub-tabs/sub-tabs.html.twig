@@ -5,12 +5,12 @@
             {% set classes_border = "border border-2 border-primary" %}
             {% set classes = classes_common ~ " " ~ classes_border %}
             {% set colorClasses = subtype == oneSubType.slug ? 'bg-white text-primary' : 'bg-primary text-white' %}
-            <h3 class="{{ classes }} {{ colorClasses }}"
+            <a class="{{ classes }} {{ colorClasses }}"
                 style="border-top-left-radius: 1.2em !important; border-top-right-radius: 1.2em !important;">
-                <a href="?oblast={{ oneSubType.slug }}" style="color: inherit;">
+                <h3 href="?oblast={{ oneSubType.slug }}" style="color: inherit;">
                     {{ oneSubType.name }}
-                </a>
-            </h3>
+                </h3>
+            </a>
         {% endfor %}
     </div>
 {% endif %}
