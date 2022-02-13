@@ -1,5 +1,5 @@
 <li class="{{ item.classes | join(' ') }}">
-    <a target="{{ item.target }}" href="{{ item.link }}" itemprop="url" class="px-4 py-2">
+    <a target="{{ item.target }}" href="{{ item.link }}" itemprop="url" class="px-2 py-2">
         <span itemprop="name">{{ item.title }}</span>
     </a>
     {% include "navigations/menu/menu.html.twig" with {'items': item.children, 'fontSize': '0.9em'} %}
