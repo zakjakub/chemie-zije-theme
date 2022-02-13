@@ -17,7 +17,7 @@
     <section class="row my-3">
         {% if post.locations|length > 0 %}
             <div class="col-12 col-lg-6">
-                <h3>Provozovny</h3>
+                <h4>Provozovny</h4>
                 <ul>
                     {% for location in post.locations %}
                         <li class="text-uppercase">
@@ -32,7 +32,7 @@
         {% endif %}
         {% if post.meta('_company_url') or post.meta('_company_email') or post.meta('_company_phone') %}
             <div class="col-12 col-lg-6">
-                <h3>Kontakt</h3>
+                <h4>Kontakt</h4>
                 <ul>
                     {% if post.meta('_company_url') %}
                         <li>
@@ -64,7 +64,7 @@
 
         {% if post.activities|length > 0 %}
             <div class="col-12 col-lg-6">
-                <h3>Výroba</h3>
+                <h4>Výroba</h4>
                 <ul>
                     {% for activity in post.activities %}
                         <li class="text-uppercase">
@@ -76,7 +76,7 @@
         {% endif %}
         {% if post.documents|length > 0 %}
             <div class="col-12 col-lg-6">
-                <h3>Pracovní listy</h3>
+                <h4>Pracovní listy</h4>
                 <ul>
                     {% for document in post.documents %}
                         <li class="text-uppercase">
