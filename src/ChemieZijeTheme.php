@@ -84,15 +84,10 @@ class ChemieZijeTheme extends Site
         $rand = wp_rand(100, 9999999);
 
         return <<<EOF
-            <a class="btn btn-primary"
-               data-bs-toggle="collapse"
-               href="#solution$rand"
-               role="button"
-               aria-expanded="false"
-               aria-controls="solution$rand">
+            <a data-bs-toggle="collapse" href="#sol$rand" role="button" aria-expanded="false" aria-controls="sol$rand">
                 $name                        
             </a>
-            <div class="my-1 collapse" id="solution$rand">
+            <div class="my-1 collapse" id="sol$rand">
                 $content
             </div>
         EOF;
