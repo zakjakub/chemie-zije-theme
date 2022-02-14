@@ -73,9 +73,14 @@ class ChemieZijeTheme extends Site
     /**
      * @throws \Exception
      */
-    final public function solution(?array $atts = [], ?string $content = ''): string
+    final public function solution(mixed $atts = [], mixed $content = null, mixed $tag = ''): string
     {
-        $name = $atts['name'] ?? 'Zobrazit řešení';
+        // override default attributes with user attributes
+        $name = shortcode_atts(
+            ['name' => 'Zobrazit řešení'],
+            array_change_key_case((array)$atts, CASE_LOWER),
+            $tag
+        )['name'] ?? '';
         $rand = wp_rand(100, 9999999);
 
         return <<<EOF
@@ -111,7 +116,7 @@ class ChemieZijeTheme extends Site
      *
      * @return string Shortcode output.
      */
-    final public function wporg_shortcode($atts = [], $content = null, $tag = ''): string
+    final public function wporg_shortcode(mixed $atts = [], $content = null, $tag = ''): string
     {
         // normalize attribute keys, lowercase
         $atts = array_change_key_case((array)$atts, CASE_LOWER);
