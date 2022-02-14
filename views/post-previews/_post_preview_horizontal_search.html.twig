@@ -10,6 +10,10 @@
             <a href="{{ post.link }}" class="text-dark text-decoration-none">
                 {{- post.title -}}
                 {{- post.meta('_alternative_names')|default ? ' <small>(' ~ post.meta('_alternative_names') ~ ')</small>'  : '' -}}
+                {% set terms = post.terms({taxonomy: 'teach_mat_cat_type'}) %}
+                {% if terms|length > 0 %}
+                    {{ terms|join(', ') }}
+                {% endif %}
             </a>
         </h3>
         {% if post.parent or post.type.labels.singular_name|default(post.type.label) %}

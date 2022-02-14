@@ -87,9 +87,9 @@ class ChemieZijeTheme extends Site
             <a data-bs-toggle="collapse" href="#sol$rand" role="button" aria-expanded="false" aria-controls="sol$rand">
                 $name                        
             </a>
-            <div class="m-1 p-1 px-2 border border-2 border-success collapse" id="sol$rand">
-                $content
-            </div>
+            <ul class="collapse text-primary" id="sol$rand">
+                <li>$content</li>
+            </ul>
         EOF;
     }
 
