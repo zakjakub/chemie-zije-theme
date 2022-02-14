@@ -19,18 +19,18 @@
     <section class="row">
         <div class="tab-content col-12" id="nav-tabContent">
             {% set iter = 0 %}
-            {% for index, tab in tabs %}
-                <div class="tab-pane fade {{ iter < 1 ? ' show active' : '' }}"
-                     id="nav-{{ index }}"
-                     role="tabpanel"
-                     aria-labelledby="nav-tab-{{ index }}">
-                    {% filter shortcodes|raw %}
+            {% filter shortcodes|raw %}
+                {% for index, tab in tabs %}
+                    <div class="tab-pane fade {{ iter < 1 ? ' show active' : '' }}"
+                         id="nav-{{ index }}"
+                         role="tabpanel"
+                         aria-labelledby="nav-tab-{{ index }}">
                         [reseni]FOOOOOO[/reseni]
-                    {% endfilter %}
-                    {{ tab.tab_content|default(tab.content)|apply_filters('the_content') }}
-                </div>
-                {% set iter = iter + 1 %}
-            {% endfor %}
+                        {{ tab.tab_content|default(tab.content)|apply_filters('the_content') }}
+                    </div>
+                    {% set iter = iter + 1 %}
+                {% endfor %}
+            {% endfilter %}
         </div>
     </section>
 {% endif %}
