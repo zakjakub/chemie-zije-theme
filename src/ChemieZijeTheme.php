@@ -52,7 +52,7 @@ class ChemieZijeTheme extends Site
                 ],
             ),
         );
-        add_shortcode('skryte_reseni', 'hiddenSolution');
+        add_shortcode('reseni', 'hiddenSolution');
         parent::__construct();
     }
 
