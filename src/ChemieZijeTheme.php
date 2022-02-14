@@ -52,6 +52,7 @@ class ChemieZijeTheme extends Site
                 ],
             ),
         );
+        add_shortcode('hiddenSolution', 'hiddenSolution');
         parent::__construct();
     }
 
@@ -67,6 +68,29 @@ class ChemieZijeTheme extends Site
             themeType: 'regular',
         );
         // @formatter:on
+    }
+
+    /**
+     * @throws \Exception
+     */
+    public function hiddenSolution(?array $atts = [], ?string $content = ''): string
+    {
+        $name = $atts['name'] ?? 'Zobrazit řešení';
+        $rand = random_int(100, 9999999);
+
+        return <<<EOF
+            <a class="btn btn-primary"
+               data-bs-toggle="collapse"
+               href="#solution$rand"
+               role="button"
+               aria-expanded="false"
+               aria-controls="solution$rand">
+                $name                        
+            </a>
+            <div class="my-1 collapse" id="solution$rand">
+                $content
+            </div>
+        EOF;
     }
 
     final public function addQueryVarsFilter(array $vars): array
