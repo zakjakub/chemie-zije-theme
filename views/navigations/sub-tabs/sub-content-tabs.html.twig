@@ -24,8 +24,8 @@
                      id="nav-{{ index }}"
                      role="tabpanel"
                      aria-labelledby="nav-tab-{{ index }}">
-                    {{ wp.do_shortcode("[reseni]FOOOOOO[/reseni]")|raw }}
-                    {{ wp.do_shortcode(tab.tab_content|default(tab.content))|raw }}
+                    {{ "[reseni]FOOOOOO[/reseni]"|raw|shortcodes|raw }}
+                    {{ tab.tab_content|default(tab.content)|shortcodes|raw }}
                 </div>
                 {% set iter = iter + 1 %}
             {% endfor %}
