@@ -148,8 +148,8 @@ class ChemieZijeTheme extends Site
 
     final public function registerShortcodes(): void
     {
-        add_shortcode('wporg', 'wporg_shortcode');
-        add_shortcode('reseni', 'solution');
+        add_shortcode('wporg', [$this, 'wporg_shortcode']);
+        add_shortcode('reseni', [$this, 'solution']);
     }
 
     final public function registerPostTypes(): void
