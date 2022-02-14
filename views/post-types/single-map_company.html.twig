@@ -18,12 +18,14 @@
         {% if post.locations|length > 0 %}
             <div class="col-12 col-lg-6">
                 <h4>Provozovny</h4>
-                {% for location in post.locations %}
-                    <p class="text-uppercase">
-                        <strong>{{ location.location_name }}</strong><br>
-                        {{ location.location_address }}
-                    </p>
-                {% endfor %}
+                <ul>
+                    {% for location in post.locations %}
+                        <li class="text-uppercase">
+                            <strong>{{ location.location_name }}</strong><br>
+                            {{ location.location_address }}
+                        </li>
+                    {% endfor %}
+                </ul>
             </div>
         {% endif %}
         {% if post.meta('_company_url') or post.meta('_company_email') or post.meta('_company_phone') %}
