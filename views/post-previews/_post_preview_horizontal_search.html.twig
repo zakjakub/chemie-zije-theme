@@ -14,7 +14,7 @@
         </h3>
         {% if post.parent or post.type.labels.singular_name|default(post.type.label) %}
             <h4 class="text-muted text-decoration-none my-1">
-                <small class="d-block">{{ post.type.labels.singular_name|default(post.type.label) }}</small>
+                <small>{{ post.type.labels.singular_name|default(post.type.label) }}</small>
                 {% set terms = post.terms({taxonomy: 'teach_mat_cat_type'}) %}
                 {% if terms|length > 0 %}
                     <small>({{ terms|join(', ') }})</small>
