@@ -76,7 +76,7 @@ class ChemieZijeTheme extends Site
     final public function solution(?array $atts = [], ?string $content = ''): string
     {
         $name = $atts['name'] ?? 'Zobrazit řešení';
-        $rand = random_int(100, 9999999);
+        $rand = wp_rand(100, 9999999);
 
         return <<<EOF
             <a class="btn btn-primary"
