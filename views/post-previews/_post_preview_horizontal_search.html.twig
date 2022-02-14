@@ -12,7 +12,7 @@
                 {{- post.meta('_alternative_names')|default ? ' <small>(' ~ post.meta('_alternative_names') ~ ')</small>'  : '' -}}
                 {% set terms = post.terms({taxonomy: 'teach_mat_cat_type'}) %}
                 {% if terms|length > 0 %}
-                    {{ terms|join(', ') }}
+                    <small>({{ terms|join(', ') }})</small>
                 {% endif %}
             </a>
         </h3>
