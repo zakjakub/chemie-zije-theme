@@ -74,8 +74,6 @@ a
 1views/custom-templates/periodical-table.html.twig,f/f/ffdd201d0d8c21f82e7de08183b4bca8a9c1ca36
 f
 6views/single-customs/single-chemical_element.html.twig,1/d/1d2145cdb2bb2084362311eeb5776c7a6bc7c124
-m
-=views/post-previews/_post_preview_horizontal_search.html.twig,4/f/4fd463bc18503c7ce1723496c647f8306b59e0de
 ]
 -views/navigations/signpost/signpost.html.twig,9/7/9764313689c6ff6ec1440b0226d5d2462a707475
 b
