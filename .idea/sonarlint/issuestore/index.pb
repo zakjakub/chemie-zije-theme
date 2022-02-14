@@ -12,8 +12,6 @@ Z
 ]
 -views/post-types/teach_material_cat.html.twig,b/8/b83701a313beca9b49feb4fe70e714632f203a5a
 Y
-)views/post-types/teach_material.html.twig,8/9/89cfdfc52eaa2e49571f6f66acebe69dad2d2e7e
-Y
 )views/post-types/contact_person.html.twig,9/3/9384b4b3227ebd548ff661fc0bf08c69ca7e00f1
 i
 9views/custom-templates/interactive-industry-map.html.twig,b/2/b211ae3920e8a2335484799287f5137cac38ced4

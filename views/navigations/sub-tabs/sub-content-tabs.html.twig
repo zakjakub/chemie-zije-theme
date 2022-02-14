@@ -24,7 +24,9 @@
                      id="nav-{{ index }}"
                      role="tabpanel"
                      aria-labelledby="nav-tab-{{ index }}">
-                    {{ tab.tab_content|default(tab.content)|shortcodes }}
+                    {% filter shortcodes %}
+                        {{ tab.tab_content|default(tab.content)|shortcodes }}
+                    {% endfilter %}
                 </div>
                 {% set iter = iter + 1 %}
             {% endfor %}
