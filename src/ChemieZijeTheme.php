@@ -52,7 +52,7 @@ class ChemieZijeTheme extends Site
                 ],
             ),
         );
-        add_shortcode('reseni', 'hiddenSolution');
+        add_shortcode('reseni', 'solution');
         parent::__construct();
     }
 
@@ -73,7 +73,7 @@ class ChemieZijeTheme extends Site
     /**
      * @throws \Exception
      */
-    final public function hiddenSolution(?array $atts = [], ?string $content = ''): string
+    final public function solution(?array $atts = [], ?string $content = ''): string
     {
         $name = $atts['name'] ?? 'Zobrazit řešení';
         $rand = random_int(100, 9999999);
