@@ -33,6 +33,7 @@ class ChemieZijeTheme extends Site
         add_action('init', [$this, 'registerPostTypes']);
         add_action('init', [$this, 'registerTaxonomies']);
         add_action('init', [$this, 'registerSidebars']);
+        add_action('init', [$this, 'registerShortcodes']);
         add_action('widgets_init', [$this, 'registerWidgets']);
         add_filter('query_vars', [$this, 'addQueryVarsFilter']);
         // WPackIO Enqueue
@@ -52,7 +53,6 @@ class ChemieZijeTheme extends Site
                 ],
             ),
         );
-        add_shortcode('reseni', 'solution');
         parent::__construct();
     }
 
@@ -103,6 +103,11 @@ class ChemieZijeTheme extends Site
     final public function themeEnqueue(): void
     {
         $this->enqueue->enqueue('app', 'main', []);
+    }
+
+    final public function registerShortcodes(): void
+    {
+        add_shortcode('reseni', 'solution');
     }
 
     final public function registerPostTypes(): void
