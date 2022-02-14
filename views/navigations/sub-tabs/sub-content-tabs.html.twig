@@ -25,6 +25,7 @@
                      role="tabpanel"
                      aria-labelledby="nav-tab-{{ index }}">
                     {{ "[reseni]FOOOOOO[/reseni]"|shortcodes }}
+                    {{ "[video]"|shortcodes }}
                     {{ tab.tab_content|default(tab.content)|shortcodes }}
                 </div>
                 {% set iter = iter + 1 %}
