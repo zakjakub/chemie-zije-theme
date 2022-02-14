@@ -21,10 +21,8 @@
                 <ul>
                     {% for location in post.locations %}
                         <li class="text-uppercase">
-                            <strong>{{ location.location_name }}</strong>
-                            <ul>
-                                <li>{{ location.location_address }}</li>
-                            </ul>
+                            <strong>{{ location.location_name }}</strong><br>
+                            {{ location.location_address }}
                         </li>
                     {% endfor %}
                 </ul>
