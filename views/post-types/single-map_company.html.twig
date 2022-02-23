@@ -7,7 +7,7 @@
         </div>
         {% if get_image(post.meta('_company_logo')).src|default %}
             <div class="col-12 col-md-4 col-lg-3 d-flex flex-column justify-content-center">
-                <img class="d-block w-100 mh-100 p-2 img-thumbnail"
+                <img class="d-block w-100 mh-100 p-2"
                      src="{{ get_image(post.meta('_company_logo')).src }}"
                      alt="{{ get_image(post.meta('_company_logo')).alt }}">
             </div>
