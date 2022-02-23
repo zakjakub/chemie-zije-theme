@@ -41,7 +41,7 @@ $taxQuery = count($context['categories']) ? [
 ] : null;
 $allEquations = Timber::get_posts(
     new WP_Query([
-            'post_type'      => 'equation_category',
+            'post_type'      => 'equation',
             'orderby'        => 'title',
             'order'          => 'ASC',
             'posts_per_page' => 1000,
