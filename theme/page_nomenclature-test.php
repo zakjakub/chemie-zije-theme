@@ -57,5 +57,5 @@ foreach ($allEquations as $equation) {
 // Randomize order.
 shuffle($context['equations']);
 // Select required amount.
-$context['equations'] = array_slice($context['equations'], 0, $context['count']);
+$context['equations'] = array_slice($context['equations'], 0, min(count($context['equations']), $context['count']));
 Timber::render($templates, $context);
