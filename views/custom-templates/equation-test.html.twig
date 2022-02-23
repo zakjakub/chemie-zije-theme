@@ -1,0 +1,117 @@
+{% extends "post-types/page.html.twig" %}
+
+{% block article_content %}
+
+    <nav class="nav row my-3 p-0 rounded-tabs" id="nav-tab">
+        <button class="rounded-tab col m-0 mt-3 mx-1 px-5 px-xl-4 py-2 border border-2 border-primary active"
+                id="nav-tab-0"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-0"
+                type="button"
+                role="tab"
+                aria-controls="nav-0"
+                aria-selected="true">
+            Náhodný test na chemické výpočty
+        </button>
+    </nav>
+
+    <section class="row">
+        <div class="tab-content col-12" id="nav-tabContent">
+
+            <div class="tab-pane fade show active" id="nav-0" role="tabpanel" aria-labelledby="nav-tab-0">
+
+                <div class="w-100 m-0 container-fluid p-0">
+
+                    {% if post.content|default %}
+                        <div class="row">
+                            <div class="col-12">
+                                {{ post.content|default(content|default) }}
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    <form class="row">
+
+                        <div class="form-group col-12 my-3">
+                            <label for="categories" class="w-100">
+                                <strong>Obsah zadání</strong>
+                                <select id="categories" class="form-control w-100" multiple placeholder="" name="categories[]">
+                                    {% for category in allCategories %}
+                                        <option value="{{ category.slug }}"
+                                                {{ categories|filter(cat => cat == category.slug)|length > 0 ? 'selected=selected' : '' }}>
+                                            {{ category.name }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                            </label>
+                        </div>
+
+                        <div class="form-group col-12 col-md-6 my-3">
+                            <label for="count" class="w-100">
+                                <span class="d-block w-100"><strong>Počet příkladů</strong></span>
+                                <select id="count" class="d-block w-100 form-select" name="count">
+                                    {% for i in range(1, 20) %}
+                                        <option value="{{ i }}" {{ count == i ? 'selected=selected' : '' }}>
+                                            {{ i }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                            </label>
+                        </div>
+
+                        <div class="form-group col-12 col-md-6 my-3">
+                            <label for="level" class="w-100">
+                                <span class="d-block w-100"><strong>Obtížnost</strong></span>
+                                <select id="level" class="d-block w-100 form-select" name="level">
+                                    {% for oneLevel in allLevels %}
+                                        <option value="{{ oneLevel.level }}" {{ ''~oneLevel.level == ''~level ? 'selected=selected' : '' }}>
+                                            {{ oneLevel.name }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                            </label>
+                        </div>
+
+                        <div class="btn-group col-12 my-3" role="group" aria-label="GENEROVAT TEST">
+                            <button type="submit" class="btn btn-outline-primary">
+                                <strong>GENEROVAT TEST</strong>
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <div class="w-100 m-0 mt-3 container-fluid p-0">
+
+                    <div class="row">
+                        <ol class="ms-4">
+                            {% for index, equation in equations %}
+                                <li class="my-1">
+                                    <p>{{ equation.content|apply_filters('the_content') }}</p>
+                                    <p>
+                                        <a data-bs-toggle="collapse"
+                                           href="#solution{{ index }}"
+                                           role="button"
+                                           aria-expanded="false"
+                                           aria-controls="solution{{ index }}">
+                                            Zobrazit řešení
+                                        </a>
+                                    </p>
+                                </li>
+                                <ul class="my-1 collapse" id="solution{{ index }}">
+                                    <li>{{ equation.meta('_solution')|apply_filters('the_content') }}</li>
+                                </ul>
+                            {% endfor %}
+                        </ol>
+                    </div>
+
+                </div>
+
+            </div>
+    </section>
+
+{% endblock %}
+
+{% block article_signpost %}
+{% endblock %}

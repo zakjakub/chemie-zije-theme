@@ -1,13 +1,15 @@
 <article class="row my-3 py-4 pt-2 border-bottom border-2 border-light">
 
+    {% set link = post.parent.link ?? post.link %}
+
     <div class="col-12 col-md d-flex align-items-start flex-column py-1">
         <h3 class="my-1">
-            {%- if post.parent -%}
-                <a href="{{ post.parent.link }}" class="text-muted text-decoration-none small">
-                    <small>{{ post.parent.title }} ></small>
-                </a>
-            {%- endif -%}
             <a href="{{ post.link }}" class="text-dark text-decoration-none">
+                {%- if post.parent -%}
+                    <small class="text-muted text-decoration-none small">
+                        {{ post.parent.title }} >
+                    </small>
+                {%- endif -%}
                 {{- post.title -}}
                 {{- post.meta('_alternative_names')|default ? ' <small>(' ~ post.meta('_alternative_names') ~ ')</small>'  : '' -}}
             </a>
