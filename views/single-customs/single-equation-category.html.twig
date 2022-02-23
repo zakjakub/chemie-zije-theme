@@ -83,14 +83,13 @@
 
                 {% if equations|length > 0 %}
                     <div class="swiper-container">
-                        <div class="swiper-wrapper p-4">
+                        <div class="swiper-wrapper p-2">
                             {% for index, equation in equations %}
-                                <div class="swiper-slide p-5" data-level="{{ equation.meta('_level') }}">
+                                <div class="swiper-slide p-2 px-5" data-level="{{ equation.meta('_level') }}">
                                     <div class="my-1">
                                         {{ equation.content|apply_filters('the_content') }}
-                                        <p class="my-5">
-                                            <a class="btn btn-primary"
-                                               data-bs-toggle="collapse"
+                                        <p class="my-3">
+                                            <a data-bs-toggle="collapse"
                                                href="#solution{{ index }}"
                                                role="button"
                                                aria-expanded="false"
