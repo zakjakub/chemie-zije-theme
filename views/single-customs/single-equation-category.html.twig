@@ -88,8 +88,9 @@
                                 <div class="swiper-slide p-2 px-5" data-level="{{ equation.meta('_level') }}">
                                     <div class="my-1">
                                         {{ equation.content|apply_filters('the_content') }}
-                                        <p class="my-3 collapse-href">
+                                        <p class="my-3">
                                             <a data-bs-toggle="collapse"
+                                               class="collapse-href"
                                                href="#solution{{ index }}"
                                                role="button"
                                                aria-expanded="false"
