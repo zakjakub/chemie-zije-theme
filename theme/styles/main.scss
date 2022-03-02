@@ -183,7 +183,7 @@ h5 {
 
 
 .collapse-href {
-  &.collapsed {
+  .collapsed {
     .collapsed-show {
       display: inherit;
     }
@@ -193,7 +193,7 @@ h5 {
     }
   }
 
-  &:not(.collapsed) {
+  :not(.collapsed) {
     .collapsed-show {
       display: none;
     }
