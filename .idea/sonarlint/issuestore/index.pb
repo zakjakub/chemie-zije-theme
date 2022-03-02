@@ -86,8 +86,6 @@ g
 7views/post-parts/contact/contact-organization.html.twig,0/a/0a72708c755bc50ce9f6ff1d15770874c66c78ce
 ]
 -views/navigations/sub-tabs/sub-tabs.html.twig,7/0/703028671d0bd8cd44ff72ff8c0951a24c332834
-F
-theme/styles/main.scss,3/6/368d36b29228e0c67f0204c694fe46637b37f654
 j
 :views/custom-templates/teach_material_cat_videos.html.twig,d/f/dfeb8de85c8f372da7b3fd1636899794071ad50b
 Y
@@ -122,9 +120,5 @@ R
 "theme/single-chem_nomenclature.php,3/d/3d7449b7e0b33b93223cad283f8686f70e82f66a
 R
 "theme/single-equation_category.php,a/5/a54b8a62ff302380389d349d857b347a79b2aeb9
-b
-2views/single-customs/single-nomenclature.html.twig,5/2/525bf511ed456db872c463c039a627733feda8a4
-g
-7views/single-customs/single-equation-category.html.twig,7/3/7318a034781ae5b4cacb5be36bc94222f10c1a4b
 K
 src/Post/MapCompanyPost.php,d/8/d8b1662026cc6a3666f81719ccddd5c390de8904

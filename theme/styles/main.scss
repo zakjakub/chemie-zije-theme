@@ -181,3 +181,25 @@ h5 {
   text-align: justify !important;
 }
 
+
+.collapse-href {
+  &.collapsed {
+    .collapsed-show {
+      display: inherit;
+    }
+
+    .collapsed-hide {
+      display: none;
+    }
+  }
+
+  &:not(.collapsed) {
+    .collapsed-show {
+      display: none;
+    }
+
+    .collapsed-hide {
+      display: inherit;
+    }
+  }
+}
