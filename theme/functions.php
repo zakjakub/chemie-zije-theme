@@ -12,7 +12,7 @@ use Timber\Timber;
 use WPackio\Enqueue;
 use Zakjakub\ChemieZijeTheme\ChemieZijeTheme;
 
-$timber = new Timber();
+Timber::init();
 $enqueue = new Enqueue(
     'chemieZijeTheme',
     'dist',

@@ -88,8 +88,6 @@ g
 -views/navigations/sub-tabs/sub-tabs.html.twig,7/0/703028671d0bd8cd44ff72ff8c0951a24c332834
 F
 theme/styles/main.scss,3/6/368d36b29228e0c67f0204c694fe46637b37f654
-C
-theme/functions.php,7/c/7ccbbe5fe5677abe7b94804d7e2820d6b7ad471d
 j
 :views/custom-templates/teach_material_cat_videos.html.twig,d/f/dfeb8de85c8f372da7b3fd1636899794071ad50b
 Y
@@ -106,8 +104,6 @@ d
 4views/single-customs/single-industry_field.html.twig,b/4/b4cd5f05ba0744668f5892cf28fee520c9310efe
 M
 src/Model/ChemicalElement.php,c/4/c4fc13dbcba55b1d80f153a71a7a08a2698e970a
-G
-src/ChemieZijeTheme.php,7/4/74c9ea92b0be8839cd978a4b7d116878ce03bca4
 U
 %theme/page_chemical-nomenclatures.php,f/d/fd7a5728fdcc8df5bf441f5b463356a52e953c24
 Q
