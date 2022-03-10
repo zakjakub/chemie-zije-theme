@@ -78,6 +78,9 @@
                         <li class="text-uppercase">
                             <strong>{{ activity.activity_name }}</strong><br>
                             {{ activity.activity_description }}
+                            {% if activity.activity_more_info_link %}
+                                [<a href="{{ activity.activity_more_info_link }}" target="_blank">více zde</a>]
+                            {% endif %}
                         </li>
                     {% endfor %}
                 </ul>

@@ -21,8 +21,6 @@ E
 views/index.html.twig,e/2/e2a74844d7ebfd61700a36e03fa2b9498d4073fa
 Y
 )src/Post/ChemicalIndustryMaterialPost.php,5/1/51b0d9293b757ed139b02da7a9e8587e431adeeb
-@
-theme/single.php,9/a/9a0185be5210ed319c01f66b698e9f4b8b1f9ab8
 N
 theme/page_industry-fields.php,9/2/9231ff8de81d774b84d6290e879b66c521d06d19
 g
@@ -122,3 +120,11 @@ R
 "theme/single-equation_category.php,a/5/a54b8a62ff302380389d349d857b347a79b2aeb9
 K
 src/Post/MapCompanyPost.php,d/8/d8b1662026cc6a3666f81719ccddd5c390de8904
+G
+src/ChemieZijeTheme.php,7/4/74c9ea92b0be8839cd978a4b7d116878ce03bca4
+C
+theme/functions.php,7/c/7ccbbe5fe5677abe7b94804d7e2820d6b7ad471d
+i
+9views/custom-templates/interactive-industry-map.html.twig,b/2/b211ae3920e8a2335484799287f5137cac38ced4
+A
+theme/sidebar.php,8/8/88ed93e9b1d34f77b5cabc1420ce487f964b3eea
