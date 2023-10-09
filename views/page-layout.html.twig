@@ -16,16 +16,22 @@ DEFAULT PAGE TEMPLATE - Used (directly or through inheritance) by every other pa
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name='format-detection' content='telephone=yes'>
     <meta name='DC.Language' content='{{ html_lang }}'>
-    <meta name="description" content="{% block html_description %}{{ description|default }}{% endblock html_description %}">
-    <meta name='author' content='{% block meta_author %}{{ author|default('Jakub Zak (https://jakubzak.cz)') }}{% endblock meta_author %}'>
-    <meta name='copyright' content='{% block meta_copyright %}{{ copyright|default('Jakub Zak (https://jakubzak.cz)') }}{% endblock meta_copyright %}'>
-    <meta name='Designer' content='{% block meta_designer %}{{ designer|default('Jakub Zak (https://jakubzak.cz)') }}{% endblock meta_designer %}'>
+    <meta name="description"
+          content="{% block html_description %}{{ description|default }}{% endblock html_description %}">
+    <meta name='author'
+          content='{% block meta_author %}{{ author|default('Jakub Zak (https://jakubzak.cz)') }}{% endblock meta_author %}'>
+    <meta name='copyright'
+          content='{% block meta_copyright %}{{ copyright|default('Jakub Zak (https://jakubzak.cz)') }}{% endblock meta_copyright %}'>
+    <meta name='Designer'
+          content='{% block meta_designer %}{{ designer|default('Jakub Zak (https://jakubzak.cz)') }}{% endblock meta_designer %}'>
     <link rel="author" href="{{ site.theme.link }}/humans.txt"/>
     <link rel="pingback" href="{{ site.pingback_url }}"/>
     <link rel="profile" href="http://gmpg.org/xfn/11">
-    <meta name='Revisit-After' content='{% block meta_revisit_after %}{{ revisit_after|default('1 day') }}{% endblock meta_revisit_after %}'>
+    <meta name='Revisit-After'
+          content='{% block meta_revisit_after %}{{ revisit_after|default('1 day') }}{% endblock meta_revisit_after %}'>
     <meta name="application-name" content="{% block meta_app_name %}{{ title|default }}{% endblock %}">
-    <meta name="apple-mobile-web-app-title" content="{% block meta_app_title_apple %}{{ block('meta_app_name') }}{% endblock %}">
+    <meta name="apple-mobile-web-app-title"
+          content="{% block meta_app_title_apple %}{{ block('meta_app_name') }}{% endblock %}">
     <meta property="og:site_name" content="{{ block('meta_app_name') }}">
     <meta property="og:title" content="{{ title }}">
     <meta property="og:description" content="{{ block('html_description') }}">
@@ -37,7 +43,8 @@ DEFAULT PAGE TEMPLATE - Used (directly or through inheritance) by every other pa
     <meta name="twitter:creator" content="{{ block('meta_author') }}">
     <meta property="og:latitude" content="{% block meta_geo_x %}{{ geo_lat|default(oswis.web.geo_x) }}{% endblock %}"/>
     <meta property="og:longitude" content="{% block meta_geo_y %}{{ geo_lon|default(oswis.web.geo_y) }}{% endblock %}"/>
-    <meta name='geo.position' content='{% block meta_geo_position %}{{ block('meta_geo_x') }},{{ block('meta_geo_y') }}{% endblock %}'>
+    <meta name='geo.position'
+          content='{% block meta_geo_position %}{{ block('meta_geo_x') }},{{ block('meta_geo_y') }}{% endblock %}'>
     <meta name='ICBM' content='{{ block('meta_geo_position') }}'>
     <link rel="stylesheet" href="{{ site.theme.link ~ '/style.css' }}" type="text/css" media="screen"/>
     <!-- WP_HEAD -->

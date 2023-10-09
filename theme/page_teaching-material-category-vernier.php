@@ -25,21 +25,21 @@ $context['subtype'] = get_query_var('oblast', $firstSubTypeSlug) ?? $firstSubTyp
 $context['subtype'] = trim($context['subtype']);
 $context['materials'] = Timber::get_posts(
     new WP_Query([
-        'post_type'      => 'teach_material',
-        'orderby'        => 'name',
-        'order'          => 'ASC',
+        'post_type' => 'teach_material',
+        'orderby' => 'name',
+        'order' => 'ASC',
         'posts_per_page' => 1000,
-        'tax_query'      => [
+        'tax_query' => [
             'relation' => 'AND',
             [
                 'taxonomy' => 'teach_mat_cat_type',
-                'field'    => 'title',
-                'terms'    => array_map(static fn(Term $term) => $term->__toString(), $context['categories']),
+                'field' => 'title',
+                'terms' => array_map(static fn(Term $term) => $term->__toString(), $context['categories']),
             ],
             [
                 'taxonomy' => 'teach_mat_sub_type',
-                'field'    => 'slug',
-                'terms'    => [$context['subtype']],
+                'field' => 'slug',
+                'terms' => [$context['subtype']],
             ],
         ],
     ])

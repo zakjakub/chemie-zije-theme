@@ -7,17 +7,17 @@ $templates = ['single-customs/single-nomenclature.html.twig', 'post-types/page.h
 $context['categories'] = $context['post']->terms('nomenclature_cat');
 $context['equations'] = Timber::get_posts(
     new WP_Query([
-        'post_type'      => 'nomenclat_equation',
-        'meta_key'       => '_level',
-        'orderby'        => 'meta_value',
-        'order'          => 'ASC',
+        'post_type' => 'nomenclat_equation',
+        'meta_key' => '_level',
+        'orderby' => 'meta_value',
+        'order' => 'ASC',
         'posts_per_page' => 1000,
-        'tax_query'      => [
+        'tax_query' => [
             'relation' => 'AND',
             [
                 'taxonomy' => 'nomenclature_cat',
-                'field'    => 'name',
-                'terms'    => array_map(static fn(Term $term) => $term->__toString(), $context['categories']),
+                'field' => 'name',
+                'terms' => array_map(static fn(Term $term) => $term->__toString(), $context['categories']),
             ],
         ],
     ])

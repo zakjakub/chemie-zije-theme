@@ -17,7 +17,7 @@ $context['search'] = $search = get_search_query();
 $context['title'] = "Vyhledávání \"$search\"";
 $context['posts'] = new PostQuery(
     new WP_Query([
-        's'           => $search,
+        's' => $search,
         'numberposts' => -1,
     ]),
 );

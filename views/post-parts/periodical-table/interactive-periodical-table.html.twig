@@ -2,7 +2,8 @@
 
     {% set columnIndexRows = [1, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2, 1] %}
     {% for columnIndex in 1..18 %}
-        <div class="index index-column" style="grid-row: {{ columnIndexRows[columnIndex - 1] }}; grid-column: {{ columnIndex + 1 }};">
+        <div class="index index-column"
+             style="grid-row: {{ columnIndexRows[columnIndex - 1] }}; grid-column: {{ columnIndex + 1 }};">
             {{ columnIndex }}
         </div>
     {% endfor %}
@@ -21,7 +22,8 @@
         {% endif %}
         {% if row and col %}
             {% set color = element.color|default ? ' background-color: ' ~ element.color ~ '; ' : '' %}
-            <a class="periodical-table-element" style="grid-column: {{ col }}; grid-row: {{ row }};{{ color }}" href="/prvek/{{ element.nameCz|sanitize }}">
+            <a class="periodical-table-element" style="grid-column: {{ col }}; grid-row: {{ row }};{{ color }}"
+               href="/prvek/{{ element.nameCz|sanitize }}">
                 <div class="periodical-table-element-content">
                     <span class="atomic-number">
                         {{ element.protonNumber }}

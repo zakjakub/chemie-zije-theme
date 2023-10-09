@@ -29,7 +29,7 @@ if (!class_exists('Timber')) {
         $message = "Timber not activated. Make sure you activate the plugin in $timberPluginLink";
         echo "<div class='error'><p>$message</p></div>";
     });
-    add_filter('template_include', fn() => dirname(get_stylesheet_directory()).'/static/no-timber.html');
+    add_filter('template_include', fn() => dirname(get_stylesheet_directory()) . '/static/no-timber.html');
 
     return;
 }

@@ -3,7 +3,7 @@
 import * as bootstrap from 'bootstrap';
 import Swiper from 'swiper/bundle';
 import '../styles/main.scss';
-import { analyseMF, getInfo } from 'chemcalc';
+import {analyseMF, getInfo} from 'chemcalc';
 import TomSelect from 'tom-select';
 
 const swiper = new Swiper('.swiper-container', {
@@ -31,8 +31,7 @@ const swiper = new Swiper('.swiper-container', {
 
 const elements = getInfo().elements;
 
-function getElement(symbol)
-{
+function getElement(symbol) {
     const element = elements.find(el => el.symbol === symbol);
     console.log('For', symbol, 'its', element);
 
@@ -40,8 +39,7 @@ function getElement(symbol)
 }
 
 // noinspection JSUnresolvedVariable
-function processFormula(table, formula)
-{
+function processFormula(table, formula) {
     table.innerHTML = '';
 
     let sum = 0;
@@ -57,7 +55,7 @@ function processFormula(table, formula)
             <td class="text-end">M<sub>r</sub> mezisoučet </td>
         </tr>`;
 
-  // noinspection JSUnresolvedVariable
+    // noinspection JSUnresolvedVariable
     analyseMF(formula).ea.forEach(part => {
         const element = getElement(part.element);
         const row = document.createElement('tr');
@@ -96,8 +94,7 @@ function processFormula(table, formula)
     table.appendChild(tableFoot);
 }
 
-function initCalcs()
-{
+function initCalcs() {
     document.querySelectorAll('.molcalc').forEach(molcalc => {
         const table = molcalc.querySelector('.molcalc_table');
         const molcalcFormula = molcalc.querySelector('.molcalc_formula');
@@ -106,16 +103,15 @@ function initCalcs()
                 processFormula(table, event.target.value);
             }
         });
-    molcalc.querySelector('button').addEventListener('click', event => {
-        if (molcalcFormula.value) {
-            processFormula(table, molcalcFormula.value);
-        }
-      });
+        molcalc.querySelector('button').addEventListener('click', event => {
+            if (molcalcFormula.value) {
+                processFormula(table, molcalcFormula.value);
+            }
+        });
     });
 }
 
-function initSelects()
-{
+function initSelects() {
     const tomSelect = new TomSelect('#categories', {
         plugins: ['remove_button'],
         create: true,
@@ -144,8 +140,7 @@ function initSelects()
     });
 }
 
-function getLevelBackgroundClass(level)
-{
+function getLevelBackgroundClass(level) {
     if (Number.parseInt(level) < 3) {
         return 'bg-success';
     }
@@ -159,8 +154,7 @@ function getLevelBackgroundClass(level)
     return 'bg-primary';
 }
 
-function initSwiper(swiperContainer)
-{
+function initSwiper(swiperContainer) {
     const colors = [];
     swiperContainer.querySelectorAll('.swiper-slide').forEach(swiperSlide => {
         colors.push(getLevelBackgroundClass(swiperSlide.dataset.level ?? 'level-attr-is-unknown'));

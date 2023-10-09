@@ -11,7 +11,8 @@
             <h5 class="card-title {{ post.post_excerpt|default|length > 0 ? '' : 'text-center' }}">
                 {{ post.title }}
             </h5>
-            <p class="small card-text {{ post.post_excerpt|default|length > 0 ? 'mt-auto' : '' }}" style="text-align: justify;">
+            <p class="small card-text {{ post.post_excerpt|default|length > 0 ? 'mt-auto' : '' }}"
+               style="text-align: justify;">
                 {{ post.post_excerpt }}
             </p>
         </div>

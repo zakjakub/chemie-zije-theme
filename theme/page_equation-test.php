@@ -35,18 +35,18 @@ $taxQuery = count($context['categories']) ? [
     'relation' => 'AND',
     [
         'taxonomy' => 'equation_cat',
-        'field'    => 'slug',
-        'terms'    => $context['categories'],
+        'field' => 'slug',
+        'terms' => $context['categories'],
     ],
 ] : null;
 $allEquations = Timber::get_posts(
     new WP_Query([
-            'post_type'      => 'equation',
-            'orderby'        => 'title',
-            'order'          => 'ASC',
-            'posts_per_page' => 1000,
-            'tax_query'      => $taxQuery,
-        ])
+        'post_type' => 'equation',
+        'orderby' => 'title',
+        'order' => 'ASC',
+        'posts_per_page' => 1000,
+        'tax_query' => $taxQuery,
+    ])
 ) ?? [];
 $context['equations'] = [];
 foreach ($allEquations as $equation) {

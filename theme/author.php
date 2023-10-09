@@ -17,6 +17,6 @@ $context = Timber::context();
 if (isset($wp_query->query_vars['author'])) {
     $author = Timber::get_user($wp_query->query_vars['author']);
     $context['author'] = $author;
-    $context['title'] = 'Author Archives: '.$author->name();
+    $context['title'] = 'Author Archives: ' . $author->name();
 }
 Timber::render(['post-types/author.html.twig', 'post-types/archive.html.twig'], $context);

@@ -45,29 +45,15 @@ class ChemieZijeTheme extends Site
             fn($classmap) => array_merge(
                 $classmap,
                 [
-                    'industry_material'  => ChemicalIndustryMaterialPost::class,
-                    'industry_field'     => ChemicalIndustryFieldPost::class,
-                    'map_company'        => MapCompanyPost::class,
-                    'teach_material'     => TeachMaterialPost::class,
+                    'industry_material' => ChemicalIndustryMaterialPost::class,
+                    'industry_field' => ChemicalIndustryFieldPost::class,
+                    'map_company' => MapCompanyPost::class,
+                    'teach_material' => TeachMaterialPost::class,
                     'teach_material_cat' => TeachMaterialCategoryPost::class,
                 ],
             ),
         );
         parent::__construct();
-    }
-
-    private function getEnqueue(): Enqueue
-    {
-        // @formatter:off
-        return $this->enqueue ?? new Enqueue(
-            appName: 'chemieZijeTheme',
-            outputPath: 'dist',
-            version: '1.0.0',
-            type: 'theme',
-            pluginPath: 'theme',
-            themeType: 'regular',
-        );
-        // @formatter:on
     }
 
     /**
@@ -105,9 +91,9 @@ class ChemieZijeTheme extends Site
      *
      * Accepts a title and will display a box.
      *
-     * @param  array  $atts  Shortcode attributes. Default empty.
-     * @param  string  $content  Shortcode content. Default null.
-     * @param  string  $tag  Shortcode tag (name). Default empty.
+     * @param array $atts Shortcode attributes. Default empty.
+     * @param string $content Shortcode content. Default null.
+     * @param string $tag Shortcode tag (name). Default empty.
      *
      * @return string Shortcode output.
      */
@@ -126,7 +112,7 @@ class ChemieZijeTheme extends Site
         // start box
         $o = '<div class="wporg-box">';
         // title
-        $o .= '<h2>'.esc_html__($wporg_atts['title'], 'wporg').'</h2>';
+        $o .= '<h2>' . esc_html__($wporg_atts['title'], 'wporg') . '</h2>';
         // enclosing tags
         if (!is_null($content)) {
             // secure output by executing the_content filter hook on $content
@@ -178,15 +164,15 @@ class ChemieZijeTheme extends Site
         ];
         foreach ($sidebars as $index => $sidebar) {
             register_sidebar([
-                'id'             => $sidebar['id'] ?? "sidebar-$index",
-                'name'           => $sidebar['name'] ?? "Sidebar $index",
-                'description'    => $sidebar['description'] ?? '',
-                'before_widget'  => '',
-                'after_widget'   => '',
-                'before_title'   => '',
-                'after_title'    => '',
+                'id' => $sidebar['id'] ?? "sidebar-$index",
+                'name' => $sidebar['name'] ?? "Sidebar $index",
+                'description' => $sidebar['description'] ?? '',
+                'before_widget' => '',
+                'after_widget' => '',
+                'before_title' => '',
+                'after_title' => '',
                 'before_sidebar' => '',
-                'after_sidebar'  => '',
+                'after_sidebar' => '',
             ]);
         }
     }
@@ -194,10 +180,10 @@ class ChemieZijeTheme extends Site
     final public function registerNavMenus(): void
     {
         register_nav_menus([
-            'primary'       => 'Primární menu (v záhlaví)',
-            'footer_left'   => 'Menu v levém sloupci zápatí',
+            'primary' => 'Primární menu (v záhlaví)',
+            'footer_left' => 'Menu v levém sloupci zápatí',
             'footer_center' => 'Menu v prostředním sloupci zápatí',
-            'footer_right'  => 'Menu v pravém sloupci zápatí',
+            'footer_right' => 'Menu v pravém sloupci zápatí',
         ]);
     }
 
@@ -205,7 +191,7 @@ class ChemieZijeTheme extends Site
      * This is where you add some context
      *;
      *
-     * @param  array  $context  context['this'] Being the Twig's {{ this }}.
+     * @param array $context context['this'] Being the Twig's {{ this }}.
      *
      * @return array
      */
@@ -224,18 +210,18 @@ class ChemieZijeTheme extends Site
         }
         // Contact fields.
         $context['contact'] = [
-            'name'         => carbon_get_theme_option('contact_name'),
-            'department'   => carbon_get_theme_option('contact_department'),
-            'faculty'      => carbon_get_theme_option('contact_faculty'),
-            'university'   => carbon_get_theme_option('contact_university'),
-            'street'       => carbon_get_theme_option('contact_street'),
+            'name' => carbon_get_theme_option('contact_name'),
+            'department' => carbon_get_theme_option('contact_department'),
+            'faculty' => carbon_get_theme_option('contact_faculty'),
+            'university' => carbon_get_theme_option('contact_university'),
+            'street' => carbon_get_theme_option('contact_street'),
             'house_number' => carbon_get_theme_option('contact_house_number'),
-            'postal_code'  => carbon_get_theme_option('contact_postal_code'),
-            'city'         => carbon_get_theme_option('contact_city'),
-            'phone'        => carbon_get_theme_option('contact_phone'),
-            'fax'          => carbon_get_theme_option('contact_fax'),
-            'e_mail'       => carbon_get_theme_option('contact_e_mail'),
-            'gps'          => carbon_get_theme_option('contact_gps'),
+            'postal_code' => carbon_get_theme_option('contact_postal_code'),
+            'city' => carbon_get_theme_option('contact_city'),
+            'phone' => carbon_get_theme_option('contact_phone'),
+            'fax' => carbon_get_theme_option('contact_fax'),
+            'e_mail' => carbon_get_theme_option('contact_e_mail'),
+            'gps' => carbon_get_theme_option('contact_gps'),
         ];
 
         return $context;
@@ -276,7 +262,7 @@ class ChemieZijeTheme extends Site
     /**
      * This is where you can add your own functions to twig.
      *
-     * @param  Environment  $twig  get extension.
+     * @param Environment $twig get extension.
      *
      * @return Environment
      */
@@ -285,5 +271,19 @@ class ChemieZijeTheme extends Site
         $twig->addExtension(new StringLoaderExtension());
 
         return $twig;
+    }
+
+    private function getEnqueue(): Enqueue
+    {
+        // @formatter:off
+        return $this->enqueue ?? new Enqueue(
+            appName: 'chemieZijeTheme',
+            outputPath: 'dist',
+            version: '1.0.0',
+            type: 'theme',
+            pluginPath: 'theme',
+            themeType: 'regular',
+        );
+        // @formatter:on
     }
 }

@@ -21,9 +21,9 @@ if (post_password_required($post->ID)) {
 } else {
     Timber::render(
         [
-            'single-customs/single-'.$post->ID.'.html.twig',
-            'single-customs/single-'.$post->post_type.'.html.twig',
-            'single-customs/single-'.$post->slug.'.html.twig',
+            'single-customs/single-' . $post->ID . '.html.twig',
+            'single-customs/single-' . $post->post_type . '.html.twig',
+            'single-customs/single-' . $post->slug . '.html.twig',
             'post-types/single.html.twig',
         ],
         $context
