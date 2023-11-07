@@ -1,9 +1,25 @@
 <article class="department-contact mb-5">
-    <h3>{{ contact.name|default(contact.department) }}</h3>
+    {% if contact.url|default %}
+        <a href="{{ contact.url|default }}" target="_blank" title="{{ contact.name|default(contact.department) }}">
+            <h3>
+                {{ contact.name|default(contact.department) }}
+            </h3>
+        </a>
+    {% else %}
+        <h3>{{ contact.name|default(contact.department) }}</h3>
+    {% endif %}
     <address>
         {% if contact.department|default %}
-            <strong>{{ contact.department }}</strong><br>
+            {% if contact.url|default %}
+                <a href="{{ contact.url|default }}" target="_blank"
+                   title="{{ contact.name|default(contact.department) }}">
+                    <strong>{{ contact.department }}</strong><br>
+                </a>
+            {% else %}
+                <strong>{{ contact.department }}</strong><br>
+            {% endif %}
         {% endif %}
+
         {% if contact.faculty|default %}
             {{ contact.faculty }}<br>
         {% endif %}
@@ -24,6 +40,9 @@
         {% endif %}
         {% if contact.e_mail|default %}
             E-mail: <a href="mailto:{{ contact.e_mail }}">{{ contact.e_mail }}</a><br>
+        {% endif %}
+        {% if contact.url|default %}
+            E-mail: <a href="{{ contact.url }}">{{ contact.url }}</a><br>
         {% endif %}
         {% if contact.gps|default %}
             GPS: <a href="https://mapy.cz/?q={{ contact.gps|escape }}">{{ contact.gps }}</a><br>

@@ -19,7 +19,7 @@
     }
   ],
   "require": {
-    "php": ">=8.0",
+    "php": ">=8.2",
     "timber/timber": "^2.0.0-rc.1",
     "wpackio/enqueue": "^3.5.0",
     "hellonico/timber-dump-extension": "dev-master"
