@@ -2,6 +2,17 @@
 
 use Timber\Term;
 
+global $paged;
+
+$postsPerPage = 1000;
+$paged ??= get_query_var('paged');
+
+die(var_export($paged, true));
+
+if (!isset($paged) || !$paged) {
+    $paged = 1;
+}
+
 $context = Timber::context();
 $templates = ['post-types/teach_material_cat.html.twig', 'post-types/page.html.twig'];
 $terms = $context['post']->terms('teach_mat_cat_type');
@@ -18,6 +29,8 @@ $context['materials'] = Timber::get_posts(
         'post_type' => 'teach_material',
         'orderby' => 'title',
         'order' => 'ASC',
+        'posts_per_page' => $postsPerPage,
+        'paged' => $paged,
         'tax_query' => [
             'relation' => 'AND',
             [

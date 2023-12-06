@@ -7,7 +7,6 @@
       <sourceFolder url="file://$MODULE_DIR$/wordpress/wp-includes/sodium_compat/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/automattic/wordbless" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/htmlburger/carbon-fields" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/hellonico/twig-dump-extension" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/var-dumper" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/roots/wordpress-core-installer" />

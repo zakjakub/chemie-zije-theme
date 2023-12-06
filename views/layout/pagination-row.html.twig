@@ -1,30 +1,39 @@
+{% if post.prew or post.next %}
+    <div>
+    {% if post.prev %}
+        <a style="float: left;" href="{{ post.prev.link }}">{{ post.prev.title }}</a>
+    {% endif %}
+    {% if post.next %}
+        <a style="float: right;" href="{{ post.next.link }}">{{ post.next.title }}</a>
+    {% endif %}
+    </div>
+{% endif %}
+
+{#
 {% if posts.pagination.pages is not empty %}
     <nav class="row pagination-block">
         <ul class="pagination">
 
-            {# First #}
             {% if posts.pagination.pages|first and posts.pagination.pages|first.current != true %}
                 <li class="first btn">
-                    <a href="{{ posts.pagination.pages|first.link }}">First</a>
+                    <a href="{{ posts.pagination.pages|first.link }}">První stránka</a>
                 </li>
             {% else %}
                 <li class="first btn disabled">
-                    <button disabled>First</button>
+                    <button disabled>První stránka</button>
                 </li>
             {% endif %}
 
-            {# Previous #}
             {% if posts.pagination.prev %}
                 <li class="prev btn">
-                    <a href="{{ posts.pagination.prev.link }}">Previous</a>
+                    <a href="{{ posts.pagination.prev.link }}">Předchozí</a>
                 </li>
             {% else %}
                 <li class="prev btn disabled">
-                    <button disabled>Previous</button>
+                    <button disabled>Předchodzí</button>
                 </li>
             {% endif %}
 
-            {# Pages #}
             {% for page in posts.pagination.pages %}
                 {% if page.link %}
                     <li>
@@ -37,28 +46,27 @@
                 {% endif %}
             {% endfor %}
 
-            {# Next #}
             {% if posts.pagination.next %}
                 <li class="next btn">
-                    <a href="{{ posts.pagination.next.link }}">Next</a>
+                    <a href="{{ posts.pagination.next.link }}">Následující</a>
                 </li>
             {% else %}
                 <li class="next btn disabled">
-                    <button disabled>Next</button>
+                    <button disabled>Následující</button>
                 </li>
             {% endif %}
 
-            {# Last #}
             {% if posts.pagination.pages|last and posts.pagination.pages|last.current != true %}
                 <li class="last btn">
-                    <a href="{{ posts.pagination.pages|last.link }}">Last</a>
+                    <a href="{{ posts.pagination.pages|last.link }}">Poslední stránka</a>
                 </li>
             {% else %}
                 <li class="last btn disabled">
-                    <button disabled>Last</button>
+                    <button disabled>Poslední stránka</button>
                 </li>
             {% endif %}
 
         </ul>
     </nav>
 {% endif %}
+#}

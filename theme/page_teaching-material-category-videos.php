@@ -7,6 +7,12 @@
 
 use Timber\Term;
 
+global $paged;
+
+if (!isset($paged) || !$paged) {
+    $paged = 1;
+}
+
 $context = Timber::context();
 $templates = [
     'custom-templates/teach_material_cat_videos.html.twig',
