@@ -1,21 +1,25 @@
 <?php
+/*
+ * Template Name: Výukové materiály - SŠ
+ * Description: Stránka se seznamem videí sloužících jako výukové materiály pro SŠ.
+ * Template Post Type: teach_material_cat
+ */
 
 use Timber\Term;
 
 global $paged;
-
-$postsPerPage = 1000;
-$paged ??= get_query_var('paged');
-
-die(var_export($paged, true));
 
 if (!isset($paged) || !$paged) {
     $paged = 1;
 }
 
 $context = Timber::context();
-$templates = ['post-types/teach_material_cat.html.twig', 'post-types/page.html.twig'];
-$terms = $context['post']->terms('teach_mat_cat_type');
+$templates = [
+    'custom-templates/teach_material_cat_highschool.html.twig',
+    'post-types/teach_material_cat.html.twig',
+    'post-types/page.html.twig',
+];
+$context['categories'] = $context['post']->terms('teach_mat_cat_type');
 $context['subtypes'] = $context['post']->terms('teach_mat_sub_type');
 usort($context['subtypes'], static fn(Term $a, Term $b) => $a->description() <=> $b->description());
 $parts = explode('/', $context['subtypes'][0]?->path() ?? '');
@@ -27,16 +31,15 @@ $context['subtype'] = get_query_var('oblast', $firstSubTypeSlug) ?? $firstSubTyp
 $context['materials'] = Timber::get_posts(
     new WP_Query([
         'post_type' => 'teach_material',
-        'orderby' => 'menu_order',
+        'orderby' => 'title',
         'order' => 'ASC',
-        'posts_per_page' => $postsPerPage,
-        'paged' => $paged,
+        'posts_per_page' => 1000,
         'tax_query' => [
             'relation' => 'AND',
             [
                 'taxonomy' => 'teach_mat_cat_type',
-                'field' => 'slug',
-                'terms' => array_map(static fn(Term $term) => $term->__toString(), $terms),
+                'field' => 'name',
+                'terms' => array_map(static fn(Term $term) => $term->__toString(), $context['categories']),
             ],
             [
                 'taxonomy' => 'teach_mat_sub_type',
