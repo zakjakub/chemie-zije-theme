@@ -8,7 +8,7 @@
     </div>
     <div class="col-12 col-lg-7 title-box d-flex flex-column justify-content-center text-center">
         <h1 class="px-5 py-3 text-capitalize {{ isHome ? ' single-heading ' : ' ' }}">
-            {{ site.name }}
+            {{ category_name ?? site.name }}
         </h1>
         <h2 class="px-5 pt-2 pb-3 {{ isHome ? ' d-none ' : '' }}">
             {{- post.title ?? title ?? 'Stránka nenalezena' -}}
