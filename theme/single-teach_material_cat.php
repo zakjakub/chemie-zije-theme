@@ -7,8 +7,6 @@ global $paged;
 $postsPerPage = 1000;
 $paged ??= get_query_var('paged');
 
-die(var_export($paged, true));
-
 if (!isset($paged) || !$paged) {
     $paged = 1;
 }
