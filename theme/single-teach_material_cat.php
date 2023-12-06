@@ -27,7 +27,7 @@ $context['subtype'] = get_query_var('oblast', $firstSubTypeSlug) ?? $firstSubTyp
 $context['materials'] = Timber::get_posts(
     new WP_Query([
         'post_type' => 'teach_material',
-        'orderby' => 'menu_order',
+        'orderby' => 'title',
         'order' => 'ASC',
         'posts_per_page' => $postsPerPage,
         'paged' => $paged,
