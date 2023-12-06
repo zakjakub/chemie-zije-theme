@@ -1,12 +1,16 @@
 {% if post.prew or post.next %}
-    <div>
-    {% if post.prev %}
-        <a style="float: left;" href="{{ post.prev.link }}">{{ post.prev.title }}</a>
-    {% endif %}
-    {% if post.next %}
-        <a style="float: right;" href="{{ post.next.link }}">{{ post.next.title }}</a>
-    {% endif %}
-    </div>
+    <nav class="row pagination-block mt-3 mb-2">
+        {% if post.prev %}
+            <div class="col-6">
+                <a style="float: left;" href="{{ post.prev.link }}"><= {{ post.prev.title }}</a>
+            </div>
+        {% endif %}
+        {% if post.next %}
+            <div class="col-6">
+                <a style="float: right;" href="{{ post.next.link }}">{{ post.next.title }} =></a>
+            </div>
+        {% endif %}
+    </nav>
 {% endif %}
 
 {#
