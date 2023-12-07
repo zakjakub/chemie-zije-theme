@@ -31,6 +31,7 @@ class DepartmentContactsWidget extends WP_Widget
             'phone' => carbon_get_theme_option('contact_phone'),
             'fax' => carbon_get_theme_option('contact_fax'),
             'e_mail' => carbon_get_theme_option('contact_e_mail'),
+            'url' => carbon_get_theme_option('contact_url'),
             'gps' => carbon_get_theme_option('contact_gps'),
         ];
         Timber::render('widgets/department-contacts-widget/department-contacts-widget.html.twig', $context);
