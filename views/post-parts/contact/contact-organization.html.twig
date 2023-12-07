@@ -42,7 +42,7 @@
             E-mail: <a href="mailto:{{ contact.e_mail }}">{{ contact.e_mail }}</a><br>
         {% endif %}
         {% if contact.url|default %}
-            E-mail: <a href="{{ contact.url }}">{{ contact.url }}</a><br>
+            URL: <a href="{{ contact.url }}">{{ contact.url }}</a><br>
         {% endif %}
         {% if contact.gps|default %}
             GPS: <a href="https://mapy.cz/?q={{ contact.gps|escape }}">{{ contact.gps }}</a><br>
