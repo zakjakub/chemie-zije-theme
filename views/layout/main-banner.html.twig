@@ -10,8 +10,17 @@
         <h1 class="px-5 py-3 text-capitalize {{ isHome ? ' single-heading ' : ' ' }}">
             {{ category_name ?? site.name }}
         </h1>
-        <h2 class="px-5 pt-2 pb-3 {{ isHome ? ' d-none ' : '' }}">
-            {{- post.title ?? title ?? 'Stránka nenalezena' -}}
-        </h2>
+        {% if sub_category_name %}
+            <h2 class="px-5 pt-2 pb-2 {{ isHome ? ' d-none ' : '' }}">
+                {{- sub_category_name -}}
+            </h2>
+            <h3 class="px-5 pt-2 pb-3 {{ isHome ? ' d-none ' : '' }}">
+                {{- post.title ?? title ?? 'Stránka nenalezena' -}}
+            </h3>
+        {% else %}
+            <h2 class="px-5 pt-2 pb-3 {{ isHome ? ' d-none ' : '' }}">
+                {{- post.title ?? title ?? 'Stránka nenalezena' -}}
+            </h2>
+        {% endif %}
     </div>
 </header>

@@ -11,5 +11,9 @@ $context['posts'] = Timber::get_posts([
     'orderby' => ['priority' => 'ASC'],
     'posts_per_page' => 100,
 ]);
-$templates = ['custom-templates/industry-fields.html.twig', 'post-types/page.html.twig'];
+$templates = [
+    'custom-templates/industry-fields.html.twig',
+    'post-types/study_material_cat.html.twig',
+    'post-types/page.html.twig',
+];
 Timber::render($templates, $context);
