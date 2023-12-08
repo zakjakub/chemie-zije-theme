@@ -19,6 +19,7 @@ $context['posts'] = new PostQuery(
     new WP_Query([
         's' => $search,
         'numberposts' => 1000,
+        'posts_per_page' => 1000,
     ]),
 );
 Timber::render($templates, $context);
