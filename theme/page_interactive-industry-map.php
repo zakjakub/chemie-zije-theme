@@ -8,7 +8,7 @@
 $context = Timber::context();
 $context['companies'] = Timber::get_posts([
     'post_type' => 'map_company',
-    'numberposts' => -1,
+    'numberposts' => 1000,
     'orderby' => ['title' => 'ASC'],
 ]);
 Timber::render(

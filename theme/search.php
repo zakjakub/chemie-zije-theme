@@ -18,7 +18,7 @@ $context['title'] = "Vyhledávání \"$search\"";
 $context['posts'] = new PostQuery(
     new WP_Query([
         's' => $search,
-        'numberposts' => -1,
+        'numberposts' => 1000,
     ]),
 );
 Timber::render($templates, $context);
