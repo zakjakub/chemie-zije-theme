@@ -54,8 +54,6 @@ R
 "views/layout/main-banner.html.twig,9/e/9ec95b8fa6e00e2376b31a9f23dcdae173caacc1
 =
 composer.json,3/9/3957b91a0d8450cea0115cfd5af69eac90d75897
-g
-7views/custom-templates/chemical-nomenclatures.html.twig,f/1/f150007b4827eb51037f58977ce342e5f264c68f
 @
 theme/search.php,f/4/f43abde555072d0ce1dbc52024ea88c8eb7380ba
 a
@@ -138,3 +136,23 @@ F
 -views/post-types/single-map_company.html.twig,4/f/4f34be42e4895c513d1c0597fe0d35231eb15817
 C
 theme/functions.php,7/c/7ccbbe5fe5677abe7b94804d7e2820d6b7ad471d
+W
+'theme/page_interactive-industry-map.php,a/c/ac74e07757c2d41050adc19c590f30969cb2fc42
+Z
+*theme/page_chemical-industry-materials.php,8/7/8774b71a89216eb74182a16c0240c8e56bc10373
+L
+theme/single-map_company.php,9/3/9396b17dbae9dba8bf981d59a7e8203167708179
+@
+theme/header.php,3/2/322ad228c1ba2d8d9808a545848b1d61a1bef4c8
+N
+theme/page_study-materials.php,0/6/0635040ba515570c9ed111a4e0f297b0c43a4eec
+O
+theme/single-teach_material.php,b/7/b780faae990abf81cdae7b7dc2b8b2c87e91548a
+R
+"theme/single-industry_material.php,6/b/6b809fb2b9ef0811116496734969090e1e0b4ad1
+O
+theme/single-industry_field.php,c/b/cbc6cded888ed25426b3ed970d0c36343cb3016c
+O
+theme/single-contact_person.php,1/f/1f674a608b04ee9783deb86186ab73ccb398f6a7
+Q
+!theme/single-chemical_element.php,8/a/8af168960db69a39f031318fdb023fcf91d6259f
