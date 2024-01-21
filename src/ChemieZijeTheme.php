@@ -56,6 +56,20 @@ class ChemieZijeTheme extends Site
         parent::__construct();
     }
 
+    private function getEnqueue(): Enqueue
+    {
+        // @formatter:off
+        return $this->enqueue ?? new Enqueue(
+            appName: 'chemieZijeTheme',
+            outputPath: 'dist',
+            version: '1.0.0',
+            type: 'theme',
+            pluginPath: 'theme',
+            themeType: 'regular',
+        );
+        // @formatter:on
+    }
+
     /**
      * @throws \Exception
      */
@@ -271,19 +285,5 @@ class ChemieZijeTheme extends Site
         $twig->addExtension(new StringLoaderExtension());
 
         return $twig;
-    }
-
-    private function getEnqueue(): Enqueue
-    {
-        // @formatter:off
-        return $this->enqueue ?? new Enqueue(
-            appName: 'chemieZijeTheme',
-            outputPath: 'dist',
-            version: '1.0.0',
-            type: 'theme',
-            pluginPath: 'theme',
-            themeType: 'regular',
-        );
-        // @formatter:on
     }
 }

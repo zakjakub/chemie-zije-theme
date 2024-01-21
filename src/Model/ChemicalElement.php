@@ -70,6 +70,16 @@ class ChemicalElement
         $this->electronAffinity = self::inputToFloat(self::cleanString($electronAffinity));
     }
 
+    private static function cleanString(mixed $columnContent = null): string|null
+    {
+        return empty($columnContent = trim($columnContent)) ? null : $columnContent;
+    }
+
+    private static function inputToFloat(mixed $input): float|null
+    {
+        return empty($input) ? null : (float)str_replace(',', '.', $input);
+    }
+
     final public static function fromRow(array $elementData, array $keys): self
     {
         return new ChemicalElement(
@@ -99,21 +109,6 @@ class ChemicalElement
     final public static function getElement(int $atomicNumber): self
     {
         return self::fromArray(self::getArrayElements()[$atomicNumber]);
-    }
-
-    final public static function getElements(): array
-    {
-        return array_map(static fn(array $arrEl) => self::fromArray($arrEl), self::getArrayElements());
-    }
-
-    private static function cleanString(mixed $columnContent = null): string|null
-    {
-        return empty($columnContent = trim($columnContent)) ? null : $columnContent;
-    }
-
-    private static function inputToFloat(mixed $input): float|null
-    {
-        return empty($input) ? null : (float)str_replace(',', '.', $input);
     }
 
     private static function fromArray(array $elementData): self
@@ -2742,5 +2737,10 @@ class ChemicalElement
                 'electron_affinity' => '5,403',
             ],
         ];
+    }
+
+    final public static function getElements(): array
+    {
+        return array_map(static fn(array $arrEl) => self::fromArray($arrEl), self::getArrayElements());
     }
 }

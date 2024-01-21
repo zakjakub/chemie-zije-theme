@@ -156,3 +156,11 @@ O
 theme/single-contact_person.php,1/f/1f674a608b04ee9783deb86186ab73ccb398f6a7
 Q
 !theme/single-chemical_element.php,8/a/8af168960db69a39f031318fdb023fcf91d6259f
+P
+ theme/page_general-chemistry.php,6/f/6fd3ebf154f089a94566a376d5a60186bd7023ee
+R
+"theme/single-general_chemistry.php,3/5/35eb6ab3b7a1d8d60460a8997b36176871faac88
+g
+7views/single-customs/single-general_chemistry.html.twig,a/2/a2553b2512956ad50354209c2d3917b0fc67ff02
+w
+Gtheme/images/logo/katedra-anorganicke-chemie-UPOL-zakladni-varianta.svg,a/4/a416434f5e12fcd9c4f5116805111a12b029c8ba
