@@ -21,7 +21,6 @@
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
       <path value="$PROJECT_DIR$/vendor/hellonico/timber-dump-extension" />
-      <path value="$PROJECT_DIR$/vendor/hellonico/twig-dump-extension" />
       <path value="$PROJECT_DIR$/vendor/htmlburger/carbon-fields" />
       <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
@@ -55,10 +54,13 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/twig-bridge" />
       <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
       <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
       <path value="$PROJECT_DIR$/vendor/timber/timber" />
       <path value="$PROJECT_DIR$/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/vendor/wecodemore/wordpress-early-hook" />
       <path value="$PROJECT_DIR$/vendor/wpackio/enqueue" />
       <path value="$PROJECT_DIR$/vendor/yoast/phpunit-polyfills" />
     </include_path>

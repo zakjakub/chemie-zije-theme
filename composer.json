@@ -22,7 +22,7 @@
     "php": ">=8.2",
     "timber/timber": "^2.0.0",
     "wpackio/enqueue": "^3.5.0",
-    "hellonico/timber-dump-extension": "dev-master"
+    "hellonico/timber-dump-extension": "^2.0.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
